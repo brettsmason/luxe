@@ -1,5 +1,4 @@
 <article <?php Hybrid\attr( 'entry' ) ?>>
-
 	<header class="entry__header">
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
 
@@ -19,5 +18,4 @@
 		<?php Hybrid\post_terms( [ 'taxonomy' => 'category' ] ) ?>
 		<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => ABC\get_meta_sep() ] ) ?>
 	</footer>
-
 </article>

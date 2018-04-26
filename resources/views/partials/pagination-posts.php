@@ -1,7 +1,8 @@
 <?php Hybrid\posts_pagination( [
-	'prev_text'       => __( '&larr; Previous' ),
-	'next_text'       => __( 'Next &rarr;' ),
-	'title_text'      => __( 'Posts Navigation' ),
-	'container_class' => 'pagination pagination--posts',
-	'title_class'     => 'pagination__title screen-reader-text'
+	'container_class'    => 'pagination pagination--posts',
+	'title_class'        => 'pagination__title screen-reader-text',
+	'prev_text'          => __( '&larr; Previous page' ),
+	'next_text'          => __( 'Next &rarr;' ),
+	'title_text'         => __( 'Posts Navigation' ),
+	'before_page_number' => __( 'Page' ) . ' ',
 ] ) ?>

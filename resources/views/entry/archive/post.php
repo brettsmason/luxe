@@ -4,8 +4,8 @@
 
 		<div class="entry__byline">
 			<?php Hybrid\post_author() ?>
-			<?php Hybrid\post_date( [ 'before' => ABC\get_meta_sep() ] ) ?>
-			<?php Hybrid\post_comments( [ 'before' => ABC\get_meta_sep() ] ) ?>
+			<?php Hybrid\post_date( [ 'before' => XYZ\get_meta_sep() ] ) ?>
+			<?php Hybrid\post_comments( [ 'before' => XYZ\get_meta_sep() ] ) ?>
 		</div>
 	</header>
 

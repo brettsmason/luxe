@@ -13,7 +13,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace XYZ;
 
 use WP_Customize_Manager;
 

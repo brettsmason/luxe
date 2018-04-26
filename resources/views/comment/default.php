@@ -6,8 +6,8 @@
 		<span class="comment__author"><?php comment_author_link() ?></span>
 		<br />
 		<a href="<?php comment_link() ?>" class="comment__permalink"><time class="comment__published"><?php printf( __( '%s ago' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ) ?></time></a>
-		<?php edit_comment_link( null, ABC\get_meta_sep() ) ?>
-		<?php Hybrid\comment_reply_link( [ 'before' => ABC\get_meta_sep() ] ) ?>
+		<?php edit_comment_link( null, XYZ\get_meta_sep() ) ?>
+		<?php Hybrid\comment_reply_link( [ 'before' => XYZ\get_meta_sep() ] ) ?>
 	</header>
 
 	<div class="comment__content">

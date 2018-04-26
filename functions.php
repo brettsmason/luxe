@@ -4,14 +4,14 @@
  *
  * This file is used to bootstrap the theme.
  *
- * @package   ABC
+ * @package   XYZ
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @link      https://themehybrid.com/themes/xyz
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace XYZ;
 
 use function Hybrid\app;
 use function Hybrid\autoload;
@@ -54,4 +54,4 @@ array_map(
 );
 
 # Registers a single instance of our `Customize` class with the container.
-app()->instance( 'abc/customize', new Customize() );
+app()->instance( 'xyz/customize', new Customize() );

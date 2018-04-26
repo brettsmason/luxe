@@ -12,7 +12,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace ABC;
+namespace XYZ;
 
 /**
  * Returns the metadata separator.
@@ -25,7 +25,7 @@ namespace ABC;
 function get_meta_sep( $sep = '' ) {
 
 	return apply_filters(
-		'abc/meta_sep',
+		'xyz/meta_sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
 			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )

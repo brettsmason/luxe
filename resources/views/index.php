@@ -3,7 +3,6 @@
 	<?php Hybrid\render_view( 'partials', 'head' ) // Load partials/head template. ?>
 
 	<body <?php Hybrid\attr( 'body' ) ?>>
-
 		<div class="app">
 			<?php Hybrid\render_view( 'header', Hybrid\get_template_hierarchy() ) // Load header/* template. ?>
 

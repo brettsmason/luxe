@@ -48,7 +48,10 @@ array_map(
 		require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 	},
 	[
-		'functions-svg',
+		'functions-embeds',
+		'functions-filters',
+		'functions-icons',
+		'functions-scripts',
 		'functions-setup',
 		'template-general'
 	]

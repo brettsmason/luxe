@@ -137,6 +137,6 @@ add_action( 'widgets_init', function() {
 
 	register_sidebar( [
 		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar', 'uuups' ),
+		'name' => esc_html_x( 'Primary', 'sidebar', 'xyz' ),
 	] + $args );
 }, 5 );

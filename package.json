@@ -64,24 +64,5 @@
     "webpack-dev-server": "^2.4.4",
     "webpack-extraneous-file-cleanup-plugin": "^1.0.5",
     "webpack-watched-glob-entries-plugin": "^2.1.2"
-  },
-  "browserslist": [
-    "> 1%",
-    "ie >= 11",
-    "last 1 Android versions",
-    "last 1 ChromeAndroid versions",
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions",
-    "last 2 iOS versions",
-    "last 2 Edge versions",
-    "last 2 Opera versions"
-  ],
-  "stylelint": {
-    "extends": "stylelint-config-wordpress/scss",
-    "rules": {}
-  },
-  "eslintConfig": {
-    "extends": "wordpress"
   }
 }

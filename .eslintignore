@@ -1,0 +1,3 @@
+dist/scripts/*.js
+resources/build/
+.eslintrc.js

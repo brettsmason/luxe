@@ -2,18 +2,20 @@
 //   #CLEARFIX
 //   ======================================================================== */
 
-// Mixin to drop micro clearfix into a selector. Further reading:
-// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
-//
-// .usage {
-//   @include clearfix();
-// }
+/// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+/// The clearfix is augmented with specific styles to prevent borders in flexbox environments
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
+/// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+		flex-basis: 0;
+		order: 1;
+  }
 
-@mixin clearfix() {
-  &:after {
-    content: '' !important;
-    display: block !important;
-    clear: both !important;
+  &::after {
+    clear: both;
   }
 }
-

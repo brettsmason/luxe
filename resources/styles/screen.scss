@@ -16,6 +16,7 @@
 // place to define things like variables.
 
 @import "settings/global";
+@import "settings/typography";
 
 
 // TOOLS
@@ -23,10 +24,9 @@
 // These are used throughout the code but don't output CSS on their own.
 // Things like mixins and extensions go here.
 
-@import "tools/font-size";
 @import "tools/clearfix";
 @import "tools/hidden";
-@import "node_modules/sass-mq/mq";
+// @import "node_modules/sass-mq/mq";
 
 
 // GENERIC
@@ -36,7 +36,7 @@
 // styles will build upon.
 
 @import "generic/box-sizing";
-@import "generic/normalize";
+// @import "generic/normalize";
 @import "generic/reset";
 @import "generic/shared";
 
@@ -63,7 +63,7 @@
 // a one-off or reusable block of code.
 
 @import "objects/wrapper";
-@import "objects/layout";
+// @import "objects/layout";
 @import "objects/media";
 @import "objects/list-bare";
 @import "objects/list-inline";
@@ -76,7 +76,7 @@
 // every piece of the design is some type of component, whether it's
 // a one-off or reusable block of code.
 
-@import "components/buttons";
+// @import "components/buttons";
 @import "components/header";
 @import "components/footer";
 
@@ -86,7 +86,7 @@
 // Vendor files handle code for specific plugins and third-party
 // scripts that would overwrite earlier styles.
 
-@import 'vendor/index';
+// @import 'vendor/index';
 
 
 // UTILITIES
@@ -95,7 +95,7 @@
 // If necessary, this is the only place where `!important` rules should
 // go, but only if necessary.
 
-@import "utilities/align";
+@import "utilities/alignment";
 @import "utilities/clearfix";
 @import "utilities/headings";
 @import "utilities/hide";

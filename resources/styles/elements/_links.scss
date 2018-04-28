@@ -3,10 +3,21 @@
    ========================================================================== */
 
 a {
-  color: $color-link;
-  text-decoration: underline;
+	color: $color-link;
+	transition: $global-transition;
 
-  &:hover {
-    color: $color-hover;
-  }
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-hover;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
 }

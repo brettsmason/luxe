@@ -7,29 +7,30 @@
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
 
-/* Fonts
-   ========================================================================== */
-
-$font-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
-  'Roboto', 'Helvetica Neue', 'Arial', sans-serif !default;
-
 /* Breakpoints
    ========================================================================== */
 
-$bp-small: 480px;
-$bp-medium: 768px;
-$bp-large: 1024px;
-$bp-xlarge: 1280px;
-$bp-full: 1600px;
+$breakpoints: (
+	'small': 480px,
+	'medium': 768px,
+	'large': 1024px,
+	'xlarge': 1280px,
+	'xxlarge': 1600px
+) !default;
 
 /* Colors
    ========================================================================== */
 
-// Colors shouldn't be used directly but reassigned
+$color-primary: #4ecdc4;
+$color-secondary: #292f36;
+$color-alert: #ff6b6b;
+$color-warning: #ffe66d;
+$color-success: #4ecdc4;
+
 $color-white: #fff;
 $color-black: #000;
-$color-very-light-grey: #ccc;
-$color-light-grey: #999;
+
+$color-light-grey: #ccc;
 $color-medium-grey: #666;
 $color-dark-grey: #333;
 
@@ -38,11 +39,8 @@ $color-bg: $color-white;
 $color-text: $color-black;
 
 // Links
-$color-link: $color-medium-grey;
-$color-hover: $color-light-grey;
+$color-link: $color-primary;
+$color-hover: $color-primary + 20;
 
 // Borders
-$color-border: $color-very-light-grey;
-
-// Fills
-$color-fill: $color-very-light-grey;
+$color-border: $color-light-grey;

@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Main scripts.
 	wp_enqueue_script(
-		'xyz/app.js',
+		'xyz-app',
 		get_parent_theme_file_uri( 'public/scripts/app.js' ),
 		null,
 		$version,
@@ -30,8 +30,8 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Main styles.
 	wp_enqueue_style(
-		'xyz/app.cs',
-		get_parent_theme_file_uri( 'public/styles/app.css' ),
+		'xyz-screen',
+		get_parent_theme_file_uri( 'public/styles/screen.css' ),
 		null,
 		$version
 	);

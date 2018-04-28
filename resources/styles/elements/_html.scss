@@ -13,28 +13,14 @@
  */
 
 html {
-  background: $color-bg;
-  color: $color-text;
-  font-family: $font-sans-serif;
-  font-size: 0.8125rem; /* [1] */ /* 13px */
-  line-height: 1.5; /* [1] */
-  min-height: 100%; /* [3] */
-  overflow-y: scroll; /* [2] */
-  padding: 1rem;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-
-  @include bp-medium {
-    font-size: 0.875em; /* 14px */
-  }
-
-  @include bp-large {
-    font-size: 0.9375em; /* 15px */
-  }
-
-  @include bp-full {
-    font-size: 1em; /* 16px */
-  }
+	background: $color-bg;
+	color: $color-text;
+	font-family: $font-family-body;
+	font-size: 1rem; /* [1] */ /* 16px */
+	line-height: 1.5; /* [1] */
+	min-height: 100%; /* [3] */
+	overflow-y: scroll; /* [2] */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
-

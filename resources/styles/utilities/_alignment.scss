@@ -1,0 +1,64 @@
+/* ==========================================================================
+   #ALIGNMENT
+   ========================================================================== */
+
+.alignleft {
+	float: left;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+
+	@media (min-width: 800px) {
+		max-width: 50%;
+	}
+}
+
+.alignright {
+	float: right;
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+
+	@media (min-width: 800px) {
+		max-width: 50%;
+	}
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignwide {
+	@media (min-width: 800px) {
+		max-width: 58rem;
+	}
+}
+
+.alignfull {
+	max-width: 100%;
+}
+
+.u-float-left {
+	float: left;
+}
+
+.u-float-right {
+	float: right;
+}
+
+.u-clear {
+	clear: both;
+}
+
+.u-text-center {
+	text-align: center;
+}
+
+.u-text-left {
+	text-align: left;
+}
+
+.u-text-right {
+	text-align: right;
+}

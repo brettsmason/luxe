@@ -7,38 +7,46 @@
  */
 
 body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
 figure,
 hr,
-fieldset, legend {
-  margin: 0;
-  padding: 0;
+fieldset,
+legend {
+	margin: 0;
+	padding: 0;
 }
-
 
 /**
  * Remove trailing margins from nested lists.
  */
 
 li > {
-  ol,
-  ul {
-    margin-bottom: 0;
-  }
+	ol,
+	ul {
+		margin-bottom: 0;
+	}
 }
-
 
 /**
  * Remove default table spacing.
  */
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-
 
 /**
  * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
@@ -46,6 +54,6 @@ table {
  */
 
 fieldset {
-  min-width: 0; /* [1] */
-  border: 0;
+	min-width: 0; /* [1] */
+	border: 0;
 }

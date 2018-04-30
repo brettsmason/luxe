@@ -173,7 +173,12 @@ module.exports = env => {
 					speed: 4
 				},
 				svgo: {
-					plugins: [{ removeUnknownsAndDefaults: false }, { cleanupIDs: false }]
+					plugins: [
+						{ removeUnknownsAndDefaults: false },
+						{ cleanupIDs: false },
+						{ removeViewBox: false },
+						{ removeDimensions: true }
+					]
 				},
 				plugins: [imageminMozjpeg({ quality: 75 })],
 				disable: !env.production

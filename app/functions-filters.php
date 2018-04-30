@@ -63,9 +63,16 @@ function excerpt_more( $link ) {
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 
 function get_custom_logo( $html ) {
-	$html = str_replace( 'class="custom-logo"', 'app-header__logo', $html );
-	$html = str_replace( 'class="custom-logo-link"', 'app-header__logo-link', $html );
-
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$html = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
+		esc_url( home_url( '/' ) ),
+		'app-header__logo-anchor',
+		wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+			'class'    => 'app-header__logo',
+			'itemprop' => 'logo',
+			'alt' => esc_attr( get_bloginfo( 'name' ) ),
+		) )
+	);
 	return $html;
 }
 add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );

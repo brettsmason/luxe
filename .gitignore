@@ -1,4 +1,4 @@
 node_modules/
-/vendor
-/public
+vendor/
+public/
 /composer.lock

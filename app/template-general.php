@@ -28,7 +28,7 @@ function get_meta_sep( $sep = '' ) {
 		'luxe/meta_sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )
+			$sep ? $sep : esc_html_x( '&middot;', 'meta separator', 'luxe' )
 		)
 	);
 }

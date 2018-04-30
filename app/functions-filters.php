@@ -61,3 +61,11 @@ function excerpt_more( $link ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
+
+function get_custom_logo( $html ) {
+	$html = str_replace( 'class="custom-logo"', 'app-header__logo', $html );
+	$html = str_replace( 'class="custom-logo-link"', 'app-header__logo-link', $html );
+
+	return $html;
+}
+add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );

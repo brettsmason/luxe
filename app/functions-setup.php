@@ -72,6 +72,15 @@ add_action( 'after_setup_theme', function() {
 
 	// Add support for align wide blocks.
 	add_theme_support( 'align-wide' );
+
+	// Add support for custom logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 300,
+		'height'      => 200,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'app-header__title', 'app-header__description' ),
+	) );
 }, 5 );
 
 /**

@@ -62,6 +62,12 @@ function excerpt_more( $link ) {
 }
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 
+/**
+ * Modify the `custom_logo` core function based on our class preferences.
+ *
+ * @param string $html The custom logo HTML markup.
+ * @return string The modified custom logo HTML markup.
+ */
 function get_custom_logo( $html ) {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$html = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',

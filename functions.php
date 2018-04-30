@@ -48,6 +48,7 @@ array_map(
 		require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 	},
 	[
+		'bootstrap-theme',
 		'functions-config',
 		'functions-embeds',
 		'functions-filters',
@@ -58,5 +59,3 @@ array_map(
 	]
 );
 
-# Registers a single instance of our `Customize` class with the container.
-app()->instance( 'luxe/customize', new Customize() );

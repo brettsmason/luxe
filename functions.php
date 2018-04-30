@@ -48,6 +48,7 @@ array_map(
 		require_once( get_parent_theme_file_path( "app/{$file}.php" ) );
 	},
 	[
+		'functions-config',
 		'functions-embeds',
 		'functions-filters',
 		'functions-icons',

@@ -10,7 +10,7 @@ namespace Luxe;
 use function Hybrid\app;
 
 /**
- * Filter functions.
+ * Retrieve values from our theme.json config file.
  *
  * @param  string $key A key to retrieve froom the config.
  * @return array  Theme config array matching the given $key.

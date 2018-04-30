@@ -5,14 +5,14 @@
  * This file holds general template tags for the theme. Template tags are PHP
  * functions meant for use within theme templates.
  *
- * @package   ABC
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @package   Luxe
+ * @author    Brett Mason <brettsmason@gmail.com>
+ * @copyright Copyright (c) 2018, Brett Mason
+ * @link      https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Returns the metadata separator.
@@ -25,7 +25,7 @@ namespace XYZ;
 function get_meta_sep( $sep = '' ) {
 
 	return apply_filters(
-		'xyz/meta_sep',
+		'luxe/meta_sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
 			$sep ? $sep : esc_html_x( '&middot;', 'meta separator' )

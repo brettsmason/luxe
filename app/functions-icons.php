@@ -2,10 +2,10 @@
 /**
  * SVG icons related functions and filters
  *
- * @package XYZ
+ * @package Luxe
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Return SVG markup.
@@ -23,12 +23,12 @@ namespace XYZ;
 function get_svg( $args = [] ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return esc_html__( 'Please define default parameters in the form of an array.', 'xyz' );
+		return esc_html__( 'Please define default parameters in the form of an array.', 'luxe' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return esc_html__( 'Please define an SVG icon filename.', 'xyz' );
+		return esc_html__( 'Please define an SVG icon filename.', 'luxe' );
 	}
 
 	// Set defaults.
@@ -155,5 +155,5 @@ function social_links_icons() {
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */
-	return apply_filters( 'xyz_social_links_icons', $social_links_icons ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+	return apply_filters( 'luxe_social_links_icons', $social_links_icons ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 }

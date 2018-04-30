@@ -4,10 +4,10 @@
  *
  * This file holds functions that are used for filtering.
  *
- * @package   XYZ
+ * @package   Luxe
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Filters the WP nav menu link attributes.
@@ -55,7 +55,7 @@ function excerpt_more( $link ) {
 		'<p class="link-more"><a href="%1$s" class="more-link" aria-hidden="true" tabindex="-1">%2$s</a></p>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'xyz' ), get_the_title( get_the_ID() ) )
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'luxe' ), get_the_title( get_the_ID() ) )
 	);
 
 	return ' &hellip; ' . $link;

@@ -19,7 +19,7 @@ const themePrompt = async () => {
 const themeData = async () => {
 	const options = {
 		files: "style.css",
-		from: ["https://github.com/justintadlock/abc", "Justin Tadlock"],
+		from: ["https://github.com/brettsmason/luxe", "Brett Mason"],
 		to: [conf.themeUri, conf.themeAuthor]
 	};
 
@@ -44,7 +44,7 @@ const nameReplace = async () => {
 			"style.css",
 			"readme.md"
 		],
-		from: [/ABC/g, /abc-/g, /abc_/g, /abc/g],
+		from: [/Luxe/g, /luxe-/g, /luxe_/g, /luxe/g],
 		to: [
 			conf.themeName,
 			`${conf.textDomain}-`,

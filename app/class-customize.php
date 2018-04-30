@@ -6,14 +6,14 @@
  * Customization API. This is the place to set up all of your theme options for
  * the customizer.
  *
- * @package   ABC
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @package   Luxe
+ * @author    Brett Mason <brettsmason@gmail.com>
+ * @copyright Copyright (c) 2018, Brett Mason
+ * @link      https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace XYZ;
+namespace Luxe;
 
 use WP_Customize_Manager;
 
@@ -163,7 +163,7 @@ class Customize {
                 $version = wp_get_theme( get_template() )->get( 'Version' );
 
                 wp_enqueue_script(
-                        'abc-customize-preview',
+                        'luxe-customize-preview',
                         get_parent_theme_file_uri( 'dist/scripts/customize-preview.js' ),
                         [ 'customize-preview' ],
                         $version,

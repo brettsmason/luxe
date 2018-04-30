@@ -1,6 +1,6 @@
-# XYZ - A starter theme for WordPress
+# Luxe - A starter theme for WordPress
 
-XYZ (temporary name) is a starter theme project that's currently under active development.  
+Luxe is a starter theme project that's currently under active development.
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
 
@@ -32,7 +32,7 @@ Then, clone the theme:
 
 ```
 # Clone the theme.
-git clone -b master git@github.com:justintadlock/xyz.git <theme-name>
+git clone -b master git@github.com:brettsmason/luxe.git <theme-name>
 ```
 
 After that, you need to make sure that you're in the proper folder to follow the next steps:
@@ -44,7 +44,7 @@ cd theme-name
 
 ### Installing PHP dependencies
 
-XYZ has the following dependencies, which must be installed for the theme to work:
+Luxe has the following dependencies, which must be installed for the theme to work:
 
 * [Hybrid Core](https://github.com/justintadlock/hybrid-core).
 
@@ -56,7 +56,7 @@ composer install
 
 ### Installing Node dependencies
 
-XYZ has many Node dependencies that it uses for the build process.  To install them, you can either use NPM or Yarn.
+Luxe has many Node dependencies that it uses for the build process.  To install them, you can either use NPM or Yarn.
 
 **NPM command:**
 
@@ -71,8 +71,6 @@ yarn install
 ```
 
 ## Folder structure
-
-_Note: The folder structure is still under development and could change in the future._
 
 ### root
 
@@ -98,9 +96,9 @@ The `/app` folder is where your _under-the-hood_ PHP lives.  Use this folder for
 
 Also, see the `functions.php` file for how all of these get loaded too.
 
-### /dist
+### /public
 
-The `/dist` folder is for holding our compiled assets for distribution. These files should not be edited directly.  The sub-folders are organized on par with the sub-folders in `/resources`.
+The `/public` folder is for holding our compiled assets for distribution. These files should not be edited directly.  The sub-folders are organized on par with the sub-folders in `/resources`.
 
 * `scripts` - Holds the compiled scripts.
 * `styles` - Holds the compiled stylesheets.

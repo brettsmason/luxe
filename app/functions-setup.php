@@ -9,15 +9,15 @@
  * unregistering, removing, or modifying all of the things in this file.  Those APIs
  * should be used instead of attempting to use `remove_action()`.
  *
- * @package    XYZ
+ * @package    Luxe
  * @subpackage Includes
- * @author     Justin Tadlock <justintadlock@gmail.com>
- * @copyright  Copyright (c) 2018, Justin Tadlock
- * @link       https://github.com/brettsmason/xyz/
+ * @author     Brett Mason <brettsmason@gmail.com>
+ * @copyright  Copyright (c) 2018, Brett Mason
+ * @link       https://github.com/brettsmason/luxe/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Set up theme support. This is where calls to `add_theme_support()` happen.
@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location', 'xyz' ),
+		'primary' => esc_html_x( 'Primary', 'nav menu location', 'luxe' ),
 	] );
 
 }, 5 );
@@ -137,6 +137,6 @@ add_action( 'widgets_init', function() {
 
 	register_sidebar( [
 		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar', 'xyz' ),
+		'name' => esc_html_x( 'Primary', 'sidebar', 'luxe' ),
 	] + $args );
 }, 5 );

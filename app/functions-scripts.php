@@ -2,10 +2,10 @@
 /**
  * Styles and scripts related functions, hooks, and filters.
  *
- * @package XYZ
+ * @package Luxe
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Enqueue scripts/styles.
@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Main scripts.
 	wp_enqueue_script(
-		'xyz-app',
+		'luxe-app',
 		get_parent_theme_file_uri( 'public/scripts/app.js' ),
 		null,
 		$version,
@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	// Main styles.
 	wp_enqueue_style(
-		'xyz-screen',
+		'luxe-screen',
 		get_parent_theme_file_uri( 'public/styles/screen.css' ),
 		null,
 		$version
@@ -54,7 +54,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 
 	// Main block styles.
 	wp_enqueue_style(
-		'xyz/editor.css',
+		'luxe/editor.css',
 		get_parent_theme_file_uri( 'scripts/styles/editor.css' ),
 		null,
 		$version

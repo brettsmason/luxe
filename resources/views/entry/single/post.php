@@ -4,8 +4,8 @@
 
 		<div class="entry__byline">
 			<?php Hybrid\post_author() ?>
-			<?php Hybrid\post_date( [ 'before' => XYZ\get_meta_sep() ] ) ?>
-			<?php Hybrid\post_comments( [ 'before' => XYZ\get_meta_sep() ] ) ?>
+			<?php Hybrid\post_date( [ 'before' => Luxe\get_meta_sep() ] ) ?>
+			<?php Hybrid\post_comments( [ 'before' => Luxe\get_meta_sep() ] ) ?>
 		</div>
 	</header>
 
@@ -16,6 +16,6 @@
 
 	<footer class="entry__footer">
 		<?php Hybrid\post_terms( [ 'taxonomy' => 'category' ] ) ?>
-		<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => XYZ\get_meta_sep() ] ) ?>
+		<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => Luxe\get_meta_sep() ] ) ?>
 	</footer>
 </article>

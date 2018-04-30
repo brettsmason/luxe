@@ -2,10 +2,10 @@
 /**
  * Create responsive embeds by wrapping them in a div.
  *
- * @package XYZ
+ * @package Luxe
  */
 
-namespace XYZ;
+namespace Luxe;
 
 /**
  * Wraps embeds with `.embed-wrap` class.
@@ -58,7 +58,7 @@ function maybe_wrap_embed( $html, $url ) {
 		'#https?://(www\.|embed\.)?ted\.com/talks/.*#i',
 	];
 
-	$patterns = apply_filters( 'xyz_maybe_wrap_embed_patterns', $patterns ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+	$patterns = apply_filters( 'luxe_maybe_wrap_embed_patterns', $patterns ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 	foreach ( $patterns as $pattern ) {
 		$do_wrap = preg_match( $pattern, $url );

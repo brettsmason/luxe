@@ -4,14 +4,14 @@
  *
  * This file is used to bootstrap the theme.
  *
- * @package   XYZ
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/xyz
+ * @package   Luxe
+ * @author    Brett Mason <brettsmason@gmail.com>
+ * @copyright Copyright (c) 2018, Brett Mason
+ * @link      https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace XYZ;
+namespace Luxe;
 
 use function Hybrid\app;
 use function Hybrid\autoload;
@@ -58,4 +58,4 @@ array_map(
 );
 
 # Registers a single instance of our `Customize` class with the container.
-app()->instance( 'xyz/customize', new Customize() );
+app()->instance( 'luxe/customize', new Customize() );

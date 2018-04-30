@@ -5,10 +5,10 @@
  * is imported into the other Webpack files to get the correct settings. This is
  * where theme authors might want to add any additional settings.
  *
- * @package   ABC
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2018, Justin Tadlock
- * @link      https://themehybrid.com/themes/abc
+ * @package   Luxe
+ * @author    Brett Mason <brettsmason@gmail.com>
+ * @copyright Copyright (c) 2018, Brett Mason
+ * @link      https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 

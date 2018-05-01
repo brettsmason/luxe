@@ -1,9 +1,24 @@
 {
-	"colors": {
-		"primary": "#2516c7",
-		"secondary": "#06031f",
-		"tertiary": "#ff6600",
-		"black": "#000000",
-		"white": "#ffffff"
-	}
+	"colors": [
+    {
+      "name": "primary",
+      "color": "#2516c7"
+    },
+    {
+      "name": "secondary",
+      "color": "#06031f"
+    },
+    {
+      "name": "tertiary",
+      "color": "#ff6600"
+    },
+    {
+      "name": "black",
+      "color": "#000000"
+    },
+    {
+      "name": "white",
+      "color": "#000000"
+    }
+  ]
 }

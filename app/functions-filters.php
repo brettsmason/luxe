@@ -15,39 +15,10 @@ namespace Luxe;
  *
  * @return string Path to our SVGs.
  */
-add_filter( 'hybrid/svg/path', function() {
+function hybrid_svg_path() {
 	return '/public/svg/';
-}, 10 );
-
-/**
- * Filters the WP nav menu link attributes.
- *
- * @param array    $atts {
- *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
- *
- *     @type string $title  Title attribute.
- *     @type string $target Target attribute.
- *     @type string $rel    The rel attribute.
- *     @type string $href   The href attribute.
- * }
- * @param WP_Post  $item  The current menu item.
- * @param stdClass $args  An object of wp_nav_menu() arguments.
- * @param int      $depth Depth of menu item. Used for padding.
- * @return string  $attr
- */
-add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
-	$atts['class'] = 'menu__anchor menu__anchor--' . $args->theme_location;
-
-	if ( in_array( 'current-menu-item', $item->classes, true ) ) {
-		$atts['class'] .= ' is-active';
-	}
-
-	if ( in_array( 'button', $item->classes, true ) ) {
-		$atts['class'] .= ' menu__anchor--button';
-	}
-
-	return $atts;
-}, 10, 4 );
+}
+add_filter( 'hybrid/svg/path', __NAMESPACE__ . '\hybrid_svg_path', 10 );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and

@@ -48,7 +48,7 @@ function dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . get_svg( 'angle-down' );
+				$title = $title . get_svg( 'chevron-down' );
 			}
 		}
 	}
@@ -65,9 +65,14 @@ add_filter( 'nav_menu_item_title', __NAMESPACE__ . '\dropdown_icon_to_menu_link'
 function social_links_icons() {
 	// Supported social links icons.
 	$social_links_icons = [
-		'facebook.com'  => 'facebook',
-		'instagram.com' => 'instagram',
-		'twitter.com'   => 'twitter',
+		'facebook.com'    => 'facebook',
+		'instagram.com'   => 'instagram',
+		'linkedin.com'    => 'linkedin',
+		'medium.com'      => 'medium',
+		'pinterest.com'   => 'pinterest-p',
+		'twitter.com'     => 'twitter',
+		'vimeo.com'       => 'vimeo',
+		'youtube.com'     => 'youtube',
 	];
 
 	/**

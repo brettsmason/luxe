@@ -10,6 +10,16 @@
 namespace Luxe;
 
 /**
+ * Set the path to our SVGs.
+ * Used for the `Hybrid\svg` and `Hybrid\get_svg` functions.
+ *
+ * @return string Path to our SVGs.
+ */
+add_filter( 'hybrid/svg/path', function() {
+	return '/public/svg/';
+}, 10 );
+
+/**
  * Filters the WP nav menu link attributes.
  *
  * @param array    $atts {

@@ -52,9 +52,9 @@ array_map(
 		'functions-config',
 		'functions-embeds',
 		'functions-filters',
-		'functions-icons',
 		'functions-scripts',
 		'functions-setup',
+		'functions-svgs',
 		'template-general'
 	]
 );

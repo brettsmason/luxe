@@ -16,7 +16,7 @@ namespace Luxe;
  * @return string Path to our SVGs.
  */
 function hybrid_svg_path() {
-	return '/public/svg/';
+	return 'public/svg';
 }
 add_filter( 'hybrid/svg/path', __NAMESPACE__ . '\hybrid_svg_path', 10 );
 

@@ -92,7 +92,8 @@ module.exports = env => {
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: !env.production
+								sourceMap: !env.production,
+								outputStyle: 'expanded'
 							}
 						}
 					]

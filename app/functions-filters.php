@@ -18,7 +18,7 @@ namespace Luxe;
 function hybrid_svg_path() {
 	return 'public/svg';
 }
-add_filter( 'hybrid/svg/path', __NAMESPACE__ . '\hybrid_svg_path', 10 );
+add_filter( 'hybrid/svg/path', __NAMESPACE__ . '\hybrid_svg_path' );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and

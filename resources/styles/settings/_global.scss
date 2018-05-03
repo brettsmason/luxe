@@ -10,7 +10,7 @@ $global-transition: all 300ms ease-in-out !default;
 /* Breakpoints
    ========================================================================== */
 
-$breakpoints: (
+$mq-breakpoints: (
 	'small': 480px,
 	'medium': 768px,
 	'large': 1024px,

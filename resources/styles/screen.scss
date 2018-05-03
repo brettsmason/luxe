@@ -15,6 +15,7 @@
 // Settings handle the configuration and don't output CSS. This is a good
 // place to define things like variables.
 
+@import "settings/colors";
 @import "settings/global";
 @import "settings/typography";
 
@@ -25,6 +26,7 @@
 // Things like mixins and extensions go here.
 
 @import "tools/clearfix";
+@import "tools/font-size";
 @import "tools/hidden";
 @import "node_modules/sass-mq/mq";
 

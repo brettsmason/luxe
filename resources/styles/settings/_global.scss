@@ -4,12 +4,14 @@
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
-$global-radius: 3px !default;
-$global-transition: all 300ms ease-in-out !default;
+// Baseline grid lines height.
+$global-baseline: 6px !default;
 
-/* Breakpoints
-   ========================================================================== */
+// Base typographical styles.
+$global-font-size: 16px !default;
+$global-line-height: $global-baseline * 4 !default;
 
+// Breakpoints.
 $mq-breakpoints: (
 	'small': 480px,
 	'medium': 768px,
@@ -18,29 +20,7 @@ $mq-breakpoints: (
 	'xxlarge': 1600px
 ) !default;
 
-/* Colors
-   ========================================================================== */
+// Other global settings.
+$global-radius: 3px !default;
+$global-transition: all 300ms ease-in-out !default;
 
-$color-primary: #4ecdc4;
-$color-secondary: #292f36;
-$color-alert: #ff6b6b;
-$color-warning: #ffe66d;
-$color-success: #4ecdc4;
-
-$color-white: #fff;
-$color-black: #000;
-
-$color-light-grey: #ccc;
-$color-medium-grey: #666;
-$color-dark-grey: #333;
-
-// Text
-$color-bg: $color-white;
-$color-text: $color-black;
-
-// Links
-$color-link: $color-primary;
-$color-hover: $color-primary + 20;
-
-// Borders
-$color-border: $color-light-grey;

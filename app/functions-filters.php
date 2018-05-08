@@ -10,17 +10,6 @@
 namespace Luxe;
 
 /**
- * Set the path to our SVGs.
- * Used for the `Hybrid\svg` and `Hybrid\get_svg` functions.
- *
- * @return string Path to our SVGs.
- */
-function hybrid_svg_path() {
-	return 'public/svg';
-}
-add_filter( 'hybrid/svg/path', __NAMESPACE__ . '\hybrid_svg_path' );
-
-/**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
  *

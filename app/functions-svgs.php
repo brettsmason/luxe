@@ -7,7 +7,33 @@
 
 namespace Luxe;
 
-use function Hybrid\get_svg;
+/**
+ * Renders SVG output.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  string  $file
+ * @param  array   $attr
+ * @return void
+ */
+function svg( $file, $args = [] ) {
+	$svg = new Svg( $file, $args );
+	$svg->render();
+}
+
+/**
+ * Returns SVG output.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  string  $file
+ * @param  array   $attr
+ * @return string
+ */
+function get_svg( $file, $args = [] ) {
+	$svg = new Svg( $file, $args );
+	return $svg->fetch();
+}
 
 /**
  * Display SVG icons in social links menu.
@@ -69,7 +95,7 @@ function social_links_icons() {
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',
 		'medium.com'      => 'medium',
-		'pinterest.com'   => 'pinterest-p',
+		'pinterest.com'   => 'pinterest',
 		'twitter.com'     => 'twitter',
 		'vimeo.com'       => 'vimeo',
 		'youtube.com'     => 'youtube',

@@ -26,6 +26,7 @@
 // Things like mixins and extensions go here.
 
 @import "tools/clearfix";
+@import "tools/baseline";
 @import "tools/font-size";
 @import "tools/hidden";
 @import "node_modules/sass-mq/mq";
@@ -69,6 +70,7 @@
 @import "objects/media";
 @import "objects/list-bare";
 @import "objects/list-inline";
+@import "objects/svg";
 @import "objects/table";
 
 

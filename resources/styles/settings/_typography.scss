@@ -12,25 +12,24 @@ $font-family-pre: "Courier 10 Pitch", "Courier", monospace !default;
 $typi: (
 	base: (
 		null: (16px, 1.4),
-		small: (18px),
-		large: (20px),
+		medium: (18px),
 	),
 	h1: (
-		null: (50px, 1.2),
+		null: (42px, 1.2),
 	),
 	h2: (
-		null: (38px, 1.2),
+		null: (32px, 1.2),
 	),
 	h3: (
-		null: (32px, 1.3),
+		null: (26px, 1.3),
 	),
 	h4: (
-		null: (28px, 1.3),
+		null: (24px, 1.3),
 	),
 	h5: (
-		null: (23px, 1.3),
+		null: (22px, 1.3),
 	),
 	h6: (
-		null: (16px, 1.3),
+		null: (18px, 1.3),
 	)
 );

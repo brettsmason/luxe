@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+
+.pagination__items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+}
+
+.pagination__item {
+	& + & {
+		margin-left: vr(1);
+	}
+}
+
+.pagination__anchor {
+	text-decoration: none;
+}

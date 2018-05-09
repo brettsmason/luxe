@@ -6,7 +6,7 @@
 		<div class="app">
 			<?php Hybrid\render_view( 'header', Hybrid\get_global_hierarchy() ) // Load header/* template. ?>
 
-			<div class="app-content">
+			<div class="app-content o-wrapper">
 				<?php Hybrid\render_view( 'content', Hybrid\get_global_hierarchy() ) // Load content/* template. ?>
 				<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 			</div>

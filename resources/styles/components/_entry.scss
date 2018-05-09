@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #ENTRY
+   ========================================================================== */
+
+.entry__content > *,
+.entry__summary > * {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.entry__content,
+.entry__summary {
+	h1 {
+		margin-bottom: vr(1/2);
+	}
+
+	h2 {
+		margin-top: vr(1.5);
+		margin-bottom: vr(1/2);
+	}
+
+	h3 {
+		margin-top: vr(1.5);
+		margin-bottom: vr(1/2);
+	}
+
+	h4 {
+		margin-top: vr(1.5);
+		margin-bottom: vr(1/2);
+	}
+
+	h5 {
+		margin-top: vr(1.5);
+		margin-bottom: vr(1/2);
+	}
+
+	h6 {
+		margin-top: vr(1.5);
+		margin-bottom: vr(1/2);
+	}
+}

@@ -10,36 +10,25 @@
 
 h1 {
 	@include typi(h1);
-	margin-bottom: vr(1/2);
 }
 
 h2 {
 	@include typi(h2);
-	margin-top: vr(1.5);
-	margin-bottom: vr(1/2);
 }
 
 h3 {
 	@include typi(h3);
-	margin-top: vr(1.5);
-	margin-bottom: vr(1/2);
 }
 
 h4 {
 	@include typi(h4);
-	margin-top: vr(1.5);
-	margin-bottom: vr(1/2);
 }
 
 h5 {
 	@include typi(h5);
-	margin-top: vr(1.5);
-	margin-bottom: vr(1/2);
 }
 
 h6 {
 	@include typi(h6);
-	margin-top: vr(1.5);
-	margin-bottom: vr(1/2);
 }
 

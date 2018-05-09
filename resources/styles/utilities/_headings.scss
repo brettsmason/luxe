@@ -12,25 +12,25 @@
  */
 
 .u-h1 {
-
+	@include typi(h1);
 }
 
 .u-h2 {
-
+	@include typi(h2);
 }
 
 .u-h3 {
-
+	@include typi(h3);
 }
 
 .u-h4 {
-
+	@include typi(h4);
 }
 
 .u-h5 {
-
+	@include typi(h5);
 }
 
 .u-h6 {
-
+	@include typi(h6);
 }

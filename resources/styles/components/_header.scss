@@ -3,7 +3,10 @@
    ========================================================================== */
 
 .app-header {
-	border-bottom: 1px solid $color-border;
-	margin-bottom: 2em;
-	padding-bottom: 1em;
+	margin-bottom: vr(1);
+	padding-top: vr(1);
+	padding-bottom: vr(1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

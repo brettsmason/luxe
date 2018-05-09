@@ -1,3 +1,13 @@
 /* ==========================================================================
-   #LAYOUT
+   #SVG
    ========================================================================== */
+
+.svg {
+	display: inline-block;
+	fill: currentColor;
+	height: 1rem;
+	position: relative;
+	top: -0.0625rem;
+	vertical-align: middle;
+	width: 1rem;
+}

@@ -3,18 +3,21 @@
    ========================================================================== */
 
 blockquote {
-  quotes: '“' '”' '‘' '’';
-  font-style: italic;
+	padding-left: vr(1);
+	border-left: 4px solid $color-light-grey;
+	font-style: italic;
+	color: $color-dark-grey;
+	font-style: italic;
 
-  p:first-child {
-    &:before {
-      content: open-quote;
-    }
-  }
+	p:first-child {
+		&:before {
+			content: open-quote;
+		}
+	}
 
-  p:last-child {
-    &:after {
-      content: close-quote;
-    }
-  }
+	p:last-child {
+		&:after {
+			content: close-quote;
+		}
+	}
 }

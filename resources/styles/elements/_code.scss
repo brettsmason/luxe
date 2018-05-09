@@ -1,0 +1,28 @@
+code,
+kbd,
+pre,
+samp,
+var {
+	font-family: $font-family-code;
+}
+
+pre {
+	@include typi(small);
+	padding: vr(1);
+	background-color: $color-light-grey;
+	display: block;
+	color: $color-dark-grey;
+	overflow: auto;
+	white-space: pre;
+	font-family: $font-family-pre;
+}
+
+code,
+kbd,
+mark,
+samp {
+	padding: vr(0.25);
+	display: inline-block;
+	line-height: 1;
+	background-color: $color-light-grey;
+}

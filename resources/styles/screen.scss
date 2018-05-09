@@ -48,7 +48,7 @@
 // Elements are (or should be) class-less designs for the base
 // HTML elements.
 
-@import "elements/html";
+@import "elements/page";
 @import "elements/headings";
 @import "elements/links";
 @import "elements/blockquote";
@@ -56,6 +56,7 @@
 @import "elements/hr";
 @import "elements/tables";
 @import "elements/images";
+@import "elements/code";
 
 
 // OBJECTS

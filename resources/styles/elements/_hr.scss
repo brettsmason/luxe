@@ -3,5 +3,8 @@
    ========================================================================== */
 
 hr {
-	display: block;
+	border: none;
+	border-bottom: 1px solid $color-light-grey;
+	margin-top: -1px;
+	margin-bottom: vr(1);
 }

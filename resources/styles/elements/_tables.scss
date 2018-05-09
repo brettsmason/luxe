@@ -3,12 +3,24 @@
    ========================================================================== */
 
 table {
-	border-collapse: separate;
+	border-collapse: collapse;
 	border-spacing: 0;
+	max-width: 100%;
 	width: 100%;
+	empty-cells: show;
 }
 
 th,
 td {
 	text-align: left;
+	padding: vr(1/2);
+	border-bottom: 1px solid $color-border;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
 }

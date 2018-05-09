@@ -2,14 +2,6 @@
    #TABLE
    ========================================================================== */
 
-/**
- * A simple object for manipulating the structure of HTML `table`s.
- */
-
-.o-table {
-	width: 100%;
-}
-
 /* Equal-width table cells.
    ========================================================================== */
 
@@ -21,6 +13,27 @@
  * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
  */
 
-.o-table--fixed {
+.table--fixed {
 	table-layout: fixed;
+}
+
+// Border around each cell
+.table--bordered {
+	& th,
+	& td {
+		border: 1px solid $color-border;
+		padding: vr(1/2);
+	}
+}
+
+// Odd striped rows
+.table--striped {
+	& th,
+	& td {
+		padding: vr(1/2);
+	}
+
+	tbody tr:nth-child(odd) {
+		background: $color-light-grey;
+	}
 }

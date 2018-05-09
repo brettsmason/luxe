@@ -69,7 +69,6 @@
 @import "objects/media";
 @import "objects/list-bare";
 @import "objects/list-inline";
-@import "objects/svg";
 @import "objects/table";
 
 
@@ -80,6 +79,7 @@
 // a one-off or reusable block of code.
 
 // @import "components/buttons";
+@import "components/svg";
 @import "components/header";
 @import "components/footer";
 

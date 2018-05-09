@@ -24,3 +24,14 @@ $color-hover: $color-primary + 20;
 
 // Borders
 $color-border: $color-light-grey;
+
+// Colors used for social networks
+$colors-social: (
+	facebook: #3b5998,
+	instagram: #c13584,
+	linkedin: #0077b5,
+	pinterest: #bd081c,
+	twitter: #1da1f2,
+	vimeo: #1ab7ea,
+	youtube: #cd201f
+);

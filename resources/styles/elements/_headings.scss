@@ -9,25 +9,37 @@
  */
 
 h1 {
-	font-size: 2.25rem;
+	@include typi(h1);
+	margin-bottom: vr(1/2);
 }
 
 h2 {
-	font-size: 1.75rem;
+	@include typi(h2);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1/2);
 }
 
 h3 {
-	font-size: 1.5rem;
+	@include typi(h3);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1/2);
 }
 
 h4 {
-	font-size: 1.25rem;
+	@include typi(h4);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1/2);
 }
 
 h5 {
-	font-size: 1.125rem;
+	@include typi(h5);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1/2);
 }
 
 h6 {
-	font-size: 1rem;
+	@include typi(h6);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1/2);
 }
+

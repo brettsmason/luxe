@@ -4,50 +4,16 @@
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
-// Breakpoints.
+// Media queries used throughout.
 $mq-breakpoints: (
-	'small': 480px,
-	'medium': 768px,
-	'large': 1024px,
-	'xlarge': 1280px,
-	'xxlarge': 1600px
-) !default;
-
-// Baseline grid lines height.
-$global-baseline: 6px !default;
-
-// Base typographical styles.
-$typography: (
-	html: (
-		null: (16px, $global-baseline * 4),
-		small: 18px,
-		medium: 20px
-	),
-	h1: (
-		null: 24px,
-		large: 48px
-	),
-	h2: (
-		null: 20px,
-		large: 40px
-	),
-	h3: (
-		null: 19px,
-		large: 31px
-	),
-	h4: (
-		null: 18px,
-		large: 25px
-	),
-	h5: (
-		null: 17px,
-		large: 20px
-	),
-	h6: (
-		null: 16px,
-		large: 18px
-	)
+	small: 320px,
+	medium: 740px,
+	large: 980px,
+	xlarge: 1300px
 );
+
+// Set Typi to use the sass-mq library for breakpoints.
+$typi-breakpoint: mq;
 
 // Other global settings.
 $global-radius: 3px !default;

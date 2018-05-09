@@ -16,13 +16,22 @@ img {
   vertical-align: middle; /* [3] */
 }
 
+/// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
 
-/**
- * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
- *    not make the image fluid.
- */
+figure {
+	margin: 0 0 vr(1);
+	max-width: 100%;
+}
 
-img[width],
-img[height] {
-  max-width: none;
+figcaption {
+	color: $color-dark-grey;
+	font-style: italic;
+	margin-bottom: vr(1);
+	margin-top: vr(1/2);
+	text-align: center;
 }

@@ -38,7 +38,7 @@
 // styles will build upon.
 
 @import "generic/box-sizing";
-// @import "generic/normalize";
+@import "generic/normalize";
 @import "generic/reset";
 @import "generic/shared";
 
@@ -55,7 +55,7 @@
 @import "elements/lists";
 @import "elements/hr";
 @import "elements/tables";
-@import "elements/images";
+@import "elements/media";
 @import "elements/code";
 
 

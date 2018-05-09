@@ -7,10 +7,18 @@
  */
 
 .o-wrapper {
-  @include clearfix();
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1200px;
-  padding-left: vr(1);
-  padding-right: vr(1);
+	@include clearfix();
+	margin-right: auto;
+	margin-left: auto;
+	max-width: map-get($global-width, base);
+	padding-left: vr(1);
+	padding-right: vr(1);
+
+	&--narrow {
+		max-width: map-get($global-width, narrow);
+	}
+
+	&--wide {
+		max-width: map-get($global-width, wide);
+	}
 }

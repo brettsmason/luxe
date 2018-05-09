@@ -18,3 +18,10 @@ $typi-breakpoint: mq;
 // Other global settings.
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
+
+// Global widths used throughout to constrain elements.
+$global-width: (
+	base: 1140px,
+	narrow: 800px,
+	wide: 1400px
+);

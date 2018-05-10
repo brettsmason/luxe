@@ -2,34 +2,33 @@
    #ENTRY
    ========================================================================== */
 
+.entry__byline {
+	margin-bottom: vr(1);
+}
+
 .entry__content,
 .entry__summary {
-	h1 {
-		margin-bottom: vr(1/2);
-	}
-
-	h2 {
-		margin-top: vr(1.5);
-		margin-bottom: vr(1/2);
-	}
-
-	h3 {
-		margin-top: vr(1.5);
-		margin-bottom: vr(1/2);
-	}
-
-	h4 {
-		margin-top: vr(1.5);
-		margin-bottom: vr(1/2);
-	}
-
-	h5 {
-		margin-top: vr(1.5);
-		margin-bottom: vr(1/2);
-	}
-
+	h2,
+	h3,
+	h4,
+	h5,
 	h6 {
 		margin-top: vr(1.5);
-		margin-bottom: vr(1/2);
+	}
+}
+
+.entry__terms-wrapper {
+	display: block;
+
+	& + & {
+		margin-top: vr(1/4);
+	}
+}
+
+.entry__terms {
+	margin-left: vr(1/4);
+
+	a {
+		color: inherit;
 	}
 }

@@ -15,7 +15,20 @@
 	</div>
 
 	<footer class="entry__footer">
-		<?php Hybrid\post_terms( [ 'taxonomy' => 'category' ] ) ?>
-		<?php Hybrid\post_terms( [ 'taxonomy' => 'post_tag', 'before' => Luxe\get_meta_sep() ] ) ?>
+		<?php
+			Hybrid\post_terms( [
+				'taxonomy' => 'category',
+				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
+				'after'    => '</span>'
+			] )
+		?>
+
+		<?php
+			Hybrid\post_terms( [
+				'taxonomy' => 'post_tag',
+				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
+				'after'    => '</span>'
+			] )
+		?>
 	</footer>
 </article>

@@ -3,13 +3,14 @@
    ========================================================================== */
 
 a {
-	color: $color-link;
+	color: $color-primary;
 	transition: $global-transition;
+	text-decoration: none;
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color-hover;
+		color: $color-primary - 20;
 	}
 
 	&:focus {

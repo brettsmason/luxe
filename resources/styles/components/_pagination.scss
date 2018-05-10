@@ -2,6 +2,10 @@
    #PAGINATION
    ========================================================================== */
 
+.pagination {
+	width: 100%;
+}
+
 .pagination__items {
 	display: flex;
 	flex-wrap: wrap;

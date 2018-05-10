@@ -46,6 +46,7 @@
     "imagemin-webpack-plugin": "^2.1.1",
     "img-loader": "^2.0.1",
     "inquirer": "^5.2.0",
+    "lost": "^8.2.1",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.2",

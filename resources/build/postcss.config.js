@@ -9,6 +9,7 @@ module.exports = ({ file, options, env }) => ({
 				rem: false
 			}
 		},
+		'lost': {},
 		autoprefixer: env === 'production',
 		cssnano: env === 'production'
 	}

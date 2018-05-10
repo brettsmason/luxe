@@ -52,3 +52,20 @@ function get_custom_logo( $html ) {
 	return $html;
 }
 add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function body_class( $classes ) {
+
+	// Adds a class of has-sidebar when the sidebar is enabled and is active.
+	if ( is_active_sidebar( 'primary' ) ) {
+		$classes[] = 'has-sidebar';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', __NAMESPACE__ . '\body_class' );

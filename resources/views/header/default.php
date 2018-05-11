@@ -1,4 +1,4 @@
-<header class="app-header o-wrapper">
+<header class="app-header wrapper">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'luxe' ) ?></a>
 
 	<div class="app-header__branding">

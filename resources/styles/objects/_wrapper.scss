@@ -6,8 +6,7 @@
  * Page-level constraining and wrapping elements.
  */
 
-.o-wrapper {
-	@include clearfix();
+.wrapper {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: map-get($global-width, base);
@@ -20,5 +19,10 @@
 
 	&--wide {
 		max-width: map-get($global-width, wide);
+	}
+
+	&--flush {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

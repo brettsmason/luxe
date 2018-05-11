@@ -31,6 +31,19 @@
 	}
 }
 
+.grid--auto {
+	@include mq(medium) {
+		& > * {
+			flex: 1 1 0px;
+			margin-right: vr(1);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
 // Layout for content with sidebar
 .has-sidebar-primary {
 	@include mq(medium) {

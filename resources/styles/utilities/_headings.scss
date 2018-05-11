@@ -11,6 +11,16 @@
  *
  */
 
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+	font-family: $font-family-heading;
+	font-weight: 700;
+}
+
 .u-h1 {
 	@include typi(h1);
 }

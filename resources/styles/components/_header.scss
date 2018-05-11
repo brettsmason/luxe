@@ -10,3 +10,12 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.app-header__title {
+	margin-bottom: 0;
+	color: $color-black;
+
+	a {
+		color: inherit;
+	}
+}

@@ -127,4 +127,9 @@ add_action( 'widgets_init', function() {
 		'id'   => 'primary',
 		'name' => esc_html_x( 'Primary', 'sidebar', 'luxe' ),
 	] + $args );
+
+	register_sidebar( [
+		'id'   => 'subsidiary',
+		'name' => esc_html_x( 'Subsidiary', 'sidebar', 'luxe' ),
+	] + $args );
 }, 5 );

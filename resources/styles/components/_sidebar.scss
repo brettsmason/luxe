@@ -1,0 +1,12 @@
+.sidebar--subsidiary {
+	display: flex;
+
+	.widget {
+		flex: 1 1 0px;
+		margin-right: vr(1);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

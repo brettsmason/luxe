@@ -8,8 +8,13 @@
 
 			<div class="app-content wrapper">
 				<?php Hybrid\render_view( 'content', Hybrid\get_global_hierarchy() ) // Load content/* template. ?>
-				<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+
+				<?php if ( Luxe\display_sidebar() ) : ?>
+					<?php Hybrid\render_view( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+				<?php endif; ?>
 			</div>
+
+			<?php Hybrid\render_view( 'sidebar', 'subsidiary', [ 'name' => 'subsidiary' ] ) ?>
 
 			<?php Hybrid\render_view( 'footer', Hybrid\get_global_hierarchy() ) // Load footer/* template. ?>
 		</div><!-- .app -->

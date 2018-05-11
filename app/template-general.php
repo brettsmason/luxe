@@ -32,3 +32,13 @@ function get_meta_sep( $sep = '' ) {
 		)
 	);
 }
+
+/**
+ * Determine whether to show the sidebar
+ * @return bool
+ */
+function display_sidebar() {
+    static $display;
+    isset($display) || $display = apply_filters( 'luxe/display_sidebar', false );
+    return $display;
+}

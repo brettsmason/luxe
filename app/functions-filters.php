@@ -62,10 +62,25 @@ add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );
 function body_class( $classes ) {
 
 	// Adds a class of has-sidebar when the sidebar is enabled and is active.
-	if ( is_active_sidebar( 'primary' ) ) {
-		$classes[] = 'has-sidebar';
+	if ( \is_active_sidebar( 'primary' ) && display_sidebar() ) {
+		$classes[] = 'has-sidebar-primary';
 	}
 
 	return $classes;
 }
 add_filter( 'body_class', __NAMESPACE__ . '\body_class' );
+
+/**
+ * Display the primary sidebar or not.
+ * Simply add conditional checks and return true to display for that condition.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function display_primary_sidebar() {
+
+	// Example to display sidebar for the blog.
+	// if ( is_home() )
+	// 	return true;
+}
+add_filter( 'luxe/display_sidebar', __NAMESPACE__ . '\display_primary_sidebar' );

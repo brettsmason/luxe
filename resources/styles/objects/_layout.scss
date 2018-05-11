@@ -30,3 +30,20 @@
 		}
 	}
 }
+
+// Layout for content with sidebar
+.has-sidebar-primary {
+	@include mq(medium) {
+		.app-content {
+			display: flex;
+		}
+
+		.app-main {
+			lost-column: 2/3 0;
+		}
+
+		.sidebar--primary {
+			lost-column: 1/3 0;
+		}
+	}
+}

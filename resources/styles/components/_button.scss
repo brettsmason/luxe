@@ -16,45 +16,29 @@
  * 5. Force all button-styled elements to appear clickable.
  */
 
-.c-btn {
-	display: inline-block; /* [1] */
-	vertical-align: middle; /* [2] */
-	font: inherit; /* [3] */
-	text-align: center; /* [4] */
-	margin: 0; /* [4] */
-	cursor: pointer; /* [5] */
-	padding: 0.5rem 1rem;
-	transition: $global-transition;
-	border-radius: $global-radius;
+.button {
+	@include button();
 }
 
 /* Style variants
 ========================================================================== */
 
-.c-btn--primary {
-	background-color: $color-link;
-
-&,
-&:hover,
-&:active,
-&:focus {
-	text-decoration: none; /* [4] */
-	color: $color-white;
+.button--primary {
+	@include button-style($color-primary);
 }
 
-&:hover,
-&:focus {
-	background-color: $color-hover;
-}
+.button--secondary {
+	@include button-style($color-secondary);
 }
 
-/* Size variants
-========================================================================== */
-
-.c-btn--small {
-	padding: 0.25rem 0.5rem;
+.button--alert {
+	@include button-style($color-alert);
 }
 
-.c-btn--large {
-	padding: 0.75rem 1.5rem;
+.button--warning {
+	@include button-style($color-warning);
+}
+
+.button--success {
+	@include button-style($color-success);
 }

@@ -1,14 +1,5 @@
-@mixin button(
-	$color: $color-white,
-	$background-color: $color-primary,
-	$color-hover: null,
-	$background-color-hover: null
-) {
-	$color-hover: if($color-hover, $color-hover, $color);
-	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color + 20);
-
-	color: $color;
-	background-color: $background-color;
+@mixin button() {
+	font: inherit;
 	border-radius: $global-radius;
 	padding: vr(1/2) vr(3/4);
 	font-weight: 700;
@@ -19,6 +10,19 @@
 	vertical-align: middle;
 	-webkit-appearance: none;
 	transition: $global-transition;
+}
+
+
+@mixin button-style(
+	$background-color: $color-primary,
+	$color: $color-white,
+	$background-color-hover: null,
+	$color-hover: null
+) {
+	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color + 20);
+
+	color: $color;
+	background-color: $background-color;
 
 	&:hover,
 	&:focus {

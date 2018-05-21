@@ -5984,6 +5984,13 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
+lost@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/lost/-/lost-8.2.1.tgz#4ee4dcb6de4633bbb8e1fe53877d342ebdf071bd"
+  dependencies:
+    object-assign "^4.1.0"
+    postcss "^6.0.6"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -8466,9 +8473,9 @@ sass-graph@^2.2.4:
     scss-tokenizer "^0.2.3"
     yargs "^7.0.0"
 
-sass-loader@^6.0.7:
-  version "6.0.7"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-6.0.7.tgz#dd2fdb3e7eeff4a53f35ba6ac408715488353d00"
+sass-loader@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-7.0.1.tgz#fd937259ccba3a9cfe0d5f8a98746d48adfcc261"
   dependencies:
     clone-deep "^2.0.1"
     loader-utils "^1.0.1"
@@ -9595,6 +9602,11 @@ type-is@~1.6.15, type-is@~1.6.16:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typi@zellwk/typi:
+  version "3.2.0"
+  uid "25b21071c61cb85aceb3ca2b77cc0e9e5aa740c2"
+  resolved "https://codeload.github.com/zellwk/typi/tar.gz/25b21071c61cb85aceb3ca2b77cc0e9e5aa740c2"
 
 ua-parser-js@0.7.17:
   version "0.7.17"

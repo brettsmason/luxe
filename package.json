@@ -59,7 +59,7 @@
     "sass-loader": "^6.0.7",
     "sass-mq": "^4.0.2",
     "simple-progress-webpack-plugin": "^1.1.2",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.2.1",
     "stylelint-config-wordpress": "^13.0.0",
     "typi": "zellwk/typi",
     "webpack": "^4.6.0",

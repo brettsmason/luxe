@@ -10145,9 +10145,9 @@ webpack-dev-server@^2.4.4:
     webpack-dev-middleware "1.12.2"
     yargs "6.6.0"
 
-webpack-extraneous-file-cleanup-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/webpack-extraneous-file-cleanup-plugin/-/webpack-extraneous-file-cleanup-plugin-1.0.5.tgz#92b534011f8c26b91a6a9861e978c4ecd3eefe04"
+webpack-extraneous-file-cleanup-plugin@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/webpack-extraneous-file-cleanup-plugin/-/webpack-extraneous-file-cleanup-plugin-2.0.0.tgz#fad563d8e9be1bc5e3a30f1a7f293fe31fc27355"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.1.0"

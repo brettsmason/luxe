@@ -41,7 +41,7 @@
     "eslint-config-wordpress": "^2.0.0",
     "figlet": "^1.2.0",
     "file-loader": "^1.1.11",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^6.0.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.1.1",
     "img-loader": "^2.0.1",

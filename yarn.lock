@@ -5984,6 +5984,13 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
+lost@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/lost/-/lost-8.2.1.tgz#4ee4dcb6de4633bbb8e1fe53877d342ebdf071bd"
+  dependencies:
+    object-assign "^4.1.0"
+    postcss "^6.0.6"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -9596,6 +9603,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typi@zellwk/typi:
+  version "3.2.0"
+  uid "25b21071c61cb85aceb3ca2b77cc0e9e5aa740c2"
+  resolved "https://codeload.github.com/zellwk/typi/tar.gz/25b21071c61cb85aceb3ca2b77cc0e9e5aa740c2"
+
 ua-parser-js@0.7.17:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
@@ -10114,9 +10126,9 @@ webpack-dev-server@^2.4.4:
     webpack-dev-middleware "1.12.2"
     yargs "6.6.0"
 
-webpack-extraneous-file-cleanup-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/webpack-extraneous-file-cleanup-plugin/-/webpack-extraneous-file-cleanup-plugin-1.0.5.tgz#92b534011f8c26b91a6a9861e978c4ecd3eefe04"
+webpack-extraneous-file-cleanup-plugin@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/webpack-extraneous-file-cleanup-plugin/-/webpack-extraneous-file-cleanup-plugin-2.0.0.tgz#fad563d8e9be1bc5e3a30f1a7f293fe31fc27355"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.1.0"

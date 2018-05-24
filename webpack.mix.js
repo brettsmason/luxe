@@ -16,14 +16,16 @@ mix
 	.js('resources/scripts/app.js', 'public/scripts')
 	.sass('resources/styles/screen.scss', 'public/styles')
 	.sourceMaps()
-	.copy('resources/img/*.{jpg,png,gif}', 'public/img')
-	.copy('resources/svg/*.svg', 'public/svg')
+	.copy('resources/img/*.{jpg,jpeg,png,gif}', 'public/img', false)
+	.copy('resources/svg/*.svg', 'public/svg', false)
+	.copy('resources/fonts/**/*.{svg,eot,ttf,woff,woff2}', 'public/fonts', false)
 	.options({})
 	.browserSync({
 		proxy: 'theme-development.localhost',
 		files: [
-			"public/**/*.{js,css,svg,jpg}",
-			"resources/views/**/*.php"
+			"public/**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}",
+			"resources/views/**/*.php",
+			"app/**/*.php"
 		]
 	});
 

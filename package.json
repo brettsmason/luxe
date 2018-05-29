@@ -35,7 +35,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "clear": "^0.1.0",
     "copy-webpack-plugin": "^4.5.1",
-    "cross-env": "^5.1.4",
+    "cross-env": "^5.1.6",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-wordpress": "^2.0.0",

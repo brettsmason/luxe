@@ -8,7 +8,14 @@ mix.setPublicPath('public');
 
 // Compile assets.
 mix.js('resources/scripts/app.js', 'public/scripts').sourceMaps();
-mix.sass('resources/styles/screen.scss', 'public/styles').sourceMaps();
+mix.sass('resources/styles/screen.scss', 'public/styles')
+   .sourceMaps()
+   .options({
+     postCss: [
+		require('postcss-preset-env')()
+     ],
+     processCssUrls: false
+   });
 
 // Generate a manifest file for cache busting.
 // Append a unique hash for production only assets.

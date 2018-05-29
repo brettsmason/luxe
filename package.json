@@ -63,7 +63,7 @@
     "stylelint-config-wordpress": "^13.0.0",
     "typi": "zellwk/typi",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.0.15",
+    "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4",
     "webpack-extraneous-file-cleanup-plugin": "^2.0.0",
     "webpack-watched-glob-entries-plugin": "^2.1.2"

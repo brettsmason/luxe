@@ -8,7 +8,11 @@ mix.setPublicPath('public');
 
 // Compile assets.
 mix.js('resources/scripts/app.js', 'public/scripts').sourceMaps();
-mix.sass('resources/styles/screen.scss', 'public/styles')
+mix.sass('resources/styles/screen.scss', 'public/styles', {
+	  outputStyle: 'expanded',
+	  indentType: 'tab',
+	  indentWidth: 1
+	})
    .sourceMaps()
    .options({
      postCss: [

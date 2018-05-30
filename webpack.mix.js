@@ -3,6 +3,9 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
+// Set the BrowserSync proxy URL.
+const browserSyncUrl = 'theme-development.localhost';
+
 // Set path to our generated assets.
 mix.setPublicPath('public');
 
@@ -80,7 +83,7 @@ mix.webpackConfig({
 
 // monitor files for changes and inject your changes into the browser.
 mix.browserSync({
-  proxy: 'theme-development.localhost',
+  proxy: browserSyncUrl,
   files: [
     "public/**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}",
     "resources/views/**/*.php",

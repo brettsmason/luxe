@@ -12,6 +12,11 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+import ResponsiveMenu from './responsive-menu';
+
+// Setup a new menu
+let menu = new ResponsiveMenu('primary-menu', {});
+
 /**
  * A simple immediately-invoked function expression to kick-start
  * things and encapsulate our code.
@@ -21,7 +26,4 @@
  * @return void
  */
 (function () {
-
-        console.log( 'Testing the resources/scripts/app.js file.' );
-
 })();

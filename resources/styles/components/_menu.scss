@@ -1,86 +1,137 @@
+// New menu styles
 .menu {
 	// Reset the base <ul>
 	&__items {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
+		display: none;
+
+		[aria-expanded="true"] + & {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+		}
 	}
 
 	// Styles for <li>
 	&__item {
 		display: block;
-		float: left;
-		position: relative;
 
-		& + & {
-			margin-left: vr(1);
+		&--has-children {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 
 	&__anchor {
-		padding: vr(1/4);
+		padding: 10px;
 		display: block;
 		line-height: 1.2;
 		font-weight: bold;
-		color: $color-medium-grey;
+		color: #111;
+		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: $color-black;
+			color: #000;
 		}
 
 		.menu__item--current & {
-			color: $color-black;
-		}
-
-		.svg {
-			width: vr(1/2);
-			height: vr(1/2);
-			color: $color-medium-grey;
-			margin-left: 5px;
-
-			// Rotate icon for sub sub menus
-			.menu__sub-menu & {
-				transform: rotate(-90deg);
-			}
+			color: #000;
 		}
 	}
 
 	// The sub-menus
 	&__sub-menu {
-		visibility: hidden;
-		opacity: 0;
-		min-width: 5rem;
-		position: absolute;
-		transition: all 0.5s ease;
-		left: 0;
-		margin: 0;
-		padding: 0;
-		background-color: $color-white;
+		transition: all 0.3s ease;
+		background-color: #fff;
 		display: flex;
 		flex-direction: column;
+		padding: 0;
+		margin: 0;
+		list-style: none;
 
 		// Make sure <li> items within a submenu are full width
 		& > .menu__item {
 			margin: 0;
 			padding: 0;
 		}
+	}
 
-		& & {
-			right: auto;
-			left: 100%;
-			top: 0;
+	&__toggle {
+		@include mq(medium) {
+			display: none;
 		}
 	}
 
-	// Display our submenus if any of these conditions are met
-	&__item:hover > &__sub-menu,
-	&__item:focus-within > &__sub-menu,
-	&__sub-menu:hover,
-	&__sub-menu:focus {
+	&__submenu-toggle {
+		background: #ccc;
+		border: none;
+		width: 40px;
+	}
+}
+
+.menu--is-mobile {
+	.menu__anchor {
+		flex: 1 1 0px;
+	}
+
+	.menu__items {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: $color-white;
+		width: 100%;
+	}
+
+	.menu__sub-menu {
+		width: 100%;
+		flex-direction: column;
+		visibility: hidden;
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	[aria-expanded="true"] + .menu__sub-menu {
+		max-height: 50em;
 		visibility: visible;
-		opacity: 1;
+	}
+}
+
+.menu--is-desktop {
+	.menu__items {
+		flex-direction: row;
+		display: flex;
+	}
+
+	> .menu__item + .menu__item {
+		margin-left: 10px;
+	}
+
+	.menu__sub-menu {
+		visibility: hidden;
+		min-width: 5rem;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		top: 100%;
+	}
+
+	.menu__submenu .menu__submenu {
+		right: auto;
+		left: 100%;
+		top: 0;
+	}
+
+	// Display our submenus if any of these conditions are met
+	.menu__item:hover > .menu__sub-menu,
+	/* &__item:focus-within > &__sub-menu,*/
+	.menu__sub-menu:hover,
+	.menu__sub-menu:focus,
+  	.is-toggled + .menu__sub-menu {
+		visibility: visible;
 	}
 }

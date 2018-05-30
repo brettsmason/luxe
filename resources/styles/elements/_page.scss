@@ -13,7 +13,7 @@
  */
 
 html {
-	@include typi(base); /* [1] */
+	@include baseline; /* [1] */
 
 	background: $color-bg;
 	color: $color-text;

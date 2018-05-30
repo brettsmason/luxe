@@ -24,25 +24,25 @@ h6 {
 }
 
 h1 {
-	@include typi(h1);
+	@include font-size(42px);
 }
 
 h2 {
-	@include typi(h2);
+	@include font-size(32px);
 }
 
 h3 {
-	@include typi(h3);
+	@include font-size(26px);
 }
 
 h4 {
-	@include typi(h4);
+	@include font-size(24px);
 }
 
 h5 {
-	@include typi(h5);
+	@include font-size(22px);
 }
 
 h6 {
-	@include typi(h6);
+	@include font-size(18px);
 }

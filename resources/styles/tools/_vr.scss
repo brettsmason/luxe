@@ -1,0 +1,21 @@
+///* ========================================================================
+//   #VERTICAL-RHYTHM
+//   ======================================================================== */
+@function vr(
+	$baselines: 1,
+	$important: false
+) {
+	@if (type-of($baselines) != number) {
+		@error "`#{$baselines}` needs to be a number.";
+	}
+
+	@if ($important == true) {
+		$important: !important;
+	} @else if ($important == false) {
+		$important: null;
+	} @else {
+		@error "`#{$important}` needs to be `true` or `false`.";
+	}
+
+	@return (($global-line-height / $global-font-size) * 1rem) * $baselines $important;
+}

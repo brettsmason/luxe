@@ -1,0 +1,30 @@
+@mixin baseline() {
+	$breakpoints: map-get($typography, html);
+
+	@each $name, $value in $breakpoints {
+		// if not a named breakpoint, dont wrap in a media query
+        @if $name == null {
+
+			// If our value is a list, assume its a font-size / line-height combo
+			@if type-of($value) == 'list' and length($value) == 2 {
+				font-size: percentage(nth($value, 1) / 16px);
+				line-height: nth($value, 2) / nth($value, 1);
+			} @else {
+				font-size: percentage(nth($value, 1) / 16px);
+			}
+
+		// Wrap the following in a media query
+		} @else {
+
+			@include mq($name) {
+				// If our value is a list, assume its a font-size / line-height combo
+				@if type-of($value) == 'list' and length($value) == 2 {
+					font-size: percentage(nth($value, 1) / 16px);
+					line-height: nth($value, 2) / nth($value, 1);
+				} @else {
+					font-size: percentage(nth($value, 1) / 16px);
+				}
+			}
+		}
+	}
+}

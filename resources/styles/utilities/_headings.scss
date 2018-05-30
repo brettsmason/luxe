@@ -21,26 +21,27 @@
 	font-weight: 700;
 }
 
-.u-h1 {
-	@include typi(h1);
+h1 {
+	@include font-size(42px);
 }
 
-.u-h2 {
-	@include typi(h2);
+h2 {
+	@include font-size(32px);
 }
 
-.u-h3 {
-	@include typi(h3);
+h3 {
+	@include font-size(26px);
 }
 
-.u-h4 {
-	@include typi(h4);
+h4 {
+	@include font-size(24px);
 }
 
-.u-h5 {
-	@include typi(h5);
+h5 {
+	@include font-size(22px);
 }
 
-.u-h6 {
-	@include typi(h6);
+h6 {
+	@include font-size(18px);
 }
+

@@ -35,3 +35,33 @@ $typi: (
 		null: (14px)
 	)
 );
+
+$typography: (
+	html: (
+		null: (16px, $global-line-height)
+	),
+	h1: (
+		null: 24px,
+		large: 48px
+	),
+	h2: (
+		null: 20px,
+		large: 40px
+	),
+	h3: (
+		null: 19px,
+		large: 31px
+	),
+	h4: (
+		null: 18px,
+		large: 25px
+	),
+	h5: (
+		null: 17px,
+		large: 20px
+	),
+	h6: (
+		null: 16px,
+		large: 18px
+	)
+);

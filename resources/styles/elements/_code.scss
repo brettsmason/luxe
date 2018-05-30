@@ -7,7 +7,7 @@ var {
 }
 
 pre {
-	@include typi(small);
+	@include font-size(14px);
 	padding: vr(1);
 	background-color: $color-light-grey;
 	display: block;

@@ -77,6 +77,13 @@
 		left: 0;
 		background-color: $color-white;
 		width: 100%;
+		opacity: 0;
+		height: 0;
+	}
+
+	[aria-expanded="true"] + .menu__items {
+		opacity: 1;
+		height: auto;
 	}
 
 	.menu__sub-menu {

@@ -8,8 +8,9 @@ export default class ResponsiveMenu {
 			screenReaderClass: "screen-reader-text",
 			openSubmenuText: "Open submenu",
 			closeSubmenuText: "Close submenu",
-			submenuToggleOpenIcon: "+",
-			submenuToggleCloseIcon: "-"
+			submenuToggleOpenIcon: menuIcons.submenuToggleOpenIcon,
+			submenuToggleCloseIcon: menuIcons.submenuToggleCloseIcon,
+			dropdownMenuIcon: menuIcons.dropdownMenuIcon
 		};
 
 		// Merge defaults with our passed options

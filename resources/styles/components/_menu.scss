@@ -79,6 +79,7 @@
 		width: 100%;
 		opacity: 0;
 		height: 0;
+		overflow: hidden;
 	}
 
 	[aria-expanded="true"] + .menu__items {

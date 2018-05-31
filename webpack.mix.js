@@ -38,7 +38,12 @@ mix.webpackConfig({
   stats: 'minimal',
   performance: {
     hints: false
-  },
+	},
+	// Prevent certain dependencies being included in bundles.
+	// @link https://webpack.js.org/configuration/externals/#externals
+	externals: {
+		jquery: 'jQuery'
+	},
   plugins: [
     // Copy our static assets to the public directory.
     new CopyWebpackPlugin([

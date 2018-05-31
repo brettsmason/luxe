@@ -21,27 +21,27 @@
 	font-weight: 700;
 }
 
-h1 {
+.u-h1 {
 	@include font-size(42px);
 }
 
-h2 {
+.u-h2 {
 	@include font-size(32px);
 }
 
-h3 {
+.u-h3 {
 	@include font-size(26px);
 }
 
-h4 {
+.u-h4 {
 	@include font-size(24px);
 }
 
-h5 {
+.u-h5 {
 	@include font-size(22px);
 }
 
-h6 {
+.u-h6 {
 	@include font-size(18px);
 }
 

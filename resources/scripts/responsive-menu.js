@@ -44,11 +44,12 @@ export default class ResponsiveMenu {
 	_events() {
 		// Remove ARIA when on "desktop".
 		window.addEventListener("resize", () => this._setStates());
+		window.addEventListener("resize", () => this._createSubmenuButtons());
+		window.addEventListener("resize", () => this._removeSubmenuButtons());
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener("click", () => {
 			this._toggleMenu(this.menuToggle);
-			this._setFocus();
 		});
 
 		// Toggle Submenu aria attributes.
@@ -76,34 +77,52 @@ export default class ResponsiveMenu {
 
 	// Add submenu button to any element that has children
 	_createSubmenuButtons() {
-		[...this.submenus].forEach(element => {
-			let anchor = element.getElementsByTagName("a")[0];
-			let submenu = element.getElementsByTagName("ul")[0];
-			let submenuToggle = document.createElement("button");
-			let id = `submenu-${this._createUUID()}`;
-			let submenuToggleText = this.options.openSubmenuText;
-			let submenuToggleIcon = this.options.submenuToggleOpenIcon;
+		if(this._isMobile()) {
+			[...this.submenus].forEach(element => {
+				if (! element.classList.contains('menu__item--has-submenu-toggle')) {
+					let anchor = element.getElementsByTagName("a")[0];
+					let submenu = element.getElementsByTagName("ul")[0];
+					let submenuToggle = document.createElement("button");
+					let id = `submenu-${this._createUUID()}`;
+					let submenuToggleText = this.options.openSubmenuText;
+					let submenuToggleIcon = this.options.submenuToggleOpenIcon;
 
-			// Add our new unique ID as an ID to the submenu
-			submenu.setAttribute("id", id);
+					element.classList.add('menu__item--has-submenu-toggle');
 
-			// Add our new unique ID to match up with the button.
-			submenuToggle.setAttribute("aria-controls", id);
+					// Add our new unique ID as an ID to the submenu
+					submenu.setAttribute("id", id);
 
-			// Set aria-expanded to false by default.
-			submenuToggle.setAttribute("aria-expanded", false);
+					// Add our new unique ID to match up with the button.
+					submenuToggle.setAttribute("aria-controls", id);
 
-			// Add class to button.
-			submenuToggle.classList.add(this.options.submenuToggleClass);
+					// Set aria-expanded to false by default.
+					submenuToggle.setAttribute("aria-expanded", false);
 
-			// Add icon to button - temporary to help visualise
-			submenuToggle.innerHTML = `<span class="${
-				this.options.screenReaderClass
-			}">${submenuToggleText}</span>${submenuToggleIcon}`;
+					// Add class to button.
+					submenuToggle.classList.add(this.options.submenuToggleClass);
 
-			// Add our new button after the anchor.
-			anchor.after(submenuToggle);
-		});
+					// Add icon to button - temporary to help visualise
+					submenuToggle.innerHTML = `<span class="${
+						this.options.screenReaderClass
+					}">${submenuToggleText}</span>${submenuToggleIcon}`;
+
+					// Add our new button after the anchor.
+					anchor.after(submenuToggle);
+				}
+			});
+		}
+	}
+
+	// Remove submenu toggles
+	_removeSubmenuButtons() {
+		if(!this._isMobile()) {
+			let toRemove = document.getElementsByClassName('menu__submenu-toggle');
+
+			[...toRemove].forEach(button => {
+				button.parentNode.classList.remove('menu__item--has-submenu-toggle');
+				button.parentNode.removeChild(button);
+			});
+		}
 	}
 
 	_setStates() {
@@ -165,78 +184,4 @@ export default class ResponsiveMenu {
 		var uuid = s.join("");
 		return uuid;
 	}
-
-	_setFocus() {
-		// Bail if menu is not open.
-		if (!this._isMenuOpen()) {
-			return;
-		}
-
-		// Set focusable elements inside main navigation.
-		let focusableElements = this.container.querySelectorAll([
-			"a[href]",
-			"area[href]",
-			"input:not([disabled])",
-			"select:not([disabled])",
-			"textarea:not([disabled])",
-			"button:not([disabled])",
-			"iframe",
-			"object",
-			"embed",
-			"[contenteditable]",
-			'[tabindex]:not([tabindex^="-"])'
-		]);
-		let firstFocusableElement = focusableElements[0];
-		let lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-		// Redirect last Tab to first focusable element.
-		lastFocusableElement.addEventListener("keydown", e => {
-			if (9 === e.keyCode && !e.shiftKey) {
-				e.preventDefault();
-				this.menuToggle.focus(); // Set focus on first element - that's actually close menu button.
-			}
-		});
-
-		// Redirect first Shift+Tab to toggle button element.
-		firstFocusableElement.addEventListener("keydown", e => {
-			if (9 === e.keyCode && e.shiftKey) {
-				e.preventDefault();
-				this.menuToggle.focus(); // Set focus on first element.
-			}
-		});
-
-		// Redirect Shift+Tab from the toggle button to last focusable element.
-		this.menuToggle.addEventListener("keydown", e => {
-			if (9 === e.keyCode && e.shiftKey) {
-				e.preventDefault();
-				lastFocusableElement.focus(); // Set focus on last element.
-			}
-		});
-	}
-
-	_resize() {
-		// If on mobile
-		if (
-			window
-				.getComputedStyle(this.menuToggle, null)
-				.getPropertyValue("display") !== "none"
-		) {
-			// this.menuToggle.classList.remove('is-toggled');
-
-			[...this.submenus].forEach(submenu => {
-				submenu.removeAttribute("aria-haspopup");
-			});
-			// if on desktop
-		} else {
-			this.menuToggle.removeAttribute("aria-expanded");
-			this.menuToggle.classList.remove("is-toggled");
-
-			[...this.submenus].forEach(submenu => {
-				submenu.setAttribute("aria-haspopup", "true");
-			});
-		}
-	}
-
-	// TODO - work out what to do for destroy
-	_destroy() {}
 }

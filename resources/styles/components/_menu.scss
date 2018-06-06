@@ -108,6 +108,11 @@
 		max-height: 50em;
 		visibility: visible;
 	}
+
+	[aria-expanded="true"] > .svg {
+		transform: rotate(180deg);
+	}
+
 }
 
 .menu--is-desktop {

@@ -8,8 +8,7 @@ export default class ResponsiveMenu {
 			screenReaderClass: 'screen-reader-text',
 			openSubmenuText: 'Open submenu',
 			closeSubmenuText: 'Close submenu',
-			submenuToggleOpenIcon: menuIcons.submenuToggleOpenIcon,
-			submenuToggleCloseIcon: menuIcons.submenuToggleCloseIcon,
+			submenuToggleIcon: menuIcons.submenuToggleIcon,
 			dropdownMenuIcon: menuIcons.dropdownMenuIcon
 		};
 
@@ -58,6 +57,12 @@ export default class ResponsiveMenu {
 				if (this._isMenuOpen()) {
 					this._toggle(this.menuToggle);
 					this.menuToggle.focus();
+
+					let toggles = document.getElementsByClassName('menu__submenu-toggle');
+
+					[...toggles].forEach(toggle => {
+						toggle.setAttribute('aria-expanded', 'false');
+					});
 				}
 			}
 		});
@@ -80,7 +85,7 @@ export default class ResponsiveMenu {
 					let submenuToggle = document.createElement('button');
 					let id = `submenu-${this._createUUID()}`;
 					let submenuToggleText = this.options.openSubmenuText;
-					let submenuToggleIcon = this.options.submenuToggleOpenIcon;
+					let submenuToggleIcon = this.options.submenuToggleIcon;
 
 					element.classList.add('has-submenu-toggle');
 

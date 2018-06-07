@@ -38,7 +38,7 @@
 
 	// The sub-menus
 	&__sub-menu {
-		transition: all 0.3s ease;
+		transition: all 250ms ease;
 		background-color: #fff;
 		display: flex;
 		flex-direction: column;
@@ -100,12 +100,12 @@
 		width: 100%;
 		flex-direction: column;
 		visibility: hidden;
-		max-height: 0;
+		height: 0;
 		overflow: hidden;
 	}
 
 	[aria-expanded="true"] + .menu__sub-menu {
-		max-height: 50em;
+		// height: auto;
 		visibility: visible;
 	}
 

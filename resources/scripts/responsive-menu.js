@@ -48,14 +48,14 @@ export default class ResponsiveMenu {
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
-			this._toggle(this.menuToggle);
+			this._toggle(this.menuToggle, false);
 		});
 
 		// Close menu using Esc key.
 		document.addEventListener('keyup', event => {
 			if (27 === event.keyCode) {
 				if (this._isMenuOpen()) {
-					this._toggle(this.menuToggle);
+					this._toggle(this.menuToggle, true);
 					this.menuToggle.focus();
 
 					let toggles = document.getElementsByClassName('menu__submenu-toggle');
@@ -66,29 +66,21 @@ export default class ResponsiveMenu {
 				}
 			}
 		});
-
-		let toggles = document.getElementsByClassName('menu__submenu-toggle');
-		console.log(toggles);
-
-			[...toggles].forEach(toggle => {
-				toggle.addEventListener('click', function(e) {
-				let submenu = toggle.nextElementSibling;
-				let isCollapsed = toggle.getAttribute('aria-expanded') === 'true';
-
-				if(isCollapsed) {
-					this._expandSection(submenu);
-				} else {
-					this._collapseSection(submenu);
-				}
-			});
-		});
 	}
 
 	// Toggle aria-expanded state when button is pressed
-	_toggle(element) {
+	_toggle(element, height = false) {
 		let expanded =
 			'false' === element.getAttribute('aria-expanded') ? true : false;
 		element.setAttribute('aria-expanded', expanded);
+
+		if(height) {
+			if(expanded) {
+				this._expandElement(element.nextElementSibling);
+			} else {
+				this._collapseElement(element.nextElementSibling);
+			}
+		}
 	}
 
 	// Add submenu button to any element that has children
@@ -125,7 +117,7 @@ export default class ResponsiveMenu {
 					// Add our new button after the anchor.
 					anchor.after(submenuToggle);
 
-					submenuToggle.addEventListener('click', () => this._toggle(submenuToggle));
+					submenuToggle.addEventListener('click', () => this._toggle(submenuToggle, true));
 				}
 			});
 		}
@@ -196,7 +188,7 @@ export default class ResponsiveMenu {
 		return uuid;
 	}
 
-	_collapseSection(element) {
+	_collapseElement(element) {
 		// get the height of the element's inner content, regardless of its actual size
 		var sectionHeight = element.scrollHeight;
 
@@ -214,15 +206,12 @@ export default class ResponsiveMenu {
 		  // on the next frame (as soon as the previous style change has taken effect),
 		  // have the element transition to height: 0
 		  requestAnimationFrame(function() {
-			element.style.height = 0 + 'px';
+			element.style.height = 0;
 		  });
 		});
-
-		// mark the section as "currently collapsed"
-		element.setAttribute('data-collapsed', 'true');
 	}
 
-	_expandSection(element) {
+	_expandElement(element) {
 		// get the height of the element's inner content, regardless of its actual size
 		var sectionHeight = element.scrollHeight;
 
@@ -230,15 +219,12 @@ export default class ResponsiveMenu {
 		element.style.height = sectionHeight + 'px';
 
 		// when the next css transition finishes (which should be the one we just triggered)
-		element.addEventListener('transitionend', function(e) {
+		element.addEventListener('transitionend', function transitionEnd(event) {
 		  // remove this event listener so it only gets triggered once
-		  element.removeEventListener('transitionend', arguments.callee);
+		  element.removeEventListener('transitionend', transitionEnd, false);
 
 		  // remove "height" from the element's inline styles, so it can return to its initial value
-		  element.style.height = null;
-		});
-
-		// mark the section as "currently not collapsed"
-		element.setAttribute('data-collapsed', 'false');
+		  element.style.height = 'auto';
+		}, false);
 	}
 }

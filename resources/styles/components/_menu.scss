@@ -109,6 +109,10 @@
 		visibility: visible;
 	}
 
+	.menu__submenu-toggle .svg {
+		transition: transform 250ms ease;
+	}
+
 	[aria-expanded="true"] > .svg {
 		transform: rotate(180deg);
 	}

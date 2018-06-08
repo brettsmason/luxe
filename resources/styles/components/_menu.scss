@@ -89,10 +89,13 @@
 		opacity: 0;
 		height: 0;
 		overflow: hidden;
+		transition: all 250ms ease;
+		visibility: hidden;
 	}
 
 	[aria-expanded="true"] + .menu__items {
 		opacity: 1;
+		visibility: visible;
 		height: auto;
 	}
 
@@ -105,7 +108,6 @@
 	}
 
 	[aria-expanded="true"] + .menu__sub-menu {
-		// height: auto;
 		visibility: visible;
 	}
 
@@ -116,7 +118,6 @@
 	[aria-expanded="true"] > .svg {
 		transform: rotate(180deg);
 	}
-
 }
 
 .menu--is-desktop {

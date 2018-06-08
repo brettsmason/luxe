@@ -48,7 +48,7 @@ export default class ResponsiveMenu {
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
-			this._toggle(this.menuToggle, false);
+			this._toggle(this.menuToggle, true);
 		});
 
 		// Close menu using Esc key.

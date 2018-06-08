@@ -149,6 +149,7 @@
 	// Display our submenus if any of these conditions are met
 	.menu__item:hover > .menu__sub-menu,
 	.menu__item:focus-within > .menu__sub-menu,
+	.has-focus-within > .menu__sub-menu,
 	.menu__sub-menu:hover,
 	.menu__sub-menu:focus,
   	.is-toggled + .menu__sub-menu {

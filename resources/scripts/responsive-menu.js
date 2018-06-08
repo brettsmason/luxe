@@ -55,6 +55,15 @@ export default class ResponsiveMenu {
 			this._trapFocus();
 		});
 
+		// Get all the link elements within the menu.
+		var links = this.menu.getElementsByTagName( 'a' );
+
+		// Each time a menu link is focused or blurred, toggle focus.
+		for (var i = 0; i < links.length; ++i) {
+			links[i].addEventListener( 'focus', this._toggleFocusWithin, true );
+			links[i].addEventListener( 'blur', this._toggleFocusWithin, true );
+		}
+
 		// Close menu using Esc key.
 		document.addEventListener('keyup', event => {
 			if (27 === event.keyCode) {
@@ -270,7 +279,7 @@ export default class ResponsiveMenu {
 		let firstFocusableElement = focusableElements[0];
 		let lastFocusableElement  = focusableElements[focusableElements.length - 1];
 
-		// Redirect last Tab to first focusable element.
+		// Redirect last Tab to first foc	usable element.
 		lastFocusableElement.addEventListener( 'keydown', function(e) {
 			if ((9 === e.keyCode && !e.shiftKey)) {
 				e.preventDefault();
@@ -293,5 +302,27 @@ export default class ResponsiveMenu {
 				lastFocusableElement.focus(); // Set focus on last element.
 			}
 		} );
-}
+	}
+
+	/**
+	 * Sets or removes .focus-within class on an element.
+	 */
+	_toggleFocusWithin() {
+		var self = this;
+
+		// Move up through the ancestors of the current link until we hit .js-nav-menu.
+		while ( -1 === self.className.indexOf( 'menu__items' ) ) {
+
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'has-focus-within' ) ) {
+					self.className = self.className.replace( 'has-focus-within', '' );
+				} else {
+					self.className += ' has-focus-within';
+				}
+			}
+
+			self = self.parentElement;
+		}
+	}
 }

@@ -33,6 +33,15 @@ class Svg implements Fetchable, Renderable {
 	protected $file = '';
 
 	/**
+	 * The class of the SVG object.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected $class = '';
+
+	/**
 	 * Used to add or replace an existing `<title>` element in the SVG.
 	 *
 	 * @since  1.0.0
@@ -94,7 +103,12 @@ class Svg implements Fetchable, Renderable {
 		// Get a name for use in hooks and such.
 		$this->name = isset( $this->pathinfo['filename'] )
 		              ? $this->pathinfo['filename']
-			      : basename( $this->file );
+				  : basename( $this->file );
+
+		// Setup classes to apply to the SVG.
+		$this->class = isset( $this->class )
+		              ? implode( ' ', [ $this->name, $this->class ] )
+			      : $this->name;
 	}
 
 	/**
@@ -172,7 +186,7 @@ class Svg implements Fetchable, Renderable {
 			$attr['role'] = 'img';
 
 			// Get an attributes object.
-			$attr = attributes( 'svg', $this->name, $attr );
+			$attr = attributes( 'svg', $this->class, $attr );
 
 			$svg = sprintf( '<svg %s>%s</svg>', $attr->fetch(), $inner_html );
 		}

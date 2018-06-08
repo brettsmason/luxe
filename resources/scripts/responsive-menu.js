@@ -36,6 +36,7 @@ export default class ResponsiveMenu {
 	_init() {
 		this.menuToggle.setAttribute('aria-expanded', 'false');
 		this._createSubmenuButtons();
+		this._createDropdownIcons();
 		this._setStates();
 	}
 
@@ -45,6 +46,8 @@ export default class ResponsiveMenu {
 		window.addEventListener('resize', () => this._setStates());
 		window.addEventListener('resize', () => this._createSubmenuButtons());
 		window.addEventListener('resize', () => this._removeSubmenuButtons());
+		window.addEventListener('resize', () => this._createDropdownIcons());
+		window.addEventListener('resize', () => this._removeDropdownIcons());
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
@@ -136,6 +139,44 @@ export default class ResponsiveMenu {
 		}
 	}
 
+	// Add dropdown icons if not on mobile
+	_createDropdownIcons() {
+		if (!this._isMobile()) {
+			// [...this.submenus].forEach(submenu => {
+			// 	let anchor = submenu.firstChild;
+
+			// 	if (!anchor.classList.contains('has-dropdown-icon')) {
+			// 		let anchorHTML = anchor.innerHTML;
+			// 		anchor.classList.add('has-dropdown-icon');
+			// 		anchor.innerHTML = anchorHTML + this.options.dropdownMenuIcon;
+			// 	}
+			// });
+
+			let anchors = this.container.querySelectorAll('.menu__item--has-children > .menu__anchor');
+			console.log(anchors);
+
+			for (var i = 0; i < anchors.length; ++i) {
+				if (!anchors[i].classList.contains('has-dropdown-icon')) {
+					anchors[i].classList.add('has-dropdown-icon');
+					anchors[i].innerHTML = anchors[i].innerHTML + this.options.dropdownMenuIcon;
+				}
+			}
+		}
+	}
+
+	// Remove the dropdown icons on mobile
+	_removeDropdownIcons() {
+		if (this._isMobile()) {
+			var icons = this.container.querySelectorAll('.menu__dropdown-icon');
+
+			for (var i = 0; i < icons.length; ++i) {
+				icons[i].parentNode.classList.remove('has-dropdown-icon');
+				icons[i].parentNode.removeChild(icons[i]);
+			}
+		}
+	}
+
+	// Set initial state of our menu depending on menu state
 	_setStates() {
 		if (this._isMobile()) {
 			this.container.classList.add('menu--is-mobile');
@@ -149,10 +190,6 @@ export default class ResponsiveMenu {
 			this.container.classList.add('menu--is-desktop');
 			this.container.classList.remove('menu--is-mobile');
 			this.menuToggle.setAttribute('aria-expanded', 'false');
-
-			[...this.submenus].forEach(submenu => {
-				submenu.setAttribute('aria-haspopup', 'true');
-			});
 		}
 	}
 

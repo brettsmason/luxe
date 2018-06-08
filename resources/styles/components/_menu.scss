@@ -111,11 +111,11 @@
 		visibility: visible;
 	}
 
-	.menu__submenu-toggle .svg {
+	.menu__submenu-toggle-icon {
 		transition: transform 250ms ease;
 	}
 
-	[aria-expanded="true"] > .svg {
+	[aria-expanded="true"] > .menu__submenu-toggle-icon {
 		transform: rotate(180deg);
 	}
 }

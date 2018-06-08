@@ -142,18 +142,7 @@ export default class ResponsiveMenu {
 	// Add dropdown icons if not on mobile
 	_createDropdownIcons() {
 		if (!this._isMobile()) {
-			// [...this.submenus].forEach(submenu => {
-			// 	let anchor = submenu.firstChild;
-
-			// 	if (!anchor.classList.contains('has-dropdown-icon')) {
-			// 		let anchorHTML = anchor.innerHTML;
-			// 		anchor.classList.add('has-dropdown-icon');
-			// 		anchor.innerHTML = anchorHTML + this.options.dropdownMenuIcon;
-			// 	}
-			// });
-
 			let anchors = this.container.querySelectorAll('.menu__item--has-children > .menu__anchor');
-			console.log(anchors);
 
 			for (var i = 0; i < anchors.length; ++i) {
 				if (!anchors[i].classList.contains('has-dropdown-icon')) {

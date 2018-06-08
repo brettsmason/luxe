@@ -19,7 +19,7 @@
 	}
 
 	&__anchor {
-		padding: 10px;
+		padding: 15px;
 		display: block;
 		line-height: 1.2;
 		font-weight: bold;
@@ -29,6 +29,10 @@
 		&:hover,
 		&:focus {
 			color: #000;
+		}
+
+		&:focus {
+			outline-offset: -1px;
 		}
 
 		.menu__item--current & {
@@ -69,9 +73,24 @@
 	}
 
 	&__submenu-toggle {
-		background: #ccc;
+		background-color: $color-light-grey;
+		color: $color-medium-grey;
 		border: none;
-		width: 40px;
+		width: 50px;
+		height: 50px;
+
+		&:focus {
+			outline: 1px dotted;
+			outline-offset: -1px;
+		}
+	}
+
+
+	&__dropdown-icon {
+		width: 0.5rem;
+		height: 0.5rem;
+		margin-left: 0.3rem;
+		fill: $color-medium-grey;
 	}
 }
 
@@ -91,6 +110,10 @@
 		overflow: hidden;
 		transition: all 250ms ease;
 		visibility: hidden;
+	}
+
+	.menu__item {
+		border-top: 1px solid $color-light-grey;
 	}
 
 	[aria-expanded="true"] + .menu__items {
@@ -138,9 +161,13 @@
 		margin: 0;
 		padding: 0;
 		top: 100%;
+
+		.menu__dropdown-icon {
+			transform: rotate(-90deg);
+		}
 	}
 
-	.menu__submenu .menu__submenu {
+	.menu__sub-menu .menu__sub-menu {
 		right: auto;
 		left: 100%;
 		top: 0;

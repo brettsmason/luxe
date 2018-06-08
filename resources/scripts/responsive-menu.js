@@ -52,6 +52,7 @@ export default class ResponsiveMenu {
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
 			this._toggle(this.menuToggle, true);
+			this._trapFocus();
 		});
 
 		// Close menu using Esc key.
@@ -253,4 +254,44 @@ export default class ResponsiveMenu {
 		  element.style.height = 'auto';
 		}, false);
 	}
+
+	/**
+	 * Trap focus when nav is open.
+	 */
+	_trapFocus() {
+
+		// Bail if menu is not open.
+		if (!this._isMenuOpen()) {
+			return;
+		}
+
+		// Set focusable elements inside main navigation.
+		let focusableElements     = this.container.querySelectorAll( [ 'a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])' ] );
+		let firstFocusableElement = focusableElements[0];
+		let lastFocusableElement  = focusableElements[focusableElements.length - 1];
+
+		// Redirect last Tab to first focusable element.
+		lastFocusableElement.addEventListener( 'keydown', function(e) {
+			if ((9 === e.keyCode && !e.shiftKey)) {
+				e.preventDefault();
+				firstFocusableElement.focus(); // Set focus on first element - that's actually close menu button.
+			}
+		} );
+
+		// Redirect first Shift+Tab to toggle button element.
+		firstFocusableElement.addEventListener('keydown', function(e) {
+			if ((9 === e.keyCode && e.shiftKey)) {
+				e.preventDefault();
+				firstFocusableElement.focus(); // Set focus on first element.
+			}
+		});
+
+		// Redirect Shift+Tab from the toggle button to last focusable element.
+		this.menuToggle.addEventListener('keydown', function(e) {
+			if ((9 === e.keyCode && e.shiftKey)) {
+				e.preventDefault();
+				lastFocusableElement.focus(); // Set focus on last element.
+			}
+		} );
+}
 }

@@ -4,13 +4,13 @@
   "description": "A starter theme for WordPress.",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
-    "lint:scripts": "eslint './resources/scripts/**/*.js'"
+    "lint:scripts": "eslint './resources/scripts/**/*.js' -o eslint.html"
   },
   "repository": {
     "type": "git",
@@ -27,11 +27,17 @@
     "browser-sync-webpack-plugin": "2.0.1",
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.6",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-import": "^2.12.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^2.1.5",
     "laravel-mix": "^2.1.0",
     "nth-grid": "github:brettsmason/nth-grid",
     "postcss-preset-env": "^5.1.0",
-    "sass-mq": "^4.0.2"
+    "sass-mq": "^4.0.2",
+    "stylelint": "^9.2.1",
+    "stylelint-config-wordpress": "^13.0.0"
   }
 }

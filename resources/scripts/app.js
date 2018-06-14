@@ -15,15 +15,4 @@
 import ResponsiveMenu from './responsive-menu';
 
 // Setup a new menu
-let menu = new ResponsiveMenu('primary-menu', {});
-
-/**
- * A simple immediately-invoked function expression to kick-start
- * things and encapsulate our code.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-(function () {
-})();
+const menu = new ResponsiveMenu('primary-menu', {});

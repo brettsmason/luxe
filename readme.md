@@ -77,12 +77,15 @@ yarn install
 The root theme folder has several files, some of which shouldn't be edited.
 
 * `.editorconfig` - Used for configuring code editors for consistent styles. See: [EditorConfig](http://editorconfig.org/).
+* `.browserlistrc` - Used for configuring target browsers between different front-end tools. See: [Browserlist](https://github.com/browserslist/browserslist).
+* `.eslintrc` - Used to configure ESLint linting rules. See: [ESLint](https://eslint.org/).
+* `.stylelintrc` - Used to configure stylelint linting rules. See: [stylelint](https://stylelint.io/).
 * `.gitignore` - Files and folders that Git should ignore when committing and pushing to a repo.
 * `composer.json` - Used for listing Composer dependencies.
 * `functions.php` - Functions file first called by WordPress to bootstrap the theme.
 * `index.php` - Unused fallback template that's required in WP's system.
 * `package-lock.json` - Used by NPM to lock dependencies (don't edit).
-* `postcss.config.js` - Used by PostCSS for compiling modern CSS.
+* `webpack.mix.js` - Handles the Laravel Mix configuration.
 * `style.css` - Needed by WP to know this is a theme. We use this for configuration, essentially.
 * `yarn.lock` - Used by Yarn to lock dependencies (don't edit).
 
@@ -102,12 +105,12 @@ The `/public` folder is for holding our compiled assets for distribution. These 
 
 * `scripts` - Holds the compiled scripts.
 * `styles` - Holds the compiled stylesheets.
+* `svg` - Holds the cleaned and optimised SVGS.
 
 ### /resources
 
 The `/resources` folder is where much of the magic of theme development will happen.  This is essentially the stuff that you will be editing the vast majority of the time when creating a theme.
 
-* `build` - Build scripts. We're using Webpack for this.
 * `fonts` - Font files.
 * `img` - PNG, JPG, and most other image files.
 * `lang` - POT and any other MO or PO language files.
@@ -115,3 +118,32 @@ The `/resources` folder is where much of the magic of theme development will hap
 * `styles` - SCSS/CSS files.
 * `svg` - SVG files.
 * `views` - The template files for the theme.
+
+## Build Process
+
+This theme utilizes [Laravel Mix](https://laravel.com/docs/5.6/mix) for most of the build process with the theme.
+
+Laravel Mix is a layer built on top of Webpack that makes defining your build process much easier than attempting to write out a custom `webpack.config.js` configuration file.  It simplifies most of the complexity while still allowing you to define custom Webpack config options for more advanced uses.
+
+You may configure the build process to your liking by editing `webpack.mix.js`.
+
+The following is a list of commands you can run from the command line:
+
+```
+# Processes all of your assets for a development environment.
+npm run dev
+
+# Watches for changes to any files and rebuilds and syncs with the browser using BrowserSync.
+npm run watch
+
+# Watches for changes to files and syncs with the browser using BrowserSync and hot module replacement.
+npm run hot
+
+# Processes all of your assets for a production environment.
+npm run build
+
+# Lint JavaScript and/or SCSS files.
+npm run lint
+npm run lint:styles
+npm run lint:scripts
+```

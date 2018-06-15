@@ -52,6 +52,7 @@ array_map(
 		'functions-config',
 		'functions-embeds',
 		'functions-filters',
+		'functions-helpers',
 		'functions-scripts',
 		'functions-setup',
 		'functions-svgs',

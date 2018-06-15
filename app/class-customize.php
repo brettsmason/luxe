@@ -36,15 +36,15 @@ class Customize {
 	public function __construct() {
 
 		// Register panels, sections, settings, controls, and partials.
-		add_action( 'customize_register', [ $this, 'registerPanels'   ] );
-		add_action( 'customize_register', [ $this, 'registerSections' ] );
-		add_action( 'customize_register', [ $this, 'registerSettings' ] );
-		add_action( 'customize_register', [ $this, 'registerControls' ] );
-		add_action( 'customize_register', [ $this, 'registerPartials' ] );
+		add_action( 'customize_register', [ $this, 'register_panels' ] );
+		add_action( 'customize_register', [ $this, 'register_sections' ] );
+		add_action( 'customize_register', [ $this, 'register_settings' ] );
+		add_action( 'customize_register', [ $this, 'register_controls' ] );
+		add_action( 'customize_register', [ $this, 'register_partials' ] );
 
 		// Enqueue scripts and styles.
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
-		add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controls_enqueue' ] );
+		add_action( 'customize_preview_init', [ $this, 'preview_enqueue' ] );
 	}
 
 	/**
@@ -53,10 +53,10 @@ class Customize {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
-	public function registerPanels( WP_Customize_Manager $manager ) {}
+	public function register_panels( WP_Customize_Manager $manager ) {}
 
 	/**
 	 * Callback for registering sections.
@@ -64,10 +64,10 @@ class Customize {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
-	public function registerSections( WP_Customize_Manager $manager ) {}
+	public function register_sections( WP_Customize_Manager $manager ) {}
 
 	/**
 	 * Callback for registering settings.
@@ -75,17 +75,17 @@ class Customize {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
-	public function registerSettings( WP_Customize_Manager $manager ) {
+	public function register_settings( WP_Customize_Manager $manager ) {
 
 		// Update the `transform` property of core WP settings.
 		$settings = [
 			$manager->get_setting( 'blogname' ),
 			$manager->get_setting( 'blogdescription' ),
 			$manager->get_setting( 'header_textcolor' ),
-			$manager->get_setting( 'header_image' )
+			$manager->get_setting( 'header_image' ),
 		];
 
 		array_walk( $settings, function( &$setting ) {
@@ -99,10 +99,10 @@ class Customize {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
-	public function registerControls( WP_Customize_Manager $manager ) {}
+	public function register_controls( WP_Customize_Manager $manager ) {}
 
 	/**
 	 * Callback for registering partials.
@@ -110,10 +110,10 @@ class Customize {
 	 * @link   https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#selective-refresh-fast-accurate-updates
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
-	public function registerPartials( WP_Customize_Manager $manager ) {
+	public function register_partials( WP_Customize_Manager $manager ) {
 
 		// If the selective refresh component is not available, bail.
 		if ( ! isset( $manager->selective_refresh ) ) {
@@ -126,7 +126,7 @@ class Customize {
 			'selector'        => '.app-header__title a',
 			'render_callback' => function() {
 				return get_bloginfo( 'name', 'display' );
-			}
+			},
 		] );
 
 		// Selectively refreshes the description in the header when the
@@ -135,7 +135,7 @@ class Customize {
 			'selector'        => '.app-header__description',
 			'render_callback' => function() {
 				return get_bloginfo( 'description', 'display' );
-			}
+			},
 		] );
 	}
 
@@ -149,7 +149,7 @@ class Customize {
 	 * @access public
 	 * @return void
 	 */
-	public function controlsEnqueue() {}
+	public function controls_enqueue() {}
 
 	/**
 	 * Register or enqueue scripts/styles for the live preview frame.
@@ -158,7 +158,7 @@ class Customize {
 	 * @access public
 	 * @return void
 	 */
-	public function previewEnqueue() {
+	public function preview_enqueue() {
 
 		$version = wp_get_theme( get_template() )->get( 'Version' );
 

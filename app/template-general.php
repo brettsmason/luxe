@@ -19,7 +19,7 @@ namespace Luxe;
  *
  * @since  1.0.0
  * @access public
- * @param  string  $sep
+ * @param  string $sep The seperator.
  * @return string
  */
 function get_meta_sep( $sep = '' ) {
@@ -35,10 +35,9 @@ function get_meta_sep( $sep = '' ) {
 
 /**
  * Determine whether to show the sidebar
+ *
  * @return bool
  */
 function display_sidebar() {
-    static $display;
-    isset($display) || $display = apply_filters( 'luxe/display_sidebar', false );
-    return $display;
+	return apply_filters( 'luxe/display_sidebar', false );
 }

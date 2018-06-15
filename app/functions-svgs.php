@@ -12,8 +12,8 @@ namespace Luxe;
  *
  * @since  1.0.0
  * @access public
- * @param  string  $file
- * @param  array   $attr
+ * @param  string $file The SVG file.
+ * @param  array  $args An array or arguements to apply to the SVG.
  * @return void
  */
 function svg( $file, $args = [] ) {
@@ -26,8 +26,8 @@ function svg( $file, $args = [] ) {
  *
  * @since  1.0.0
  * @access public
- * @param  string  $file
- * @param  array   $attr
+ * @param  string $file The SVG file.
+ * @param  array  $args An array or arguements to apply to the SVG.
  * @return string
  */
 function get_svg( $file, $args = [] ) {
@@ -60,28 +60,6 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
-
-/**
- * Add dropdown icon if menu item has children.
- *
- * @param  string  $title The menu item's title.
- * @param  WP_Post $item  The current menu item.
- * @param  array   $args  An array of wp_nav_menu() arguments.
- * @param  int     $depth Depth of menu item. Used for padding.
- * @return string  $title The menu item's title with dropdown icon.
- */
-function dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
-	if ( 'primary' === $args->theme_location ) {
-		foreach ( $item->classes as $value ) {
-			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . get_svg( 'chevron-down' );
-			}
-		}
-	}
-
-	return $title;
-}
-// add_filter( 'nav_menu_item_title', __NAMESPACE__ . '\dropdown_icon_to_menu_link', 10, 4 );
 
 /**
  * Returns an array of supported social links (URL and icon name).

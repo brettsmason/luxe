@@ -3,6 +3,12 @@
  * SVG class.
  *
  * This is an SVG system for displaying SVGs in themes.
+ *
+ * @package   Luxe
+ * @author    Brett Mason <brettsmason@gmail.com>
+ * @copyright Copyright (c) 2018, Brett Mason
+ * @link      https://github.com/brettsmason/luxe
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 namespace Luxe;
@@ -73,8 +79,8 @@ class Svg implements Fetchable, Renderable {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string  $file
-	 * @param  array   $args
+	 * @param  string $file The SVG file name.
+	 * @param  array  $args An array of arguements to apply to the SVG.
 	 * @return void
 	 */
 	public function __construct( $file, $args = [] ) {
@@ -102,13 +108,13 @@ class Svg implements Fetchable, Renderable {
 
 		// Get a name for use in hooks and such.
 		$this->name = isset( $this->pathinfo['filename'] )
-		              ? $this->pathinfo['filename']
-				  : basename( $this->file );
+			? $this->pathinfo['filename']
+			: basename( $this->file );
 
 		// Setup classes to apply to the SVG.
 		$this->class = isset( $this->class )
-		              ? implode( ' ', [ $this->name, $this->class ] )
-			      : $this->name;
+			? implode( ' ', [ $this->name, $this->class ] )
+			: $this->name;
 	}
 
 	/**
@@ -157,7 +163,7 @@ class Svg implements Fetchable, Renderable {
 
 				$patterns = [
 					'/<title.*?<\/title>/is',
-					'/<desc.*?<\/desc>/is'
+					'/<desc.*?<\/desc>/is',
 				];
 
 				$inner_html = preg_replace( $patterns, '', $inner_html );

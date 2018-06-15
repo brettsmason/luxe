@@ -88,8 +88,8 @@ add_action( 'after_setup_theme', function() {
 add_action( 'init', function() {
 
 	register_nav_menus( [
-		'primary' => esc_html_x( 'Primary', 'nav menu location', 'luxe' ),
-		'subsidiary' => esc_html_x( 'Subsidiary', 'nav menu location', 'luxe' )
+		'primary'    => esc_html_x( 'Primary', 'nav menu location', 'luxe' ),
+		'subsidiary' => esc_html_x( 'Subsidiary', 'nav menu location', 'luxe' ),
 	] );
 
 }, 5 );

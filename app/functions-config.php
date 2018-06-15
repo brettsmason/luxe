@@ -16,5 +16,5 @@ use function Hybrid\app;
  * @return array  Theme config array matching the given $key.
  */
 function theme_config( $key ) {
-    return app( 'luxe/theme_config' )->get( $key );
+	return app( 'luxe/theme_config' )->get( $key );
 }

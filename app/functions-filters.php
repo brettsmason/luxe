@@ -40,13 +40,13 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
  */
 function get_custom_logo( $html ) {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$html = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
+	$html           = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
 		esc_url( home_url( '/' ) ),
 		'app-header__logo-anchor',
 		wp_get_attachment_image( $custom_logo_id, 'full', false, array(
 			'class'    => 'app-header__logo',
 			'itemprop' => 'logo',
-			'alt' => esc_attr( get_bloginfo( 'name' ) ),
+			'alt'      => esc_attr( get_bloginfo( 'name' ) ),
 		) )
 	);
 	return $html;
@@ -74,13 +74,11 @@ add_filter( 'body_class', __NAMESPACE__ . '\body_class' );
  * Display the primary sidebar or not.
  * Simply add conditional checks and return true to display for that condition.
  *
- * @param array $classes Classes for the body element.
- * @return array
+ * @return bool
  */
 function display_primary_sidebar() {
-
-	// Example to display sidebar for the blog.
-	// if ( is_home() )
-	// 	return true;
+	if ( is_page_template( 'resources/views/templates/sidebar-right.php' ) ) {
+		return true;
+	}
 }
 add_filter( 'luxe/display_sidebar', __NAMESPACE__ . '\display_primary_sidebar' );

@@ -30,7 +30,7 @@ use function Hybrid\app;
  *
  * @since  1.0.0
  * @access public
- * @param  string  $path
+ * @param  string $path The path of the file.
  * @return string
  */
 function asset( $path ) {

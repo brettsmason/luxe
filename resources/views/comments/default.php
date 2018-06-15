@@ -1,6 +1,8 @@
-<?php if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) ) {
+<?php
+if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) ) {
 	return;
-} ?>
+}
+?>
 
 <section class="comments-template">
 
@@ -14,15 +16,17 @@
 
 			<ol class="comments__list">
 
-				<?php wp_list_comments( [
+				<?php
+				wp_list_comments( [
 					'style'        => 'ol',
 					'callback'     => function( $comment, $args, $depth ) {
 						Hybrid\render_view( 'comment', Hybrid\get_comment_hierarchy(), compact( 'comment', 'args', 'depth' ) );
 					},
 					'end-callback' => function() {
 						echo '</li>';
-					}
-				] ) ?>
+					},
+				] )
+				?>
 
 			</ol>
 

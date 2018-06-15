@@ -19,7 +19,7 @@
 			Hybrid\post_terms( [
 				'taxonomy' => 'category',
 				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
-				'after'    => '</span>'
+				'after'    => '</span>',
 			] )
 		?>
 
@@ -27,7 +27,7 @@
 			Hybrid\post_terms( [
 				'taxonomy' => 'post_tag',
 				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
-				'after'    => '</span>'
+				'after'    => '</span>',
 			] )
 		?>
 	</footer>

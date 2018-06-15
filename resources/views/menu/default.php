@@ -10,12 +10,14 @@ endif
 		<span class="menu__label screen-reader-text"><?= esc_html( 'Menu', 'luxe' ) ?></span>
 	</button>
 
-	<?php wp_nav_menu( [
+	<?php
+	wp_nav_menu( [
 		'theme_location' => $data->name,
 		'container'      => '',
 		'menu_id'        => 'menu__items--' . esc_attr( $data->name ),
 		'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ),
 		'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
-		'item_spacing'   => 'discard'
-	] ) ?>
+		'item_spacing'   => 'discard',
+	] )
+	?>
 </nav>

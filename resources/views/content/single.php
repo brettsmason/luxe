@@ -6,7 +6,7 @@
 
 		<?php endwhile ?>
 
-		<?php comments_template( '/resources/views/partials/comments.php' ) ?>
+		<?php comments_template() ?>
 
 	<?php endif ?>
 </main>

@@ -65,10 +65,26 @@
 		@include mq(medium) {
 			display: none;
 		}
+	}
 
-		.svg {
-			width: 2.5rem;
-			height: 2.5rem;
+	&__toggle-icon {
+		width: 2rem;
+		height: 2rem;
+
+		path {
+			transition: all 300ms ease;
+		}
+
+		[aria-expanded="true"] > & {
+			path:nth-child(1) {
+			}
+
+			path:nth-child(2) {
+				opacity: 0;
+			}
+
+			path:nth-child(3) {
+			}
 		}
 	}
 

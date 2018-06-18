@@ -1,4 +1,4 @@
-<footer class="app-footer wrapper">
+<footer class="app-footer wrapper u-text-center">
 	<?php Hybrid\render_view( 'menu', 'inline', [ 'name' => 'subsidiary' ] ) ?>
 
 	<p class="app-footer__credit">

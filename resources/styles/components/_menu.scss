@@ -219,7 +219,9 @@
 	}
 }
 
-// Inline menu
-.menu--inline {
-	display: inline-flex;
+// Subsidiary menu
+.menu--subsidiary {
+	.menu__items {
+		display: inline-flex;
+	}
 }

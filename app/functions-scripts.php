@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		'luxe-app',
 		asset( 'scripts/app.js' ),
 		null,
-		null,
+		false,
 		true
 	);
 

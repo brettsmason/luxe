@@ -1,0 +1,226 @@
+# <!=Copyright (C) 2018 Brett Mason
+# This file is distributed under the GNU General Public License v2.0 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Luxe 1.0.0-dev\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2018-06-18 12:08:55+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.1.1\n"
+
+#: app/functions-filters.php:28
+#. translators: %s: Name of current post
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: resources/views/comment/default.php:9 resources/views/comment/ping.php:6
+#. translators: %s how many days ago.
+msgid "%s ago"
+msgstr ""
+
+#: resources/views/comments/default.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/views/content/404.php:3
+msgid "Page not found"
+msgstr ""
+
+#: resources/views/content/404.php:5
+msgid ""
+"It looks like you stumbled upon a page that does not exist. Perhaps a "
+"search might help."
+msgstr ""
+
+#: resources/views/footer/default.php:8
+#. Translators: 1 is current year, 2 is site name/link, 3 is WordPress
+#. name/link, and 4 is theme name/link.
+msgid "Copyright &#169; %1$s %2$s"
+msgstr ""
+
+#: resources/views/footer/default.php:17
+#. translators: %1$s is theme name, and %2$s is link to theme site.
+msgid "Theme %1$s by %2$s"
+msgstr ""
+
+#: resources/views/header/default.php:2
+msgid "Skip to content"
+msgstr ""
+
+#: resources/views/partials/comments-nav.php:4
+msgid "Comments Navigation"
+msgstr ""
+
+#: resources/views/partials/comments-nav.php:16
+#. Translators: Comments page numbers. 1 is current page and 2 is total pages.
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+#: resources/views/partials/pagination-posts.php:5
+msgid "&larr; Previous page"
+msgstr ""
+
+#: resources/views/partials/pagination-posts.php:6
+msgid "Next page &rarr;"
+msgstr ""
+
+#: resources/views/partials/pagination-posts.php:7
+msgid "Posts Navigation"
+msgstr ""
+
+#: resources/views/partials/pagination-posts.php:8
+msgid "Page"
+msgstr ""
+
+#: resources/views/partials/pagination-singular.php:5
+msgid "Pages:"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/functions-filters.php:203
+#. Translators: Used as a placeholder for untitled posts on non-singular views.
+msgid "(Untitled)"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/media-meta/meta/class-dimensions.php:68
+#: vendor/justintadlock/hybrid-core/src/template-media.php:245
+#. Translators: Media dimensions - 1 is width and 2 is height.
+msgid "%1$s &#215; %2$s"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/media-meta/meta/class-focal-length.php:48
+#. Translators: %s is the focal length of a camera.
+msgid "%s mm"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/media-meta/meta/class-shutter-speed.php:69
+#. Translators: %s is the shutter speed of a camera.
+msgid "%s sec"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:219
+msgid "https://wordpress.org"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:220
+msgid "WordPress"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:363
+msgid "Archives"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:437
+#. Translators: 1 is the week number and 2 is the year.
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:514
+#. Translators: Minute archive title. %s is the minute time format.
+msgid "Minute %s"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:566
+#. Translators: %s is the search query.
+msgid "Search results for: %s"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:592
+msgid "404 Not Found"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Luxe"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/brettsmason/luxe"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "An awesome starter theme for WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Brett Mason"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/brettsmason"
+msgstr ""
+
+#: app/functions-setup.php:91
+msgctxt "nav menu location"
+msgid "Primary"
+msgstr ""
+
+#: app/functions-setup.php:92
+msgctxt "nav menu location"
+msgid "Subsidiary"
+msgstr ""
+
+#: app/functions-setup.php:129
+msgctxt "sidebar"
+msgid "Primary"
+msgstr ""
+
+#: app/functions-setup.php:134
+msgctxt "sidebar"
+msgid "Subsidiary"
+msgstr ""
+
+#: app/template-general.php:31
+msgctxt "meta separator"
+msgid "&middot;"
+msgstr ""
+
+#: resources/views/partials/comments-nav.php:8
+msgctxt "comments navigation"
+msgid "&larr; Previous"
+msgstr ""
+
+#: resources/views/partials/comments-nav.php:25
+msgctxt "comments navigation"
+msgid "Next &rarr;"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:411
+#: vendor/justintadlock/hybrid-core/src/template-general.php:439
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:438
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:464
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:488
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:515
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-general.php:540
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: vendor/justintadlock/hybrid-core/src/template-post.php:252
+#. Translators: Separates tags, categories, etc. when displaying a post.
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ""

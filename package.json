@@ -10,7 +10,10 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
-    "lint:scripts": "eslint './resources/scripts/**/*.js'"
+    "lint:scripts": "eslint './resources/scripts/**/*.js'",
+    "i18n": "npm run i18n:textdomain && npm run i18n:pot",
+		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
+    "i18n:pot": "npx wpi18n makepot"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^2.1.5",
     "laravel-mix": "^2.1.0",
+    "node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
     "nth-grid": "github:brettsmason/nth-grid",
     "postcss-preset-env": "^5.1.0",
     "sass-mq": "^5.0.0",

@@ -189,6 +189,7 @@ export default class ResponsiveMenu {
 			this.container.classList.add('menu--is-desktop');
 			this.container.classList.remove('menu--is-mobile');
 			this.menuToggle.setAttribute('aria-expanded', 'false');
+			this.menu.style.removeProperty('height');
 		}
 	}
 

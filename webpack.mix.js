@@ -27,16 +27,29 @@ const browserSyncUrl = 'theme-development.localhost';
 // in the theme. If doing something custom, make sure to change this everywhere.
 mix.setPublicPath('public');
 
-// Set Laravel Mix options.
+// Compile JavaScript.
 //
+// @link https://laravel.com/docs/5.6/mix#working-with-scripts
+mix.js('resources/scripts/app.js', 'scripts')
+   .js('resources/scripts/customize-controls.js', 'scripts')
+   .js('resources/scripts/customize-preview.js', 'scripts');
+
+// Compile SASS/CSS.
+//
+// @link https://laravel.com/docs/5.6/mix#sass
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
-mix.options({
-  postCss: [
-    require('postcss-preset-env')()
-  ],
-  processCssUrls: false, // Disable processing asset URLs in Sass files.
-});
+mix.sass('resources/styles/screen.scss', 'styles', {
+	   outputStyle: 'expanded',
+	   indentType: 'tab',
+     indentWidth: 1,
+   })
+   .options({
+	   postCss: [
+		   require('postcss-preset-env')()
+	   ],
+	   processCssUrls: false
+	 });
 
 // Builds sources maps for assets.
 //
@@ -50,20 +63,6 @@ if (mix.inProduction()) {
   mix.version();
 }
 
-// Compile JavaScript.
-//
-// @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js('resources/scripts/app.js', 'scripts')
-  .js('resources/scripts/customize-controls.js', 'scripts')
-  .js('resources/scripts/customize-preview.js', 'scripts');
-
-// Compile SASS/CSS.
-mix.sass('resources/styles/screen.scss', 'styles', {
-  outputStyle: 'expanded',
-  indentType: 'tab',
-  indentWidth: 1,
-});
-
 // Add custom Webpack configuration.
 //
 // Laravel Mix doesn't currently have a built-in method for minimizing images,
@@ -72,6 +71,7 @@ mix.sass('resources/styles/screen.scss', 'styles', {
 //
 // @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
 mix.webpackConfig({
+	devtool: mix.inProduction() ? false : 'cheap-source-map',
   stats: 'minimal',
   performance: {
     hints: false,

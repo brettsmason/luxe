@@ -61,4 +61,3 @@ array_map(
 		'template-general',
 	]
 );
-

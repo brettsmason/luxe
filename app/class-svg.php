@@ -130,7 +130,7 @@ class Svg implements Fetchable, Renderable {
 
 		$file = $path ? "{$path}/{$this->file}" : $this->file;
 
-		$svg = implode( '', file( get_theme_file_path( $file ) ) );
+		$svg = file_get_contents( get_theme_file_path( $file ) );
 
 		if ( ! $svg ) {
 			return '';

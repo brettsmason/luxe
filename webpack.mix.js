@@ -40,16 +40,16 @@ mix.js('resources/scripts/app.js', 'scripts')
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
 mix.sass('resources/styles/screen.scss', 'styles', {
-	   outputStyle: 'expanded',
-	   indentType: 'tab',
-     indentWidth: 1,
+      outputStyle: 'expanded',
+      indentType: 'tab',
+      indentWidth: 1,
    })
    .options({
-	   postCss: [
-		   require('postcss-preset-env')()
-	   ],
-	   processCssUrls: false
-	 });
+	  postCss: [
+        require('postcss-preset-env')()
+      ],
+      processCssUrls: false
+   });
 
 // Builds sources maps for assets.
 //
@@ -71,11 +71,8 @@ if (mix.inProduction()) {
 //
 // @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
 mix.webpackConfig({
-	devtool: mix.inProduction() ? false : 'cheap-source-map',
-  stats: 'minimal',
-  performance: {
-    hints: false,
-  },
+  // Set sourcemaps on development only.
+  devtool: mix.inProduction() ? false : 'cheap-source-map',
   // Prevent certain dependencies being included in bundles.
   // @link https://webpack.js.org/configuration/externals/#externals
   externals: {
@@ -96,7 +93,8 @@ mix.webpackConfig({
         from: 'resources/fonts',
         to: 'fonts',
       },
-    ]),
+	]),
+
     // @link https://github.com/Klathmon/imagemin-webpack-plugin
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,

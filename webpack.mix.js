@@ -45,7 +45,7 @@ mix.sass('resources/styles/screen.scss', 'styles', {
       indentWidth: 1,
    })
    .options({
-	  postCss: [
+      postCss: [
         require('postcss-preset-env')()
       ],
       processCssUrls: false

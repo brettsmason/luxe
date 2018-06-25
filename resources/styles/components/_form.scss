@@ -1,0 +1,15 @@
+.form {
+
+	&__field {
+		margin-bottom: vr(1);
+	}
+
+	&__field-description {
+		@include font-size(14px);
+		color: $color-medium-grey;
+	}
+
+	&__field-required {
+		color: $color-alert;
+	}
+}

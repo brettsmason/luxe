@@ -33,7 +33,7 @@ select {
 	display: block;
 	width: 100%;
 	font-family: inherit;
-	height: vr(1.75);
+	height: vr(1.5);
 	outline: none;
 	background-color: $color-white;
 	border: 1px solid $color-medium-grey;
@@ -41,15 +41,7 @@ select {
 	padding: 0 vr(1/2);
 }
 
-select {
-	-webkit-appearance: none;
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12"><path fill="#5e6c75" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>');
-	background-repeat: no-repeat;
-	background-position: right 1rem center;
-}
-
 select[multiple] {
-	background-image: none;
 	height: auto;
 	padding: vr(1/4) vr(1/2);
 }
@@ -90,7 +82,7 @@ select {
 	&:focus {
 		outline: none;
 		background-color: $color-white;
-		border-color: $color-medium-grey;
+		border-color: $color-primary;
 	}
 
 	&:disabled {

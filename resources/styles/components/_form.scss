@@ -1,15 +1,32 @@
-.form {
+.form-field {
+	margin-bottom: vr(1/2);
 
-	&__field {
-		margin-bottom: vr(1);
-	}
-
-	&__field-description {
+	&__description {
 		@include font-size(14px);
 		color: $color-medium-grey;
 	}
 
-	&__field-required {
+	&__required {
 		color: $color-alert;
+	}
+
+	&__checkbox label,
+	&__radio label {
+		font-weight: 400;
+	}
+
+	// Inline form styles.
+	// Apply this to set radio/checkbox fields inline.
+	&--inline {
+
+		.form-field__checkbox,
+		.form-field__radio {
+			display: inline-block;
+		}
+
+		.form-field__checkbox + .form-field__checkbox,
+		.form-field__radio + .form-field__radio {
+			margin-left: vr(1/2);
+		}
 	}
 }

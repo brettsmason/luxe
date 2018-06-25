@@ -1,9 +1,12 @@
+// 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+// on fieldsets.
 fieldset {
 	font-family: inherit;
 	border: 1px solid $color-medium-grey;
 	padding: vr(1);
 	margin-bottom: vr(1);
 	margin-top: vr(1);
+	min-width: 0; /* [1] */
 }
 
 legend {

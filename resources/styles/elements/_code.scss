@@ -3,26 +3,34 @@ kbd,
 pre,
 samp,
 var {
-	font-family: $font-family-code;
-}
-
-pre {
 	@include font-size(14px);
-	padding: vr(1);
-	background-color: $color-light-grey;
-	display: block;
-	color: $color-dark-grey;
-	overflow: auto;
-	white-space: pre;
-	font-family: $font-family-pre;
+	font-family: $font-family-monospace;
 }
 
 code,
 kbd,
 mark,
 samp {
-	padding: vr(0.25);
 	display: inline-block;
 	line-height: 1;
 	background-color: $color-light-grey;
+	padding: vr(1/4);
+}
+
+pre {
+	@include font-size($global-font-size);
+	background-color: $color-light-grey;
+	display: block;
+	color: $color-dark-grey;
+	padding: vr(1);
+	margin-bottom: vr(1);
+	overflow: auto;
+	white-space: pre;
+
+	code {
+		padding: 0;
+		font-size: inherit;
+		line-height: inherit;
+		background-color: transparent;
+	}
 }

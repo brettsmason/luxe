@@ -8,10 +8,22 @@ ol {
 	margin-bottom: vr(1);
 }
 
+li > {
+
+	ol,
+	ul {
+		margin-bottom: 0;
+	}
+}
+
 dl {
 	margin-bottom: vr(1);
 }
 
+dd {
+	margin-bottom: vr(1/4);
+}
+
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }

@@ -3,8 +3,9 @@
    ========================================================================== */
 
 hr {
-	border: none;
-	border-bottom: 1px solid $color-light-grey;
-	margin-top: -1px;
+	background-color: $color-light-grey;
+	border: 0;
+	height: 2px;
 	margin-bottom: vr(1);
+	margin-top: vr(1);
 }

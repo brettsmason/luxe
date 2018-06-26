@@ -23,7 +23,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 						Hybrid\render_view( 'comment', Hybrid\get_comment_hierarchy(), compact( 'comment', 'args', 'depth' ) );
 					},
 					'end-callback' => function() {
-						echo '</li>';
+						echo '</div></li>';
 					},
 				] )
 				?>

@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #COMMENTS
+   ========================================================================== */
+
+.comments__title {
+	margin-bottom: vr(1);
+}
+
+.comments__list,
+.comments__list .children {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.comment__meta {
+	margin-bottom: vr(1/4);
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
+
+.comment__avatar {
+	border-radius: $global-radius;
+}

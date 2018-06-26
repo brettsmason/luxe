@@ -10,13 +10,16 @@ blockquote {
 	margin-bottom: vr(1);
 
 	p:first-child {
-		&:before {
+
+		&::before {
 			content: open-quote;
 		}
 	}
 
 	p:last-child {
-		&:after {
+		margin-bottom: 0;
+
+		&::after {
 			content: close-quote;
 		}
 	}

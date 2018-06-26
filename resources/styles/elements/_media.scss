@@ -11,9 +11,9 @@
  */
 
 img {
-  font-style: italic; /* [2] */
-  max-width: 100%; /* [1] */
-  vertical-align: middle; /* [3] */
+	font-style: italic; /* [2] */
+	max-width: 100%; /* [1] */
+	vertical-align: middle; /* [3] */
 }
 
 /// Make sure embeds and iframes fit their containers.
@@ -26,6 +26,12 @@ object {
 figure {
 	margin: 0 0 vr(1);
 	max-width: 100%;
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 figcaption {

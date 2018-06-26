@@ -5,3 +5,14 @@
 address {
 	margin-bottom: vr(1);
 }
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+cite {
+	color: $color-medium-grey;
+}

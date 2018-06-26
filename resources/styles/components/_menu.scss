@@ -12,23 +12,22 @@
 		display: block;
 
 		&--has-children {
-			position: relative;
 			display: flex;
 			flex-wrap: wrap;
+			position: relative;
 		}
 	}
 
 	&__anchor {
-		padding: 15px;
+		color: $color-black;
 		display: block;
 		line-height: 1.2;
-		font-weight: bold;
-		color: #111;
+		padding: 15px;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: #000;
+			color: $color-primary;
 		}
 
 		&:focus {
@@ -36,19 +35,19 @@
 		}
 
 		.menu__item--current & {
-			color: #000;
+			color: $color-primary;
 		}
 	}
 
 	// The sub-menus
 	&__sub-menu {
-		transition: all 250ms ease;
-		background-color: #fff;
+		background-color: $color-white;
 		display: flex;
 		flex-direction: column;
-		padding: 0;
-		margin: 0;
 		list-style: none;
+		margin: 0;
+		padding: 0;
+		transition: all 250ms ease;
 		visibility: hidden;
 
 		// Make sure <li> items within a submenu are full width
@@ -61,8 +60,8 @@
 	&__toggle {
 		background-color: transparent;
 		border: none;
-		padding: 0;
 		cursor: pointer;
+		padding: 0;
 
 		@include mq(medium) {
 			display: none;
@@ -70,9 +69,9 @@
 	}
 
 	&__toggle {
-		width: 50px;
 		height: 50px;
 		padding: 0.5rem;
+		width: 50px;
 
 		&:focus {
 			outline: 1px dotted;
@@ -81,17 +80,18 @@
 	}
 
 	&__toggle-icon {
-		width: 100%;
 		height: 100%;
+		width: 100%;
 
 		path {
+			opacity: 1;
 			transform: rotate(0) translate(0, 0);
 			transform-origin: 50% 50%;
 			transition: all 300ms ease;
-			opacity: 1;
 		}
 
 		[aria-expanded="true"] > & {
+
 			path:nth-of-type(1) {
 				transform: rotate(-45deg) translateY(42%);
 			}
@@ -108,10 +108,10 @@
 
 	&__submenu-toggle {
 		background-color: $color-light-grey;
-		color: $color-medium-grey;
 		border: none;
-		width: 55px;
+		color: $color-medium-grey;
 		height: 55px;
+		width: 55px;
 
 		&:focus {
 			outline: 1px dotted;
@@ -121,30 +121,31 @@
 
 
 	&__dropdown-icon {
-		width: 0.5rem;
+		fill: $color-medium-grey;
 		height: 0.5rem;
 		margin-left: 0.3rem;
-		fill: $color-medium-grey;
+		width: 0.5rem;
 	}
 }
 
 .menu--is-mobile {
+
 	.menu__anchor {
-		flex: 1 1 0px;
+		flex: 1 1 0;
 		padding: vr(3/4) vr(1);
 	}
 
 	.menu__items {
+		background-color: $color-white;
+		height: 0;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
 		position: absolute;
 		top: 100%;
-		left: 0;
-		background-color: $color-white;
-		width: 100%;
-		opacity: 0;
-		height: 0;
-		overflow: hidden;
 		transition: all 250ms ease;
 		visibility: hidden;
+		width: 100%;
 	}
 
 	.menu__item {
@@ -152,17 +153,17 @@
 	}
 
 	[aria-expanded="true"] + .menu__items {
+		height: auto;
 		opacity: 1;
 		visibility: visible;
-		height: auto;
 	}
 
 	.menu__sub-menu {
-		width: 100%;
 		flex-direction: column;
-		visibility: hidden;
 		height: 0;
 		overflow: hidden;
+		visibility: hidden;
+		width: 100%;
 	}
 
 	[aria-expanded="true"] + .menu__sub-menu {
@@ -170,9 +171,9 @@
 	}
 
 	.menu__submenu-toggle-icon {
+		height: 1rem;
 		transition: transform 250ms ease;
 		width: 1rem;
-		height: 1rem;
 	}
 
 	[aria-expanded="true"] > .menu__submenu-toggle-icon {
@@ -181,9 +182,10 @@
 }
 
 .menu--is-desktop {
+
 	.menu__items {
-		flex-direction: row;
 		display: flex;
+		flex-direction: row;
 	}
 
 	> .menu__item + .menu__item {
@@ -191,13 +193,13 @@
 	}
 
 	.menu__sub-menu {
-		visibility: hidden;
-		min-width: 5rem;
-		position: absolute;
 		left: 0;
 		margin: 0;
+		min-width: 5rem;
 		padding: 0;
+		position: absolute;
 		top: 100%;
+		visibility: hidden;
 
 		.menu__dropdown-icon {
 			transform: rotate(-90deg);
@@ -205,8 +207,8 @@
 	}
 
 	.menu__sub-menu .menu__sub-menu {
-		right: auto;
 		left: 100%;
+		right: auto;
 		top: 0;
 	}
 
@@ -216,13 +218,14 @@
 	.has-focus-within > .menu__sub-menu,
 	.menu__sub-menu:hover,
 	.menu__sub-menu:focus,
-  	.is-toggled + .menu__sub-menu {
+	.is-toggled + .menu__sub-menu {
 		visibility: visible;
 	}
 }
 
 // Subsidiary menu
 .menu--subsidiary {
+
 	.menu__items {
 		display: inline-flex;
 	}

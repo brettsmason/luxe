@@ -8,8 +8,8 @@
  */
 
 .o-media {
-	display: flex;
 	align-items: flex-start;
+	display: flex;
 }
 
 .o-media__img {
@@ -33,6 +33,7 @@
    ========================================================================== */
 
 .o-media--reverse {
+
 	> .o-media__img {
 		margin-left: 1rem;
 		margin-right: 0;
@@ -43,6 +44,7 @@
    ========================================================================== */
 
 .o-media--flush {
+
 	> .o-media__img {
 		margin-left: 0;
 		margin-right: 0;

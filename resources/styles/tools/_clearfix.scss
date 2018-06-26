@@ -7,10 +7,11 @@
 /// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
 /// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
 @mixin clearfix {
+
 	&::before,
 	&::after {
+		content: "";
 		display: table;
-		content: '';
 		flex-basis: 0;
 		order: 1;
 	}

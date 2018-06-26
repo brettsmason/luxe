@@ -9,26 +9,27 @@
 
 .grid--2 {
 	@include mq(medium) {
-		@include grid-layout(2, $selector: '> .entry');
+		@include grid-layout(2, $selector: "> .entry");
 	}
 }
 
 .grid--3 {
 	@include mq(medium) {
-		@include grid-layout(3, $selector: '> .entry');
+		@include grid-layout(3, $selector: "> .entry");
 	}
 }
 
 .grid--4 {
 	@include mq(medium) {
-		@include grid-layout(4, $selector: '> .entry');
+		@include grid-layout(4, $selector: "> .entry");
 	}
 }
 
 .grid--auto {
 	@include mq(medium) {
+
 		& > * {
-			flex: 1 1 0px;
+			flex: 1 1 0;
 			margin-right: vr(1);
 
 			&:last-child {
@@ -41,6 +42,7 @@
 // Layout for content with sidebar
 .has-sidebar-primary {
 	@include mq(medium) {
+
 		.app-content {
 			@include grid;
 			@include grid-layout(2 1);

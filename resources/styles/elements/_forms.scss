@@ -1,18 +1,18 @@
 // 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
 // on fieldsets.
 fieldset {
-	font-family: inherit;
 	border: 1px solid $color-medium-grey;
-	padding: vr(1);
+	font-family: inherit;
 	margin-bottom: vr(1);
 	min-width: 0; /* [1] */
+	padding: vr(1);
 }
 
 legend {
 	font-weight: 700;
-	text-transform: uppercase;
-	padding: 0 vr(1/2);
 	margin-left: -#{vr(1/2)};
+	padding: 0 vr(1/2);
+	text-transform: uppercase;
 }
 
 input[type="text"],
@@ -32,15 +32,15 @@ input[type="datetime-local"],
 input[type="color"],
 textarea,
 select {
-	display: block;
-	width: 100%;
-	font-family: inherit;
-	height: vr(1.75);
-	outline: none;
 	background-color: $color-white;
 	border: 1px solid $color-medium-grey;
 	border-radius: $global-radius;
+	display: block;
+	font-family: inherit;
+	height: vr(1.75);
+	outline: none;
 	padding: vr(1/4) vr(1/2);
+	width: 100%;
 }
 
 select[multiple] {
@@ -55,21 +55,21 @@ textarea {
 }
 
 input[type="file"] {
-	width: auto;
-	border: none;
-	padding: 0;
-	height: auto;
 	background: none;
+	border: none;
 	box-shadow: none;
 	display: inline-block;
+	height: auto;
+	padding: 0;
+	width: auto;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
 	display: inline-block;
-	width: auto;
 	height: auto;
 	padding: 0;
+	width: auto;
 
 	& + & {
 		margin-left: vr(1/2);
@@ -81,25 +81,25 @@ textarea,
 select {
 
 	&:focus {
-		outline: none;
 		background-color: $color-white;
 		box-shadow: 0 0 2px $color-primary;
+		outline: none;
 	}
 
 	&:disabled {
-		resize: none;
-		opacity: 0.3;
+		color: $color-medium-grey;
 		cursor: not-allowed;
 		font-style: italic;
-		color: $color-medium-grey;
+		opacity: 0.3;
+		resize: none;
 	}
 }
 
 label {
-	display: block;
 	color: $color-dark-grey;
-	margin-bottom: vr(1/4);
+	display: block;
 	font-weight: 700;
+	margin-bottom: vr(1/4);
 }
 
 button,

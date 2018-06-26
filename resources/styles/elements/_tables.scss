@@ -5,17 +5,17 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	max-width: 100%;
-	width: 100%;
 	empty-cells: show;
 	margin-bottom: vr(1);
+	max-width: 100%;
+	width: 100%;
 }
 
 th,
 td {
-	text-align: left;
-	padding: vr(1/2);
 	border-bottom: 1px solid $color-border;
+	padding: vr(1/2);
+	text-align: left;
 
 	tfoot & {
 		color: $color-dark-grey;

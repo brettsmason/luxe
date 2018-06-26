@@ -3,18 +3,18 @@
    ========================================================================== */
 
 .app-header {
-	margin-bottom: vr(1);
-	padding-top: vr(1);
-	padding-bottom: vr(1);
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	margin-bottom: vr(1);
+	padding-bottom: vr(1);
+	padding-top: vr(1);
 	position: relative;
 }
 
 .app-header__title {
-	margin-bottom: 0;
 	color: $color-black;
+	margin-bottom: 0;
 
 	a {
 		color: inherit;

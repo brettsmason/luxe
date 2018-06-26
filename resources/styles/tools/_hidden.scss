@@ -18,8 +18,8 @@
 	overflow: hidden #{$important};
 	padding: 0 #{$important};
 	position: absolute #{$important};
-	width: 1px #{$important};
 	white-space: nowrap #{$important};
+	width: 1px #{$important};
 	word-wrap: normal #{$important};
 }
 
@@ -29,10 +29,11 @@
 @mixin show-visually($enforce: true) {
 	$important: if($enforce, "!important", null);
 
-	position: static #{$important};
-	width: auto #{$important};
+	clip: auto #{$important};
 	height: auto #{$important};
 	overflow: visible #{$important};
-	clip: auto #{$important};
+
+	position: static #{$important};
 	white-space: normal #{$important};
+	width: auto #{$important};
 }

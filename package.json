@@ -9,10 +9,10 @@
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "npm run lint:styles && npm run lint:scripts",
-    "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss",
+    "lint:styles": "stylelint './resources/styles/**/*.scss' --syntax scss --fix",
     "lint:scripts": "eslint './resources/scripts/**/*.js'",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
-		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
+    "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
     "i18n:pot": "npx wpi18n makepot"
   },
   "repository": {
@@ -41,6 +41,7 @@
     "postcss-preset-env": "^5.1.0",
     "sass-mq": "^5.0.0",
     "stylelint": "^9.2.1",
-    "stylelint-config-wordpress": "^13.0.0"
+    "stylelint-config-wordpress": "^13.0.0",
+    "stylelint-order": "^0.8.1"
   }
 }

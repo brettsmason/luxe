@@ -19,6 +19,7 @@
 
 // Border around each cell
 .table--bordered {
+
 	& th,
 	& td {
 		border: 1px solid $color-border;
@@ -28,6 +29,7 @@
 
 // Odd striped rows
 .table--striped {
+
 	& th,
 	& td {
 		padding: vr(1/2);

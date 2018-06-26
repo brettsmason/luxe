@@ -11,26 +11,26 @@ code,
 kbd,
 mark,
 samp {
+	background-color: $color-light-grey;
 	display: inline-block;
 	line-height: 1;
-	background-color: $color-light-grey;
 	padding: vr(1/4);
 }
 
 pre {
 	@include font-size($global-font-size);
 	background-color: $color-light-grey;
-	display: block;
 	color: $color-dark-grey;
-	padding: vr(1);
+	display: block;
 	margin-bottom: vr(1);
 	overflow: auto;
+	padding: vr(1);
 	white-space: pre;
 
 	code {
-		padding: 0;
+		background-color: transparent;
 		font-size: inherit;
 		line-height: inherit;
-		background-color: transparent;
+		padding: 0;
 	}
 }

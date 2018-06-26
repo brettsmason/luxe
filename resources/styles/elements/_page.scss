@@ -18,10 +18,10 @@ html {
 	background: $color-bg;
 	color: $color-text;
 	font-family: $font-family-body;
-	min-height: 100%; /* [3] */
-	overflow-y: scroll; /* [2] */
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	min-height: 100%; /* [3] */
+	overflow-y: scroll; /* [2] */
 	text-rendering: optimizeLegibility;
 }
 

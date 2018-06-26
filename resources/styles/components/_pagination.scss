@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .pagination {
-	width: 100%;
 	margin: vr(2) 0;
+	width: 100%;
 }
 
 .pagination__items {
@@ -16,6 +16,7 @@
 }
 
 .pagination__item {
+
 	& + & {
 		margin-left: vr(1);
 	}

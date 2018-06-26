@@ -1,16 +1,16 @@
 @mixin button() {
-	font: inherit;
+	-webkit-appearance: none;
+	border: 1px solid transparent;
 	border-radius: $global-radius;
-	padding: vr(1/4) vr(3/4);
-	font-weight: 700;
-	text-decoration: none;
 	cursor: pointer;
 	display: inline-block;
-	border: 1px solid transparent;
-	vertical-align: middle;
-	-webkit-appearance: none;
-	transition: $global-transition;
+	font: inherit;
+	font-weight: 700;
 	height: vr(1.75);
+	padding: vr(1/4) vr(3/4);
+	text-decoration: none;
+	transition: $global-transition;
+	vertical-align: middle;
 }
 
 
@@ -21,13 +21,13 @@
 	$color-hover: null
 ) {
 	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);
+	background-color: $background-color;
 
 	color: $color;
-	background-color: $background-color;
 
 	&:hover,
 	&:focus {
-		color: $color-hover;
 		background-color: $background-color-hover;
+		color: $color-hover;
 	}
 }

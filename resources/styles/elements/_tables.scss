@@ -17,6 +17,10 @@ td {
 	padding: vr(1/2);
 	border-bottom: 1px solid $color-border;
 
+	tfoot & {
+		color: $color-dark-grey;
+	}
+
 	&:first-child {
 		padding-left: 0;
 	}

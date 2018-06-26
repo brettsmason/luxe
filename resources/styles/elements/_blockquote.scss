@@ -9,18 +9,7 @@ blockquote {
 	font-style: italic;
 	margin-bottom: vr(1);
 
-	p:first-child {
-
-		&::before {
-			content: open-quote;
-		}
-	}
-
 	p:last-child {
 		margin-bottom: 0;
-
-		&::after {
-			content: close-quote;
-		}
 	}
 }

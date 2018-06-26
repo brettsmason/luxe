@@ -1,7 +1,7 @@
 @mixin button() {
 	font: inherit;
 	border-radius: $global-radius;
-	padding: vr(1/2) vr(3/4);
+	padding: vr(1/4) vr(3/4);
 	font-weight: 700;
 	text-decoration: none;
 	cursor: pointer;
@@ -10,6 +10,7 @@
 	vertical-align: middle;
 	-webkit-appearance: none;
 	transition: $global-transition;
+	height: vr(1.75);
 }
 
 
@@ -19,7 +20,7 @@
 	$background-color-hover: null,
 	$color-hover: null
 ) {
-	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color + 20);
+	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);
 
 	color: $color;
 	background-color: $background-color;

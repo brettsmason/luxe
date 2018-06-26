@@ -35,12 +35,12 @@ select {
 	display: block;
 	width: 100%;
 	font-family: inherit;
-	height: vr(1.5);
+	height: vr(1.75);
 	outline: none;
 	background-color: $color-white;
 	border: 1px solid $color-medium-grey;
 	border-radius: $global-radius;
-	padding: 0 vr(1/2);
+	padding: vr(1/4) vr(1/2);
 }
 
 select[multiple] {
@@ -70,11 +70,10 @@ input[type="checkbox"] {
 	width: auto;
 	height: auto;
 	padding: 0;
-}
 
-input[type="submit"] {
-	@include button;
-	@include button-style($color-primary);
+	& + & {
+		margin-left: vr(1/2);
+	}
 }
 
 input,
@@ -101,4 +100,12 @@ label {
 	color: $color-dark-grey;
 	margin-bottom: vr(1/4);
 	font-weight: 700;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include button;
+	@include button-style($color-light-grey, $color-black);
 }

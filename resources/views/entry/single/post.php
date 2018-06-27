@@ -3,8 +3,8 @@
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
 
 		<div class="entry__byline">
-			<?php Hybrid\post_author() ?>
-			<?php Hybrid\post_date( [ 'before' => Luxe\get_meta_sep() ] ) ?>
+			<?php Hybrid\post_date() ?>
+			<?php Hybrid\post_author( [ 'before' => Luxe\get_meta_sep() ] ) ?>
 			<?php Hybrid\post_comments( [ 'before' => Luxe\get_meta_sep() ] ) ?>
 		</div>
 	</header>

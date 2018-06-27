@@ -18,10 +18,37 @@
 .pagination__item {
 
 	& + & {
-		margin-left: vr(1);
+		margin-left: vr(1/4);
 	}
 }
 
 .pagination__anchor {
+	border: 1px solid $color-light-grey;
+	border-radius: $global-radius;
+	line-height: 1;
+	padding: vr(1/4) vr(1/2);
 	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	&--current {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	&--dots {
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			border-color: $color-light-grey;
+			color: $color-black;
+		}
+	}
 }

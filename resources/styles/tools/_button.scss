@@ -9,7 +9,7 @@
 	height: vr(1.75);
 	padding: vr(1/4) vr(3/4);
 	text-decoration: none;
-	transition: $global-transition;
+	transition: all $global-transition-duration $global-transition-type;
 	vertical-align: middle;
 }
 

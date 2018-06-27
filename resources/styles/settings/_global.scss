@@ -21,7 +21,8 @@ $global-line-height: $global-baseline * 4 !default;
 
 // Other global settings.
 $global-radius: 3px !default;
-$global-transition: all 300ms ease-in-out !default;
+$global-transition-duration: 300ms !default;
+$global-transition-type: ease-in-out !default;
 
 // Global widths used throughout to constrain elements.
 $global-width: (

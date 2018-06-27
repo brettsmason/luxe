@@ -2,10 +2,16 @@
    #COMMENTS
    ========================================================================== */
 
+// Comments main container.
+.comments-template {
+	margin-top: vr(2);
+}
+
 .comments__title {
 	margin-bottom: vr(1);
 }
 
+// The comments list.
 .comments__list,
 .comments__list .children {
 	list-style: none;
@@ -13,20 +19,56 @@
 	padding: 0;
 }
 
-.comment__meta {
-	margin-bottom: vr(1/4);
+// Single comment.
+.comment {
+	align-items: flex-start;
+	display: flex;
 
-	a {
-		text-decoration: none;
+	&__avatar {
+		margin-right: vr(1/2);
+		min-width: 32px;
+	}
 
-		&:hover,
-		&:focus,
-		&:active {
-			text-decoration: underline;
+	&__avatar-img {
+		border-radius: $global-radius;
+	}
+
+	&__body {
+		flex: 1;
+	}
+
+	&__meta {
+		margin-bottom: vr(1/4);
+
+		a {
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
 		}
+	}
+
+	&__author {
+		font-weight: 700;
+	}
+
+	&__content {
+		margin-bottom: vr(1/4);
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__actions {
+		margin-bottom: vr(1.5);
 	}
 }
 
-.comment__avatar {
-	border-radius: $global-radius;
+// Comment respond form
+.comment-respond {
+	margin-top: vr(2);
 }

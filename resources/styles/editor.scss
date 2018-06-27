@@ -1,0 +1,108 @@
+/**
+ * Blocks stylesheet for the theme.
+ *
+ * This is for the editor in WordPress 5.0 and beyond.
+ */
+
+// SETTINGS
+//
+// Settings handle the configuration and don't output CSS. This is a good
+// place to define things like variables.
+
+@import "settings/global";
+@import "settings/colors";
+@import "settings/typography";
+
+
+// TOOLS
+//
+// These are used throughout the code but don't output CSS on their own.
+// Things like mixins and extensions go here.
+
+@import "tools/clearfix";
+@import "tools/hidden";
+@import "tools/button";
+@import "tools/font-size";
+@import "tools/baseline";
+@import "tools/vr";
+@import "tools/responsive-embed";
+@import "node_modules/sass-mq/mq";
+@import "node_modules/nth-grid/sass/nth-grid";
+
+
+// Editor styles.
+.edit-post-visual-editor {
+
+	// ElEMENTS
+	//
+	// Elements are (or should be) class-less designs for the base
+	// HTML elements.
+
+	@import "elements/page";
+	@import "elements/headings";
+	@import "elements/links";
+	@import "elements/blockquote";
+	@import "elements/lists";
+	@import "elements/hr";
+	@import "elements/tables";
+	@import "elements/media";
+	@import "elements/code";
+	// @import "elements/forms"; // @TODO work out how we could make this work
+	@import "elements/misc";
+
+
+	/*--------------------------------------------------------------
+	# Blocks - editor related styles.
+	--------------------------------------------------------------*/
+	// @import "blocks/blocks";
+	// @import "blocks/color-palette";
+
+
+	/*--------------------------------------------------------------
+	# Editor related styles which overwrites above styles.
+	--------------------------------------------------------------*/
+	@include font-size($global-font-size, $global-line-height);
+	font-family: $font-family-body;
+
+	// p {
+	// 	@include typography;
+	// 	margin-bottom: 0;
+	// }
+
+	// Post title.
+	.editor-post-title {
+
+		&__block {
+			max-width: map-get($global-width, base);
+		}
+
+		&__input {
+			@include font-size(50px); // @TODO should be heading 1 size
+			min-height: auto;
+		}
+	}
+
+	.editor-block-list__block,
+	.editor-default-block-appender {
+		max-width: map-get($global-width, base);
+	}
+
+	.editor-block-list__block[data-align="wide"] {
+		max-width: map-get($global-width, wide);
+	}
+
+	.editor-rich-text__tinymce.mce-content-body:not(.wp-block-cover-image-text):not(.wp-block-subhead):not(h2):not(h3) {
+		line-height: $global-line-height;
+	}
+
+	// UTILITIES
+	//
+	// Utilities are helper classes and overrides.  This gets loaded last.
+	// If necessary, this is the only place where `!important` rules should
+	// go, but only if necessary.
+
+	@import "utilities/alignment";
+	@import "utilities/clearfix";
+	@import "utilities/headings";
+	@import "utilities/hide";
+}

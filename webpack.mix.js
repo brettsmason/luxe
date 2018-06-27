@@ -44,6 +44,11 @@ mix.sass('resources/styles/screen.scss', 'styles', {
       indentType: 'tab',
       indentWidth: 1,
    })
+   .sass('resources/styles/editor.scss', 'styles', {
+	  outputStyle: 'expanded',
+	  indentType: 'tab',
+	  indentWidth: 1,
+   })
    .options({
       postCss: [
         require('postcss-preset-env')()

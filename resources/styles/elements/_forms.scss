@@ -15,21 +15,21 @@ legend {
 	text-transform: uppercase;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="search"],
+[type="number"],
+[type="tel"],
+[type="range"],
+[type="date"],
+[type="month"],
+[type="week"],
+[type="time"],
+[type="datetime"],
+[type="datetime-local"],
+[type="color"],
 textarea,
 select {
 	background-color: $color-white;
@@ -54,7 +54,7 @@ textarea {
 	vertical-align: top;
 }
 
-input[type="file"] {
+[type="file"] {
 	background: none;
 	border: none;
 	box-shadow: none;
@@ -64,14 +64,19 @@ input[type="file"] {
 	width: auto;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+[type="radio"],
+[type="checkbox"] {
 	display: inline-block;
 	height: auto;
 	padding: 0;
 	width: auto;
 
 	& + & {
+		margin-left: vr(1/2);
+	}
+
+	+ label {
+		display: inline-block;
 		margin-left: vr(1/2);
 	}
 }
@@ -103,9 +108,9 @@ label {
 }
 
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
 	@include button;
 	@include button-style($color-light-grey, $color-black);
 }

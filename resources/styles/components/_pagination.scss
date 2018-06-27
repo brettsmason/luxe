@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .pagination {
-	margin: vr(2) 0;
+	margin-bottom: vr(2);
 	width: 100%;
 }
 
@@ -25,6 +25,7 @@
 .pagination__anchor {
 	border: 1px solid $color-light-grey;
 	border-radius: $global-radius;
+	display: block;
 	line-height: 1;
 	padding: vr(1/4) vr(1/2);
 	text-decoration: none;

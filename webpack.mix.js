@@ -126,7 +126,7 @@ mix.webpackConfig({
 mix.browserSync({
   proxy: browserSyncUrl,
   files: [
-    'public/**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
+    'public/**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
     'resources/views/**/*.php',
     'app/**/*.php',
   ],

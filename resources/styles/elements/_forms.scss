@@ -87,7 +87,7 @@ select {
 
 	&:focus {
 		background-color: $color-white;
-		box-shadow: 0 0 2px $color-primary;
+		border-color: $color-primary;
 		outline: none;
 	}
 

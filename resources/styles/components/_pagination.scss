@@ -23,7 +23,7 @@
 }
 
 .pagination__anchor {
-	border: 1px solid $color-light-grey;
+	border: 1px solid $color-border;
 	border-radius: $global-radius;
 	display: block;
 	line-height: 1;
@@ -48,7 +48,7 @@
 		&:hover,
 		&:focus {
 			background-color: transparent;
-			border-color: $color-light-grey;
+			border-color: $color-border;
 			color: $color-black;
 		}
 	}

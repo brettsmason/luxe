@@ -1,7 +1,7 @@
 // 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
 // on fieldsets.
 fieldset {
-	border: 1px solid $color-medium-grey;
+	border: 1px solid $color-border;
 	font-family: inherit;
 	margin-bottom: vr(1);
 	min-width: 0; /* [1] */
@@ -33,8 +33,9 @@ legend {
 textarea,
 select {
 	background-color: $color-white;
-	border: 1px solid $color-medium-grey;
+	border: 1px solid $color-border;
 	border-radius: $global-radius;
+	color: $color-text;
 	display: block;
 	font-family: inherit;
 	height: vr(1.75);
@@ -86,13 +87,12 @@ textarea,
 select {
 
 	&:focus {
-		background-color: $color-white;
 		border-color: $color-primary;
 		outline: none;
 	}
 
 	&:disabled {
-		color: $color-medium-grey;
+		color: $color-mid-grey;
 		cursor: not-allowed;
 		font-style: italic;
 		opacity: 0.3;
@@ -101,16 +101,15 @@ select {
 }
 
 label {
-	color: $color-dark-grey;
+	color: $color-black;
 	display: block;
 	font-weight: 700;
 	margin-bottom: vr(1/4);
 }
 
-button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
 	@include button;
-	@include button-style($color-light-grey, $color-black);
+	@include button-style($color-silver-grey, $color-dark-grey);
 }

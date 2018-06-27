@@ -1,26 +1,46 @@
 /* Colors
    ========================================================================== */
 
-$color-primary: #535e7e;
+// Brand colors
+$color-primary: #544882;
 $color-secondary: #292f36;
+$color-tertiary: #6b5ca5;
+
+// State colors
 $color-alert: #8c182b;
 $color-warning: #f6bf27;
 $color-success: #407d80;
 
-$color-white: #fff;
+// Black/white
 $color-black: #000;
+$color-white: #fff;
 
-$color-light-grey: #f2f2f2;
-$color-medium-grey: #d9d8dd;
-$color-dark-grey: #6d6d6d;
+// Greyscale
+$color-dark-grey: #313439;
+$color-mid-grey: #676b72;
+$color-grey: #bdbdbd;
+$color-light-grey: #d4d4d4;
+$color-silver-grey: #e0e1e1;
+$color-aluminium-grey: #f8f8f8;
+
+
+/* Component specific colors
+   ========================================================================== */
 
 // Text
 $color-bg: $color-white;
-$color-text: $color-black;
+$color-text: $color-dark-grey;
+
+// Headings
+$heading-color: $color-black;
 
 // Links
 $color-link: $color-secondary;
-$color-hover: $color-link + 20;
+$color-hover: $color-link + 30;
+
+// Buttons
+$button-color: $color-mid-grey;
+$button-bg-color: $color-aluminium-grey;
 
 // Borders
 $color-border: $color-light-grey;

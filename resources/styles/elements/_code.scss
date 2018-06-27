@@ -11,7 +11,8 @@ code,
 kbd,
 mark,
 samp {
-	background-color: $color-light-grey;
+	background-color: $color-aluminium-grey;
+	color: $color-dark-grey;
 	display: inline-block;
 	line-height: 1;
 	padding: vr(1/4);
@@ -19,7 +20,7 @@ samp {
 
 pre {
 	@include font-size($global-font-size);
-	background-color: $color-light-grey;
+	background-color: $color-aluminium-grey;
 	color: $color-dark-grey;
 	display: block;
 	margin-bottom: vr(1);

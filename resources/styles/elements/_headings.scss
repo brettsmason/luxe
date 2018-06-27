@@ -14,6 +14,7 @@ h3,
 h4,
 h5,
 h6 {
+	color: $heading-color;
 	font-family: $font-family-heading;
 	margin-bottom: vr(1/2);
 	font-weight: 700;

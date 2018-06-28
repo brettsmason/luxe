@@ -18,6 +18,6 @@
 
 		<div class="comment__actions">
 			<?php Hybrid\comment_reply_link() ?>
-</div>
+		</div>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

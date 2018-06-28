@@ -30,3 +30,9 @@
 		}
 	}
 }
+
+// Add required styling for occurances when we
+// cant add the above classes.
+.required {
+	color: $color-alert;
+}

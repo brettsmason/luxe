@@ -5,7 +5,7 @@
 ) {
 	margin-left: $margin;
 	margin-right: $margin;
-	max-width: $width;
+	max-width: rem($width);
 	padding-left: $padding;
 	padding-right: $padding;
 }

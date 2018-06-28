@@ -2,6 +2,12 @@
    #ENTRY
    ========================================================================== */
 
+.entry__header,
+.entry__summary,
+.entry__footer {
+	@include wrapper;
+}
+
 .entry__byline {
 	margin-bottom: vr(1);
 }
@@ -15,6 +21,21 @@
 	h5,
 	h6 {
 		margin-top: vr(1.5);
+	}
+}
+
+.entry__content {
+
+	> * {
+		@include wrapper(map-get($global-width, base));
+	}
+
+	> .alignwide {
+		@include wrapper(map-get($global-width, wide), null);
+	}
+
+	> .alignfull {
+		max-width: 100%;
 	}
 }
 

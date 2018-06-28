@@ -1,0 +1,11 @@
+@mixin wrapper(
+	$width: map-get($global-width, base),
+	$margin: auto,
+	$padding: null
+) {
+	margin-left: $margin;
+	margin-right: $margin;
+	max-width: $width;
+	padding-left: $padding;
+	padding-right: $padding;
+}

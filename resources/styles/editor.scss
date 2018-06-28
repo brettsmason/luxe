@@ -29,9 +29,54 @@
 @import "node_modules/sass-mq/mq";
 @import "node_modules/nth-grid/sass/nth-grid";
 
-
-// Editor styles.
+// Kick off the editor styles.
 .edit-post-visual-editor {
+
+	// Set base styles for the editor.
+	@include baseline;
+	background-color: $color-bg;
+	color: $color-text;
+	font-family: $font-family-body;
+
+	// Set bottom margin for paragraphs.
+	p {
+		@include baseline;
+		font-family: $font-family-body;
+		margin-bottom: vr(1);
+	}
+
+	// Set the main tinyMCE editor font styling.
+	.editor-rich-text__tinymce.mce-content-body {
+		@include font-size($global-font-size, $global-line-height);
+	}
+
+	// Post title.
+	.editor-post-title {
+
+		&__input {
+			@include font-size(50px); // @TODO should be heading 1 size
+			font-family: $font-family-heading;
+			font-weight: 700;
+			min-height: auto;
+		}
+	}
+
+	// Standard width blocks.
+	.editor-post-title__block,
+	.editor-default-block-appender,
+	.editor-block-list__block {
+		max-width: map-get($global-width, base);
+	}
+
+	// Wide blocks.
+	.editor-block-list__block[data-align="wide"] {
+		max-width: map-get($global-width, wide);
+	}
+
+	// Full width blocks.
+	.editor-block-list__block[data-align="full"] {
+		max-width: none;
+	}
 
 	// ElEMENTS
 	//
@@ -57,43 +102,6 @@
 	// @import "blocks/blocks";
 	// @import "blocks/color-palette";
 
-
-	/*--------------------------------------------------------------
-	# Editor related styles which overwrites above styles.
-	--------------------------------------------------------------*/
-	@include font-size($global-font-size, $global-line-height);
-	font-family: $font-family-body;
-
-	// p {
-	// 	@include typography;
-	// 	margin-bottom: 0;
-	// }
-
-	// Post title.
-	.editor-post-title {
-
-		&__block {
-			max-width: map-get($global-width, base);
-		}
-
-		&__input {
-			@include font-size(50px); // @TODO should be heading 1 size
-			min-height: auto;
-		}
-	}
-
-	.editor-block-list__block,
-	.editor-default-block-appender {
-		max-width: map-get($global-width, base);
-	}
-
-	.editor-block-list__block[data-align="wide"] {
-		max-width: map-get($global-width, wide);
-	}
-
-	.editor-rich-text__tinymce.mce-content-body:not(.wp-block-cover-image-text):not(.wp-block-subhead):not(h2):not(h3) {
-		line-height: $global-line-height;
-	}
 
 	// UTILITIES
 	//

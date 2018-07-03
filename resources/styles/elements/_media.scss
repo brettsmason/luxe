@@ -26,6 +26,7 @@ object {
 figure {
 	margin: 0 0 vr(1);
 	max-width: 100%;
+	position: relative;
 
 	img {
 		display: block;
@@ -36,9 +37,15 @@ figure {
 
 figcaption {
 	@include font-size(14px, $modifier: -1);
-	color: $color-dark-grey;
+	background-color: rgba($color-black, 0.7);
+	bottom: 0;
+	color: $color-white;
 	font-style: italic;
-	margin-bottom: vr(1);
-	margin-top: vr(1/2);
+	margin: 0;
+	max-height: 100%;
+	overflow: auto;
+	padding: vr(1/2);
+	position: absolute;
 	text-align: center;
+	width: 100%;
 }

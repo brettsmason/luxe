@@ -53,7 +53,8 @@
 	@include mq(medium) {
 
 		.app-content {
-			@include grid;
+			display: flex;
+			flex-wrap: wrap;
 
 			> * {
 				@include nth-grid(2 1);

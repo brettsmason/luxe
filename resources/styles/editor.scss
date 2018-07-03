@@ -100,8 +100,8 @@
 	/*--------------------------------------------------------------
 	# Blocks - editor related styles.
 	--------------------------------------------------------------*/
-	// @import "blocks/blocks";
-	// @import "blocks/color-palette";
+	@import "blocks/wp-block-gallery";
+	@import "blocks/wp-cover-image";
 
 
 	// UTILITIES

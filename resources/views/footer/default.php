@@ -1,5 +1,5 @@
-<footer class="app-footer u-px-1 u-text-center">
-	<div class="wrapper">
+<footer class="app-footer u-text-center">
+	<div class="app-footer__wrapper wrapper">
 		<?php Hybrid\render_view( 'menu', 'inline', [ 'name' => 'subsidiary' ] ) ?>
 
 		<p class="app-footer__credit">

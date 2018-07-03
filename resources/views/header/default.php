@@ -1,5 +1,5 @@
-<header class="app-header u-px-1 u-py-1">
-	<div class="wrapper wrapper--wide u-flex u-items-center u-space-between">
+<header class="app-header">
+	<div class="app-header__wrapper wrapper wrapper--wide">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'luxe' ) ?></a>
 
 		<div class="app-header__branding">

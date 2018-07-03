@@ -1,16 +1,11 @@
 /* ==========================================================================
-   #HEADER
+   #FOOTER
    ========================================================================== */
 
-.app-header {
-	position: relative;
-}
+.app-footer {
+	padding: 0 vr(1);
 
-.app-header__title {
-	color: $color-black;
-	margin-bottom: 0;
-
-	a {
-		color: inherit;
+	&__credit {
+		@include font-size(14px);
 	}
 }

@@ -87,17 +87,17 @@
 // every piece of the design is some type of component, whether it's
 // a one-off or reusable block of code.
 
+@import "components/app-header";
+@import "components/app-footer";
+@import "components/sidebar";
+@import "components/entry";
+@import "components/comments";
 @import "components/button";
 @import "components/svg";
-@import "components/header";
-@import "components/entry";
-@import "components/sidebar";
-@import "components/footer";
 @import "components/menu";
 @import "components/pagination";
 @import "components/table";
 @import "components/form";
-@import "components/comments";
 
 
 // VENDOR
@@ -118,4 +118,4 @@
 @import "utilities/clearfix";
 @import "utilities/headings";
 @import "utilities/hide";
-@import "utilities/layout";
+// @import "utilities/layout";

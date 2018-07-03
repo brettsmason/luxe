@@ -25,21 +25,7 @@
 }
 
 .entry__content {
-
-	> * {
-		@include wrapper(map-get($global-width, base));
-	}
-
-	> .alignwide {
-		@include wrapper(map-get($global-width, wide), null);
-	}
-
-	> .alignfull {
-		margin-left: -#{vr(1)};
-		margin-right: -#{vr(1)};
-		max-width: calc(100% + #{vr(2)});
-		width: 100vw;
-	}
+	margin-bottom: vr(2);
 }
 
 .entry__terms-wrapper {
@@ -56,4 +42,8 @@
 	a {
 		color: inherit;
 	}
+}
+
+.entry__footer {
+	margin-bottom: vr(2);
 }

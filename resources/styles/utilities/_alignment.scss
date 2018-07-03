@@ -4,20 +4,20 @@
 
 .alignleft {
 	float: left;
-	margin-bottom: 1rem;
-	margin-right: 1rem;
+	margin-bottom: vr(1);
+	margin-right: vr(1);
 
-	@media (min-width: 800px) {
+	@include mq(large) {
 		max-width: 50%;
 	}
 }
 
 .alignright {
 	float: right;
-	margin-bottom: 1rem;
-	margin-left: 1rem;
+	margin-bottom: vr(1);
+	margin-left: vr(1);
 
-	@media (min-width: 800px) {
+	@include mq(large) {
 		max-width: 50%;
 	}
 }
@@ -27,6 +27,27 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+// Set the extended width only when above that screen size.
+.alignwide {
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	max-width: 100vw;
+	width: 100vw;
+
+	@include mq($global-width-wide) {
+		margin-left: -#{rem(($global-width-wide - $global-width) / 2)};
+		margin-right: -#{rem(($global-width-wide - $global-width) / 2)};
+		max-width: rem($global-width-wide);
+	}
+}
+
+.alignfull {
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	max-width: 100vw;
+	width: 100vw;
 }
 
 .u-float-left {

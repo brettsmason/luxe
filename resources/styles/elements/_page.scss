@@ -21,6 +21,7 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	min-height: 100%; /* [3] */
+	overflow-x: hidden;
 	overflow-y: scroll; /* [2] */
 	text-rendering: optimizeLegibility;
 }

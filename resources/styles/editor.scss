@@ -65,12 +65,12 @@
 	.editor-post-title__block,
 	.editor-default-block-appender,
 	.editor-block-list__block {
-		max-width: map-get($global-width, base);
+		max-width: rem($global-width);
 	}
 
 	// Wide blocks.
 	.editor-block-list__block[data-align="wide"] {
-		max-width: map-get($global-width, wide);
+		max-width: rem($global-width-wide);
 	}
 
 	// Full width blocks.

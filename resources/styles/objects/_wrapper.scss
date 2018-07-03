@@ -7,14 +7,14 @@
  */
 
 .wrapper {
-	@include wrapper(map-get($global-width, base));
+	@include wrapper($global-width, $padding: vr(1));
 
 	&--narrow {
-		@include wrapper(map-get($global-width, narrow), $margin: null);
+		@include wrapper($global-width-narrow, $margin: null);
 	}
 
 	&--wide {
-		@include wrapper(map-get($global-width, wide), $margin: null);
+		@include wrapper($global-width-wide, $margin: null);
 	}
 
 	&--full {

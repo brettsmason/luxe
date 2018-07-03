@@ -25,8 +25,6 @@ $global-transition-duration: 300ms !default;
 $global-transition-type: ease-in-out !default;
 
 // Global widths used throughout to constrain elements.
-$global-width: (
-	base: 1024px,
-	narrow: 800px,
-	wide: 1400px
-);
+$global-width: 1024px !default;
+$global-width-wide: 1400px !default;
+$global-width-narrow: 800px !default;

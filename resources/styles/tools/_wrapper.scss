@@ -1,5 +1,5 @@
 @mixin wrapper(
-	$width: map-get($global-width, base),
+	$width: $global-width,
 	$margin: auto,
 	$padding: null
 ) {

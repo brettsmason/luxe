@@ -29,25 +29,14 @@
 	margin-right: auto;
 }
 
-// Set the extended width only when above that screen size.
 .alignwide {
-	margin-left: calc(-50vw + 50%);
-	margin-right: calc(-50vw + 50%);
-	max-width: 100vw;
-	width: 100vw;
-
-	@include mq($global-width-wide) {
-		margin-left: -#{rem(($global-width-wide - $global-width) / 2)};
-		margin-right: -#{rem(($global-width-wide - $global-width) / 2)};
-		max-width: rem($global-width-wide);
-	}
+	max-width: rem($global-width-wide);
 }
 
 .alignfull {
-	margin-left: calc(-50vw + 50%);
-	margin-right: calc(-50vw + 50%);
-	max-width: 100vw;
-	width: 100vw;
+	margin-left: -#{vr(1)};
+	margin-right: -#{vr(1)};
+	max-width: calc(100% + #{vr(2)});
 }
 
 .u-float-left {

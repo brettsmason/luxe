@@ -99,6 +99,12 @@
 @import "components/table";
 @import "components/form";
 
+// BLOCKS
+//
+// Gutenberg editor block styles go here.
+
+@import "blocks/wp-block-gallery";
+
 
 // VENDOR
 //
@@ -118,4 +124,4 @@
 @import "utilities/clearfix";
 @import "utilities/headings";
 @import "utilities/hide";
-// @import "utilities/layout";
+@import "utilities/padding";

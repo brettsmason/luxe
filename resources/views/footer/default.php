@@ -1,4 +1,4 @@
-<footer class="app-footer u-text-center">
+<footer class="app-footer u-text-center u-px-1">
 	<div class="app-footer__wrapper wrapper">
 		<?php Hybrid\render_view( 'menu', 'inline', [ 'name' => 'subsidiary' ] ) ?>
 

@@ -1,4 +1,4 @@
-<main id="main" class="app-main grid grid--3">
+<main id="main" class="app-main wrapper grid grid--3">
 	<?php Hybrid\render_view( 'partials', 'archive-header' ) ?>
 
 	<?php if ( have_posts() ) : ?>

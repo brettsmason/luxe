@@ -19,6 +19,7 @@
 // These are used throughout the code but don't output CSS on their own.
 // Things like mixins and extensions go here.
 
+@import "tools/units";
 @import "tools/clearfix";
 @import "tools/hidden";
 @import "tools/button";
@@ -113,4 +114,12 @@
 	@import "utilities/clearfix";
 	@import "utilities/headings";
 	@import "utilities/hide";
+
+	// We need this as some blocks add the below classes to the markup too,
+	// which messes with the layout in the editor.
+	.alignwide,
+	.alignfull {
+		width: 100%;
+		margin: auto;
+	}
 }

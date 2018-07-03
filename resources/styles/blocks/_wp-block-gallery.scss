@@ -1,0 +1,47 @@
+.wp-block-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+
+	.blocks-gallery-item {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		margin-bottom: vr(1);
+		position: relative;
+	}
+
+	&.is-cropped .blocks-gallery-item img {
+		flex: 1;
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	figure {
+		align-items: flex-end;
+		display: flex;
+		height: 100%;
+		margin: 0;
+	}
+
+	figcaption {
+		background-color: rgba($color-black, 0.7);
+		color: $color-white;
+		margin: 0;
+		padding: vr(1/2);
+		position: absolute;
+		width: 100%;
+	}
+}
+
+// Generate column widths
+@for $i from 1 through 8 {
+
+	.columns-#{$i} {
+
+		.blocks-gallery-item {
+			@include nth-grid($i);
+		}
+	}
+}

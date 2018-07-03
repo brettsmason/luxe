@@ -35,6 +35,7 @@ figure {
 }
 
 figcaption {
+	@include font-size(14px, $modifier: -1);
 	color: $color-dark-grey;
 	font-style: italic;
 	margin-bottom: vr(1);

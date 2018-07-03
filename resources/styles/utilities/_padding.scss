@@ -1,16 +1,3 @@
-.u-flex {
-	display: flex;
-}
-
-.u-items-center {
-	align-items: center;
-}
-
-.u-space-between {
-	justify-content: space-between;
-}
-
-// Padding classes
 @for $i from 1 through 4 {
 
 	.u-px-#{$i} {
@@ -21,5 +8,9 @@
 	.u-py-#{$i} {
 		padding-bottom: vr($i);
 		padding-top: vr($i);
+	}
+
+	.u-p-#{$i} {
+		padding: vr($i);
 	}
 }

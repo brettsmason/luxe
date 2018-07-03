@@ -7,7 +7,7 @@
  */
 
 .wrapper {
-	@include wrapper($global-width, $padding: vr(1));
+	@include wrapper($global-width);
 
 	&--narrow {
 		@include wrapper($global-width-narrow, $margin: null);

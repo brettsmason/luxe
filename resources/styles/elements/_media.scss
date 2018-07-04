@@ -12,6 +12,7 @@
 
 img {
 	font-style: italic; /* [2] */
+	height: auto;
 	max-width: 100%; /* [1] */
 	vertical-align: middle; /* [3] */
 }
@@ -42,7 +43,6 @@ figcaption {
 	color: $color-white;
 	font-style: italic;
 	margin: 0;
-	max-height: 100%;
 	overflow: auto;
 	padding: vr(1/2);
 	position: absolute;

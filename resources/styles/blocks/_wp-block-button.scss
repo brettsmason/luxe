@@ -1,0 +1,44 @@
+.wp-block-button {
+
+	&__link {
+		@include button;
+		@include button-style($color-primary, $color-white);
+
+		&.has-primary-background-color {
+			@include button-style($color-primary, null);
+		}
+
+		&.has-secondary-background-color {
+			@include button-style($color-secondary, null);
+		}
+
+		&.has-white-background-color {
+			@include button-style($color-white, null);
+		}
+
+		&.has-black-background-color {
+			@include button-style($color-black, null);
+		}
+
+		&.has-primary-color {
+			@include button-style(null, $color-primary);
+		}
+
+		&.has-secondary-color {
+			@include button-style(null, $color-secondary);
+		}
+
+		&.has-white-color {
+			@include button-style(null, $color-white);
+		}
+
+		&.has-black-color {
+			@include button-style(null, $color-black);
+		}
+	}
+
+	&.alignwide &__link,
+	&.alignfull &__link {
+		width: 100%;
+	}
+}

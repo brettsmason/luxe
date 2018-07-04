@@ -26,21 +26,6 @@
 
 .entry__content {
 	margin-bottom: vr(2);
-
-	> * {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: $global-width;
-	}
-
-	// Add left indent back to lists that don't have a class.
-	ul,
-	ol {
-
-		&:not([class]) {
-			padding-left: vr(1.5);
-		}
-	}
 }
 
 .entry__terms-wrapper {

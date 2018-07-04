@@ -8,6 +8,7 @@
 	font-weight: 700;
 	height: vr(1.75);
 	padding: vr(1/4) vr(3/4);
+	text-align: center;
 	text-decoration: none;
 	transition: all $global-transition-duration $global-transition-type;
 	vertical-align: middle;
@@ -20,7 +21,10 @@
 	$background-color-hover: null,
 	$color-hover: null
 ) {
-	$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);
+	@if $background-color {
+		$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);
+	}
+
 	background-color: $background-color;
 
 	color: $color;

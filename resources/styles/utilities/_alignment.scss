@@ -3,22 +3,23 @@
    ========================================================================== */
 
 .alignleft {
-	float: left;
 	margin-bottom: vr(1);
-	margin-right: vr(1);
 
 	@include mq(large) {
+		float: left;
+		margin-right: vr(1);
 		max-width: 50%;
 	}
 }
 
 .alignright {
-	float: right;
 	margin-bottom: vr(1);
-	margin-left: vr(1);
 
-	@include mq(large) {
+	@include mq(medium) {
+		float: right;
+		margin-left: vr(1);
 		max-width: 50%;
+		width: 50%;
 	}
 }
 
@@ -30,13 +31,17 @@
 }
 
 .alignwide {
+	margin-left: 50%;
 	max-width: rem($global-width-wide);
+	transform: translateX(-50%);
+	width: 100vw;
 }
 
 .alignfull {
-	margin-left: -#{vr(1)};
-	margin-right: -#{vr(1)};
-	max-width: calc(100% + #{vr(2)});
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	max-width: 100vw;
+	width: 100vw;
 }
 
 .u-float-left {

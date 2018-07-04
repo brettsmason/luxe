@@ -6,17 +6,18 @@
 	.blocks-gallery-image,
 	.blocks-gallery-item {
 		display: flex;
-		flex-grow: 1;
 		flex-direction: column;
+		flex-grow: 1;
 		justify-content: center;
 		margin-bottom: vr(1);
+		margin-left: 0;
 		position: relative;
 
 		figure {
-			margin: 0;
-			height: 100%;
-			display: flex;
 			align-items: flex-end;
+			display: flex;
+			height: 100%;
+			margin: 0;
 		}
 	}
 
@@ -26,9 +27,9 @@
       a,
       img {
 			flex: 1;
-			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			width: 100%;
 
 		}
 	}
@@ -36,7 +37,7 @@
 	// Responsive fallback value, 2 columns
 	& .blocks-gallery-image,
 	& .blocks-gallery-item {
-		@include nth-grid(2);
+		@include nth-grid(2, $selector: type);
 
 		&:last-child {
 			margin-right: 0;
@@ -50,9 +51,10 @@
 
 	@include mq(medium) {
 		@for $i from 3 through 8 {
+
 			&.columns-#{$i} .blocks-gallery-image,
 			&.columns-#{$i} .blocks-gallery-item {
-				@include nth-grid(#{$i}, vr(1));
+				@include nth-grid($i, $selector: type);
 			}
 		}
 	}

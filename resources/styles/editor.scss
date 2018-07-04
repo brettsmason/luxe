@@ -100,8 +100,11 @@
 	/*--------------------------------------------------------------
 	# Blocks - editor related styles.
 	--------------------------------------------------------------*/
+	@import "blocks/color-palette";
 	@import "blocks/wp-block-gallery";
-	@import "blocks/wp-cover-image";
+	@import "blocks/wp-block-cover-image";
+	@import "blocks/wp-block-image";
+	@import "blocks/wp-block-button";
 
 
 	// UTILITIES
@@ -116,10 +119,11 @@
 	@import "utilities/hide";
 
 	// We need this as some blocks add the below classes to the markup too,
-	// which messes with the layout in the editor.
+	// which messes with the layout in the editor (namely the gallery block).
 	.alignwide,
 	.alignfull {
-		width: 100%;
 		margin: auto;
+		transform: translateX(0);
+		width: 100%;
 	}
 }

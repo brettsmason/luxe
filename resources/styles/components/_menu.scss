@@ -49,6 +49,7 @@
 		padding: 0;
 		transition: all $global-transition-duration $global-transition-type;
 		visibility: hidden;
+		z-index: 10;
 
 		// Make sure <li> items within a submenu are full width
 		& > .menu__item {

@@ -1,14 +1,14 @@
 <main id="main" class="app-main">
-	<?php Hybrid\render_view( 'partials', 'archive-header' ) ?>
+	<?php Hybrid\View\render( 'partials', 'archive-header' ) ?>
 
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php Hybrid\render_view( 'entry/archive', Hybrid\get_post_hierarchy() ) ?>
+			<?php Hybrid\View\render( 'entry/archive', Hybrid\Post\hierarchy() ) ?>
 
 		<?php endwhile ?>
 
-		<?php Hybrid\render_view( 'partials', 'pagination-posts' ) ?>
+		<?php Hybrid\View\render( 'partials', 'pagination-posts' ) ?>
 
 	<?php endif ?>
 </main>

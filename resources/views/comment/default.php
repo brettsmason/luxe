@@ -1,4 +1,4 @@
-<li <?php Hybrid\attr( 'comment' ) ?>>
+<li <?php Hybrid\Attr\render( 'comment' ) ?>>
 	<figure class="comment__avatar">
 		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
 	</figure>
@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="comment__actions">
-			<?php Hybrid\comment_reply_link() ?>
+			<?php Hybrid\Comment\render_reply_link() ?>
 		</div>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

@@ -15,7 +15,7 @@ namespace Luxe;
 
 use Hybrid\Contracts\Fetchable;
 use Hybrid\Contracts\Renderable;
-use function Hybrid\attributes;
+use Hybrid\Attr\Attr;
 
 class Svg implements Fetchable, Renderable {
 
@@ -192,7 +192,7 @@ class Svg implements Fetchable, Renderable {
 			$attr['role'] = 'img';
 
 			// Get an attributes object.
-			$attr = attributes( 'svg', $this->class, $attr );
+			$attr = new Attr( 'svg', $this->class, $attr );
 
 			$svg = sprintf( '<svg %s>%s</svg>', $attr->fetch(), $inner_html );
 		}

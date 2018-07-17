@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="comment__actions">
-			<?php Hybrid\Comment\render_reply_link() ?>
+			<?php Hybrid\Comment\render_reply_link( [ 'before' => Luxe\get_svg( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
 		</div>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

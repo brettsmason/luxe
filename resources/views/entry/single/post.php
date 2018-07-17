@@ -1,5 +1,5 @@
 <article <?php Hybrid\Attr\render( 'entry' ) ?>>
-	<header class="entry__header">
+	<header class="entry__header wrapper">
 		<h1 class="entry__title"><?php single_post_title() ?></h1>
 
 		<div class="entry__byline">
@@ -14,7 +14,7 @@
 		<?php Hybrid\View\render( 'partials', 'pagination-singular' ) ?>
 	</div>
 
-	<footer class="entry__footer">
+	<footer class="entry__footer wrapper">
 		<?php
 			Hybrid\Post\render_terms( [
 				'taxonomy' => 'category',

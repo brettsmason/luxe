@@ -6,7 +6,7 @@
 		<div class="app">
 			<?php Hybrid\View\render( 'header', Hybrid\Template\hierarchy() ) ?>
 
-			<div class="app-content wrapper u-px-1 u-py-1">
+			<div class="app-content u-px-1">
 				<?php Hybrid\View\render( 'content', Hybrid\Template\hierarchy() ) ?>
 
 				<?php if ( Luxe\display_sidebar() ) : ?>

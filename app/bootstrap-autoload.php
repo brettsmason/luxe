@@ -47,10 +47,9 @@ spl_autoload_register( function( $class ) {
 array_map( function( $file ) {
 	require_once get_parent_theme_file_path( "app/{$file}.php" );
 }, [
+	'functions-assets',
 	'functions-embeds',
 	'functions-filters',
-	'functions-helpers',
-	'functions-scripts',
 	'functions-setup',
 	'functions-svgs',
 	'template-general',

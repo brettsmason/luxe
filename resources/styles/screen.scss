@@ -104,10 +104,17 @@
 // Gutenberg editor block styles go here.
 
 @import "blocks/color-palette";
-@import "blocks/wp-block-gallery";
-@import "blocks/wp-block-cover-image";
-@import "blocks/wp-block-image";
-@import "blocks/wp-block-button";
+@import "blocks/audio";
+@import "blocks/button";
+@import "blocks/columns";
+@import "blocks/cover-image";
+@import "blocks/gallery";
+@import "blocks/image";
+@import "blocks/latest-posts";
+@import "blocks/pullquote";
+@import "blocks/quote";
+@import "blocks/separator";
+@import "blocks/subhead";
 
 
 // VENDOR

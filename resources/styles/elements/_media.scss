@@ -38,14 +38,8 @@ figure {
 
 figcaption {
 	@include font-size(14px, $modifier: -1);
-	background-color: rgba($color-black, 0.7);
-	bottom: 0;
-	color: $color-white;
 	font-style: italic;
-	margin: 0;
-	overflow: auto;
-	padding: vr(1/2);
-	position: absolute;
+	margin-top: vr(1/4);
 	text-align: center;
 	width: 100%;
 }

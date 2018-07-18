@@ -1,0 +1,30 @@
+.wp-block-latest-posts {
+	padding-left: vr(1.5);
+
+	&.is-grid {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: vr(1/4);
+			margin-right: vr(1);
+			width: 100%;
+		}
+	}
+
+	@include mq(medium) {
+		@for $i from 2 through 6 {
+
+			&.columns-#{$i} li {
+				width: calc((100% / #{$i}) - #{vr(1)});
+			}
+		}
+	}
+
+	&__post-date {
+		color: $color-dark-grey;
+		display: block;
+	}
+}

@@ -1,0 +1,5 @@
+.wp-block-subhead {
+	@include font-size(30px);
+	color: $color-mid-grey;
+	font-style: italic;
+}

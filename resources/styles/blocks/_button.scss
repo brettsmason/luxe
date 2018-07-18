@@ -37,6 +37,10 @@
 		}
 	}
 
+	&.aligncenter {
+		text-align: center;
+	}
+
 	&.alignwide &__link,
 	&.alignfull &__link {
 		width: 100%;

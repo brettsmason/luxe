@@ -12,7 +12,7 @@ blockquote {
 		@include font-size(24px);
 	}
 
-	p:last-child {
-		margin-bottom: 0;
+	p:last-of-type {
+		margin-bottom: vr(1/4);
 	}
 }

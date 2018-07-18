@@ -19,7 +19,7 @@ samp {
 }
 
 pre {
-	@include font-size($global-font-size);
+	@include font-size(15px);
 	background-color: $color-aluminium-grey;
 	color: $color-dark-grey;
 	display: block;

@@ -33,22 +33,70 @@
 // Kick off the editor styles.
 .edit-post-visual-editor {
 
+	// ElEMENTS
+	//
+	// Elements are (or should be) class-less designs for the base
+	// HTML elements.
+
+	@import "elements/page";
+	@import "elements/headings";
+	@import "elements/links";
+	@import "elements/blockquote";
+	@import "elements/lists";
+	@import "elements/hr";
+	@import "elements/tables";
+	@import "elements/media";
+	@import "elements/code";
+	// @import "elements/forms"; // @TODO work out how we could make this work
+	@import "elements/misc";
+
+
+	/*--------------------------------------------------------------
+	# Blocks - editor related styles.
+	--------------------------------------------------------------*/
+	@import "blocks/color-palette";
+	@import "blocks/audio";
+	@import "blocks/button";
+	@import "blocks/columns";
+	@import "blocks/cover-image";
+	@import "blocks/gallery";
+	@import "blocks/image";
+	@import "blocks/latest-posts";
+	@import "blocks/pullquote";
+	@import "blocks/quote";
+	@import "blocks/separator";
+	@import "blocks/subhead";
+
+
+	// UTILITIES
+	//
+	// Utilities are helper classes and overrides.  This gets loaded last.
+	// If necessary, this is the only place where `!important` rules should
+	// go, but only if necessary.
+
+	@import "utilities/alignment";
+	@import "utilities/clearfix";
+	@import "utilities/headings";
+	@import "utilities/hide";
+
 	// Set base styles for the editor.
-	@include baseline;
-	background-color: $color-bg;
+	background-color: $color-background;
 	color: $color-text;
 	font-family: $font-family-body;
+	font-size: $global-font-size;
+	line-height: $global-line-height;
 
 	// Set bottom margin for paragraphs.
 	p {
-		@include baseline;
 		font-family: $font-family-body;
-		margin-bottom: vr(1);
+		font-size: $global-font-size;
+		line-height: $global-line-height;
+		margin-bottom: 0;
 	}
 
-	// Set the main tinyMCE editor font styling.
-	.editor-rich-text__tinymce.mce-content-body {
-		@include font-size($global-font-size, $global-line-height);
+	ul,
+	ol {
+		margin-left: 0;
 	}
 
 	// Post title.
@@ -78,45 +126,6 @@
 	.editor-block-list__block[data-align="full"] {
 		max-width: none;
 	}
-
-	// ElEMENTS
-	//
-	// Elements are (or should be) class-less designs for the base
-	// HTML elements.
-
-	@import "elements/page";
-	@import "elements/headings";
-	@import "elements/links";
-	@import "elements/blockquote";
-	@import "elements/lists";
-	@import "elements/hr";
-	@import "elements/tables";
-	@import "elements/media";
-	@import "elements/code";
-	// @import "elements/forms"; // @TODO work out how we could make this work
-	@import "elements/misc";
-
-
-	/*--------------------------------------------------------------
-	# Blocks - editor related styles.
-	--------------------------------------------------------------*/
-	@import "blocks/color-palette";
-	@import "blocks/wp-block-gallery";
-	@import "blocks/wp-block-cover-image";
-	@import "blocks/wp-block-image";
-	@import "blocks/wp-block-button";
-
-
-	// UTILITIES
-	//
-	// Utilities are helper classes and overrides.  This gets loaded last.
-	// If necessary, this is the only place where `!important` rules should
-	// go, but only if necessary.
-
-	@import "utilities/alignment";
-	@import "utilities/clearfix";
-	@import "utilities/headings";
-	@import "utilities/hide";
 
 	// We need this as some blocks add the below classes to the markup too,
 	// which messes with the layout in the editor (namely the gallery block).

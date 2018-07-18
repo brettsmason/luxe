@@ -15,7 +15,7 @@
 html {
 	@include baseline; /* [1] */
 
-	background: $color-bg;
+	background: $color-background;
 	color: $color-text;
 	font-family: $font-family-body;
 	-moz-osx-font-smoothing: grayscale;

@@ -47,24 +47,31 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Add support for editor color palette.
-	add_theme_support( 'editor-color-palette',
+	add_theme_support( 'editor-color-palette', [
 		[
-			'name'  => 'primary',
+			'name'  => __( 'Primary', 'luxe' ),
+			'slug'  => 'primary',
 			'color' => '#544882',
 		],
 		[
-			'name'  => 'secondary',
+			'name'  => __( 'Secondary', 'luxe' ),
+			'slug'  => 'secondary',
 			'color' => '#292f36',
 		],
 		[
-			'name'  => 'white',
+			'name'  => __( 'White', 'luxe' ),
+			'slug'  => 'white',
 			'color' => '#fff',
 		],
 		[
-			'name'  => 'black',
+			'name'  => __( 'Black', 'luxe' ),
+			'slug'  => 'black',
 			'color' => '#000',
 		]
-	);
+	] );
+
+	// Disable custom colors in block color palettes.
+	 add_theme_support( 'disable-custom-colors' );
 
 	// Add support for align wide blocks.
 	add_theme_support( 'align-wide' );

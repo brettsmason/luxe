@@ -2,19 +2,24 @@
    #ENTRY
    ========================================================================== */
 
+.entry__content > * {
+	@include wrapper($global-width);
+}
+
 .entry__byline {
 	margin-bottom: vr(1);
+}
+
+.entry__content {
+	margin-bottom: vr(2);
 }
 
 .entry__content,
 .entry__summary {
 
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		margin-top: vr(1.5);
+	> ol:not([class]),
+	> ul:not([class]) {
+		padding-left: vr(1.5);
 	}
 }
 
@@ -32,4 +37,8 @@
 	a {
 		color: inherit;
 	}
+}
+
+.entry__footer {
+	margin-bottom: vr(2);
 }

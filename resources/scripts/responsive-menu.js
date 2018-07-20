@@ -1,7 +1,7 @@
 export default class ResponsiveMenu {
 	constructor(container, options) {
 		const defaults = {
-			submenuClass: 'menu__item--has-children',
+			submenuClass: 'has-children',
 			submenuToggleClass: 'menu__submenu-toggle',
 			menuToggleClass: 'menu__toggle',
 			menuClass: 'menu__items',
@@ -152,7 +152,7 @@ export default class ResponsiveMenu {
 	// Add dropdown icons if not on mobile
 	_createDropdownIcons() {
 		if (!this._isMobile()) {
-			let anchors = this.container.querySelectorAll('.menu__item--has-children > .menu__anchor');
+			let anchors = this.container.querySelectorAll('.has-children > .menu__anchor');
 
 			for (var i = 0; i < anchors.length; ++i) {
 				if (!anchors[i].classList.contains('has-dropdown-icon')) {

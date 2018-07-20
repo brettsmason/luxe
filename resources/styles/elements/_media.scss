@@ -12,6 +12,7 @@
 
 img {
 	font-style: italic; /* [2] */
+	height: auto;
 	max-width: 100%; /* [1] */
 	vertical-align: middle; /* [3] */
 }
@@ -26,6 +27,7 @@ object {
 figure {
 	margin: 0 0 vr(1);
 	max-width: 100%;
+	position: relative;
 
 	img {
 		display: block;
@@ -35,9 +37,9 @@ figure {
 }
 
 figcaption {
-	color: $color-dark-grey;
+	@include font-size(14px, $modifier: -1);
 	font-style: italic;
-	margin-bottom: vr(1);
-	margin-top: vr(1/2);
+	margin-top: vr(1/4);
 	text-align: center;
+	width: 100%;
 }

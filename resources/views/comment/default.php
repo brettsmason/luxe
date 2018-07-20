@@ -1,23 +1,35 @@
-<li <?php Hybrid\attr( 'comment' ) ?>>
+<li <?php Hybrid\Attr\render( 'comment' ) ?>>
 	<figure class="comment__avatar">
 		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
 	</figure>
 
 	<div class="comment__body">
 		<header class="comment__meta">
-			<span class="comment__author"><?php comment_author_link() ?></span>
-			<?= Luxe\get_meta_sep() ?>
-			<?php /* translators: %s how many days ago. */ ?>
-			<a href="<?php comment_link() ?>" class="comment__permalink"><time class="comment__published"><?php printf( __( '%s ago', 'luxe' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ) // phpcs:ignore WordPress.XSS.EscapeOutput ?></time></a>
-			<?php edit_comment_link( null, Luxe\get_meta_sep() ) ?>
+			<?php Hybrid\Comment\render_author( [ 'after' => Luxe\sep() ] ) ?>
+			<?php Hybrid\Comment\render_permalink( [
+				'text' => sprintf(
+					// Translators: 1 is the comment date and 2 is the time.
+					esc_html__( '%1$s at %2$s', 'luxe' ),
+					Hybrid\Comment\fetch_date( [ 'format' => 'jS F Y' ] ),
+					Hybrid\Comment\fetch_time()
+				)
+			] ) ?>
+			<?php Hybrid\Comment\render_edit_link( [ 'before' => Luxe\sep() ] ) ?>
 		</header>
 
 		<div class="comment__content">
+
+			<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
+				<p class="comment__moderation">
+					<?php esc_html_e( 'Your comment is awaiting moderation.', 'luxe' ) ?>
+				</p>
+			<?php endif ?>
+
 			<?php comment_text() ?>
 		</div>
 
 		<div class="comment__actions">
-			<?php Hybrid\comment_reply_link() ?>
-</div>
+			<?php Hybrid\Comment\render_reply_link( [ 'before' => Luxe\fetch_svg( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
+		</div>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

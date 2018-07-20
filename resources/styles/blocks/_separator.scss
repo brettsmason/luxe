@@ -1,0 +1,15 @@
+.wp-block-separator {
+	max-width: rem(100px);
+
+	// Wide style
+	&.is-style-wide {
+		border-bottom-width: 5px;
+		max-width: none;
+	}
+
+	// Dots style
+	&.is-style-dots {
+		border-style: dotted;
+		max-width: none;
+	}
+}

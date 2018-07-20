@@ -8,27 +8,36 @@
 }
 
 .grid--2 {
-	@include mq(medium) {
-		@include grid-layout(2, $selector: "> .entry");
+
+	.entry {
+		@include mq(medium) {
+			@include nth-grid(2);
+		}
 	}
 }
 
 .grid--3 {
-	@include mq(medium) {
-		@include grid-layout(3, $selector: "> .entry");
+
+	.entry {
+		@include mq(medium) {
+			@include nth-grid(3);
+		}
 	}
 }
 
 .grid--4 {
-	@include mq(medium) {
-		@include grid-layout(4, $selector: "> .entry");
+
+	.entry {
+		@include mq(medium) {
+			@include nth-grid(4);
+		}
 	}
 }
 
 .grid--auto {
 	@include mq(medium) {
 
-		& > * {
+		> * {
 			flex: 1 1 0;
 			margin-right: vr(1);
 
@@ -44,8 +53,12 @@
 	@include mq(medium) {
 
 		.app-content {
-			@include grid;
-			@include grid-layout(2 1);
+			display: flex;
+			flex-wrap: wrap;
+
+			> * {
+				@include nth-grid(2 1);
+			}
 		}
 	}
 }

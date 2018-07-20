@@ -4,39 +4,42 @@
 
 .alignleft {
 	float: left;
-	margin-bottom: 1rem;
-	margin-right: 1rem;
+	margin-bottom: vr(1);
+	margin-right: vr(1);
+	max-width: 50%;
 
-	@media (min-width: 800px) {
-		max-width: 50%;
+	@include mq($global-width) {
+		margin-left: calc((100% - #{$global-width}) / 2);
 	}
 }
 
 .alignright {
 	float: right;
-	margin-bottom: 1rem;
-	margin-left: 1rem;
+	margin-bottom: vr(1);
+	margin-left: vr(1);
+	max-width: 50%;
 
-	@media (min-width: 800px) {
-		max-width: 50%;
+	@include mq($global-width) {
+		margin-right: calc((100% - #{$global-width}) / 2);
 	}
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
+	margin-bottom: vr(1);
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .alignwide {
-	@media (min-width: 800px) {
-		max-width: 58rem;
-	}
+	max-width: rem($global-width-wide);
 }
 
 .alignfull {
-	max-width: 100%;
+	margin-left: -#{vr(1)};
+	margin-right: -#{vr(1)};
+	max-width: calc(100% + #{vr(2)});
 }
 
 .u-float-left {

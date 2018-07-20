@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #HEADER
+   ========================================================================== */
+
+.app-header {
+	position: relative;
+
+	&__wrapper {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__title {
+		color: $color-black;
+		margin-bottom: 0;
+
+		a {
+			color: inherit;
+		}
+	}
+}

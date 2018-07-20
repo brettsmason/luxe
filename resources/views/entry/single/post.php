@@ -1,33 +1,33 @@
-<article <?php Hybrid\attr( 'entry' ) ?>>
-	<header class="entry__header">
-		<h1 class="entry__title"><?php single_post_title() ?></h1>
+<article <?php Hybrid\Attr\render( 'entry' ) ?>>
+	<header class="entry__header wrapper">
+		<?php Hybrid\Post\render_title() ?>
 
 		<div class="entry__byline">
-			<?php Hybrid\post_date() ?>
-			<?php Hybrid\post_author( [ 'before' => Luxe\get_meta_sep() ] ) ?>
-			<?php Hybrid\post_comments( [ 'before' => Luxe\get_meta_sep() ] ) ?>
+			<?php Hybrid\Post\render_date() ?>
+			<?php Hybrid\Post\render_author( [ 'before' => Luxe\sep() ] ) ?>
+			<?php Hybrid\Post\render_comments_link( [ 'before' => Luxe\sep() ] ) ?>
 		</div>
 	</header>
 
 	<div class="entry__content">
 		<?php the_content() ?>
-		<?php Hybrid\render_view( 'partials', 'pagination-singular' ) ?>
+		<?php Hybrid\View\render( 'partials', 'pagination-singular' ) ?>
 	</div>
 
-	<footer class="entry__footer">
+	<footer class="entry__footer wrapper">
 		<?php
-			Hybrid\post_terms( [
+			Hybrid\Post\render_terms( [
 				'taxonomy' => 'category',
-				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
-				'after'    => '</span>',
+				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
+				'after'    => '</div>',
 			] )
 		?>
 
 		<?php
-			Hybrid\post_terms( [
+			Hybrid\Post\render_terms( [
 				'taxonomy' => 'post_tag',
-				'before'   => '<span class="entry__terms-wrapper">' . Luxe\get_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
-				'after'    => '</span>',
+				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
+				'after'    => '</div>',
 			] )
 		?>
 	</footer>

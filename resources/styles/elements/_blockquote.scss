@@ -8,7 +8,11 @@ blockquote {
 	margin-bottom: vr(1);
 	padding-left: vr(1);
 
-	p:last-child {
-		margin-bottom: 0;
+	p {
+		@include font-size(24px);
+	}
+
+	p:last-of-type {
+		margin-bottom: vr(1/4);
 	}
 }

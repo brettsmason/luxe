@@ -1,0 +1,16 @@
+@for $i from 1 through 4 {
+
+	.u-px-#{$i} {
+		padding-left: vr($i);
+		padding-right: vr($i);
+	}
+
+	.u-py-#{$i} {
+		padding-bottom: vr($i);
+		padding-top: vr($i);
+	}
+
+	.u-p-#{$i} {
+		padding: vr($i);
+	}
+}

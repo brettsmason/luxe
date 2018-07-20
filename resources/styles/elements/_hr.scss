@@ -3,9 +3,10 @@
    ========================================================================== */
 
 hr {
-	background-color: $color-light-grey;
 	border: 0;
-	height: 2px;
-	margin-bottom: vr(1);
-	margin-top: vr(1);
+	border-bottom: 2px solid $color-light-grey;
+	clear: both;
+	height: 0;
+	margin-bottom: vr(2);
+	margin-top: vr(2);
 }

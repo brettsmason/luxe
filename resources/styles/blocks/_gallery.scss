@@ -1,0 +1,75 @@
+.wp-block-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+
+	.blocks-gallery-item {
+		@include nth-grid(2, $selector: type);
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: center;
+		margin-bottom: vr(1);
+		margin-left: 0;
+		position: relative;
+
+		figure {
+			align-items: flex-end;
+			display: flex;
+			height: 100%;
+			margin: 0;
+		}
+
+		figcaption {
+			background-color: rgba($color-black, 0.7);
+			color: $color-white;
+			max-height: 100%;
+			overflow: auto;
+			padding: vr(1);
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	&.columns-1 .blocks-gallery-item {
+		width: 100%;
+	}
+
+	@include mq(medium) {
+		@for $i from 3 through 8 {
+
+			&.columns-#{$i} .blocks-gallery-item {
+				@include nth-grid($i, $selector: type);
+
+				// Remove the margin from the last child so we have nice
+				// full width images without a gap on the right.
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// Cropped
+	&.is-cropped .blocks-gallery-item {
+
+		a,
+		img {
+			flex: 1;
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+
+		}
+	}
+
+	// Apply max-width to floated items that have no intrinsic width
+	[data-align="left"] &,
+	[data-align="right"] &,
+	&.alignleft,
+	&.alignright {
+		max-width: $global-width / 2;
+		width: 100%;
+	}
+}

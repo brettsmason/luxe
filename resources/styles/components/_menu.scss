@@ -46,6 +46,7 @@
 		flex-direction: column;
 		list-style: none;
 		margin: 0;
+		opacity: 0;
 		padding: 0;
 		transition: all $global-transition-duration $global-transition-type;
 		visibility: hidden;
@@ -168,6 +169,7 @@
 	}
 
 	[aria-expanded="true"] + .menu__sub-menu {
+		opacity: 1;
 		visibility: visible;
 	}
 
@@ -242,6 +244,7 @@
 	.menu__sub-menu:hover,
 	.menu__sub-menu:focus,
 	.is-toggled + .menu__sub-menu {
+		opacity: 1;
 		visibility: visible;
 	}
 }

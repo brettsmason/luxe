@@ -11,7 +11,7 @@
 	&__item {
 		display: block;
 
-		&--has-children {
+		&.has-children {
 			display: flex;
 			flex-wrap: wrap;
 			position: relative;

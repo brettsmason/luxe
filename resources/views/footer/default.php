@@ -11,7 +11,7 @@
 			);
 			?>
 
-			<?= Luxe\get_meta_sep() ?>
+			<?= Luxe\sep() ?>
 
 			<?php
 				// translators: %1$s is theme name, and %2$s is link to theme site.

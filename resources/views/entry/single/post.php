@@ -4,8 +4,8 @@
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\render_date() ?>
-			<?php Hybrid\Post\render_author( [ 'before' => Luxe\get_meta_sep() ] ) ?>
-			<?php Hybrid\Post\render_comments_link( [ 'before' => Luxe\get_meta_sep() ] ) ?>
+			<?php Hybrid\Post\render_author( [ 'before' => Luxe\sep() ] ) ?>
+			<?php Hybrid\Post\render_comments_link( [ 'before' => Luxe\sep() ] ) ?>
 		</div>
 	</header>
 
@@ -18,7 +18,7 @@
 		<?php
 			Hybrid\Post\render_terms( [
 				'taxonomy' => 'category',
-				'before'   => '<div class="entry__terms-wrapper">' . Luxe\get_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
+				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
 				'after'    => '</div>',
 			] )
 		?>
@@ -26,7 +26,7 @@
 		<?php
 			Hybrid\Post\render_terms( [
 				'taxonomy' => 'post_tag',
-				'before'   => '<div class="entry__terms-wrapper">' . Luxe\get_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
+				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
 				'after'    => '</div>',
 			] )
 		?>

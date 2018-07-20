@@ -15,17 +15,17 @@
 namespace Luxe;
 
 /**
- * Returns the metadata separator.
+ * Returns the separator.
  *
  * @since  1.0.0
  * @access public
  * @param  string $sep The seperator.
  * @return string
  */
-function get_meta_sep( $sep = '' ) {
+function sep( $sep = '' ) {
 
 	return apply_filters(
-		'luxe/meta_sep',
+		'luxe/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
 			$sep ? $sep : esc_html_x( '&middot;', 'meta separator', 'luxe' )

@@ -16,7 +16,7 @@ namespace Luxe;
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return void
  */
-function svg( $file, $args = [] ) {
+function render_svg( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
 	$svg->render();
 }
@@ -30,7 +30,7 @@ function svg( $file, $args = [] ) {
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return string
  */
-function get_svg( $file, $args = [] ) {
+function fetch_svg( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
 	return $svg->fetch();
 }
@@ -52,7 +52,7 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
-				$item_output = str_replace( $args->link_after, '</span>' . get_svg( esc_attr( $value ) ), $item_output );
+				$item_output = str_replace( $args->link_after, '</span>' . fetch_svg( esc_attr( $value ) ), $item_output );
 			}
 		}
 	}

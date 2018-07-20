@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\render( 'entry' ) ?>>
 	<header class="entry__header wrapper">
-		<h1 class="entry__title"><?php single_post_title() ?></h1>
+		<?php Hybrid\Post\render_title() ?>
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\render_date() ?>

@@ -18,6 +18,11 @@ use function Hybrid\app;
  */
 add_action( 'wp_enqueue_scripts', function() {
 
+	// Load WordPress' comment-reply script where appropriate.
+	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Main scripts.
 	wp_enqueue_script(
 		'luxe-app',

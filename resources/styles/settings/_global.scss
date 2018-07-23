@@ -20,7 +20,7 @@ $global-font-size: 16px !default;
 $global-line-height: $global-baseline * 4 !default;
 
 // Other global settings.
-$global-radius: 3px !default;
+$global-radius: null !default;
 $global-transition-duration: 300ms !default;
 $global-transition-type: ease-in-out !default;
 

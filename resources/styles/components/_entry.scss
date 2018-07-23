@@ -21,10 +21,6 @@
 .entry__content,
 .entry__summary {
 
-	a:not([class]) {
-		text-decoration: underline;
-	}
-
 	> ol:not([class]),
 	> ul:not([class]) {
 		padding-left: vr(1.5);

@@ -1,13 +1,13 @@
 @mixin button() {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	border: 1px solid transparent;
 	border-radius: $global-radius;
 	cursor: pointer;
 	display: inline-block;
 	font: inherit;
-	font-weight: 700;
-	height: vr(1.75);
-	padding: vr(1/4) vr(3/4);
+	line-height: 1;
+	padding: vr(1/2) vr(3/4);
 	text-align: center;
 	text-decoration: none;
 	transition: all $global-transition-duration $global-transition-type;

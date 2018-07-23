@@ -4,7 +4,7 @@
 
 		<div class="app-header__branding">
 			<?php the_custom_logo() ?>
-			<?php Hybrid\Site\render_title( [ 'class' => 'app__header-title u-h4' ] ) ?>
+			<?php Hybrid\Site\render_title( [ 'class' => 'app-header__title u-h4' ] ) ?>
 			<?php Hybrid\Site\render_description() ?>
 		</div>
 

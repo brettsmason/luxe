@@ -2,6 +2,10 @@
    #ENTRY
    ========================================================================== */
 
+.entry__permalink {
+	text-decoration: none;
+}
+
 .entry__content > * {
 	@include wrapper($global-width);
 }
@@ -16,6 +20,10 @@
 
 .entry__content,
 .entry__summary {
+
+	a:not([class]) {
+		text-decoration: underline;
+	}
 
 	> ol:not([class]),
 	> ul:not([class]) {

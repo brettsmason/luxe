@@ -11,7 +11,7 @@
 
 	.entry {
 		@include mq(medium) {
-			@include nth-grid(2);
+			@include nth-grid(2, $gutter: vr(1));
 		}
 	}
 }
@@ -20,7 +20,7 @@
 
 	.entry {
 		@include mq(medium) {
-			@include nth-grid(3);
+			@include nth-grid(3, $gutter: vr(1));
 		}
 	}
 }
@@ -29,7 +29,7 @@
 
 	.entry {
 		@include mq(medium) {
-			@include nth-grid(4);
+			@include nth-grid(4, $gutter: vr(1));
 		}
 	}
 }
@@ -57,7 +57,7 @@
 			flex-wrap: wrap;
 
 			> * {
-				@include nth-grid(2 1);
+				@include nth-grid(2 1, $gutter: vr(1));
 			}
 		}
 	}

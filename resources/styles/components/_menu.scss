@@ -256,3 +256,21 @@
 		display: inline-flex;
 	}
 }
+
+// Widget menu
+.menu--widget {
+
+	.menu__item + .menu__item {
+		margin-top: vr(1/4);
+	}
+
+	.menu__anchor {
+		padding: 0;
+		width: 100%;
+	}
+
+	.menu__sub-menu {
+		opacity: 1;
+		visibility: visible;
+	}
+}

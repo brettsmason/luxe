@@ -13,10 +13,11 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe;
+namespace Luxe\Customize;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
+use function Luxe\asset;
 
 /**
  * Handles setting up everything we need for the customizer.

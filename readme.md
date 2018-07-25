@@ -95,7 +95,7 @@ The `/app` folder is where your _under-the-hood_ PHP lives.  Use this folder for
 
 * `class-{$classname}.php` - File holds a single class.
 * `functions-{$group}.php` - File holds a related group of functions.
-* `template-{$group}.php` - File holds a related group of template tags.
+* /{$folder}` - Code under a sub-namespace, generally classes.
 
 Also, see the `functions.php` file for how all of these get loaded too.
 

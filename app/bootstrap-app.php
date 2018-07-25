@@ -25,7 +25,7 @@ $luxe = new \Hybrid\Core\Application();
  *
  * Register customize class instance and boot it.
  */
-$luxe->instance( 'luxe/customize', new \Luxe\Customize() )->boot();
+$luxe->instance( 'luxe/customize', new \Luxe\Customize\Customize() )->boot();
 
 /**
  * Perform bootstrap actions.

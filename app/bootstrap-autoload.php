@@ -52,5 +52,5 @@ array_map( function( $file ) {
 	'functions-filters',
 	'functions-setup',
 	'functions-svgs',
-	'template-general',
+	'functions-template',
 ] );

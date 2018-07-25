@@ -48,6 +48,10 @@
 		<config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
 		<!-- Allow short open tags. -->
 		<exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" />
+		<!-- Allow no semicolon at the end of an inline PHP statement. -->
+		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
+		<!-- Allow namespaced hook names. -->
+		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
 	</rule>
 
 	<!--

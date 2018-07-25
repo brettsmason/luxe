@@ -6,14 +6,18 @@
 	<div class="comment__body">
 		<header class="comment__meta">
 			<?php Hybrid\Comment\render_author( [ 'after' => Luxe\sep() ] ) ?>
-			<?php Hybrid\Comment\render_permalink( [
-				'text' => sprintf(
-					// Translators: 1 is the comment date and 2 is the time.
-					esc_html__( '%1$s at %2$s', 'luxe' ),
-					Hybrid\Comment\fetch_date( [ 'format' => 'jS F Y' ] ),
-					Hybrid\Comment\fetch_time()
-				)
-			] ) ?>
+			<?php
+			Hybrid\Comment\render_permalink(
+				[
+					'text' => sprintf(
+						// Translators: 1 is the comment date and 2 is the time.
+						esc_html__( '%1$s at %2$s', 'luxe' ),
+						Hybrid\Comment\fetch_date( [ 'format' => 'jS F Y' ] ),
+						Hybrid\Comment\fetch_time()
+					),
+				]
+			)
+			?>
 			<?php Hybrid\Comment\render_edit_link( [ 'before' => Luxe\sep() ] ) ?>
 		</header>
 

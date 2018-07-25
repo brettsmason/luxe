@@ -45,7 +45,7 @@ class Customize implements Bootable {
 		add_action( 'customize_register', [ $this, 'registerPartials' ] );
 
 		// Enqueue scripts and styles.
-		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue'] );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'controlsEnqueue' ] );
 		add_action( 'customize_preview_init', [ $this, 'previewEnqueue' ] );
 	}
 
@@ -55,7 +55,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#panels
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
 	public function registerPanels( WP_Customize_Manager $manager ) {}
@@ -66,7 +66,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#sections
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
 	public function registerSections( WP_Customize_Manager $manager ) {}
@@ -77,7 +77,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#settings
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
 	public function registerSettings( WP_Customize_Manager $manager ) {
@@ -87,7 +87,7 @@ class Customize implements Bootable {
 			$manager->get_setting( 'blogname' ),
 			$manager->get_setting( 'blogdescription' ),
 			$manager->get_setting( 'header_textcolor' ),
-			$manager->get_setting( 'header_image' )
+			$manager->get_setting( 'header_image' ),
 		];
 
 		array_walk( $settings, function( &$setting ) {
@@ -101,7 +101,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/customizer-objects/#controls
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
 	public function registerControls( WP_Customize_Manager $manager ) {}
@@ -112,7 +112,7 @@ class Customize implements Bootable {
 	 * @link   https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#selective-refresh-fast-accurate-updates
 	 * @since  1.0.0
 	 * @access public
-	 * @param  WP_Customize_Manager  $manager
+	 * @param  WP_Customize_Manager $manager
 	 * @return void
 	 */
 	public function registerPartials( WP_Customize_Manager $manager ) {
@@ -124,21 +124,25 @@ class Customize implements Bootable {
 
 		// Selectively refreshes the title in the header when the core
 		// WP `blogname` setting changes.
-		$manager->selective_refresh->add_partial( 'blogname', [
-			'selector'	=> '.app-header__title a',
-			'render_callback' => function() {
-				return get_bloginfo( 'name', 'display' );
-			}
-		] );
+		$manager->selective_refresh->add_partial(
+			'blogname', [
+				'selector'        => '.app-header__title a',
+				'render_callback' => function() {
+					return get_bloginfo( 'name', 'display' );
+				},
+			]
+		);
 
 		// Selectively refreshes the description in the header when the
 		// core WP `blogdescription` setting changes.
-		$manager->selective_refresh->add_partial( 'blogdescription', [
-			'selector'	=> '.app-header__description',
-			'render_callback' => function() {
-				return get_bloginfo( 'description', 'display' );
-			}
-		] );
+		$manager->selective_refresh->add_partial(
+			'blogdescription', [
+				'selector'        => '.app-header__description',
+				'render_callback' => function() {
+					return get_bloginfo( 'description', 'display' );
+				},
+			]
+		);
 	}
 
 	/**

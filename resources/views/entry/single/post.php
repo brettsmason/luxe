@@ -16,19 +16,23 @@
 
 	<footer class="entry__footer wrapper">
 		<?php
-			Hybrid\Post\render_terms( [
-				'taxonomy' => 'category',
-				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
-				'after'    => '</div>',
-			] )
-		?>
+			Hybrid\Post\render_terms(
+				[
+					'taxonomy' => 'category',
+					'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'folder-open', [ 'title' => 'Categories:' ] ),
+					'after'    => '</div>',
+				]
+			)
+			?>
 
 		<?php
-			Hybrid\Post\render_terms( [
-				'taxonomy' => 'post_tag',
-				'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
-				'after'    => '</div>',
-			] )
-		?>
+			Hybrid\Post\render_terms(
+				[
+					'taxonomy' => 'post_tag',
+					'before'   => '<div class="entry__terms-wrapper">' . Luxe\fetch_svg( 'hashtag', [ 'title' => 'Tags:' ] ),
+					'after'    => '</div>',
+				]
+			)
+			?>
 	</footer>
 </article>

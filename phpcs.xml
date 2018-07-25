@@ -60,7 +60,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="mythic"/>
+			<property name="text_domain" type="array" value="luxe"/>
 		</properties>
 	</rule>
 
@@ -107,7 +107,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="mythic" />
+			<property name="prefixes" type="array" value="luxe" />
 		</properties>
 	</rule>
 

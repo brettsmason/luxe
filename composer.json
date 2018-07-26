@@ -18,8 +18,7 @@
     "justintadlock/hybrid-core": "5.0.x-dev"
   },
   "require-dev": {
-    "wp-coding-standards/wpcs": "^0.14.1",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+    "wp-coding-standards/wpcs": "^1.0.0",
     "wimg/php-compatibility": "^8.2"
   }
 }

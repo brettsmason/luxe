@@ -8,6 +8,8 @@
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
+	<config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/wimg/php-compatibility" />
+
 	<!--
 	#############################################################################
 	Command line arguments
@@ -45,13 +47,8 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
 		<!-- Allow short open tags. -->
 		<exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" />
-		<!-- Allow no semicolon at the end of an inline PHP statement. -->
-		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
-		<!-- Allow namespaced hook names. -->
-		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
 	</rule>
 
 	<!--

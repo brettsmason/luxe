@@ -28,7 +28,7 @@ function sep( $sep = '' ) {
 		'luxe/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ? $sep : esc_html_x( '&middot;', 'meta separator', 'luxe' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'luxe' )
 		)
 	);
 }

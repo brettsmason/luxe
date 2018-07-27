@@ -39,11 +39,11 @@ add_action( 'after_setup_theme', function() {
 	// Outputs HTML5 markup for core features.
 	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5.
 	add_theme_support( 'html5', [
-		'search-form',
+		'caption',
 		'comment-form',
 		'comment-list',
 		'gallery',
-		'caption',
+		'search-form',
 	] );
 
 	// Add title tag support.

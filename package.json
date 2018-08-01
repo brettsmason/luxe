@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/brettsmason/luxe#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.24.6",
     "browser-sync-webpack-plugin": "2.2.2",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",

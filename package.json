@@ -38,7 +38,7 @@
     "laravel-mix": "^2.1.0",
     "node-wp-i18n": "^1.2.0",
     "nth-grid": "github:brettsmason/nth-grid",
-    "postcss-preset-env": "^5.2.1",
+    "postcss-preset-env": "^5.3.0",
     "sass-mq": "^5.0.0",
     "stylelint": "^9.3.0",
     "stylelint-config-wordpress": "^13.0.0",

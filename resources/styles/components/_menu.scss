@@ -19,7 +19,7 @@
 	}
 
 	&__anchor {
-		color: $color-black;
+		color: $color-menu-anchor;
 		display: block;
 		line-height: 1.2;
 		padding: 15px;
@@ -27,7 +27,7 @@
 
 		&:hover,
 		&:focus {
-			color: $color-primary;
+			color: $color-menu-anchor-hover;
 		}
 
 		&:focus {
@@ -35,13 +35,13 @@
 		}
 
 		.menu__item--current & {
-			color: $color-primary;
+			color: $color-menu-anchor-hover;
 		}
 	}
 
 	// The sub-menus
 	&__sub-menu {
-		background-color: $color-white;
+		background-color: $color-menu-sub-menu-background;
 		display: flex;
 		flex-direction: column;
 		list-style: none;
@@ -109,9 +109,9 @@
 	}
 
 	&__submenu-toggle {
-		background-color: $color-light-grey;
+		background-color: $color-menu-sub-menu-toggle-background;
 		border: none;
-		color: $color-dark-grey;
+		color: $color-menu-sub-menu-toggle;
 		height: 55px;
 		width: 55px;
 
@@ -123,7 +123,7 @@
 
 
 	&__dropdown-icon {
-		fill: $color-mid-grey;
+		fill: $color-menu-dropdown-icon;
 		height: 0.5rem;
 		margin-left: 0.3rem;
 		width: 0.5rem;
@@ -138,7 +138,7 @@
 	}
 
 	.menu__items {
-		background-color: $color-white;
+		background-color: $color-menu-items-background;
 		height: 0;
 		left: 0;
 		opacity: 0;
@@ -151,7 +151,7 @@
 	}
 
 	.menu__item {
-		border-top: 1px solid $color-border;
+		border-top: 1px solid $color-menu-item-border;
 	}
 
 	[aria-expanded="true"] + .menu__items {
@@ -206,7 +206,7 @@
 	}
 
 	.menu__sub-menu {
-		border-top: 1px solid $color-border;
+		border-top: 1px solid $color-menu-item-border;
 		left: 0;
 		margin: 0;
 		min-width: 180px;
@@ -220,7 +220,7 @@
 		}
 
 		.menu__item {
-			border: 1px solid $color-border;
+			border: 1px solid $color-menu-item-border;
 			border-top: 0;
 		}
 	}

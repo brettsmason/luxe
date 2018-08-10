@@ -31,6 +31,10 @@ $color-aluminium-grey: #f8f8f8;
 $color-background: $color-white;
 $color-text: $color-dark-grey;
 
+// Content Selection.
+$color-selection: $color-white;
+$color-selection-background: $color-primary;
+
 // Borders.
 $color-border: $color-light-grey;
 
@@ -38,18 +42,20 @@ $color-border: $color-light-grey;
 $color-heading: $color-black;
 
 // Links.
-$color-link: $color-secondary;
+$color-link: $color-primary;
 $color-link-hover: $color-link + 30;
 
 // Buttons.
 $color-button: $color-white;
 $color-button-background: $color-primary;
 
-// Forms.
+// Forms
+$color-form-fieldset-border: $color-border;
 $color-form-input-background: $color-white;
 $color-form-input: $color-text;
 $color-form-input-border: $color-border;
 $color-form-input-border-focus: $color-primary;
+$color-form-input-required: $color-alert;
 $color-form-label: $color-text;
 
 // Blockquotes.
@@ -76,3 +82,23 @@ $colors-social: (
 	vimeo: #1ab7ea,
 	youtube: #cd201f
 );
+
+// Site Header.
+$color-header-title: $color-text;
+
+// Menu.
+$color-menu-items-background: $color-white;
+$color-menu-item-border: $color-border;
+$color-menu-anchor: $color-text;
+$color-menu-anchor-hover: $color-primary;
+$color-menu-dropdown-icon: $color-dark-grey;
+$color-menu-sub-menu-background: $color-white;
+$color-menu-sub-menu-toggle: $color-dark-grey;
+$color-menu-sub-menu-toggle-background: $color-light-grey;
+
+// Pagination.
+$color-pagination-anchor-border: $color-border;
+
+// Tables.
+$color-table-border: $color-border;
+$color-table-striped-background: $color-light-grey;

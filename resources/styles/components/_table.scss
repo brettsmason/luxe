@@ -22,7 +22,7 @@
 
 	th,
 	td {
-		border: 1px solid $color-border;
+		border: 1px solid $color-table-border;
 		padding: vr(1/2);
 	}
 }
@@ -31,7 +31,7 @@
 
 	th,
 	td {
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid $color-table-border;
 		padding: vr(1/2);
 	}
 }
@@ -45,6 +45,6 @@
 	}
 
 	tbody tr:nth-child(odd) {
-		background: $color-light-grey;
+		background: $color-table-striped-background;
 	}
 }

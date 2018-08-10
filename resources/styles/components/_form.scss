@@ -7,7 +7,7 @@
 	}
 
 	&__required {
-		color: $color-alert;
+		color: $color-form-input-required;
 	}
 
 	&__checkbox label,
@@ -34,12 +34,12 @@
 // Add required styling for occurances when we
 // cant add the above classes.
 .required {
-	color: $color-alert;
+	color: $color-form-input-required;
 }
 
 // A padded, bordered fieldset.
 .form-fieldset {
-	border: 1px solid $color-border;
+	border: 1px solid $color-form-fieldset-border;
 	padding: vr(1);
 
 	legend {

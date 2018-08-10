@@ -1,6 +1,6 @@
 <?php
 /**
- * General template tags.
+ * Template tags and functions.
  *
  * This file holds general template tags for the theme. Template tags are PHP
  * functions meant for use within theme templates.
@@ -28,7 +28,7 @@ function sep( $sep = '' ) {
 		'luxe/sep',
 		sprintf(
 			' <span class="sep">%s</span> ',
-			$sep ? $sep : esc_html_x( '&middot;', 'meta separator', 'luxe' )
+			$sep ?: esc_html_x( '&middot;', 'meta separator', 'luxe' )
 		)
 	);
 }
@@ -36,6 +36,8 @@ function sep( $sep = '' ) {
 /**
  * Determine whether to show the sidebar
  *
+ * @since  1.0.0
+ * @access public
  * @return bool
  */
 function display_sidebar() {

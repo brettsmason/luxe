@@ -4,10 +4,10 @@
 
 		<div class="app-header__branding">
 			<?php the_custom_logo() ?>
-			<?php Hybrid\Site\render_title( [ 'class' => 'app__header-title u-h4' ] ) ?>
-			<?php Hybrid\Site\render_description() ?>
+			<?php Hybrid\Site\display_title( [ 'class' => 'app-header__title u-h4' ] ) ?>
+			<?php Hybrid\Site\display_description() ?>
 		</div>
 
-		<?php Hybrid\View\render( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
+		<?php Hybrid\View\display( 'menu', 'primary', [ 'name' => 'primary' ] ) ?>
 	</div>
 </header>

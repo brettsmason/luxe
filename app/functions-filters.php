@@ -40,14 +40,17 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
  */
 function get_custom_logo( $html ) {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$html           = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
+	$html           = sprintf(
+		'<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
 		esc_url( home_url( '/' ) ),
 		'app-header__logo-anchor',
-		wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-			'class'    => 'app-header__logo',
-			'itemprop' => 'logo',
-			'alt'      => esc_attr( get_bloginfo( 'name' ) ),
-		) )
+		wp_get_attachment_image(
+			$custom_logo_id, 'full', false, array(
+				'class'    => 'app-header__logo',
+				'itemprop' => 'logo',
+				'alt'      => esc_attr( get_bloginfo( 'name' ) ),
+			)
+		)
 	);
 	return $html;
 }
@@ -82,3 +85,29 @@ function display_primary_sidebar() {
 	}
 }
 add_filter( 'luxe/display_sidebar', __NAMESPACE__ . '\display_primary_sidebar' );
+
+/**
+ * Display SVG icons in social links menu.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  array   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+	// Get supported social icons.
+	$social_icons = social_links_icons();
+
+	// Change SVG icon inside social links menu if there is supported URL.
+	if ( 'social' === $args->theme_location ) {
+		foreach ( $social_icons as $attr => $value ) {
+			if ( false !== strpos( $item_output, $attr ) ) {
+				$item_output = str_replace( $args->link_after, '</span>' . fetch_svg( esc_attr( $value ) ), $item_output );
+			}
+		}
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );

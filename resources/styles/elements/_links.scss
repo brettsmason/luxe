@@ -6,6 +6,10 @@ a {
 	color: $color-primary;
 	transition: all $global-transition-duration $global-transition-type;
 
+	&:not([class]) {
+		text-decoration: none;
+	}
+
 	&:hover,
 	&:focus,
 	&:active {

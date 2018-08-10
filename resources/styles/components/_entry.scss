@@ -2,6 +2,10 @@
    #ENTRY
    ========================================================================== */
 
+.entry__permalink {
+	text-decoration: none;
+}
+
 .entry__content > * {
 	@include wrapper($global-width);
 }

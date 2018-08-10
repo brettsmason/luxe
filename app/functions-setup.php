@@ -20,46 +20,45 @@
 namespace Luxe;
 
 /**
- * Set up theme support. This is where calls to `add_theme_support()` happen.
+ * Set up theme support.  This is where calls to `add_theme_support()` happen.
  *
+ * @link   https://developer.wordpress.org/reference/functions/add_theme_support/
+ * @link   https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link   https://developer.wordpress.org/reference/functions/load_theme_textdomain/
  * @since  1.0.0
  * @access public
  * @return void
  */
 add_action( 'after_setup_theme', function() {
 
+	// Set content width.
+	$GLOBALS['content_width'] = 1024;
+
 	// Load theme translations.
-	// @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
 	load_theme_textdomain( 'luxe', get_parent_theme_file_path( 'resources/lang' ) );
 
 	// Automatically add feed links to `<head>`.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#feed-links
 	add_theme_support( 'automatic-feed-links' );
 
 	// Outputs HTML5 markup for core features.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
 	add_theme_support( 'html5', [
-		'search-form',
+		'caption',
 		'comment-form',
 		'comment-list',
 		'gallery',
-		'caption',
+		'search-form',
 	] );
 
 	// Add title tag support.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
 	add_theme_support( 'title-tag' );
 
 	// Adds featured image support.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
 	add_theme_support( 'post-thumbnails' );
 
 	// Add selective refresh for widgets.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Add support for editor color palette.
-	// @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#block-color-palettes
 	add_theme_support( 'editor-color-palette', [
 		[
 			'name'  => __( 'Primary', 'luxe' ),
@@ -80,19 +79,16 @@ add_action( 'after_setup_theme', function() {
 			'name'  => __( 'Black', 'luxe' ),
 			'slug'  => 'black',
 			'color' => '#000',
-		]
+		],
 	] );
 
 	// Disable custom colors in block color palettes.
-	// @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#disabling-custom-colors-in-block-color-palettes
-	 add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-colors' );
 
 	// Add support for align wide blocks.
-	// @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#wide-alignment
 	add_theme_support( 'align-wide' );
 
 	// Add support for custom logo.
-	// @link https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
 	add_theme_support( 'custom-logo', array(
 		'width'       => 300,
 		'height'      => 200,

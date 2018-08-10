@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
-	<?php Hybrid\View\render( 'partials', 'head' ) ?>
+	<?php Hybrid\View\display( 'partials', 'head' ) ?>
 
-	<body <?php Hybrid\Attr\render( 'body' ) ?>>
+	<body <?php Hybrid\Attr\display( 'body' ) ?>>
 		<div class="app">
-			<?php Hybrid\View\render( 'header', Hybrid\Template\hierarchy() ) ?>
+			<?php Hybrid\View\display( 'header', Hybrid\Template\hierarchy() ) ?>
 
 			<div class="app-content u-px-1">
-				<?php Hybrid\View\render( 'content', Hybrid\Template\hierarchy() ) ?>
+				<?php Hybrid\View\display( 'content', Hybrid\Template\hierarchy() ) ?>
 
 				<?php if ( Luxe\display_sidebar() ) : ?>
-					<?php Hybrid\View\render( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
+					<?php Hybrid\View\display( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
 				<?php endif; ?>
 			</div>
 
-			<?php Hybrid\View\render( 'sidebar', 'subsidiary', [ 'name' => 'subsidiary' ] ) ?>
+			<?php Hybrid\View\display( 'sidebar', 'subsidiary', [ 'name' => 'subsidiary' ] ) ?>
 
-			<?php Hybrid\View\render( 'footer', Hybrid\Template\hierarchy() ) ?>
+			<?php Hybrid\View\display( 'footer', Hybrid\Template\hierarchy() ) ?>
 		</div>
 
 		<?php wp_footer() ?>

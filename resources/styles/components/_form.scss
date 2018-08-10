@@ -36,3 +36,15 @@
 .required {
 	color: $color-alert;
 }
+
+// A padded, bordered fieldset.
+.form-fieldset {
+	border: 1px solid $color-border;
+	padding: vr(1);
+
+	legend {
+		margin-bottom: 0;
+		margin-left: -#{vr(1/2)};
+		padding: 0 vr(1/2);
+	}
+}

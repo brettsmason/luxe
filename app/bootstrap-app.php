@@ -25,7 +25,16 @@ $luxe = new \Hybrid\Core\Application();
  *
  * Register customize class instance and boot it.
  */
-$luxe->instance( 'luxe/customize', new \Luxe\Customize() )->boot();
+$luxe->instance( 'luxe/customize', new \Luxe\Customize\Customize() )->boot();
+
+/**
+ *  Register the Laravel Mix manifest for cache-busting.
+ */
+$luxe->singleton( 'luxe/mix', function() {
+	$file = get_theme_file_path( 'public/mix-manifest.json' );
+
+	return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
+} );
 
 /**
  * Perform bootstrap actions.

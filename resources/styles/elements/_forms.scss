@@ -1,18 +1,15 @@
 // 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
 // on fieldsets.
 fieldset {
-	border: 1px solid $color-border;
+	border: 0;
 	font-family: inherit;
 	margin-bottom: vr(1);
 	min-width: 0; /* [1] */
-	padding: vr(1);
 }
 
 legend {
 	font-weight: 700;
-	margin-left: -#{vr(1/2)};
-	padding: 0 vr(1/2);
-	text-transform: uppercase;
+	margin-bottom: vr(1/2);
 }
 
 [type="text"],
@@ -111,5 +108,5 @@ label {
 [type="reset"],
 [type="submit"] {
 	@include button;
-	@include button-style($color-silver-grey, $color-dark-grey);
+	@include button-style($color-primary, $color-white);
 }

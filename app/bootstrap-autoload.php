@@ -30,13 +30,17 @@ if ( file_exists( get_parent_theme_file_path( 'vendor/autoload.php' ) ) ) {
  * `class-hello-world.php`). You can also build your own autoloader or utilize
  * the autoloader in Composer.
  */
-spl_autoload_register( function( $class ) {
+spl_autoload_register(
+	function( $class ) {
 
-	\Hybrid\autoload( $class, [
-		'namespace' => __NAMESPACE__,
-		'path'      => get_parent_theme_file_path( 'app' )
-	] );
-} );
+		\Hybrid\autoload(
+			$class, [
+				'namespace' => __NAMESPACE__,
+				'path'      => get_parent_theme_file_path( 'app' ),
+			]
+		);
+	}
+);
 
 /**
  * Autoload functions files.
@@ -44,13 +48,15 @@ spl_autoload_register( function( $class ) {
  * Load any functions-files from the `/app` folder that are needed. Add additional
  * files to the array without the `.php` extension.
  */
-array_map( function( $file ) {
-	require_once get_parent_theme_file_path( "app/{$file}.php" );
-}, [
-	'functions-assets',
-	'functions-embeds',
-	'functions-filters',
-	'functions-setup',
-	'functions-svgs',
-	'template-general',
-] );
+array_map(
+	function( $file ) {
+		require_once get_parent_theme_file_path( "app/{$file}.php" );
+	}, [
+		'functions-assets',
+		'functions-embeds',
+		'functions-filters',
+		'functions-setup',
+		'functions-svgs',
+		'functions-template',
+	]
+);

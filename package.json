@@ -35,7 +35,7 @@
     "eslint": "^5.0.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.13.0",
-    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-mozjpeg": "^7.0.0",
     "imagemin-webpack-plugin": "^2.1.5",
     "laravel-mix": "^2.1.0",
     "node-wp-i18n": "^1.2.0",

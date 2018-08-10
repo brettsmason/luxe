@@ -14,10 +14,10 @@
 namespace Luxe;
 
 use Hybrid\Contracts\Fetchable;
-use Hybrid\Contracts\Renderable;
+use Hybrid\Contracts\Displayable;
 use Hybrid\Attr\Attr;
 
-class Svg implements Fetchable, Renderable {
+class Svg implements Fetchable, Displayable {
 
 	/**
 	 * The name of the SVG object.
@@ -207,7 +207,7 @@ class Svg implements Fetchable, Renderable {
 	 * @access public
 	 * @return void
 	 */
-	public function render() {
+	public function display() {
 
 		echo $this->fetch();
 	}

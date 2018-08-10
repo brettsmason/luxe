@@ -16,9 +16,9 @@ namespace Luxe;
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return void
  */
-function render_svg( $file, $args = [] ) {
+function display_svg( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
-	$svg->render();
+	$svg->display();
 }
 
 /**

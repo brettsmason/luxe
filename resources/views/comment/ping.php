@@ -1,4 +1,4 @@
-<li <?php Hybrid\Attr\render( 'comment' ) ?>>
+<li <?php Hybrid\Attr\display( 'comment' ) ?>>
 
 	<div class="comment__meta">
 		<span class="comment__author"><?php comment_author_link() ?></span>

@@ -6,7 +6,7 @@ endif
 
 <nav id="<?= esc_attr( $data->name ) ?>-menu" class="menu menu--<?= esc_attr( $data->name ) ?>">
 	<button id="menu-toggle" class="menu__toggle" aria-expanded="false" aria-controls="menu__items--<?= esc_attr( $data->name ) ?>">
-		<?php Luxe\render_svg( 'bars', [ 'class' => 'menu__toggle-icon' ] ) ?>
+		<?php Luxe\display_svg( 'bars', [ 'class' => 'menu__toggle-icon' ] ) ?>
 		<span class="menu__label screen-reader-text"><?= esc_html( 'Menu', 'luxe' ) ?></span>
 	</button>
 

@@ -1,5 +1,5 @@
 <?php
-Hybrid\Pagination\render(
+Hybrid\Pagination\display(
 	'singular', [
 		'show_all'        => true,
 		'prev_next'       => false,

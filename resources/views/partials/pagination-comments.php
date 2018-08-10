@@ -1,5 +1,5 @@
 <?php
-Hybrid\Pagination\render(
+Hybrid\Pagination\display(
 	'comments', [
 		'prev_text'       => __( '&larr; Previous', 'luxe' ),
 		'next_text'       => __( 'Next &rarr;', 'luxe' ),

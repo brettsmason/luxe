@@ -1,42 +1,5 @@
 .wp-block-button {
 
-	&__link {
-		@include button;
-		@include button-style($color-primary, $color-white);
-
-		&.has-primary-background-color {
-			@include button-style($color-primary, null);
-		}
-
-		&.has-secondary-background-color {
-			@include button-style($color-secondary, null);
-		}
-
-		&.has-white-background-color {
-			@include button-style($color-white, null);
-		}
-
-		&.has-black-background-color {
-			@include button-style($color-black, null);
-		}
-
-		&.has-primary-color {
-			@include button-style(null, $color-primary);
-		}
-
-		&.has-secondary-color {
-			@include button-style(null, $color-secondary);
-		}
-
-		&.has-white-color {
-			@include button-style(null, $color-white);
-		}
-
-		&.has-black-color {
-			@include button-style(null, $color-black);
-		}
-	}
-
 	&.aligncenter {
 		text-align: center;
 	}
@@ -45,4 +8,35 @@
 	&.alignfull &__link {
 		width: 100%;
 	}
+
+	&__link {
+		@include button;
+
+		&:not(.has-background) {
+			background-color: $color-button-background;
+			color: $color-button;
+
+			&:hover,
+			&:focus {
+				background-color: $color-button-hover-background;
+				color: $color-button-hover;
+			}
+		}
+	}
+}
+
+.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border-color: $color-button-outline-border;
+	color: $color-button-outline;
+
+	&:hover,
+	&:focus {
+		background-color: $color-button-outline-hover-background;
+		color: $color-button-outline-hover;
+	}
+}
+
+.is-style-squared .wp-block-button__link {
+	border-radius: 0;
 }

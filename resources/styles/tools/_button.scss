@@ -19,7 +19,9 @@
 	$background-color: $color-primary,
 	$color: $color-white,
 	$background-color-hover: null,
-	$color-hover: null
+	$color-hover: null,
+	$border: null,
+	$border-hover: null
 ) {
 	@if $background-color {
 		$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);

@@ -48,6 +48,12 @@ $color-link-hover: $color-link + 30;
 // Buttons.
 $color-button: $color-white;
 $color-button-background: $color-primary;
+$color-button-hover: $color-white;
+$color-button-hover-background: $color-primary + 30;
+$color-button-outline: $color-primary;
+$color-button-outline-border: $color-primary;
+$color-button-outline-hover: $color-white;
+$color-button-outline-hover-background: $color-primary;
 
 // Forms
 $color-form-fieldset-border: $color-border;

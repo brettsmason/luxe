@@ -3,7 +3,7 @@
    ========================================================================== */
 
 a {
-	color: $color-primary;
+	color: $color-link;
 	transition: all $global-transition-duration $global-transition-type;
 
 	&:not([class]) {
@@ -13,7 +13,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color-primary + 30;
+		color: $color-link-hover;
 	}
 
 	&:focus {

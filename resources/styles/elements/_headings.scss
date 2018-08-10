@@ -14,10 +14,10 @@ h3,
 h4,
 h5,
 h6 {
-	color: $heading-color;
+	color: $color-heading;
 	font-family: $font-family-heading;
 	margin-bottom: vr(1/2);
-	font-weight: 700;
+	font-weight: $font-weight-heading;
 
 	a {
 		color: inherit;
@@ -25,25 +25,25 @@ h6 {
 }
 
 h1 {
-	@include font-size(42px);
+	@include font-size($h1);
 }
 
 h2 {
-	@include font-size(32px);
+	@include font-size($h2);
 }
 
 h3 {
-	@include font-size(26px);
+	@include font-size($h3);
 }
 
 h4 {
-	@include font-size(24px);
+	@include font-size($h4);
 }
 
 h5 {
-	@include font-size(22px);
+	@include font-size($h5);
 }
 
 h6 {
-	@include font-size(18px);
+	@include font-size($h6);
 }

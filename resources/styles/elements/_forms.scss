@@ -8,7 +8,7 @@ fieldset {
 }
 
 legend {
-	font-weight: 700;
+	font-weight: $font-weight-form-legend;
 	margin-bottom: vr(1/2);
 }
 
@@ -29,10 +29,10 @@ legend {
 [type="color"],
 textarea,
 select {
-	background-color: $color-white;
-	border: 1px solid $color-border;
+	background-color: $color-form-input-background;
+	border: 1px solid $color-form-input-border;
 	border-radius: $global-radius;
-	color: $color-text;
+	color: $color-form-input;
 	display: block;
 	font-family: inherit;
 	height: vr(1.75);
@@ -84,7 +84,7 @@ textarea,
 select {
 
 	&:focus {
-		border-color: $color-primary;
+		border-color: $color-form-input-border-focus;
 		outline: none;
 	}
 
@@ -98,9 +98,9 @@ select {
 }
 
 label {
-	color: $color-black;
+	color: $color-form-label;
 	display: block;
-	font-weight: 700;
+	font-weight: $font-weight-form-label;
 	margin-bottom: vr(1/4);
 }
 

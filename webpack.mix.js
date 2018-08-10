@@ -51,7 +51,15 @@ mix.sass('resources/styles/screen.scss', 'styles', {
    })
    .options({
       postCss: [
-        require('postcss-preset-env')()
+		require('postcss-preset-env')(),
+		require('postcss-pxtorem')({
+			rootValue: 16,
+			unitPrecision: 5,
+			propList: ['*'],
+			replace: true,
+			mediaQuery: false,
+			minPixelValue: 0
+		})
       ],
       processCssUrls: false
    });

@@ -2,47 +2,48 @@
    #ENTRY
    ========================================================================== */
 
-.entry__permalink {
-	text-decoration: none;
-}
+.entry {
+	&__content {
+		margin-bottom: vr(2);
 
-.entry__content > * {
-	@include wrapper($global-width);
-}
-
-.entry__byline {
-	margin-bottom: vr(1);
-}
-
-.entry__content {
-	margin-bottom: vr(2);
-}
-
-.entry__content,
-.entry__summary {
-
-	> ol:not([class]),
-	> ul:not([class]) {
-		padding-left: vr(1.5);
+		& > * {
+			@include wrapper($global-width);
+		}
 	}
-}
 
-.entry__terms-wrapper {
-	display: block;
-
-	& + & {
-		margin-top: vr(1/4);
+	&__content,
+	&__summary {
+		> ol:not([class]),
+		> ul:not([class]) {
+			padding-left: vr(1.5);
+		}
 	}
-}
 
-.entry__terms {
-	margin-left: vr(1/4);
-
-	a {
-		color: inherit;
+	&__byline {
+		margin-bottom: vr(1);
 	}
-}
 
-.entry__footer {
-	margin-bottom: vr(2);
+	&__permalink {
+		text-decoration: none;
+	}
+
+	&__terms-wrapper {
+		display: block;
+
+		& + & {
+			margin-top: vr(1/4);
+		}
+	}
+
+	&__terms {
+		margin-left: vr(1/4);
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__footer {
+		margin-bottom: vr(2);
+	}
 }

@@ -108,5 +108,5 @@ label {
 [type="reset"],
 [type="submit"] {
 	@include button;
-	@include button-style($color-primary, $color-white);
+	@include button-style($color-button-background, $color-button);
 }

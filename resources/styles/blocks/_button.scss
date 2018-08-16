@@ -14,11 +14,18 @@
 
 		&:not(.has-background) {
 			background-color: $color-button-background;
-			color: $color-button;
 
 			&:hover,
 			&:focus {
 				background-color: $color-button-hover-background;
+			}
+		}
+
+		&:not(.has-text-color) {
+			color: $color-button;
+
+			&:hover,
+			&:focus {
 				color: $color-button-hover;
 			}
 		}

@@ -1,8 +1,9 @@
-///* ========================================================================
-//   #GLOBAL
-//   ======================================================================== */
-// The global settings file contains any project-wide variables; things that
-// need to be made available to the entire codebase.
+////
+/// The global settings file contains any project-wide variables; things that
+/// need to be made available to the entire codebase.
+///
+/// @group Settings
+////
 
 // Media queries used throughout.
 $mq-breakpoints: (
@@ -49,3 +50,5 @@ $font-weight-button: 400;
 // Forms.
 $font-weight-form-legend: 700;
 $font-weight-form-label: 700;
+
+$grid-gutter: $global-line-height;

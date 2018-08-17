@@ -1,3 +1,9 @@
+////
+/// Functions for working with units.
+///
+/// @group Tools
+////
+
 /// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
 ///
 /// @param {Number} $num - Number to strip unit from.

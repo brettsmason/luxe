@@ -1,17 +1,8 @@
-/* ==========================================================================
-   #TABLE
-   ========================================================================== */
-
-/* Equal-width table cells.
-   ========================================================================== */
-
-/**
- * `table-layout: fixed` forces all cells within a table to occupy the same
- * width as each other. This also has performance benefits: because the browser
- * does not need to (re)calculate cell dimensions based on content it discovers,
- * the table can be rendered very quickly. Further reading:
- * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
- */
+////
+/// Table component.
+///
+/// @group Components
+////
 
 .table--fixed {
 	table-layout: fixed;

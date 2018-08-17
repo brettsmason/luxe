@@ -1,5 +1,11 @@
+////
+/// Separator block.
+///
+/// @group Blocks
+////
+
 .wp-block-separator {
-	max-width: rem(100px);
+	max-width: 100px;
 
 	// Wide style
 	&.is-style-wide {

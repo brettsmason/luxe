@@ -1,5 +1,8 @@
-/* Base Colors
-   ========================================================================== */
+////
+/// Set up and define colors.
+///
+/// @group Settings
+////
 
 // Brand colors
 $color-primary: #544882;
@@ -24,8 +27,7 @@ $color-silver-grey: #e0e1e1;
 $color-aluminium-grey: #f8f8f8;
 
 
-/* Component specific colors
-   ========================================================================== */
+/// Component specific colors
 
 // Page.
 $color-background: $color-white;

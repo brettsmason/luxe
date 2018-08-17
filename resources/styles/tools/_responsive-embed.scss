@@ -1,3 +1,9 @@
+////
+/// Responsive Embed Mixins.
+///
+/// @group Tools
+////
+
 /// Creates a responsive embed container.
 /// @param {List} $ratio [default] - Ratio of the container.
 @mixin responsive-embed($ratio: 16 by 9) {

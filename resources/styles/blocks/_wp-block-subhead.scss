@@ -1,0 +1,11 @@
+////
+/// Subhead block.
+///
+/// @group Blocks
+////
+
+.wp-block-subhead {
+	@include font-size($h3);
+	color: $color-mid-grey;
+	font-style: italic;
+}

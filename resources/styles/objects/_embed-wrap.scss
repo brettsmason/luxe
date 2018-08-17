@@ -1,8 +1,10 @@
-/* ==========================================================================
-   #EMBED WRAP
-   ========================================================================== */
+////
+/// Embed Wrap object.
+///
+/// @group Objects
+////
 
-.embed-wrap {
+.wp-block-embed__wrapper {
 	@include responsive-embed(16 by 9);
 	margin-bottom: vr(1);
 }

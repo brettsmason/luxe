@@ -1,0 +1,29 @@
+////
+/// Gallery (shortcode) component.
+///
+/// @group Components
+////
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+
+	&-item {
+		margin-bottom: vr(1/2);
+	}
+
+	@include mq(medium) {
+
+		@for $i from 1 through 10 {
+			&-columns-#{$i} &-item {
+				@include nth-grid($i, $gutter: vr(1/2));
+			}
+		}
+	}
+
+	&-icon {
+		img {}
+	}
+
+	&-caption {}
+}

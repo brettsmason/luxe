@@ -1,0 +1,18 @@
+////
+/// Embed block.
+///
+/// @group Blocks
+////
+
+.wp-block-embed {
+
+	iframe {}
+	figcaption {}
+
+	&.is-type-image {}
+	&.is-type-audio {}
+	&.is-type-rich {} // text, twitter, etc.
+	&.is-type-video {}
+
+	&.is-provider-vimeo {}
+}

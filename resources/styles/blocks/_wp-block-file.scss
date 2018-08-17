@@ -1,0 +1,38 @@
+////
+/// File block.
+///
+/// @group Blocks
+////
+
+.wp-block-file {
+	margin-bottom: vr(1);
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+
+	&__button {
+		@include button;
+		@include button-style;
+	}
+
+	a#{&}__button {
+		text-decoration: none;
+
+		&:hover,
+		&:visited,
+		&:focus,
+		&:active {
+			color: $color-white;
+			text-decoration: none;
+		}
+	}
+
+	* + &__button {
+		margin-left: vr(1/2);
+	}
+}

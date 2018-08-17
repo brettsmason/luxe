@@ -1,6 +1,8 @@
-///* ========================================================================
-//   #CLEARFIX
-//   ======================================================================== */
+////
+/// Clearfix Mixin.
+///
+/// @group Tools
+////
 
 /// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
 /// The clearfix is augmented with specific styles to prevent borders in flexbox environments

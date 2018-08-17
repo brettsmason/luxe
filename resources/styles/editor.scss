@@ -13,7 +13,7 @@
 @import "settings/colors";
 
 
-// TOOLS
+// Tools.
 //
 // These are used throughout the code but don't output CSS on their own.
 // Things like mixins and extensions go here.
@@ -28,10 +28,22 @@
 @import "node_modules/sass-mq/mq";
 @import "node_modules/nth-grid/sass/nth-grid";
 
-// Kick off the editor styles.
+
+// Generic.
+//
+// This is the first point that real CSS is output. Resets, normalization,
+// fonts, etc. are best handled here. These are the base styles that other
+// styles will build upon.
+
+@import "generic/box-sizing";
+@import "generic/normalize";
+@import "generic/reset";
+
+
+// Editor styles.
 .edit-post-visual-editor {
 
-	// ElEMENTS
+	// Elements.
 	//
 	// Elements are (or should be) class-less designs for the base
 	// HTML elements.
@@ -49,23 +61,32 @@
 	@import "elements/misc";
 
 
-	/*--------------------------------------------------------------
-	# Blocks - editor related styles.
-	--------------------------------------------------------------*/
-	@import "blocks/color-palette";
-	@import "blocks/audio";
-	@import "blocks/button";
-	@import "blocks/cover-image";
-	@import "blocks/gallery";
-	@import "blocks/image";
-	@import "blocks/latest-posts";
-	@import "blocks/pullquote";
-	@import "blocks/quote";
-	@import "blocks/separator";
-	@import "blocks/subhead";
+	// Blocks.
+	//
+	// Blocks are styles for specific editor blocks.
+	//
+
+	@import "blocks/wp-block-audio";
+	@import "blocks/wp-block-button";
+	@import "blocks/wp-block-categories";
+	@import "blocks/wp-block-code";
+	@import "blocks/wp-block-columns";
+	@import "blocks/wp-block-cover-image";
+	@import "blocks/wp-block-embed";
+	@import "blocks/wp-block-file";
+	@import "blocks/wp-block-gallery";
+	@import "blocks/wp-block-image";
+	@import "blocks/wp-block-latest-posts";
+	@import "blocks/wp-block-preformatted";
+	@import "blocks/wp-block-pullquote";
+	@import "blocks/wp-block-quote";
+	@import "blocks/wp-block-separator";
+	@import "blocks/wp-block-subhead";
+	@import "blocks/wp-block-table";
+	@import "blocks/wp-block-verse";
 
 
-	// UTILITIES
+	// Utilities.
 	//
 	// Utilities are helper classes and overrides.  This gets loaded last.
 	// If necessary, this is the only place where `!important` rules should
@@ -73,8 +94,10 @@
 
 	@import "utilities/alignment";
 	@import "utilities/clearfix";
+	@import "utilities/color-palette";
 	@import "utilities/headings";
 	@import "utilities/hide";
+
 
 	// Set base styles for the editor.
 	background-color: $color-background;
@@ -100,7 +123,7 @@
 	.editor-post-title {
 
 		&__input {
-			@include font-size(50px); // @TODO should be heading 1 size
+			@include font-size($h1); // @TODO should be heading 1 size
 			font-family: $font-family-heading;
 			font-weight: 700;
 			min-height: auto;
@@ -111,12 +134,12 @@
 	.editor-post-title__block,
 	.editor-default-block-appender,
 	.editor-block-list__block {
-		max-width: rem($global-width);
+		max-width: $global-width;
 	}
 
 	// Wide blocks.
 	.editor-block-list__block[data-align="wide"] {
-		max-width: rem($global-width-wide);
+		max-width: $global-width-wide;
 	}
 
 	// Full width blocks.

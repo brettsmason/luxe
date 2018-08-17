@@ -1,13 +1,10 @@
+////
+/// Button block.
+///
+/// @group Blocks
+////
+
 .wp-block-button {
-
-	&.aligncenter {
-		text-align: center;
-	}
-
-	&.alignwide &__link,
-	&.alignfull &__link {
-		width: 100%;
-	}
 
 	&__link {
 		@include button;
@@ -29,6 +26,15 @@
 				color: $color-button-hover;
 			}
 		}
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignwide &__link,
+	&.alignfull &__link {
+		width: 100%;
 	}
 }
 

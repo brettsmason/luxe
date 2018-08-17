@@ -1,0 +1,12 @@
+////
+/// Table block.
+///
+/// @group Blocks
+////
+
+.wp-block-table {
+
+	&.has-fixed-layout {
+		table-layout: fixed;
+	}
+}

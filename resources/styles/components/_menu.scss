@@ -1,4 +1,9 @@
-// New menu styles
+////
+/// Menu component.
+///
+/// @group Components
+////
+
 .menu {
 	// Reset the base <ul>
 	&__items {
@@ -132,7 +137,7 @@
 
 .menu--is-mobile {
 
-	.menu__anchor {
+	.menu__link {
 		flex: 1 1 0;
 		padding: vr(3/4) vr(1);
 	}
@@ -195,7 +200,7 @@
 		margin-left: 10px;
 	}
 
-	.menu__anchor {
+	.menu__link {
 		width: 100%;
 	}
 
@@ -264,7 +269,7 @@
 		margin-top: vr(1/4);
 	}
 
-	.menu__anchor {
+	.menu__link {
 		padding: 0;
 		width: 100%;
 	}

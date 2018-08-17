@@ -1,12 +1,8 @@
-/* ==========================================================================
-   #HEADINGS
-   ========================================================================== */
-
-/**
- * Simple default styles for headings 1 through 6. Anything more opinionated
- * than simple font-size changes should likely be applied via classes (see:
- * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
- */
+////
+/// Heading elements.
+///
+/// @group Elements
+////
 
 h1,
 h2,
@@ -16,8 +12,8 @@ h5,
 h6 {
 	color: $color-heading;
 	font-family: $font-family-heading;
-	margin-bottom: vr(1/2);
 	font-weight: $font-weight-heading;
+	margin-bottom: vr(1/2);
 
 	a {
 		color: inherit;

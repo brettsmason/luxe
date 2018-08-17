@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	);
 
 	// Dequeue Core block styles.
-	wp_dequeue_style( 'wp-core-blocks' );
+	wp_dequeue_style( 'wp-block-library' );
 }, 10 );
 
 /**
@@ -70,12 +70,12 @@ add_action( 'enqueue_block_editor_assets', function() {
 	);
 
 	// Overwrite Core block styles with empty styles.
-	wp_deregister_style( 'wp-core-blocks' );
-	wp_deregister_style( 'wp-core-blocks-theme' );
+	wp_deregister_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library-theme' );
 
 	// Overwrite Core theme styles with empty styles.
-	wp_register_style( 'wp-core-blocks', '' );
-	wp_register_style( 'wp-core-blocks-theme', '' );
+	wp_register_style( 'wp-block-library', '' );
+	wp_register_style( 'wp-block-library-theme', '' );
 }, 10 );
 
 /**

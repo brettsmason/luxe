@@ -5,17 +5,16 @@
 ////
 
 .wp-block-separator {
-	max-width: 100px;
+
+	&:not(.is-style-wide) {
+		max-width: 100px;
+	}
 
 	// Wide style
-	&.is-style-wide {
-		border-bottom-width: 5px;
-		max-width: none;
-	}
+	&.is-style-wide {}
 
 	// Dots style
 	&.is-style-dots {
 		border-style: dotted;
-		max-width: none;
 	}
 }

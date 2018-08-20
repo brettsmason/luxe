@@ -33,30 +33,6 @@ function excerpt_more( $link ) {
 add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
 
 /**
- * Modify the `custom_logo` core function based on our class preferences.
- *
- * @param string $html The custom logo HTML markup.
- * @return string The modified custom logo HTML markup.
- */
-function get_custom_logo( $html ) {
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$html           = sprintf(
-		'<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
-		esc_url( home_url( '/' ) ),
-		'app-header__logo-link',
-		wp_get_attachment_image(
-			$custom_logo_id, 'full', false, array(
-				'class'    => 'app-header__logo',
-				'itemprop' => 'logo',
-				'alt'      => esc_attr( get_bloginfo( 'name' ) ),
-			)
-		)
-	);
-	return $custom_logo_id ? $html : null;
-}
-add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );
-
-/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.

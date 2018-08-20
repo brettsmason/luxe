@@ -30,21 +30,21 @@ mix.setPublicPath('public');
 // Compile JavaScript.
 //
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js('resources/scripts/app.js', 'scripts')
-   .js('resources/scripts/customize-controls.js', 'scripts')
-   .js('resources/scripts/customize-preview.js', 'scripts');
+mix.js('resources/js/app.js', 'js')
+   .js('resources/js/customize-controls.js', 'js')
+   .js('resources/js/customize-preview.js', 'js');
 
 // Compile SASS/CSS.
 //
 // @link https://laravel.com/docs/5.6/mix#sass
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
-mix.sass('resources/styles/screen.scss', 'styles', {
+mix.sass('resources/scss/screen.scss', 'css', {
       outputStyle: 'expanded',
       indentType: 'tab',
       indentWidth: 1,
    })
-   .sass('resources/styles/editor.scss', 'styles', {
+   .sass('resources/scss/editor.scss', 'css', {
 	  outputStyle: 'expanded',
 	  indentType: 'tab',
 	  indentWidth: 1,
@@ -85,7 +85,7 @@ if (mix.inProduction()) {
 // @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
 mix.webpackConfig({
   // Set sourcemaps on development only.
-  devtool: mix.inProduction() ? false : 'cheap-source-map',
+  devtool: mix.inProduction() ? false : 'source-map',
   // Prevent certain dependencies being included in bundles.
   // @link https://webpack.js.org/configuration/externals/#externals
   externals: {
@@ -141,6 +141,7 @@ mix.browserSync({
   files: [
     'public/**/*.{css,js,jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
     'resources/views/**/*.php',
-    'app/**/*.php',
+	'app/**/*.php',
+	'functions.php',
   ],
 });

@@ -103,8 +103,8 @@ Also, see the `functions.php` file for how all of these get loaded too.
 
 The `/public` folder is for holding our compiled assets for distribution. These files should not be edited directly.  The sub-folders are organized on par with the sub-folders in `/resources`.
 
-* `scripts` - Holds the compiled scripts.
-* `styles` - Holds the compiled stylesheets.
+* `js` - Holds the compiled scripts.
+* `css` - Holds the compiled stylesheets.
 * `svg` - Holds the cleaned and optimised SVGS.
 
 ### /resources
@@ -114,8 +114,8 @@ The `/resources` folder is where much of the magic of theme development will hap
 * `fonts` - Font files.
 * `img` - PNG, JPG, and most other image files.
 * `lang` - POT and any other MO or PO language files.
-* `scripts` - JavaScript files.
-* `styles` - SCSS/CSS files.
+* `js` - JavaScript files.
+* `scss` - SCSS/CSS files.
 * `svg` - SVG files.
 * `views` - The template files for the theme.
 

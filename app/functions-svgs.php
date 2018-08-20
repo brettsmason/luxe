@@ -30,9 +30,9 @@ function display_svg( $file, $args = [] ) {
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return string
  */
-function fetch_svg( $file, $args = [] ) {
+function render_svg( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
-	return $svg->fetch();
+	return $svg->render();
 }
 
 /**

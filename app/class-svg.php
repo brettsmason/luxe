@@ -13,11 +13,11 @@
 
 namespace Luxe;
 
-use Hybrid\Contracts\Fetchable;
+use Hybrid\Contracts\Renderable;
 use Hybrid\Contracts\Displayable;
 use Hybrid\Attr\Attr;
 
-class Svg implements Fetchable, Displayable {
+class Svg implements Renderable, Displayable {
 
 	/**
 	 * The name of the SVG object.
@@ -124,7 +124,7 @@ class Svg implements Fetchable, Displayable {
 	 * @access public
 	 * @return string
 	 */
-	public function fetch() {
+	public function render() {
 
 		$path = trim( apply_filters( 'luxe/svg/path', 'public/svg' ), '/' );
 
@@ -194,7 +194,7 @@ class Svg implements Fetchable, Displayable {
 			// Get an attributes object.
 			$attr = new Attr( 'svg', $this->class, $attr );
 
-			$svg = sprintf( '<svg %s>%s</svg>', $attr->fetch(), $inner_html );
+			$svg = sprintf( '<svg %s>%s</svg>', $attr->render(), $inner_html );
 		}
 
 		return $svg;
@@ -209,6 +209,6 @@ class Svg implements Fetchable, Displayable {
 	 */
 	public function display() {
 
-		echo $this->fetch();
+		echo $this->render();
 	}
 }

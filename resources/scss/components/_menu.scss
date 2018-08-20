@@ -23,8 +23,8 @@
 		}
 	}
 
-	&__anchor {
-		color: $color-menu-anchor;
+	&__link {
+		color: $color-menu-link;
 		display: block;
 		line-height: 1.2;
 		padding: 15px;
@@ -32,7 +32,7 @@
 
 		&:hover,
 		&:focus {
-			color: $color-menu-anchor-hover;
+			color: $color-menu-link-hover;
 		}
 
 		&:focus {
@@ -40,7 +40,7 @@
 		}
 
 		.menu__item--current & {
-			color: $color-menu-anchor-hover;
+			color: $color-menu-link-hover;
 		}
 	}
 

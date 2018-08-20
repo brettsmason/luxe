@@ -152,7 +152,7 @@ export default class ResponsiveMenu {
 	// Add dropdown icons if not on mobile
 	_createDropdownIcons() {
 		if (!this._isMobile()) {
-			let anchors = this.container.querySelectorAll('.has-children > .menu__anchor');
+			let anchors = this.container.querySelectorAll('.has-children > .menu__link');
 
 			for (var i = 0; i < anchors.length; ++i) {
 				if (!anchors[i].classList.contains('has-dropdown-icon')) {

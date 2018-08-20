@@ -14,7 +14,7 @@ endif
 			'menu_class'     => 'menu__items menu__items--' . esc_attr( $data->name ),
 			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 			'link_before'    => '<span class="screen-reader-text">',
-			'link_after'     => '</span>' . Luxe\fetchy_svg( 'bars', [ 'class' => 'menu__icon menu__icon--social' ] ),
+			'link_after'     => '</span>' . Luxe\render_svg( 'bars', [ 'class' => 'menu__icon menu__icon--social' ] ),
 			'item_spacing'   => 'discard',
 		]
 	)

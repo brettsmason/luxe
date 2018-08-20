@@ -12,8 +12,8 @@
 					'text' => sprintf(
 						// Translators: 1 is the comment date and 2 is the time.
 						esc_html__( '%1$s at %2$s', 'luxe' ),
-						Hybrid\Comment\fetch_date( [ 'format' => 'jS F Y' ] ),
-						Hybrid\Comment\fetch_time()
+						Hybrid\Comment\render_date( [ 'format' => 'jS F Y' ] ),
+						Hybrid\Comment\render_time()
 					),
 				]
 			)
@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="comment__actions">
-			<?php Hybrid\Comment\display_reply_link( [ 'before' => Luxe\fetch_svg( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
+			<?php Hybrid\Comment\display_reply_link( [ 'before' => Luxe\render_svg( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
 		</div>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

@@ -8,7 +8,7 @@
 				// Translators: 1 is current year, 2 is site name/link, 3 is WordPress name/link, and 4 is theme name/link.
 				esc_html__( 'Copyright &#169; %1$s %2$s', 'luxe' ),
 				date_i18n( 'Y' ),
-				Hybrid\Site\fetch_home_link()
+				Hybrid\Site\render_home_link()
 			);
 			?>
 

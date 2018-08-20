@@ -8,7 +8,7 @@
 namespace Luxe;
 
 /**
- * Wraps embeds with `.embed-wrap` class.
+ * Wraps embeds with `.wp-block-embed__wrapper` class.
  *
  * @since  1.0.0
  * @access public
@@ -16,7 +16,7 @@ namespace Luxe;
  * @return string
  */
 function wrap_embed_html( $html ) {
-	return $html && is_string( $html ) ? sprintf( '<div class="embed-wrap">%s</div>', $html ) : $html;
+	return $html && is_string( $html ) ? sprintf( '<div class="wp-block-embed__wrapper">%s</div>', $html ) : $html;
 }
 
 /**

@@ -43,7 +43,7 @@ function get_custom_logo( $html ) {
 	$html           = sprintf(
 		'<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
 		esc_url( home_url( '/' ) ),
-		'app-header__logo-anchor',
+		'app-header__logo-link',
 		wp_get_attachment_image(
 			$custom_logo_id, 'full', false, array(
 				'class'    => 'app-header__logo',
@@ -52,7 +52,7 @@ function get_custom_logo( $html ) {
 			)
 		)
 	);
-	return $html;
+	return $custom_logo_id ? $html : null;
 }
 add_filter( 'get_custom_logo', __NAMESPACE__ . '\get_custom_logo' );
 
@@ -103,7 +103,7 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
-				$item_output = str_replace( $args->link_after, '</span>' . fetch_svg( esc_attr( $value ) ), $item_output );
+				$item_output = str_replace( $args->link_after, '</span>' . render_svg( esc_attr( $value ) ), $item_output );
 			}
 		}
 	}

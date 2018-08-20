@@ -1,0 +1,14 @@
+////
+/// HR element.
+///
+/// @group Elements
+////
+
+hr {
+	border: 0;
+	border-bottom: 2px solid $color-hr;
+	clear: both;
+	height: 0;
+	margin-bottom: vr(2);
+	margin-top: vr(2);
+}

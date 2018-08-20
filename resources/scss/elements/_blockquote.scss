@@ -1,0 +1,20 @@
+////
+/// Blockquote element.
+///
+/// @group Elements
+////
+
+blockquote {
+	border-left: 4px solid $color-blockquote-border;
+	color: $color-blockquote;
+	margin-bottom: vr(1);
+	padding-left: vr(1);
+
+	p {
+		@include font-size($h5);
+	}
+
+	p:last-of-type {
+		margin-bottom: vr(1/4);
+	}
+}

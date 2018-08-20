@@ -1,0 +1,88 @@
+////
+/// Entry component.
+///
+/// @group Components
+////
+
+.entry {
+
+	// Featured image.
+	&__image {}
+
+	// Header wrapper.
+	&__header {}
+
+	// Entry title.
+	&__title {}
+
+	&__permalink {
+		text-decoration: none;
+	}
+
+	// Meta wrappers.
+	&__byline {
+		margin-bottom: vr(1);
+	}
+
+	&__author {}
+
+	&__published {}
+
+	&__comments {}
+
+	// Full entry content.
+	&__content {
+		margin-bottom: vr(2);
+
+		> * {
+			@include wrapper($global-width);
+		}
+
+		> ol:not([class]),
+		> ul:not([class]) {
+			padding-left: vr(1.5);
+		}
+	}
+
+	// Summary/Excerpt.
+	&__summary {
+
+		> ol:not([class]),
+		> ul:not([class]) {
+			padding-left: vr(1.5);
+		}
+	}
+
+	&__footer {
+		margin-bottom: vr(2);
+	}
+
+	&__terms-wrapper {
+		display: block;
+
+		& + & {
+			margin-top: vr(1/4);
+		}
+	}
+
+	&__terms {
+		margin-left: vr(1/4);
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__terms-icon {
+		height: 16px;
+		width: 16px;
+	}
+
+	// Sticky posts.
+	&.sticky {}
+
+	// Type of entry/post.
+	&--type-post {}
+
+	&--type-page {}
+}

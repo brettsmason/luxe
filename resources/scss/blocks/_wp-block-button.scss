@@ -1,0 +1,55 @@
+////
+/// Button block.
+///
+/// @group Blocks
+////
+
+.wp-block-button {
+
+	&__link {
+		@include button;
+
+		&:not(.has-background) {
+			background-color: $color-button-background;
+
+			&:hover,
+			&:focus {
+				background-color: $color-button-hover-background;
+			}
+		}
+
+		&:not(.has-text-color) {
+			color: $color-button;
+
+			&:hover,
+			&:focus {
+				color: $color-button-hover;
+			}
+		}
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignwide &__link,
+	&.alignfull &__link {
+		width: 100%;
+	}
+}
+
+.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border-color: $color-button-outline-border;
+	color: $color-button-outline;
+
+	&:hover,
+	&:focus {
+		background-color: $color-button-outline-hover-background;
+		color: $color-button-outline-hover;
+	}
+}
+
+.is-style-squared .wp-block-button__link {
+	border-radius: 0;
+}

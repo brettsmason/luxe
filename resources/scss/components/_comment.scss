@@ -1,0 +1,82 @@
+////
+/// Comment component.
+///
+/// @group Components
+////
+
+.comment {
+	align-items: flex-start;
+	display: flex;
+
+	// The comment avatar.
+	&__avatar {
+		margin-right: vr(1/2);
+		min-width: 32px;
+
+		&-img {
+			border-radius: $global-radius;
+		}
+	}
+
+	// Full comment content container.
+	&__body {
+		flex: 1;
+		max-width: 100%;
+	}
+
+	// Metadata wrapper.
+	&__meta {
+		margin-bottom: vr(1/4);
+	}
+
+	&__author {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	&__date {}
+
+	&__time {}
+
+	&__permalink,
+	&__edit {
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+
+	// Full comment text/content.
+	&__content {
+		margin-bottom: vr(1/4);
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Comment actions (reply link etc).
+	&__actions {
+		margin-bottom: vr(1.5);
+	}
+
+	&__reply {}
+
+	&__reply-icon {
+		margin-right: vr(1/4);
+	}
+
+	// Comment under moderation message.
+	&__moderation {}
+
+	// Type of comment.
+	&--type-comment {}
+
+	&--type-ping {}
+
+	// Comment status.
+	&--status-unapproved {}
+}

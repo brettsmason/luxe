@@ -1,0 +1,35 @@
+////
+/// Comments component.
+///
+/// @group Components
+////
+
+// Comments main container.
+.comments-template {
+	margin-bottom: vr(2);
+}
+
+.comments {
+
+	// Header/title for the comments section.
+	&__title {
+		margin-bottom: vr(1);
+	}
+
+	// Comments list and children wrapper.
+	&__list,
+	.children {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.children {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	// Comments closed message.
+	&__closed {}
+}

@@ -1,0 +1,54 @@
+////
+/// The global settings file contains any project-wide variables; things that
+/// need to be made available to the entire codebase.
+///
+/// @group Settings
+////
+
+// Media queries used throughout.
+$mq-breakpoints: (
+	small: 320px,
+	medium: 740px,
+	large: 980px,
+	xlarge: 1300px
+);
+
+// Baseline grid lines height.
+$global-baseline: 6px;
+
+// Base typographical styles.
+$global-font-size: 16px;
+$global-line-height: $global-baseline * 4;
+
+// UI specific treatments.
+$global-radius: null;
+$global-transition-duration: 300ms;
+$global-transition-type: ease-in-out;
+
+// Global widths used throughout to constrain elements.
+$global-width: 1024px;
+$global-width-wide: 1400px;
+$global-width-narrow: 800px;
+
+// Font families.
+$font-family-body: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+$font-family-heading: $font-family-body;
+$font-family-monospace: "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Headings.
+$h1: 48px;
+$h2: 41px;
+$h3: 37px;
+$h4: 33px;
+$h5: 26px;
+$h6: 22px;
+$font-weight-heading: 700;
+
+// Buttons.
+$font-weight-button: 400;
+
+// Forms.
+$font-weight-form-legend: 700;
+$font-weight-form-label: 700;
+
+$grid-gutter: $global-line-height;

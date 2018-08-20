@@ -1,0 +1,18 @@
+////
+/// SVG component.
+///
+/// @group Components
+////
+
+.svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+// Loop through all social icons
+@each $social-network, $color in $colors-social {
+
+	.svg--#{$social-network} {
+		fill: $color;
+	}
+}

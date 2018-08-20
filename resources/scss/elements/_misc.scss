@@ -1,0 +1,26 @@
+////
+/// Miscellaneous elements.
+///
+/// @group Elements
+////
+
+::selection,
+::-moz-selection {
+	background: $color-selection-background;
+	color: $color-selection;
+}
+
+address {
+	margin-bottom: vr(1);
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+cite {
+	color: $color-cite;
+}

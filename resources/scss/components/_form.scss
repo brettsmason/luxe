@@ -1,0 +1,56 @@
+////
+/// Form component.
+///
+/// @group Components
+////
+
+.form-field {
+	margin-bottom: vr(1/2);
+
+	&__description {
+		@include font-size(14px);
+		color: $color-mid-grey;
+	}
+
+	&__required {
+		color: $color-form-input-required;
+	}
+
+	&__checkbox label,
+	&__radio label {
+		font-weight: 400;
+	}
+
+	// Inline form styles.
+	// Apply this to set radio/checkbox fields inline.
+	&--inline {
+
+		.form-field__checkbox,
+		.form-field__radio {
+			display: inline-block;
+		}
+
+		.form-field__checkbox + .form-field__checkbox,
+		.form-field__radio + .form-field__radio {
+			margin-left: vr(1/2);
+		}
+	}
+}
+
+// Add required styling for occurances when we
+// cant add the above classes.
+.required {
+	color: $color-form-input-required;
+}
+
+// A padded, bordered fieldset.
+.form-fieldset {
+	border: 1px solid $color-form-fieldset-border;
+	padding: vr(1);
+
+	legend {
+		margin-bottom: 0;
+		margin-left: -#{vr(1/2)};
+		padding: 0 vr(1/2);
+	}
+}

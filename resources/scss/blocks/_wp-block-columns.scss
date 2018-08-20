@@ -1,0 +1,19 @@
+////
+/// Columns block.
+///
+/// @group Blocks
+////
+
+.wp-block-columns {
+	display: flex;
+}
+
+// Individual columns.
+.wp-block-column {
+	flex: 1;
+	margin-right: vr(1);
+
+	&:last-child {
+		margin-right: 0;
+	}
+}

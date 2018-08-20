@@ -1,0 +1,29 @@
+////
+/// Anchor element.
+///
+/// @group Elements
+////
+
+a {
+	color: $color-link;
+	transition: all $global-transition-duration $global-transition-type;
+
+	&:not([class]) {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-link-hover;
+	}
+
+	&:focus {
+		outline: 1px dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

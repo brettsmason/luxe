@@ -1,0 +1,56 @@
+////
+/// Pagination component.
+///
+/// @group Components
+////
+.pagination {
+	margin-bottom: vr(2);
+	width: 100%;
+}
+
+.pagination__items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+}
+
+.pagination__item {
+
+	& + & {
+		margin-left: vr(1/4);
+	}
+}
+
+.pagination__anchor {
+	border: 1px solid $color-pagination-anchor-border;
+	border-radius: $global-radius;
+	display: block;
+	line-height: 1;
+	padding: vr(1/4) vr(1/2);
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	&--current {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	&--dots {
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			border-color: $color-border;
+			color: $color-black;
+		}
+	}
+}

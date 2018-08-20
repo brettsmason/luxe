@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Main scripts.
 	wp_enqueue_script(
 		'luxe-app',
-		asset( 'scripts/app.js' ),
+		asset( 'js/app.js' ),
 		null,
 		false,
 		true
@@ -35,21 +35,21 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Add SVG icons for use in JS.
 	wp_localize_script(
 		'luxe-app', 'menuIcons', [
-			'dropdownMenuIcon'  => fetch_svg( 'chevron-down', [ 'class' => 'menu__dropdown-icon' ] ),
-			'submenuToggleIcon' => fetch_svg( 'chevron-down', [ 'class' => 'menu__submenu-toggle-icon' ] ),
+			'dropdownMenuIcon'  => render_svg( 'chevron-down', [ 'class' => 'menu__dropdown-icon' ] ),
+			'submenuToggleIcon' => render_svg( 'chevron-down', [ 'class' => 'menu__submenu-toggle-icon' ] ),
 		]
 	);
 
 	// Main styles.
 	wp_enqueue_style(
 		'luxe-screen',
-		asset( 'styles/screen.css' ),
+		asset( 'css/screen.css' ),
 		false,
 		null
 	);
 
 	// Dequeue Core block styles.
-	wp_dequeue_style( 'wp-core-blocks' );
+	wp_dequeue_style( 'wp-block-library' );
 }, 10 );
 
 /**
@@ -63,11 +63,19 @@ add_action( 'enqueue_block_editor_assets', function() {
 
 	// Main block styles.
 	wp_enqueue_style(
-		'luxe/editor.css',
-		asset( 'styles/editor.css' ),
+		'luxe-editor',
+		asset( 'css/editor.css' ),
 		false,
 		null
 	);
+
+	// Overwrite Core block styles with empty styles.
+	wp_deregister_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library-theme' );
+
+	// Overwrite Core theme styles with empty styles.
+	wp_register_style( 'wp-block-library', '' );
+	wp_register_style( 'wp-block-library-theme', '' );
 }, 10 );
 
 /**

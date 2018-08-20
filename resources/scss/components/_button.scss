@@ -1,0 +1,29 @@
+////
+/// Button component.
+///
+/// @group Components
+////
+
+.button {
+	@include button;
+}
+
+.button--primary {
+	@include button-style($color-primary);
+}
+
+.button--secondary {
+	@include button-style($color-secondary);
+}
+
+.button--alert {
+	@include button-style($color-alert);
+}
+
+.button--warning {
+	@include button-style($color-warning);
+}
+
+.button--success {
+	@include button-style($color-success);
+}

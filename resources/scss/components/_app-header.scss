@@ -1,0 +1,34 @@
+////
+/// App header component.
+///
+/// @group Components
+////
+
+.app-header {
+	position: relative;
+
+	&__wrapper {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__branding {}
+
+	&__logo {}
+
+	&__logo-link {}
+
+	&__title {
+		color: $color-header-title;
+		margin-bottom: 0;
+	}
+
+	&__title-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	&__description {}
+}

@@ -1,0 +1,12 @@
+////
+/// App footer component.
+///
+/// @group Components
+////
+
+.app-footer {
+
+	&__credit {
+		@include font-size(14px);
+	}
+}

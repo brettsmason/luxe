@@ -1,0 +1,20 @@
+////
+/// Separator block.
+///
+/// @group Blocks
+////
+
+.wp-block-separator {
+
+	&:not(.is-style-wide) {
+		max-width: 100px;
+	}
+
+	// Wide style
+	&.is-style-wide {}
+
+	// Dots style
+	&.is-style-dots {
+		border-style: dotted;
+	}
+}

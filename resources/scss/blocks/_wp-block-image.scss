@@ -1,0 +1,28 @@
+////
+/// Image block.
+///
+/// @group Blocks
+////
+
+.wp-block-image {
+
+	&.alignfull img {
+		width: 100%;
+	}
+
+	&.is-resized {
+
+		// Emulate min-content for Edge and IE11
+		display: -ms-inline-grid;
+		-ms-grid-columns: min-content;
+		width: min-content;
+
+		figcaption {
+			-ms-grid-row: 2;
+		}
+
+		img {
+			max-width: none;
+		}
+	}
+}

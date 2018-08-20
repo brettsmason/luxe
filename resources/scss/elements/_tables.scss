@@ -1,0 +1,32 @@
+////
+/// Table element.
+///
+/// @group Elements
+////
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	margin-bottom: vr(1);
+	max-width: 100%;
+	width: 100%;
+}
+
+th,
+td {
+	padding: vr(1/4);
+	text-align: left;
+
+	tfoot & {
+		color: $color-dark-grey;
+	}
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}

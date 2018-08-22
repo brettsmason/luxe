@@ -58,5 +58,6 @@ array_map(
 		'functions-setup',
 		'functions-svgs',
 		'functions-template',
+		'functions-woocommerce',
 	]
 );

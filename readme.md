@@ -1,4 +1,4 @@
-# Luxe - A starter theme for WordPress
+# Luxe - A WordPress starter theme
 
 Luxe is a starter theme project that's currently under active development.
 

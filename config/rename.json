@@ -1,0 +1,11 @@
+{
+	"from": {
+		"Name": "Luxe",
+		"Description": "A WordPress starter theme.",
+		"Namespace": "Luxe",
+		"Uri": "https://github.com/brettsmason/luxe",
+		"Author": "Brett Mason",
+		"AuthorEmail": "brettsmason@gmail.com",
+		"AuthorUri": "https://brettmason.co.uk"
+	}
+}

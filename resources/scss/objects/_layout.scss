@@ -5,8 +5,10 @@
 ////
 
 .grid {
-	display: flex;
-	flex-wrap: wrap;
+	@include mq(medium) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .grid--2 {

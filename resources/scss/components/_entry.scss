@@ -5,6 +5,7 @@
 ////
 
 .entry {
+	margin-bottom: vr(2);
 
 	// Featured image.
 	&__image {}
@@ -24,11 +25,27 @@
 		margin-bottom: vr(1);
 	}
 
-	&__author {}
-
 	&__published {}
 
-	&__comments {}
+	&__author {
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+
+	&__comments {
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
 
 	// Full entry content.
 	&__content {
@@ -53,9 +70,7 @@
 		}
 	}
 
-	&__footer {
-		margin-bottom: vr(2);
-	}
+	&__footer {}
 
 	&__terms-wrapper {
 		display: block;

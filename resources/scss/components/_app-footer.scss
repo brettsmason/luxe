@@ -5,8 +5,10 @@
 ////
 
 .app-footer {
+	padding: vr(1);
 
 	&__credit {
 		@include font-size(14px);
+		margin-bottom: 0;
 	}
 }

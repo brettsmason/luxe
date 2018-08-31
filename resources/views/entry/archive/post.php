@@ -1,6 +1,6 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<header class="entry__header">
-		<?php Hybrid\Post\display_title( [ 'class' => 'entry__title u-h4' ] ) ?>
+		<?php Hybrid\Post\display_title( [ 'class' => 'entry__title u-h5' ] ) ?>
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\display_date() ?>

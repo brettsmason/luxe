@@ -1,4 +1,4 @@
-<div class="app-content">
+<div class="app-content wrapper">
 	<main id="main" class="app-main">
 		<div class="entry entry--error">
 			<h1 class="entry__title"><?php esc_html_e( 'Page not found', 'luxe' ) ?></h1>

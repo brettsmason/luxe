@@ -16,6 +16,11 @@ namespace Mythic;
 
 use function Hybrid\Template\path;
 
+// If WooCommerce isn't enabled then bail early.
+if ( ! class_exists( 'woocommerce' ) ) {
+	return;
+}
+
 /**
  * Adds theme support for the WooCommerce plugin.
  *
@@ -39,6 +44,33 @@ add_action( 'after_setup_theme', function() {
 		],
 	] );
 } );
+
+/**
+ * Remove WooCommerce default styles.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+/**
+ * Enqueue WooCommerce custom styles.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+add_action( 'enqueue_block_editor_assets', function() {
+
+	// Main block styles.
+	wp_enqueue_style(
+		'luxe-woocommerce',
+		asset( 'css/woocommerce.css' ),
+		false,
+		null
+	);
+}, 10 );
 
 /**
  * This overrides the top-level WooCommerce templates that would normally go in

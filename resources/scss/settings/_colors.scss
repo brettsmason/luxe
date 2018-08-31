@@ -15,7 +15,7 @@ $color-warning: #f6bf27;
 $color-success: #407d80;
 
 // Black/white
-$color-black: #000;
+$color-black: #1e1e1e;
 $color-white: #fff;
 
 // Greyscale
@@ -33,10 +33,6 @@ $color-aluminium-grey: #f8f8f8;
 $color-background: $color-white;
 $color-text: $color-dark-grey;
 
-// Content Selection.
-$color-selection: $color-white;
-$color-selection-background: $color-primary;
-
 // Borders.
 $color-border: $color-light-grey;
 
@@ -45,13 +41,13 @@ $color-heading: $color-black;
 
 // Links.
 $color-link: $color-primary;
-$color-link-hover: $color-link + 30;
+$color-link-hover: $color-black;
 
 // Buttons.
 $color-button: $color-white;
 $color-button-background: $color-primary;
 $color-button-hover: $color-white;
-$color-button-hover-background: $color-primary + 30;
+$color-button-hover-background: $color-primary + 50;
 $color-button-outline: $color-primary;
 $color-button-outline-border: $color-primary;
 $color-button-outline-hover: $color-white;

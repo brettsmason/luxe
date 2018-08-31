@@ -4,12 +4,6 @@
 /// @group Elements
 ////
 
-::selection,
-::-moz-selection {
-	background: $color-selection-background;
-	color: $color-selection;
-}
-
 address {
 	margin-bottom: vr(1);
 }

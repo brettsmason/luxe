@@ -6,16 +6,14 @@
 
 a {
 	color: $color-link;
+	text-decoration: none;
 	transition: all $global-transition-duration $global-transition-type;
-
-	&:not([class]) {
-		text-decoration: none;
-	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color-link-hover;
+		text-decoration: underline;
 	}
 
 	&:focus {

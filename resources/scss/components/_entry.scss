@@ -16,9 +16,7 @@
 	// Entry title.
 	&__title {}
 
-	&__permalink {
-		text-decoration: none;
-	}
+	&__permalink {}
 
 	// Meta wrappers.
 	&__byline {
@@ -27,25 +25,9 @@
 
 	&__published {}
 
-	&__author {
-		text-decoration: none;
+	&__author {}
 
-		&:hover,
-		&:focus,
-		&:active {
-			text-decoration: underline;
-		}
-	}
-
-	&__comments {
-		text-decoration: none;
-
-		&:hover,
-		&:focus,
-		&:active {
-			text-decoration: underline;
-		}
-	}
+	&__comments {}
 
 	// Full entry content.
 	&__content {
@@ -53,6 +35,12 @@
 
 		> * {
 			@include wrapper($global-width);
+		}
+
+		// Make links have an underline
+		// when no class is present.
+		a:not([class]) {
+			text-decoration: underline;
 		}
 
 		> ol:not([class]),

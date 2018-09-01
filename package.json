@@ -39,7 +39,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^2.1.5",
     "laravel-mix": "^2.1.0",
-    "node-wp-i18n": "^1.2.0",
+    "node-wp-i18n": "^1.2.1",
     "nth-grid": "github:brettsmason/nth-grid",
     "postcss-preset-env": "^5.2.1",
     "postcss-pxtorem": "^4.0.1",

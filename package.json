@@ -44,7 +44,7 @@
     "postcss-preset-env": "^5.2.1",
     "postcss-pxtorem": "^4.0.1",
     "sass-mq": "^5.0.0",
-    "stylelint": "^9.3.0",
+    "stylelint": "^9.5.0",
     "stylelint-config-wordpress": "^13.0.0",
     "stylelint-order": "^0.8.1",
     "theme-claim": "^0.1.5"

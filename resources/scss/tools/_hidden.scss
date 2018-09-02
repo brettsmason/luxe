@@ -9,7 +9,7 @@
 /// @link http://hugogiraudel.com/2016/10/13/css-hide-and-seek/
 ///
 /// @param {Boolean} $enforce - If `true`, use `!important` on applied properties
-@mixin hide-visually($enforce: true) {
+@mixin hide-visually($enforce: false) {
 	$important: if($enforce, "!important", null);
 
 	border: 0 #{$important};
@@ -27,15 +27,20 @@
 
 /// This reverses `hide-visually()`.
 ///
-/// @param {Boolean} $enforce - If `true`, use `!important` on applied properties
-@mixin show-visually($enforce: true) {
+/// @param {Boolean} $enforce - If `true`, use `!important` on applied properties.
+@mixin show-visually($enforce: false) {
 	$important: if($enforce, "!important", null);
 
+	background-color: $color-button-background;
 	clip: auto #{$important};
+	clip-path: none #{$important};
+	color: $color-button;
 	height: auto #{$important};
+	left: vr(1);
 	overflow: visible #{$important};
-
-	position: static #{$important};
+	padding: vr(1/2) vr(3/4);
+	text-decoration: none;
+	top: vr(1);
 	white-space: normal #{$important};
 	width: auto #{$important};
 }

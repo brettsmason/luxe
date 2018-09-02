@@ -5,6 +5,7 @@
 ////
 
 .entry {
+	margin-bottom: vr(2);
 
 	// Featured image.
 	&__image {}
@@ -15,18 +16,16 @@
 	// Entry title.
 	&__title {}
 
-	&__permalink {
-		text-decoration: none;
-	}
+	&__permalink {}
 
 	// Meta wrappers.
 	&__byline {
 		margin-bottom: vr(1);
 	}
 
-	&__author {}
-
 	&__published {}
+
+	&__author {}
 
 	&__comments {}
 
@@ -36,6 +35,12 @@
 
 		> * {
 			@include wrapper($global-width);
+		}
+
+		// Make links have an underline
+		// when no class is present.
+		a:not([class]) {
+			text-decoration: underline;
 		}
 
 		> ol:not([class]),
@@ -53,9 +58,7 @@
 		}
 	}
 
-	&__footer {
-		margin-bottom: vr(2);
-	}
+	&__footer {}
 
 	&__terms-wrapper {
 		display: block;

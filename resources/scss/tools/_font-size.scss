@@ -31,6 +31,34 @@
 	$modifier: 0,
 	$important: false
 ) {
+	@if (type-of($font-size) == map) {
+		@each $breakpoint, $size in $font-size {
+
+			$_font-size: if(type-of($size) == list, nth($size, 1), $size);
+			$_line-height: if(type-of($size) == list and length($size) >= 2, nth($size, 2), auto);
+			$_modifier: if(type-of($size) == list and length($size) == 3, nth($size, 3), 0);
+
+			@if ($breakpoint == null) {
+				@include _get-font-size($_font-size, $_line-height, $_modifier);
+			} @else {
+				@include mq($breakpoint) {
+					@include _get-font-size($_font-size, $_line-height, $_modifier);
+				}
+			}
+		}
+
+	} @else {
+		@include _get-font-size($font-size, $line-height, $modifier, $important);
+	}
+}
+
+// The internal logic for the font-size() mixin.
+@mixin _get-font-size(
+	$font-size,
+	$line-height: auto,
+	$modifier: 0,
+	$important: false
+) {
 	@if (type-of($font-size) == number) {
 		@if (unit($font-size) != "px") {
 			@error "`#{$font-size}` needs to be a pixel value.";
@@ -48,7 +76,7 @@
 	}
 
 	// Output the font size.
-	font-size: ($font-size / $global-font-size) * 1rem $important;
+	font-size: $font-size $important;
 
 	@if ($line-height == "auto") {
 
@@ -65,10 +93,8 @@
 
 		@if (type-of($line-height) == number or $line-height == "inherit" or $line-height == "normal") {
 			line-height: $line-height $important;
-		}
-
-		@else if ($line-height != 'none' and $line-height != false) {
-			@error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
+		} @else if ($line-height != "none" and $line-height != false) {
+			@error "D’oh! `#{$line-height}` is not a valid value for `$line-height`.";
 		}
 	}
 }

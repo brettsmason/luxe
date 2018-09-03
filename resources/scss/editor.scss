@@ -123,7 +123,7 @@
 	.editor-post-title {
 
 		&__input {
-			@include font-size($h1); // @TODO should be heading 1 size
+			@include font-size($h1);
 			font-family: $font-family-heading;
 			font-weight: 700;
 			min-height: auto;

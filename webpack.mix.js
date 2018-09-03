@@ -53,7 +53,7 @@ mix.sass('resources/scss/screen.scss', 'css', {
       postCss: [
 		require('postcss-preset-env')(),
 		require('postcss-pxtorem')({
-			rootValue: 16,
+			rootValue: 18,
 			unitPrecision: 5,
 			propList: ['*'],
 			replace: true,

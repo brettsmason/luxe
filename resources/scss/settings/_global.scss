@@ -17,8 +17,8 @@ $mq-breakpoints: (
 $global-baseline: 6px;
 
 // Base typographical styles.
-$global-font-size: 16px;
-$global-line-height: $global-baseline * 4;
+$global-font-size: 18px;
+$global-line-height: $global-baseline * 4.5;
 
 // UI specific treatments.
 $global-radius: null;
@@ -36,12 +36,31 @@ $font-family-heading: $font-family-body;
 $font-family-monospace: "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", monospace;
 
 // Headings.
-$h1: 48px;
-$h2: 41px;
-$h3: 37px;
-$h4: 33px;
-$h5: 26px;
-$h6: 22px;
+$h1: (
+	null: 32px,
+	medium: 48px,
+);
+$h2: (
+	null: 26px,
+	medium: 36px,
+);
+$h3: (
+	null: 22px,
+	medium: 28px,
+);
+$h4: (
+	null: 20px,
+	medium: 22px,
+);
+$h5: (
+	null: 16px,
+	medium: 20px,
+);
+$h6: (
+	null: 16px,
+	medium: 18px,
+);
+
 $font-weight-heading: 700;
 
 // Buttons.

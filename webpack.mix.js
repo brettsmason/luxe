@@ -20,49 +20,45 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
-// Set the BrowserSync proxy URL.
-const browserSyncUrl = 'theme-development.localhost';
+// Build config settings file.
+const config = require('./config/build.json');
 
 // Sets the path to the generated assets. By default, this is the `/public` folder
 // in the theme. If doing something custom, make sure to change this everywhere.
-mix.setPublicPath('public');
+mix.setPublicPath(config.publicPath);
 
 // Compile JavaScript.
+// Loop over each file listed in the config.
 //
 // @link https://laravel.com/docs/5.6/mix#working-with-scripts
-mix.js('resources/js/app.js', 'js')
-   .js('resources/js/customize-controls.js', 'js')
-   .js('resources/js/customize-preview.js', 'js');
+config.files.scripts.forEach(file => {
+	mix.js(`${config.source.scripts}/${file}`, config.dist.scripts);
+});
 
 // Compile SASS/CSS.
+// Loop over each file listed in the config.
 //
 // @link https://laravel.com/docs/5.6/mix#sass
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
-mix.sass('resources/scss/screen.scss', 'css', {
-      outputStyle: 'expanded',
-      indentType: 'tab',
-      indentWidth: 1,
-   })
-   .sass('resources/scss/editor.scss', 'css', {
-	  outputStyle: 'expanded',
-	  indentType: 'tab',
-	  indentWidth: 1,
-   })
-   .options({
-      postCss: [
+config.files.styles.forEach(file => {
+	mix.sass(`${config.source.styles}/${file}`, config.dist.styles, config.sassSettings);
+});
+
+mix.options({
+	postCss: [
 		require('postcss-preset-env')(),
 		require('postcss-pxtorem')({
-			rootValue: 16,
+			rootValue: 18,
 			unitPrecision: 5,
 			propList: ['*'],
 			replace: true,
 			mediaQuery: false,
 			minPixelValue: 0
 		})
-      ],
-      processCssUrls: false
-   });
+	],
+	processCssUrls: false
+});
 
 // Builds sources maps for assets.
 //
@@ -88,23 +84,21 @@ mix.webpackConfig({
   devtool: mix.inProduction() ? false : 'source-map',
   // Prevent certain dependencies being included in bundles.
   // @link https://webpack.js.org/configuration/externals/#externals
-  externals: {
-    jquery: 'jQuery',
-  },
+  externals: config.externals,
   plugins: [
     // @link https://github.com/webpack-contrib/copy-webpack-plugin
     new CopyWebpackPlugin([
       {
-        from: 'resources/img',
-        to: 'img',
+        from: config.source.images,
+        to: config.dist.images,
       },
       {
-        from: 'resources/svg',
-        to: 'svg',
+        from: config.source.svg,
+        to: config.dist.svg,
       },
       {
-        from: 'resources/fonts',
-        to: 'fonts',
+        from: config.source.fonts,
+        to: config.dist.fonts,
       },
 	]),
 
@@ -137,11 +131,6 @@ mix.webpackConfig({
 
 // monitor files for changes and inject your changes into the browser.
 mix.browserSync({
-  proxy: browserSyncUrl,
-  files: [
-    'public/**/*',
-    'resources/views/**/*.php',
-	'app/**/*.php',
-	'*.php',
-  ],
+  proxy: config.browserSyncUrl,
+  files: config.watchFiles,
 });

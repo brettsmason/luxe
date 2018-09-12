@@ -8,6 +8,10 @@
 		flex-wrap: wrap;
 	}
 
+	.flex-viewport &__image {
+		margin-top: 0;
+	}
+
 	.flex-viewport &__wrapper {
 		display: block;
 	}

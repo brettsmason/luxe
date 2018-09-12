@@ -73,13 +73,13 @@ add_filter( 'luxe/display_sidebar', __NAMESPACE__ . '\display_primary_sidebar' )
  */
 function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
-	$social_icons = social_links_icons();
+	$social_icons = Svg\social_links_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
-				$item_output = str_replace( $args->link_after, '</span>' . render_svg( esc_attr( $value ) ), $item_output );
+				$item_output = str_replace( $args->link_after, '</span>' . Svg\render( esc_attr( $value ) ), $item_output );
 			}
 		}
 	}

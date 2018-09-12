@@ -19,7 +19,7 @@
 			Hybrid\Post\display_terms(
 				[
 					'taxonomy' => 'category',
-					'before'   => '<div class="entry__terms-wrapper">' . Luxe\render_svg( 'folder-open', [ 'title' => 'Categories:', 'class' => 'entry__terms-icon' ] ),
+					'before'   => '<div class="entry__terms-wrapper">' . Luxe\Svg\render( 'folder-open', [ 'title' => 'Categories:', 'class' => 'entry__terms-icon' ] ),
 					'after'    => '</div>',
 				]
 			)
@@ -29,7 +29,7 @@
 			Hybrid\Post\display_terms(
 				[
 					'taxonomy' => 'post_tag',
-					'before'   => '<div class="entry__terms-wrapper">' . Luxe\render_svg( 'hashtag', [ 'title' => 'Tags:', 'class' => 'entry__terms-icon' ] ),
+					'before'   => '<div class="entry__terms-wrapper">' . Luxe\Svg\render( 'hashtag', [ 'title' => 'Tags:', 'class' => 'entry__terms-icon' ] ),
 					'after'    => '</div>',
 				]
 			)

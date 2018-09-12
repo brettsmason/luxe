@@ -5,7 +5,7 @@
  * @package Luxe
  */
 
-namespace Luxe;
+namespace Luxe\Svg;
 
 /**
  * Renders SVG output.
@@ -16,7 +16,7 @@ namespace Luxe;
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return void
  */
-function display_svg( $file, $args = [] ) {
+function display( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
 	$svg->display();
 }
@@ -30,7 +30,7 @@ function display_svg( $file, $args = [] ) {
  * @param  array  $args An array or arguements to apply to the SVG.
  * @return string
  */
-function render_svg( $file, $args = [] ) {
+function render( $file, $args = [] ) {
 	$svg = new Svg( $file, $args );
 	return $svg->render();
 }

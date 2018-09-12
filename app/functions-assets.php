@@ -35,8 +35,8 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Add SVG icons for use in JS.
 	wp_localize_script(
 		'luxe-app', 'menuIcons', [
-			'dropdownMenuIcon'  => render_svg( 'chevron-down', [ 'class' => 'menu__dropdown-icon' ] ),
-			'submenuToggleIcon' => render_svg( 'chevron-down', [ 'class' => 'menu__submenu-toggle-icon' ] ),
+			'dropdownMenuIcon'  => Svg\render( 'chevron-down', [ 'class' => 'menu__dropdown-icon' ] ),
+			'submenuToggleIcon' => Svg\render( 'chevron-down', [ 'class' => 'menu__submenu-toggle-icon' ] ),
 		]
 	);
 

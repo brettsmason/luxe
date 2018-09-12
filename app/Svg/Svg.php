@@ -11,7 +11,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe;
+namespace Luxe\Svg;
 
 use Hybrid\Contracts\Renderable;
 use Hybrid\Contracts\Displayable;

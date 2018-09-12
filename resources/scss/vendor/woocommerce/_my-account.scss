@@ -1,0 +1,45 @@
+.woocommerce-account {
+
+	.woocommerce {
+
+		@include mq(medium) {
+			display: flex;
+		}
+	}
+}
+
+.woocommerce-MyAccount-navigation {
+	flex: 0 0 20%;
+	margin-right: vr(2);
+
+	ul {
+		margin-left: 0;
+		list-style: none;
+	}
+}
+
+.woocommerce-MyAccount-content {
+	flex: 1;
+
+	fieldset {
+		margin-bottom: 0;
+	}
+}
+
+.woocommerce-MyAccount-navigation-link {
+
+	& + & {
+		border-top: 1px solid $color-border;
+	}
+
+	a {
+		text-decoration: none;
+		display: block;
+		padding: vr(1/2);
+		text-align: center;
+
+		@include mq(medium) {
+			text-align: left;
+		}
+	}
+}

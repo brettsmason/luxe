@@ -55,6 +55,12 @@
 
 	[name="update_cart"] {
 		float: right;
+
+		&[disabled] {
+			background-color: transparent;
+			color: $color-text;
+			opacity: 0.3;
+		}
 	}
 
 	.cart_totals {

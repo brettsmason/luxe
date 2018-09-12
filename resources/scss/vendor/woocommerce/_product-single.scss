@@ -86,21 +86,6 @@
 	}
 }
 
-.woocommerce-product-gallery__wrapper {
-	display: flex;
-	flex-wrap: wrap;
-}
-.woocommerce-product-gallery__image {
-	flex: 0 1 auto;
-	margin-right: vr(1/2);
-	margin-bottom: vr(1/2);
-
-	&:first-child {
-		flex: 0 0 100%;
-		margin-right: 0;
-	}
-}
-
 // Grouped products
 .woocommerce-grouped-product-list {
 	margin-bottom: vr(3/4);

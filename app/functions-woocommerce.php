@@ -12,7 +12,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Mythic;
+namespace Luxe;
 
 use function Hybrid\Template\path;
 
@@ -31,18 +31,22 @@ if ( ! class_exists( 'woocommerce' ) ) {
 add_action( 'after_setup_theme', function() {
 
 	add_theme_support( 'woocommerce', [
-		'thumbnail_image_width' => 150,
-		'single_image_width'    => 300,
+		'thumbnail_image_width' => 300,
+		'single_image_width'    => 600,
 
         'product_grid'          => [
-            'default_rows'    => 3,
+            'default_rows'    => 4,
             'min_rows'        => 2,
             'max_rows'        => 8,
             'default_columns' => 4,
             'min_columns'     => 2,
-            'max_columns'     => 5,
+            'max_columns'     => 6,
 		],
 	] );
+
+	add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 } );
 
 /**
@@ -61,7 +65,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
  * @access public
  * @return void
  */
-add_action( 'enqueue_block_editor_assets', function() {
+add_action( 'wp_enqueue_scripts', function() {
 
 	// Main block styles.
 	wp_enqueue_style(
@@ -103,4 +107,34 @@ add_filter( 'woocommerce_template_loader_files', function( $files ) {
 add_filter( 'woocommerce_template_path', function( $path ) {
 
 	return path( $path );
+} );
+
+// Add a wrapper around the the product sorting dropdown and count.
+// Allows for an easier time styling.
+add_action( 'woocommerce_before_shop_loop', function() {
+	echo '<div class="woocommerce-sorting">';
+}, PHP_INT_MIN );
+
+// Close the above wrapper.
+add_action( 'woocommerce_before_shop_loop', function() {
+	echo '</div>';
+}, PHP_INT_MAX );
+
+// Remove WooCommerce pagination as we are using our own.
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+
+// Add our pagination in place of WooCommerce.
+add_action( 'woocommerce_after_shop_loop', function() {
+	\Hybrid\View\display( 'partials', 'pagination-posts' );
+}, PHP_INT_MAX );
+
+// Remove add to cart button from archive view.
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+add_action( 'woocommerce_checkout_after_customer_details', function() {
+	echo '<div class="woocommerce-checkout__order-details">';
+} );
+
+add_action( 'woocommerce_checkout_after_order_review', function() {
+	echo '</div>';
 } );

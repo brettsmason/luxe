@@ -1,0 +1,43 @@
+.woocommerce-sorting {
+
+	@include mq(medium) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.woocommerce-ordering {
+	margin-bottom: vr(1);
+}
+
+.woocommerce-result-count {
+	margin-right: vr(1/2);
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0;
+	list-style: none;
+
+	.product {
+		@include nth-grid(2);
+		position: relative;
+	}
+
+	@for $i from 3 through 6 {
+		@include mq(medium) {
+			&.columns-#{$i} > .product {
+				@include nth-grid($i);
+			}
+		}
+	}
+}
+
+.woocommerce-loop-product__link {
+
+	img {
+		margin-bottom: vr(1/2);
+	}
+}

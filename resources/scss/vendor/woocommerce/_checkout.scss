@@ -1,0 +1,87 @@
+.woocommerce-checkout {
+
+	h3 {
+		@include font-size($h5);
+	}
+
+	.checkout {
+		display: flex;
+		align-items: flex-start;
+		width: 100%;
+	}
+
+	.col2-set {
+		flex: 1;
+		margin-right: vr(2);
+	}
+
+	.woocommerce-checkout__order-details {
+		flex: 0 0 40%;
+		padding: vr(1);
+		border: 1px solid $color-border;
+	}
+
+	.wc_payment_methods {
+		margin-left: 0;
+		list-style: none;
+
+		li {
+			margin-left: 0;
+		}
+	}
+
+	.wc_payment_method {
+		padding-top: vr(1/2);
+		padding-bottom: vr(1/2);
+
+		& + .wc_payment_method {
+			border-top: 1px solid $color-border;
+		}
+	}
+
+	.payment_box p {
+		padding-left: 25px;
+		margin-bottom: 0;
+	}
+
+	.place-order .button {
+		width: 100%;
+	}
+
+	#ship-to-different-address {
+		@include font-size($global-font-size);
+	}
+
+	.shipping {
+
+		th,
+		td {
+			vertical-align: top;
+		}
+
+		ul {
+			margin: 0;
+			list-style: none;
+		}
+
+		label {
+			font-weight: 400;
+		}
+	}
+}
+
+.woocommerce-form-login {
+
+	.form-row:not(.form-row-first):not(.form-row-last) {
+		margin-bottom: vr(1/2);
+	}
+
+	.woocommerce-form__label-for-checkbox {
+		display: inline-block;
+		margin-left: vr(1/2);
+	}
+
+	.lost_password {
+		clear: both;
+	}
+}

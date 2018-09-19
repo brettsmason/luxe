@@ -27,11 +27,5 @@
   "require-dev": {
     "wp-coding-standards/wpcs": "^1.0.0",
     "wimg/php-compatibility": "^8.2"
-  },
-  "scripts": {
-    "post-create-project-cmd": [
-      "npm install",
-      "npx theme-claim --config='./config/rename.json'"
-    ]
   }
 }

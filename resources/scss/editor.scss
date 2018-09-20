@@ -29,130 +29,100 @@
 @import "node_modules/nth-grid/sass/nth-grid";
 
 
-// Generic.
+// Elements.
 //
-// This is the first point that real CSS is output. Resets, normalization,
-// fonts, etc. are best handled here. These are the base styles that other
-// styles will build upon.
+// Elements are (or should be) class-less designs for the base
+// HTML elements.
 
-@import "generic/box-sizing";
-@import "generic/normalize";
-@import "generic/reset";
-
-
-// Editor styles.
-.edit-post-visual-editor {
-
-	// Elements.
-	//
-	// Elements are (or should be) class-less designs for the base
-	// HTML elements.
-
-	@import "elements/page";
-	@import "elements/headings";
-	@import "elements/links";
-	@import "elements/blockquote";
-	@import "elements/lists";
-	@import "elements/hr";
-	@import "elements/tables";
-	@import "elements/media";
-	@import "elements/code";
-	// @import "elements/forms"; // @TODO work out how we could make this work
-	@import "elements/misc";
+@import "elements/headings";
+@import "elements/links";
+@import "elements/blockquote";
+@import "elements/lists";
+@import "elements/hr";
+@import "elements/tables";
+@import "elements/media";
+@import "elements/code";
+@import "elements/misc";
 
 
-	// Blocks.
-	//
-	// Blocks are styles for specific editor blocks.
-	//
+// Blocks.
+//
+// Blocks are styles for specific editor blocks.
+//
 
-	@import "blocks/wp-block-audio";
-	@import "blocks/wp-block-button";
-	@import "blocks/wp-block-categories";
-	@import "blocks/wp-block-code";
-	@import "blocks/wp-block-columns";
-	@import "blocks/wp-block-cover-image";
-	@import "blocks/wp-block-embed";
-	@import "blocks/wp-block-file";
-	@import "blocks/wp-block-gallery";
-	@import "blocks/wp-block-image";
-	@import "blocks/wp-block-latest-posts";
-	@import "blocks/wp-block-preformatted";
-	@import "blocks/wp-block-pullquote";
-	@import "blocks/wp-block-quote";
-	@import "blocks/wp-block-separator";
-	@import "blocks/wp-block-subhead";
-	@import "blocks/wp-block-table";
-	@import "blocks/wp-block-verse";
-
-
-	// Utilities.
-	//
-	// Utilities are helper classes and overrides.  This gets loaded last.
-	// If necessary, this is the only place where `!important` rules should
-	// go, but only if necessary.
-
-	@import "utilities/alignment";
-	@import "utilities/clearfix";
-	@import "utilities/color-palette";
-	@import "utilities/headings";
-	@import "utilities/hide";
+@import "blocks/wp-block-audio";
+@import "blocks/wp-block-button";
+@import "blocks/wp-block-categories";
+@import "blocks/wp-block-code";
+@import "blocks/wp-block-columns";
+@import "blocks/wp-block-cover-image";
+@import "blocks/wp-block-embed";
+@import "blocks/wp-block-file";
+@import "blocks/wp-block-gallery";
+@import "blocks/wp-block-image";
+@import "blocks/wp-block-latest-posts";
+@import "blocks/wp-block-preformatted";
+@import "blocks/wp-block-pullquote";
+@import "blocks/wp-block-quote";
+@import "blocks/wp-block-separator";
+@import "blocks/wp-block-subhead";
+@import "blocks/wp-block-table";
+@import "blocks/wp-block-verse";
 
 
-	// Set base styles for the editor.
+// Utilities.
+//
+// Utilities are helper classes and overrides.  This gets loaded last.
+// If necessary, this is the only place where `!important` rules should
+// go, but only if necessary.
+
+@import "utilities/headings";
+
+
+// Set page background color.
+// Applying it directly to body doesn't work at the moment
+// but adds it to the individual blocks instead.
+body.gutenberg-editor-page {
 	background-color: $color-background;
+}
+
+// Set body styles.
+// Note line-height doesn't currently work as core trumps it.
+.edit-post-visual-editor {
+	font-family: $font-family-body;
+	font-size: $global-font-size;
+	line-height: $global-line-height;
+}
+
+// Set paragraph styles.
+// Note color needs to be set here rather than the body
+// and line-height doesn't currently work as core trumps it.
+p {
 	color: $color-text;
 	font-family: $font-family-body;
 	font-size: $global-font-size;
 	line-height: $global-line-height;
+}
 
-	// Set bottom margin for paragraphs.
-	p {
-		font-family: $font-family-body;
-		font-size: $global-font-size;
-		line-height: $global-line-height;
-		margin-bottom: 0;
-	}
+// Title styling.
+// We have to be overly specific until this is changed in core.
+.editor-post-title__block .editor-post-title__input {
+	@include font-size($h1);
+	font-family: $font-family-heading;
+	font-weight: $font-weight-heading;
+}
 
-	ul,
-	ol {
-		margin-left: 0;
-	}
+// Sets the default width of the content and the title.
+.wp-block {
+	width: $global-width;
+}
 
-	// Post title.
-	.editor-post-title {
+// Wide aligned blocks.
+[data-align="wide"] {
+	max-width: $global-width-wide;
+}
 
-		&__input {
-			@include font-size($h1);
-			font-family: $font-family-heading;
-			font-weight: 700;
-			min-height: auto;
-		}
-	}
-
-	// Standard width blocks.
-	.editor-post-title__block,
-	.editor-default-block-appender,
-	.editor-block-list__block {
-		max-width: $global-width;
-	}
-
-	// Wide blocks.
-	.editor-block-list__block[data-align="wide"] {
-		max-width: $global-width-wide;
-	}
-
-	// Full width blocks.
-	.editor-block-list__block[data-align="full"] {
-		max-width: none;
-	}
-
-	// We need this as some blocks add the below classes to the markup too,
-	// which messes with the layout in the editor (namely the gallery block).
-	.alignwide,
-	.alignfull {
-		margin: auto;
-		transform: translateX(0);
-		width: 100%;
-	}
+// Full width aligned blocks.
+[data-align="full"] {
+	max-width: none;
 }

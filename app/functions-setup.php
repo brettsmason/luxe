@@ -82,6 +82,10 @@ add_action( 'after_setup_theme', function() {
 		],
 	] );
 
+	// Editor stylesheet.
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'public/css/editor.css' );
+
 	// Disable custom colors in block color palettes.
 	add_theme_support( 'disable-custom-colors' );
 

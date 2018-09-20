@@ -10,7 +10,7 @@
 		@include font-size($global-font-size);
 	}
 
-	&.is-large {
+	&.is-style-large {
 
 		p {
 			@include font-size(30px);

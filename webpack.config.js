@@ -14,6 +14,8 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 /**
  * Export our module for Webpack.
@@ -22,15 +24,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  * @access public
  * @return function
  */
-module.exports = env => {
+module.exports = (env) => {
 	return {
 		// Set the mode based on whether we're in production or dev.
 		mode: env.production ? 'production' : 'development',
 
 		// Only generate source maps if we're in a dev environment.
-		devtool: env.production ? undefined : 'source-maps',
-
-		watch: true,
+		devtool: env.production ? undefined : 'inline-cheap-module-source-map',
 
 		entry: {
 			app: './resources/js/app.js',
@@ -41,7 +41,7 @@ module.exports = env => {
 
 		output: {
 			path: path.resolve(__dirname, './public'),
-			filename: 'js/[name].js'
+			filename: 'js/[name].js',
 		},
 
 		// Console stats output.
@@ -71,7 +71,8 @@ module.exports = env => {
 					use: {
 						loader: 'babel-loader',
 						options: {
-							presets: ['@babel/preset-env']
+							presets: ['@babel/preset-env'],
+							cacheDirectory: true
 						}
 					}
 				},
@@ -133,14 +134,31 @@ module.exports = env => {
 			]
 		},
 
+		optimization: {
+			minimizer: [
+				new UglifyJsPlugin({
+					cache: true,
+					parallel: true,
+					sourceMap: false
+				}),
+				new OptimizeCSSAssetsPlugin({
+					cssProcessorPluginOptions: {
+						preset: [ 'default', { discardComments: { removeAll: true } } ]
+					},
+					canPrint: false
+				})
+			]
+		},
+
 		// Plugins.
 		plugins: [
+
 			// Friendlier errors.
 			new FriendlyErrorsWebpackPlugin(),
 
 			// Remove the extra JS files Webpack creates for Sass entries.
 			// This should be fixed in Webpack 5.
-			new FixStyleOnlyEntriesPlugin({ silent: true }),
+			// new FixStyleOnlyEntriesPlugin({ silent: true }),
 
 			// Clean the `public` folder on build.
 			new CleanWebpackPlugin( path.resolve(__dirname, 'public'), { verbose: false } ),
@@ -188,24 +206,22 @@ module.exports = env => {
 			new BrowserSyncPlugin({
 				host: 'localhost',
 				port: 3000,
-				proxy: 'http://theme-development.localhost',
+				proxy: 'theme-development.localhost',
 				open: false,
 				// reloadDelay: 500,
 				files: [
 					'*.php',
 					'app/**/*.php',
 					'resources/views/**/*.php',
-					'resources/scripts/**/*.js',
-					'resources/styles/**/*.{sass,scss}',
+					'resources/js/**/*.js',
+					'resources/scss/**/*.{sass,scss}',
 					'resources/img/**/*.{jpg,jpeg,png,gif}',
 					'resources/svg/**/*.svg',
 					'resources/fonts/**/*.{eot,ttf,woff,woff2,svg}'
 				]
 			},
 			{
-				// Prevent BrowserSync from reloading the page
-				// and let Webpack Dev Server take care of this.
-				reload: false
+				injectCss: true
 			})
 		]
 	};

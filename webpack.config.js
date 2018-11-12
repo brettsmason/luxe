@@ -158,7 +158,7 @@ module.exports = (env) => {
 
 			// Remove the extra JS files Webpack creates for Sass entries.
 			// This should be fixed in Webpack 5.
-			// new FixStyleOnlyEntriesPlugin({ silent: true }),
+			new FixStyleOnlyEntriesPlugin({ silent: true }),
 
 			// Clean the `public` folder on build.
 			new CleanWebpackPlugin( path.resolve(__dirname, 'public'), { verbose: false } ),

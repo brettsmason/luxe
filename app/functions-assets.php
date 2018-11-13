@@ -91,15 +91,12 @@ add_action( 'enqueue_block_editor_assets', function() {
  */
 function asset( $path ) {
 
-	// Get the Laravel Mix manifest.
-	$manifest = App::resolve( 'mythic/mix' );
-
-	// Make sure to trim any slashes from the front of the path.
-	$path = '/' . ltrim( $path, '/' );
+	// Get the manifest.
+	$manifest = App::resolve( 'luxe/manifest' );
 
 	if ( $manifest && isset( $manifest[ $path ] ) ) {
 		$path = $manifest[ $path ];
 	}
 
-	return get_theme_file_uri( 'public' . $path );
+	return get_theme_file_uri( 'public/' . $path );
 }

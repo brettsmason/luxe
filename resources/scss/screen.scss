@@ -31,9 +31,9 @@
 @import "tools/font-size";
 @import "tools/vr";
 @import "tools/responsive-embed";
-@import "node_modules/sass-mq/mq";
-@import "node_modules/nth-grid/sass/nth-grid";
 @import "tools/wrapper";
+@import "~nth-grid/sass/nth-grid";
+@import "~sass-mq/mq";
 
 
 // Generic.

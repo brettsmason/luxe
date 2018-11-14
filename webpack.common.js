@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
@@ -41,13 +42,16 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env'],
-						cacheDirectory: true
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env'],
+							cacheDirectory: true,
+							sourceMap: ! isProduction
+						}
 					}
-				}
+				]
 			},
 
 			// Styles.
@@ -128,6 +132,13 @@ module.exports = {
 				to: '[path][name].[ext]',
 				context: path.resolve(__dirname, './resources')
 			}
-		])
+		]),
+
+		// Cache for improved concurrent builds.
+		new HardSourceWebpackPlugin({
+			info: {
+				level: 'warn',
+			},
+		})
 	]
 };

@@ -13,7 +13,7 @@ module.exports = merge(common, {
 		new ImageminPlugin({
 			test: /\.(jpe?g|png|gif|svg)$/i,
 			optipng: {
-				optimizationLevel: 3
+				optimizationLevel: 7
 			},
 			gifsicle: {
 				optimizationLevel: 3
@@ -38,7 +38,16 @@ module.exports = merge(common, {
 			new UglifyJsPlugin({
 				cache: true,
 				parallel: true,
-				sourceMap: false
+				sourceMap: false,
+				uglifyOptions: {
+					ie8: false,
+					ecma: 5,
+					output: {
+						comments: false,
+						beautify: false
+					},
+					warnings: false
+				}
 			}),
 			new OptimizeCSSAssetsPlugin({
 				cssProcessorPluginOptions: {

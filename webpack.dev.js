@@ -17,15 +17,16 @@ module.exports = merge(common, {
 					'*.php',
 					'app/**/*.php',
 					'resources/views/**/*.php',
-					'resources/js/**/*.js',
-					'resources/scss/**/*.{sass,scss}',
-					'resources/img/**/*.{jpg,jpeg,png,gif}',
-					'resources/svg/**/*.svg',
-					'resources/fonts/**/*.{eot,ttf,woff,woff2,svg}'
+					'public/js/**/*.js',
+					'public/css/**/*.css',
+					'public/svg/**/*.svg',
+					'public/img/**/*.{jpg,jpeg,png,gif}',
+					'public/fonts/**/*.{eot,ttf,woff,woff2,svg}'
 				]
 			},
 			{
-				injectCss: true
+				injectCss: true,
+				reload: false
 			}
 		)
 	]

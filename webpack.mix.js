@@ -42,7 +42,7 @@ config.files.scripts.forEach(file => {
 // @link https://laravel.com/docs/5.6/mix#postcss
 // @link https://laravel.com/docs/5.6/mix#url-processing
 config.files.styles.forEach(file => {
-	mix.sass(`${config.source.styles}/${file}`, config.dist.styles, config.sassSettings);
+	mix.standaloneSass(`${config.source.styles}/${file}`, config.dist.styles, config.sassSettings);
 });
 
 mix.options({

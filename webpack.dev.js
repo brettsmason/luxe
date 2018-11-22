@@ -6,7 +6,6 @@ module.exports = merge(common, {
 	mode: 'development',
 	devtool: 'inline-cheap-module-source-map',
 	plugins: [
-		// Run BrowserSync.
 		new BrowserSyncPlugin(
 			{
 				host: 'localhost',

@@ -69,10 +69,7 @@ module.exports = {
 					{
 						loader: 'postcss-loader',
 						options: {
-							sourceMap: ! isProduction,
-							config: {
-								path: 'postcss.config.js'
-							}
+							sourceMap: ! isProduction
 						}
 					},
 					{
@@ -105,17 +102,16 @@ module.exports = {
 
 		// Create our cache busting asset manifest.
 		new ManifestPlugin({
+
+			// Filter using only .js and .css files.
+			filter: ({name}) => name.endsWith( '.js' ) || name.endsWith( '.css' ),
 			map: (file) => {
-				const extension = path.extname(file.name).slice(1);
 
 				// Add hash details on production for cache busting.
 				return {
-					...file,
 					name: file.path,
-					path: ['css', 'js'].includes(extension) && isProduction ?
-					`${file.path}?id=${file.chunk.hash}` :
-					file.path
-				}
+					path: isProduction ? `${file.path}?id=${file.chunk.hash}` : file.path
+				};
 			}
 		}),
 
@@ -137,8 +133,8 @@ module.exports = {
 		// Cache for improved concurrent builds.
 		new HardSourceWebpackPlugin({
 			info: {
-				level: 'warn',
-			},
+				level: 'warn'
+			}
 		})
 	]
 };

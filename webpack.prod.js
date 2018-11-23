@@ -23,9 +23,10 @@ module.exports = merge(common, {
 			},
 			svgo: {
 				plugins: [
-					{ removeUnknownsAndDefaults: false },
 					{ cleanupIDs: false },
-					{ removeViewBox: false }
+					{ mergePaths: false },
+					{ removeUnknownsAndDefaults: false },
+					{ removeViewBox: false },
 				]
 			},
 			plugins: [imageminMozjpeg({ quality: 75 })]

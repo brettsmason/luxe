@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const config = require('./config/build');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = merge(common, {
@@ -8,20 +9,11 @@ module.exports = merge(common, {
 	plugins: [
 		new BrowserSyncPlugin(
 			{
-				host: 'localhost',
-				port: 3000,
-				proxy: 'theme-development.localhost',
-				open: false,
-				files: [
-					'*.php',
-					'app/**/*.php',
-					'resources/views/**/*.php',
-					'public/js/**/*.js',
-					'public/css/**/*.css',
-					'public/svg/**/*.svg',
-					'public/img/**/*.{jpg,jpeg,png,gif}',
-					'public/fonts/**/*.{eot,ttf,woff,woff2,svg}'
-				]
+				host: config.browserSync.host,
+				port: config.browserSync.port,
+				proxy: config.browserSync.proxy,
+				open: config.browserSync.open,
+				files: config.browserSync.files
 			},
 			{
 				injectCss: true,

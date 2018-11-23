@@ -8,16 +8,14 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
+const config = require('./config/build');
+
 module.exports = {
-	entry: {
-		app: './resources/js/app.js',
-		screen: './resources/scss/screen.scss',
-		editor: './resources/scss/editor.scss',
-		woocommerce: './resources/scss/woocommerce.scss'
-	},
+	entry: config.entries,
+
 	output: {
-		path: path.resolve(__dirname, 'public'),
-		filename: 'js/[name].js'
+		path: path.resolve(__dirname, config.paths.public),
+		filename: config.outputs.javascript
 	},
 
 	// Console stats output.
@@ -25,9 +23,10 @@ module.exports = {
 	stats: 'minimal',
 
 	// External objects.
-	externals: {
-		jquery: 'jQuery'
-	},
+	externals: config.externals,
+
+	// custom modules resolving.
+	externals: config.resolve,
 
 	// Performance settings.
 	performance: {
@@ -57,7 +56,7 @@ module.exports = {
 			// Styles.
 			{
 				test: /\.s[ac]ss$/,
-				include: path.resolve(__dirname, 'resources/scss'),
+				// include: path.resolve(__dirname, 'resources/scss'),
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
@@ -96,7 +95,7 @@ module.exports = {
 		}),
 
 		// Clean the `public` folder on build.
-		new CleanWebpackPlugin(path.resolve(__dirname, 'public'), {
+		new CleanWebpackPlugin(path.resolve(__dirname, config.paths.public), {
 			verbose: false
 		}),
 
@@ -117,7 +116,7 @@ module.exports = {
 
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].css',
+			filename: config.outputs.css,
 			chunkFilename: '[id].css'
 		}),
 
@@ -126,7 +125,7 @@ module.exports = {
 			{
 				from: '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 				to: '[path][name].[ext]',
-				context: path.resolve(__dirname, './resources')
+				context: path.resolve(__dirname, config.paths.assets)
 			}
 		]),
 

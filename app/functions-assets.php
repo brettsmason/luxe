@@ -89,8 +89,16 @@ add_action( 'enqueue_block_editor_assets', function() {
  */
 function asset( $path ) {
 
+<<<<<<< HEAD
 	// Get the manifest.
 	$manifest = App::resolve( 'luxe/manifest' );
+=======
+	// Get the Laravel Mix manifest.
+	$manifest = App::resolve( 'luxe/mix' );
+
+	// Make sure to trim any slashes from the front of the path.
+	$path = '/' . ltrim( $path, '/' );
+>>>>>>> master
 
 	if ( $manifest && isset( $manifest[ $path ] ) ) {
 		$path = $manifest[ $path ];

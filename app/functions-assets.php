@@ -79,11 +79,9 @@ add_action( 'enqueue_block_editor_assets', function() {
 }, 10 );
 
 /**
- * Helper function for outputting an asset URL in the theme. This integrates
- * with Laravel Mix for handling cache busting. If used when you enqueue a script
- * or style, it'll append an ID to the filename.
+ * Helper function for outputting an asset URL in the theme.
+ * If used when you enqueue a script or style, it'll append an ID to the filename.
  *
- * @link   https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
  * @since  1.0.0
  * @access public
  * @param  string $path The path to the asset.

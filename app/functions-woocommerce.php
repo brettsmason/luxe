@@ -34,19 +34,19 @@ add_action( 'after_setup_theme', function() {
 		'thumbnail_image_width' => 300,
 		'single_image_width'    => 600,
 
-        'product_grid'          => [
-            'default_rows'    => 4,
-            'min_rows'        => 2,
-            'max_rows'        => 8,
-            'default_columns' => 4,
-            'min_columns'     => 2,
-            'max_columns'     => 6,
+		'product_grid'          => [
+			'default_rows'    => 4,
+			'min_rows'        => 2,
+			'max_rows'        => 8,
+			'default_columns' => 4,
+			'min_columns'     => 2,
+			'max_columns'     => 6,
 		],
 	] );
 
 	add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 } );
 
 /**
@@ -90,7 +90,7 @@ add_filter( 'woocommerce_template_loader_files', function( $files ) {
 
 	return [
 		path( 'woocommerce.php' ),
-		path( 'index.php' )
+		path( 'index.php' ),
 	];
 
 }, PHP_INT_MAX );

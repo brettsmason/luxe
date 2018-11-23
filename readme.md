@@ -1,6 +1,6 @@
 # Luxe - A WordPress starter theme
 
-Luxe is a starter theme for WordPress.
+Luxe is a WordPress starter theme using a modern workflow and best practices.
 
 The theme's primary goal is to offer a modern development experience for WordPress theme authors while sticking as close to possible to WordPress standards as we can. Sometimes those things don't always mesh well. This theme aims to balance that.
 

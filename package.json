@@ -1,7 +1,7 @@
 {
   "name": "luxe",
   "version": "1.0.0",
-  "description": "A WordPress starter theme.",
+  "description": "Luxe is a WordPress starter theme using a modern workflow and best practices.",
   "main": "resources/js/app.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",

@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider {
 		// Bind a single instance of our customizer class.
 		$this->app->singleton( Customize::class );
 
-		// Bind the Laravel Mix manifest for cache-busting.
+		// Bind the asset manifest for cache-busting.
 		$this->app->singleton( 'luxe/manifest', function() {
 
 			$file = get_theme_file_path( 'public/manifest.json' );

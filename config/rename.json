@@ -1,7 +1,7 @@
 {
 	"from": {
 		"Name": "Luxe",
-		"Description": "A WordPress starter theme.",
+		"Description": "Luxe is a WordPress starter theme using a modern workflow and best practices.",
 		"Namespace": "Luxe",
 		"Uri": "https://github.com/brettsmason/luxe",
 		"Author": "Brett Mason",

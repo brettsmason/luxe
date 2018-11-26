@@ -83,7 +83,7 @@ function luxe_upgrade_notice() {
  * @return void
  */
 function luxe_load_customize() {
-	wp_die( esc_html( luxe_compat_message() ), '', array( 'back_link' => true ) );
+	wp_die( esc_html( luxe_compat_message() ), '', [ 'back_link' => true ] );
 }
 
 /**

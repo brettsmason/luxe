@@ -93,13 +93,13 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'align-wide' );
 
 	// Add support for custom logo.
-	add_theme_support( 'custom-logo', array(
+	add_theme_support( 'custom-logo', [
 		'width'       => 300,
 		'height'      => 200,
 		'flex-height' => true,
 		'flex-width'  => true,
-		'header-text' => array( 'app-header__title', 'app-header__description' ),
-	) );
+		'header-text' => [ 'app-header__title', 'app-header__description' ],
+	 ] );
 }, 5 );
 
 /**

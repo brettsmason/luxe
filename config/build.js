@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require( 'path' );
 
 module.exports = {
 
@@ -16,11 +16,11 @@ module.exports = {
 	 * Collection of application front-end assets to be compiled.
 	 */
 	entries: {
-		'app': './resources/js/app.js',
-		'customize-preview': './resources/js/customize-preview.js',
-		'screen': './resources/scss/screen.scss',
-		'editor': './resources/scss/editor.scss',
-		'woocommerce': './resources/scss/woocommerce.scss'
+		app: './resources/js/app.js',
+		customizer: './resources/js/customizer.js',
+		screen: './resources/scss/screen.scss',
+		editor: './resources/scss/editor.scss',
+		woocommerce: './resources/scss/woocommerce.scss'
 	},
 
 	/**

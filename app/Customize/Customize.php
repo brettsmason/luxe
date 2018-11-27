@@ -86,8 +86,7 @@ class Customize implements Bootable {
 		$settings = [
 			$manager->get_setting( 'blogname' ),
 			$manager->get_setting( 'blogdescription' ),
-			$manager->get_setting( 'header_textcolor' ),
-			$manager->get_setting( 'header_image' ),
+			$manager->get_setting( 'header_text' ),
 		];
 
 		array_walk( $settings, function( &$setting ) {
@@ -167,8 +166,8 @@ class Customize implements Bootable {
 	public function previewEnqueue() {
 
 		wp_enqueue_script(
-			'luxe-customize-preview',
-			asset( 'js/customize-preview.js' ),
+			'luxe-customizer',
+			asset( 'js/customizer.js' ),
 			[ 'customize-preview' ],
 			false,
 			true

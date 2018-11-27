@@ -12,7 +12,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-import ResponsiveMenu from './responsive-menu';
+import ResponsiveMenu from './components/responsive-menu';
 
 // Setup a new menu
 const menu = new ResponsiveMenu( 'primary-menu' );

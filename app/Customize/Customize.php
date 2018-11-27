@@ -126,8 +126,8 @@ class Customize implements Bootable {
 		// WP `blogname` setting changes.
 		$manager->selective_refresh->add_partial(
 			'blogname', [
-				'selector'        => '.app-header__title a',
-				'display_callback' => function() {
+				'selector'        => '.app-header__title-link',
+				'render_callback' => function() {
 					return get_bloginfo( 'name', 'display' );
 				},
 			]
@@ -138,7 +138,7 @@ class Customize implements Bootable {
 		$manager->selective_refresh->add_partial(
 			'blogdescription', [
 				'selector'        => '.app-header__description',
-				'display_callback' => function() {
+				'render_callback' => function() {
 					return get_bloginfo( 'description', 'display' );
 				},
 			]

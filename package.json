@@ -54,7 +54,7 @@
     "postcss-pxtorem": "^4.0.1",
     "sass-loader": "^7.1.0",
     "sass-mq": "^5.0.0",
-    "stylelint": "^9.3.0",
+    "stylelint": "^9.9.0",
     "stylelint-config-wordpress": "^13.0.0",
     "stylelint-order": "^2.0.0",
     "theme-claim": "^0.1.5",

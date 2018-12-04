@@ -53,32 +53,6 @@ add_action( 'wp_enqueue_scripts', function() {
 }, 10 );
 
 /**
- * Enqueue editor scripts/styles.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-add_action( 'enqueue_block_editor_assets', function() {
-
-	// Main block styles.
-	wp_enqueue_style(
-		'luxe-editor',
-		asset( 'css/editor.css' ),
-		false,
-		null
-	);
-
-	// Overwrite Core block styles with empty styles.
-	wp_deregister_style( 'wp-block-library' );
-	wp_deregister_style( 'wp-block-library-theme' );
-
-	// Overwrite Core theme styles with empty styles.
-	wp_register_style( 'wp-block-library', '' );
-	wp_register_style( 'wp-block-library-theme', '' );
-}, 10 );
-
-/**
  * Helper function for outputting an asset URL in the theme.
  * If used when you enqueue a script or style, it'll append an ID to the filename.
  *

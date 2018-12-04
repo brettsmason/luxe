@@ -77,53 +77,45 @@
 // If necessary, this is the only place where `!important` rules should
 // go, but only if necessary.
 
+@import "utilities/alignment";
+@import "utilities/clearfix";
+@import "utilities/color-palette";
 @import "utilities/headings";
+@import "utilities/hide";
 
 
-// Set page background color.
-// Applying it directly to body doesn't work at the moment
-// but adds it to the individual blocks instead.
-body.gutenberg-editor-page {
+// Editor related styles which overwrite above styles.
+
+body {
 	background-color: $color-background;
-}
-
-// Set body styles.
-// Note line-height doesn't currently work as core trumps it.
-.edit-post-visual-editor {
-	font-family: $font-family-body;
-	font-size: $global-font-size;
-	line-height: $global-line-height;
-}
-
-// Set paragraph styles.
-// Note color needs to be set here rather than the body
-// and line-height doesn't currently work as core trumps it.
-p {
 	color: $color-text;
 	font-family: $font-family-body;
 	font-size: $global-font-size;
 	line-height: $global-line-height;
 }
 
-// Title styling.
-// We have to be overly specific until this is changed in core.
+p {
+	font-size: $global-font-size;
+}
+
 .editor-post-title__block .editor-post-title__input {
 	@include font-size($h1);
+	color: $color-heading;
 	font-family: $font-family-heading;
 	font-weight: $font-weight-heading;
 }
 
 // Sets the default width of the content and the title.
 .wp-block {
-	width: $global-width;
-}
+	max-width: $global-width;
 
-// Wide aligned blocks.
-[data-align="wide"] {
-	max-width: $global-width-wide;
-}
+	// Wide aligned blocks.
+	&[data-align="wide"] {
+		max-width: $global-width-wide;
+	}
 
-// Full width aligned blocks.
-[data-align="full"] {
-	max-width: none;
+	// Full width aligned blocks.
+	&[data-align="full"] {
+		max-width: none;
+	}
 }

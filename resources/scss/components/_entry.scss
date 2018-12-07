@@ -31,6 +31,7 @@
 
 	// Full entry content.
 	&__content {
+		@include clearfix;
 		margin-bottom: vr(2);
 
 		> * {

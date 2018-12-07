@@ -5,7 +5,33 @@
 ////
 
 .wp-block-pullquote {
-	border: 0;
-	padding: vr(2) 0;
+	max-width: 40%;
 	text-align: center;
+
+	blockquote {
+		border: 0;
+		padding: vr(2) 0;
+	}
+
+	p {
+		@include font-size($h2);
+	}
+
+	&.alignleft,
+	&.alignright {
+		text-align: left;
+	}
+
+	&.is-style-solid-color {
+
+		blockquote {
+			background-color: $color-primary;
+			color: $color-white;
+			padding: vr(2);
+		}
+
+		cite {
+			color: $color-black;
+		}
+	}
 }

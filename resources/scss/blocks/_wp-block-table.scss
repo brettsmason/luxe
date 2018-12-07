@@ -6,7 +6,19 @@
 
 .wp-block-table {
 
+	th,
+	td {
+		border-top: 1px solid $color-table-border;
+	}
+
 	&.has-fixed-layout {
 		table-layout: fixed;
+	}
+
+	&.is-style-stripes {
+
+		tbody tr:nth-child(odd) {
+			background: $color-aluminium-grey;
+		}
 	}
 }

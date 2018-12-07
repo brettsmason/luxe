@@ -15,18 +15,10 @@ table {
 
 th,
 td {
-	padding: vr(1/4);
+	padding: vr(3/4);
 	text-align: left;
 
 	tfoot & {
 		color: $color-dark-grey;
-	}
-
-	&:first-child {
-		padding-left: 0;
-	}
-
-	&:last-child {
-		padding-right: 0;
 	}
 }

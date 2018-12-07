@@ -6,6 +6,11 @@
 
 .wp-block-columns {
 	display: flex;
+	flex-wrap: wrap;
+
+	@include mq(medium) {
+		flex-wrap: nowrap;
+	}
 
 	// Editor specific styling.
 	// Make sure columns span correctly.
@@ -16,10 +21,14 @@
 
 // Individual columns.
 .wp-block-column {
-	flex: 1;
-	margin-right: vr(1);
+	flex: 0 0 100%;
 
-	&:last-child {
-		margin-right: 0;
+	@include mq(medium) {
+		flex: 1;
+		margin-right: vr(1);
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }

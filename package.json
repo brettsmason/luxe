@@ -64,5 +64,8 @@
     "webpack-fix-style-only-entries": "^0.0.5",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "node-sass-json-importer": "^4.1.0"
   }
 }

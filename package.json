@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/brettsmason/luxe#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.1.0",
     "@wordpress/browserslist-config": "^2.2.2",
     "babel-loader": "^8.0.4",

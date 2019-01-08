@@ -3,9 +3,9 @@
 	position: relative;
 
 	&__wrapper {
-		max-width: none;
 		display: flex;
 		flex-wrap: wrap;
+		max-width: none;
 	}
 
 	.flex-viewport &__image {
@@ -17,22 +17,22 @@
 	}
 
 	&__trigger {
-		position: absolute;
-		top: vr(1/2);
-		right: vr(1/2);
+		border-radius: $global-radius;
 		display: block;
 		height: 20px;
-		width: 20px;
-		border-radius: $global-radius;
-		z-index: 99;
+		position: absolute;
+		right: vr(1/2);
 		text-align: center;
+		top: vr(1/2);
+		width: 20px;
+		z-index: 99;
 	}
 
 	// Default gallery without specific version enabled
 	.woocommerce-product-gallery__image:nth-child(n + 2) {
 		flex: 0 0 auto;
-		margin-top: vr(1/2);
 		margin-right: vr(1/2);
+		margin-top: vr(1/2);
 	}
 
 	.woocommerce-product-gallery__image:first-child {
@@ -44,7 +44,9 @@
 	}
 
 	@for $i from 2 through 6 {
+
 		&--columns-#{$i} {
+
 			.woocommerce-product-gallery__image:nth-child(n + 2) {
 				width: calc(#{percentage(1 / $i)} - (#{vr(1/2)} / #{$i} * (#{$i} - 1)));
 			}
@@ -61,17 +63,17 @@
 		margin-top: vr(1/2);
 
 		li {
-			margin-right: vr(1/2);
-			list-style: none;
 			flex: 1;
+			list-style: none;
+			margin-right: vr(1/2);
 
 			&:last-child {
 				margin-right: 0;
 			}
 
 			img {
-				opacity: 0.5;
 				cursor: pointer;
+				opacity: 0.5;
 			}
 
 			img:hover,

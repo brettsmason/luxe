@@ -11,8 +11,13 @@
 
 	&.is-type-image {}
 	&.is-type-audio {}
-	&.is-type-rich {} // text, twitter, etc.
+	&.is-type-rich {}
 	&.is-type-video {}
 
 	&.is-provider-vimeo {}
+
+	&__wrapper {
+		@include responsive-embed(16 by 9);
+		margin-bottom: vr(1);
+	}
 }

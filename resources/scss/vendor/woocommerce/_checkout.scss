@@ -5,8 +5,8 @@
 	}
 
 	.checkout {
-		display: flex;
 		align-items: flex-start;
+		display: flex;
 		width: 100%;
 	}
 
@@ -16,14 +16,14 @@
 	}
 
 	.woocommerce-checkout__order-details {
+		border: 1px solid $color-border;
 		flex: 0 0 40%;
 		padding: vr(1);
-		border: 1px solid $color-border;
 	}
 
 	.wc_payment_methods {
-		margin-left: 0;
 		list-style: none;
+		margin-left: 0;
 
 		li {
 			margin-left: 0;
@@ -31,17 +31,17 @@
 	}
 
 	.wc_payment_method {
-		padding-top: vr(1/2);
 		padding-bottom: vr(1/2);
+		padding-top: vr(1/2);
 
-		& + .wc_payment_method {
+		+ .wc_payment_method {
 			border-top: 1px solid $color-border;
 		}
 	}
 
 	.payment_box p {
-		padding-left: 25px;
 		margin-bottom: 0;
+		padding-left: 25px;
 	}
 
 	.place-order .button {
@@ -60,8 +60,8 @@
 		}
 
 		ul {
-			margin: 0;
 			list-style: none;
+			margin: 0;
 		}
 
 		label {

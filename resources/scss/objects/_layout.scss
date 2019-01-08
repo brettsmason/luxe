@@ -1,9 +1,3 @@
-////
-/// Layout objects.
-///
-/// @group Objects
-////
-
 .grid {
 	@include mq(medium) {
 		display: flex;
@@ -47,21 +41,6 @@
 
 			&:last-child {
 				margin-right: 0;
-			}
-		}
-	}
-}
-
-// Layout for content with sidebar
-.has-sidebar-primary {
-	@include mq(medium) {
-
-		.app-content {
-			display: flex;
-			flex-wrap: wrap;
-
-			> * {
-				@include nth-grid(2 1, $gutter: vr(1));
 			}
 		}
 	}

@@ -12,8 +12,8 @@
 	}
 
 	.quantity {
-		max-width: 90px;
 		display: inline-block;
+		max-width: 90px;
 		vertical-align: middle;
 	}
 
@@ -39,8 +39,8 @@
 }
 
 .wc-tabs-wrapper {
-	width: 100%;
 	margin-bottom: vr(1);
+	width: 100%;
 }
 
 .wc-tabs {
@@ -56,11 +56,11 @@
 	}
 
 	a {
-		display: block;
-		padding: vr(1/2) vr(1);
 		background-color: $color-light-grey;
 		border: 1px solid $color-light-grey;
 		color: $color-text;
+		display: block;
+		padding: vr(1/2) vr(1);
 	}
 
 	.active a,
@@ -105,11 +105,11 @@
 }
 
 .reset_variations {
-	position: absolute;
-	right: 0;
 	bottom: 95%;
 	color: currentColor;
 	font-size: 14px;
+	position: absolute;
+	right: 0;
 }
 
 // Related products

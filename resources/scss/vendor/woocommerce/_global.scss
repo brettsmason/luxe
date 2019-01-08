@@ -1,12 +1,12 @@
 .onsale {
 	background-color: $color-secondary;
+	border-radius: $global-radius;
 	color: $color-white;
+	left: 0;
+	line-height: 1;
+	padding: vr(1/4) vr(1/2);
 	position: absolute;
 	top: 0;
-	left: 0;
-	padding: vr(1/4) vr(1/2);
-	border-radius: $global-radius;
-	line-height: 1;
 	z-index: 5;
 }
 
@@ -38,14 +38,14 @@
 
 .woocommerce-message,
 .woocommerce-info {
-	display: flex;
-	padding: vr(1/2);
 	align-items: center;
-	margin-bottom: vr(1);
-	justify-content: space-between;
-	border: 1px solid $color-border;
 	background-color: $color-aluminium-grey;
+	border: 1px solid $color-border;
+	display: flex;
 	flex: 0 0 100%; // For when a message is in the basket
+	justify-content: space-between;
+	margin-bottom: vr(1);
+	padding: vr(1/2);
 
 	.button {
 		order: 1;
@@ -55,9 +55,9 @@
 .woocommerce {
 
 	.select2-container .select2-selection--single {
-		height: vr(1.75);
 		border-color: $color-border;
 		border-radius: 0;
+		height: vr(1.75);
 	}
 
 	.select2-container--default .select2-selection__rendered {
@@ -86,8 +86,8 @@
 }
 
 .form-row-last {
-	margin-left: vr(1);
 	clear: right;
+	margin-left: vr(1);
 }
 
 .form-row-wide {

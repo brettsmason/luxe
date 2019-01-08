@@ -1,30 +1,24 @@
-////
-/// Page elements.
-///
-/// @group Elements
-////
-
 /**
  * Simple page-level setup.
  *
  * 1. Set the default `font-size` and `line-height` for the entire project.
- * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
- * 3. Ensure the page always fills at least the entire height of the viewport.
  */
 
 html {
-	font-size: percentage($global-font-size / 16px); /* [1] */
-	line-height: $global-line-height / $global-font-size; /* [1] */
 	background: $color-background;
 	color: $color-text;
 	font-family: $font-family-body;
+	font-size: percentage($global-font-size / 16px); /* [1] */
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	min-height: 100%; /* [3] */
+	line-height: $global-line-height / $global-font-size; /* [1] */
+	min-height: 100%; /* [2] */
 	overflow-x: hidden;
-	overflow-y: scroll; /* [2] */
+	overflow-y: scroll; /* [3] */
 	text-rendering: optimizeLegibility;
 }
 

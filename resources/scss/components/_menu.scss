@@ -1,5 +1,53 @@
 .menu {
 
+	// The main toggle for the menu.
+	&__toggle {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		height: 50px;
+		padding: 0.5rem;
+		width: 50px;
+
+		@include mq(medium) {
+			display: none;
+		}
+
+		&:focus {
+			outline: 1px dotted;
+			outline-offset: -1px;
+		}
+	}
+
+	// The icon within the main menu toggle.
+	&__toggle-icon {
+		height: 100%;
+		width: 100%;
+
+		path {
+			opacity: 1;
+			transform: rotate(0) translate(0, 0);
+			transform-origin: 50% 50%;
+			transition: all $global-transition-duration $global-transition-type;
+		}
+
+		// State changed to expanded so we can animate the icon.
+		[aria-expanded="true"] > & {
+
+			path:nth-of-type(1) {
+				transform: rotate(-45deg) translateY(42%);
+			}
+
+			path:nth-of-type(2) {
+				opacity: 0;
+			}
+
+			path:nth-of-type(3) {
+				transform: rotate(45deg) translateY(-42%);
+			}
+		}
+	}
+
 	// The base <ul> of a menu.
 	&__items {
 		background-color: $color-menu-items-background;
@@ -147,51 +195,7 @@
 		transform: rotate(-90deg);
 	}
 
-	&__toggle {
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-		height: 50px;
-		padding: 0.5rem;
-		width: 50px;
-
-		@include mq(medium) {
-			display: none;
-		}
-
-		&:focus {
-			outline: 1px dotted;
-			outline-offset: -1px;
-		}
-	}
-
-	&__toggle-icon {
-		height: 100%;
-		width: 100%;
-
-		path {
-			opacity: 1;
-			transform: rotate(0) translate(0, 0);
-			transform-origin: 50% 50%;
-			transition: all $global-transition-duration $global-transition-type;
-		}
-
-		[aria-expanded="true"] > & {
-
-			path:nth-of-type(1) {
-				transform: rotate(-45deg) translateY(42%);
-			}
-
-			path:nth-of-type(2) {
-				opacity: 0;
-			}
-
-			path:nth-of-type(3) {
-				transform: rotate(45deg) translateY(-42%);
-			}
-		}
-	}
-
+	// The toggle used to expand a sub menu on smaller screens.
 	&__sub-menu-toggle {
 		background-color: $color-menu-sub-menu-toggle-background;
 		border: none;
@@ -204,14 +208,7 @@
 		}
 	}
 
-
-	&__dropdown-icon {
-		fill: $color-menu-dropdown-icon;
-		height: 0.5rem;
-		margin-left: 0.3rem;
-		width: 0.5rem;
-	}
-
+	// The icon within the above toggle.
 	&__sub-menu-toggle-icon {
 		height: 1rem;
 		transition: transform $global-transition-duration $global-transition-type;
@@ -222,10 +219,19 @@
 		}
 	}
 
+	// A menu item that has a dropdown indicator.
 	.has-dropdown-icon {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	// The icon used on larger screens to indicate there is a dropdown.
+	&__dropdown-icon {
+		fill: $color-menu-dropdown-icon;
+		height: 0.5rem;
+		margin-left: 0.3rem;
+		width: 0.5rem;
 	}
 }
 

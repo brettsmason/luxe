@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	wp_localize_script(
 		'luxe-app', 'menuIcons', [
 			'dropdownMenuIcon'  => Svg\render( 'chevron-down', [ 'class' => 'menu__dropdown-icon' ] ),
-			'submenuToggleIcon' => Svg\render( 'chevron-down', [ 'class' => 'menu__submenu-toggle-icon' ] ),
+			'submenuToggleIcon' => Svg\render( 'chevron-down', [ 'class' => 'menu__sub-menu-toggle-icon' ] ),
 		]
 	);
 

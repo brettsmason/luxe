@@ -1,5 +1,4 @@
 .wp-block-pullquote {
-	max-width: 40%;
 	text-align: center;
 
 	blockquote {
@@ -8,7 +7,7 @@
 	}
 
 	p {
-		@include font-size($h2);
+		@include font-size($h3);
 	}
 
 	&.alignleft,
@@ -21,7 +20,7 @@
 		blockquote {
 			background-color: $color-primary;
 			color: $color-white;
-			padding: vr(2);
+			padding: vr(1);
 		}
 
 		cite {

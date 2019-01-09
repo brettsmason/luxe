@@ -89,7 +89,7 @@ select {
 	}
 
 	&:disabled {
-		color: $color-mid-grey;
+		color: $color-grey-500;
 		cursor: not-allowed;
 		font-style: italic;
 		opacity: 0.3;

@@ -1,13 +1,13 @@
 a {
 	color: $color-link;
-	text-decoration: none;
+	text-decoration: underline;
 	transition: all $global-transition-duration $global-transition-type;
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color-link-hover;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 	&:focus {

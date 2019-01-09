@@ -1,20 +1,26 @@
 /// Creates a responsive embed container.
-/// @param {List} $ratio [default] - Ratio of the container.
-@mixin responsive-embed($ratio: 16 by 9) {
-	height: 0;
-	overflow: hidden;
-	padding-bottom: ratio-to-percentage($ratio);
-	position: relative;
+/// @param {List} $ratio - Ratio of the container.
+/// @param {Boolean} $base [true] - Include base styles or not.
+@mixin responsive-embed($ratio: null, $base: true) {
+	@if $ratio {
+		padding-bottom: ratio-to-percentage($ratio);
+	}
 
-	iframe,
-	object,
-	embed,
-	video {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
+	@if $base {
+		height: 0;
+		overflow: hidden;
+		position: relative;
+
+		iframe,
+		object,
+		embed,
+		video {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
 	}
 }
 

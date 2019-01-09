@@ -12,12 +12,21 @@
 	&.is-type-image {}
 	&.is-type-audio {}
 	&.is-type-rich {}
-	&.is-type-video {}
 
-	&.is-provider-vimeo {}
-
-	&__wrapper {
-		@include responsive-embed(16 by 9);
+	.is-type-video &__wrapper {
+		@include responsive-embed();
 		margin-bottom: vr(1);
+	}
+
+	.wp-embed-aspect-16-9 &__wrapper {
+		@include responsive-embed(16 by 9, false);
+	}
+
+	.wp-embed-aspect-4-3 &__wrapper {
+		@include responsive-embed(4 by 3, false);
+	}
+
+	.wp-embed-aspect-21-9 &__wrapper {
+		@include responsive-embed(21 by 9, false);
 	}
 }

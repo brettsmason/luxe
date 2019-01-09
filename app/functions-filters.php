@@ -87,3 +87,26 @@ function nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons', 10, 4 );
+
+/**
+ * Add custom sizes attribute to responsive image functionality for post thumbnails.
+ *
+ *
+ * @param array $attr  Attributes for the image markup.
+ * @param WP_Post $attachment WP_Post object for the attachment.
+ * @param string|array $size  Requested size.
+ * @return string Value for use in post thumbnail 'sizes' attribute.
+ */
+function post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+
+	if ( is_admin() ) {
+		return $attr;
+	}
+
+	if ( $size == 'post-thumbnail' ) {
+		$attr['sizes'] = '(min-width: 46.25em) 305px, 100vw';
+	}
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', __NAMESPACE__ . '\post_thumbnail_sizes_attr', 10, 3 );

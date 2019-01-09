@@ -1,6 +1,10 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
+	<figure class="entry__thumbnail">
+		<?php the_post_thumbnail( 'post-thumbnail' ) ?>
+	</figure>
+
 	<header class="entry__header">
-		<?php Hybrid\Post\display_title( [ 'class' => 'entry__title u-h5' ] ) ?>
+		<?php Hybrid\Post\display_title( [ 'class' => 'entry__title u-h4' ] ) ?>
 
 		<div class="entry__byline">
 			<?php Hybrid\Post\display_date() ?>

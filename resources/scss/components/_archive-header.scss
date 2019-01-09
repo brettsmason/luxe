@@ -2,5 +2,8 @@
 
 	&__title {}
 
-	&__description {}
+	&__description {
+		@include font-size($h4);
+		color: $color-grey-700;
+	}
 }

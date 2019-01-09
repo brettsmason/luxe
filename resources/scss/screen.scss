@@ -71,9 +71,10 @@
 // every piece of the design is some type of component, whether it"s
 // a one-off or reusable block of code.
 
-@import "objects/wrapper";
+@import "objects/animations";
 @import "objects/layout";
 @import "objects/media";
+@import "objects/wrapper";
 
 
 // Components.

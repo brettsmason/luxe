@@ -18,6 +18,8 @@
 // These are used throughout the code but don't output CSS on their own.
 // Things like mixins and extensions go here.
 
+@import "~nth-grid/sass/nth-grid";
+@import "~sass-mq/mq";
 @import "tools/units";
 @import "tools/clearfix";
 @import "tools/hidden";
@@ -26,8 +28,6 @@
 @import "tools/vr";
 @import "tools/responsive-embed";
 @import "tools/wrapper";
-@import "~nth-grid/sass/nth-grid";
-@import "~sass-mq/mq";
 
 
 // Elements.

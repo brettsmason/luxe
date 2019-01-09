@@ -5,6 +5,7 @@
 ////
 
 .wp-block-embed {
+	margin-bottom: vr(1);
 
 	iframe {}
 	figcaption {}
@@ -13,9 +14,8 @@
 	&.is-type-audio {}
 	&.is-type-rich {}
 
-	.is-type-video &__wrapper {
+	.wp-has-aspect-ratio &__wrapper {
 		@include responsive-embed();
-		margin-bottom: vr(1);
 	}
 
 	.wp-embed-aspect-16-9 &__wrapper {

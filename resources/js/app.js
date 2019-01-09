@@ -15,4 +15,4 @@
 import ResponsiveMenu from './components/responsive-menu';
 
 // Setup a new menu
-const menu = new ResponsiveMenu( 'primary-menu' );
+const menu = new ResponsiveMenu( 'primary-menu', { animateToggle: true });

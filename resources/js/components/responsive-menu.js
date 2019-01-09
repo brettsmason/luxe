@@ -1,6 +1,7 @@
 export default class ResponsiveMenu {
 	constructor(container, options) {
 		const defaults = {
+			animateToggle: true,
 			submenuClass: 'has-children',
 			submenuToggleClass: 'menu__sub-menu-toggle',
 			menuToggleClass: 'menu__toggle',
@@ -51,7 +52,7 @@ export default class ResponsiveMenu {
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
-			this._toggle(this.menuToggle, true);
+			this._toggle(this.menuToggle, this.options.animateToggle);
 			this._trapFocus();
 		});
 
@@ -68,7 +69,7 @@ export default class ResponsiveMenu {
 		document.addEventListener('keyup', event => {
 			if (27 === event.keyCode) {
 				if (this._isMenuOpen()) {
-					this._toggle(this.menuToggle, true);
+					this._toggle(this.menuToggle, this.options.animateToggle);
 					this.menuToggle.focus();
 
 					let toggles = document.getElementsByClassName('menu__sub-menu-toggle');
@@ -82,12 +83,12 @@ export default class ResponsiveMenu {
 	}
 
 	// Toggle aria-expanded state when button is pressed
-	_toggle(element, height = false) {
+	_toggle(element, height = true) {
 		let expanded =
 			'false' === element.getAttribute('aria-expanded') ? true : false;
 		element.setAttribute('aria-expanded', expanded);
 
-		if(height) {
+		if(height === true) {
 			if(expanded) {
 				this._expandElement(element.nextElementSibling);
 			} else {

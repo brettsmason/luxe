@@ -2,6 +2,7 @@ export default class ResponsiveMenu {
 	constructor(container, options) {
 		const defaults = {
 			animateToggle: true,
+			menuToggle: 'menu-toggle',
 			submenuClass: 'has-children',
 			submenuToggleClass: 'menu__sub-menu-toggle',
 			menuToggleClass: 'menu__toggle',
@@ -18,7 +19,7 @@ export default class ResponsiveMenu {
 
 		this.container = document.getElementById(container);
 		this.menu = this.container.getElementsByTagName('ul')[0];
-		this.menuToggle = this.container.getElementsByTagName('button')[0];
+		this.menuToggle = document.getElementById(this.options.menuToggle);
 		this.submenus = this.container.getElementsByClassName(
 			this.options.submenuClass
 		);

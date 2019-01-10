@@ -1,6 +1,10 @@
 .entry {
 	margin-bottom: vr(2);
 
+	.single & {
+		margin-bottom: 0;
+	}
+
 	// Featured image.
 	&__image {
 		margin-bottom: vr(1/2);
@@ -37,6 +41,10 @@
 	&__content {
 		@include clearfix;
 		margin-bottom: vr(2);
+
+		.single & {
+			margin-bottom: 0;
+		}
 
 		> * {
 			@include wrapper($global-width);

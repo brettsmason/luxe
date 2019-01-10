@@ -89,7 +89,9 @@
 	// Type of comment.
 	&--type-comment {}
 
-	&--type-ping {}
+	&--type-ping {
+		margin-bottom: vr(1/2);
+	}
 
 	// Comment status.
 	&--status-unapproved {}

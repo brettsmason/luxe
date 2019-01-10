@@ -32,8 +32,10 @@
 			<?php comment_text() ?>
 		</div>
 
-		<div class="comment__actions">
-			<?php Hybrid\Comment\display_reply_link( [ 'before' => Luxe\Svg\render( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
-		</div>
+		<?php if ( comments_open() ) : ?>
+			<div class="comment__actions">
+				<?php Hybrid\Comment\display_reply_link( [ 'before' => Luxe\Svg\render( 'reply', [ 'class' => 'comment__reply-icon' ] ) ] ) ?>
+			</div>
+		<?php endif ?>
 
 <?php /* No closing </div> and </li> is needed.  WordPress will know where to add it. */ ?>

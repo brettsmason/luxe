@@ -103,8 +103,8 @@ function post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 		return $attr;
 	}
 
-	if ( $size == 'post-thumbnail' ) {
-		$attr['sizes'] = '(min-width: 46.25em) 305px, 100vw';
+	if ( $size === 'post-thumbnail' ) {
+		$attr['sizes'] = '(min-width: 46.25em) calc(100vw / 3), 100vw';
 	}
 
 	return $attr;

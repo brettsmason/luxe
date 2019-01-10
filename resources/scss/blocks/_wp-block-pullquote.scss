@@ -3,6 +3,7 @@
 
 	blockquote {
 		border: 0;
+		margin-bottom: 0;
 		padding: vr(2) 0;
 	}
 
@@ -18,13 +19,8 @@
 	&.is-style-solid-color {
 
 		blockquote {
-			background-color: $color-primary;
-			color: $color-white;
+			background-color: $color-grey-100;
 			padding: vr(1);
-		}
-
-		cite {
-			color: $color-black;
 		}
 	}
 }

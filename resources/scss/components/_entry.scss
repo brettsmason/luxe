@@ -42,8 +42,14 @@
 		@include clearfix;
 		margin-bottom: vr(2);
 
-		.single & {
+		.single &,
+		> :last-child {
 			margin-bottom: 0;
+		}
+
+		// Add some spacing for anything after entry__content.
+		& + * {
+			margin-top: vr(2);
 		}
 
 		> * {

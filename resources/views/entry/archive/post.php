@@ -1,5 +1,5 @@
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
-	<figure class="entry__thumbnail">
+	<figure class="entry__image">
 		<?php the_post_thumbnail( 'post-thumbnail' ) ?>
 	</figure>
 

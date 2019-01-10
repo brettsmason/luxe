@@ -65,6 +65,7 @@
 		transition: all 250ms ease;
 		visibility: hidden;
 		width: 100%;
+		z-index: 100;
 
 		@include mq(medium) {
 			flex-direction: row;
@@ -144,7 +145,7 @@
 		transition: all $global-transition-duration $global-transition-type;
 		visibility: hidden;
 		width: 100%;
-		z-index: 10;
+		z-index: 100;
 
 		@include mq(medium) {
 			box-shadow: 0 vr(1/4) vr(1) rgba($color-black, 0.1);

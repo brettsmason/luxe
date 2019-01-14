@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const jsonImporter = require('node-sass-json-importer');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
@@ -76,8 +75,7 @@ module.exports = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: ! isProduction,
-							outputStyle: 'expanded',
-							importer: jsonImporter()
+							outputStyle: 'expanded'
 						}
 					}
 				]

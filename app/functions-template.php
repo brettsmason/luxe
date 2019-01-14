@@ -26,7 +26,7 @@ function sep( $sep = '' ) {
 
 	return apply_filters(
 		'luxe/sep',
-		sprintf(
+		sprintf( // WPCS: XSS OK.
 			' <span class="sep">%s</span> ',
 			$sep ?: esc_html_x( '&middot;', 'meta separator', 'luxe' )
 		)

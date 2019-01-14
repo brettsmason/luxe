@@ -91,9 +91,8 @@ add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\nav_menu_social_icons'
 /**
  * Add custom sizes attribute to responsive image functionality for post thumbnails.
  *
- *
- * @param array $attr  Attributes for the image markup.
- * @param WP_Post $attachment WP_Post object for the attachment.
+ * @param array        $attr  Attributes for the image markup.
+ * @param WP_Post      $attachment WP_Post object for the attachment.
  * @param string|array $size  Requested size.
  * @return string Value for use in post thumbnail 'sizes' attribute.
  */
@@ -103,7 +102,7 @@ function post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 		return $attr;
 	}
 
-	if ( $size === 'post-thumbnail' ) {
+	if ( 'post-thumbnail' === $size ) {
 		$attr['sizes'] = '(min-width: 46.25em) calc(100vw / 3), 100vw';
 	}
 

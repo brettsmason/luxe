@@ -1,3 +1,12 @@
+<?php
+/**
+ * Archive template for posts.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<figure class="entry__image">
 		<?php the_post_thumbnail( 'post-thumbnail' ) ?>

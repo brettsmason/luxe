@@ -1,3 +1,12 @@
+<?php
+/**
+ * WooCommerce template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <div class="app-content wrapper">
 	<main id="main" class="app-main">
 		<?php woocommerce_content() ?>

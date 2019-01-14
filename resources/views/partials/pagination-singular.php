@@ -1,4 +1,13 @@
 <?php
+/**
+ * Singular pagination.
+ *
+ * @package Luxe
+ */
+
+?>
+
+<?php
 Hybrid\Pagination\display(
 	'singular', [
 		'show_all'        => true,

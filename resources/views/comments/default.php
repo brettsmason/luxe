@@ -1,4 +1,13 @@
 <?php
+/**
+ * Comments list template.
+ *
+ * @package Luxe
+ */
+
+?>
+
+<?php
 if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! pings_open() ) ) {
 	return;
 }

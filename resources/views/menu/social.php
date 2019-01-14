@@ -1,4 +1,13 @@
 <?php
+/**
+ * Social menu template.
+ *
+ * @package Luxe
+ */
+
+?>
+
+<?php
 if ( ! has_nav_menu( $data->name ) ) :
 	return;
 endif

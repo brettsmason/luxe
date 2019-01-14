@@ -1,4 +1,13 @@
 <?php
+/**
+ * Subsidiary sidebar template.
+ *
+ * @package Luxe
+ */
+
+?>
+
+<?php
 if ( ! is_active_sidebar( $data->name ) ) :
 	return;
 endif;

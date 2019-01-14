@@ -1,3 +1,12 @@
+<?php
+/**
+ * Index template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
 	<?php Hybrid\View\display( 'partials', 'head' ) ?>

@@ -17,6 +17,12 @@ use Hybrid\Contracts\Renderable;
 use Hybrid\Contracts\Displayable;
 use Hybrid\Attr\Attr;
 
+/**
+ * Create SVG markup from a .svg file.
+ *
+ * @param array $args The parameters needed to display the SVG.
+ * @return string SVG markup.
+ */
 class Svg implements Renderable, Displayable {
 
 	/**
@@ -209,6 +215,6 @@ class Svg implements Renderable, Displayable {
 	 */
 	public function display() {
 
-		echo $this->render();
+		echo $this->render(); // WPCS: XSS OK.
 	}
 }

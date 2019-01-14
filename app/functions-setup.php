@@ -99,7 +99,7 @@ add_action( 'after_setup_theme', function() {
 		'flex-height' => true,
 		'flex-width'  => true,
 		'header-text' => [ 'app-header__title', 'app-header__description' ],
-	 ] );
+	] );
 }, 5 );
 
 /**
@@ -142,10 +142,9 @@ add_action( 'init', function() {
  * @return void
  */
 add_action( 'init', function() {
+
 	// Set the `post-thumbnail` size.
 	set_post_thumbnail_size( 739, 493, true );
-
-	// add_image_size( 'custom-thumbnail', 800, 600, true );
 }, 5 );
 
 /**

@@ -1,3 +1,12 @@
+<?php
+/**
+ * 404 template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <div class="app-content wrapper">
 	<main id="main" class="app-main">
 		<div class="entry entry--error">

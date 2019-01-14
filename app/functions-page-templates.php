@@ -21,8 +21,10 @@ add_action( 'hybrid/templates/register', function( $templates ) {
 	$templates->add(
 		'templates/landing.php',
 		[
-			'label'      => __( 'Landing' ),
-			'post_types' => [ 'page' ]
+			'label'      => __( 'Landing', 'luxe' ),
+			'post_types' => [
+				'page',
+			],
 		]
 	);
 } );

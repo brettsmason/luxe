@@ -1,3 +1,12 @@
+<?php
+/**
+ * Archive header template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <?php if ( ! is_front_page() ) : ?>
 
 	<div class="archive-header">

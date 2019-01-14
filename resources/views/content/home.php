@@ -1,9 +1,22 @@
+<?php
+/**
+ * Posts archive template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <div class="app-content">
 	<main id="main" class="app-main wrapper wrapper--wide grid grid--3">
 		<?php Hybrid\View\display( 'partials', 'archive-header' ) ?>
 
 		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php Hybrid\View\display( 'entry/archive', Hybrid\Post\hierarchy() ) ?>
 

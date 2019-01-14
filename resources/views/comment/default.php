@@ -1,3 +1,12 @@
+<?php
+/**
+ * Default comment template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <li <?php Hybrid\Attr\display( 'comment' ) ?>>
 	<figure class="comment__avatar">
 		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>

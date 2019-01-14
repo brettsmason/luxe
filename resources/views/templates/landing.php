@@ -2,7 +2,10 @@
 /**
  * Landing page template.
  * Used to create pages that have no header/footer.
+ *
+ * @package Luxe
  */
+
 ?>
 
 <!DOCTYPE html>

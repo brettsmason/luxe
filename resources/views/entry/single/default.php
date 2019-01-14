@@ -1,3 +1,12 @@
+<?php
+/**
+ * Default single content template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<header class="entry__header wrapper">
 		<?php Hybrid\Post\display_title() ?>

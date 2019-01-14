@@ -1,3 +1,12 @@
+<?php
+/**
+ * Ping comment template.
+ *
+ * @package Luxe
+ */
+
+?>
+
 <li <?php Hybrid\Attr\display( 'comment' ) ?>>
 	<div class="comment__body">
 		<div class="comment__meta">

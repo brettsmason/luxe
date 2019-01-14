@@ -1,4 +1,13 @@
 <?php
+/**
+ * Comments pagination.
+ *
+ * @package Luxe
+ */
+
+?>
+
+<?php
 Hybrid\Pagination\display(
 	'comments', [
 		'prev_text'       => __( '&larr; Previous', 'luxe' ),

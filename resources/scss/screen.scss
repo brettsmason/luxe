@@ -24,6 +24,8 @@
 // These are used throughout the code but don"t output CSS on their own.
 // Things like mixins and extensions go here.
 
+@import "~nth-grid/sass/nth-grid";
+@import "~sass-mq/mq";
 @import "tools/units";
 @import "tools/clearfix";
 @import "tools/hidden";
@@ -32,8 +34,6 @@
 @import "tools/vr";
 @import "tools/responsive-embed";
 @import "tools/wrapper";
-@import "~nth-grid/sass/nth-grid";
-@import "~sass-mq/mq";
 
 
 // Generic.
@@ -71,12 +71,10 @@
 // every piece of the design is some type of component, whether it"s
 // a one-off or reusable block of code.
 
-@import "objects/wrapper";
+@import "objects/animations";
 @import "objects/layout";
 @import "objects/media";
-@import "objects/list-bare";
-@import "objects/list-inline";
-@import "objects/embed-wrap";
+@import "objects/wrapper";
 
 
 // Components.
@@ -120,11 +118,11 @@
 @import "blocks/wp-block-gallery";
 @import "blocks/wp-block-image";
 @import "blocks/wp-block-latest-posts";
+@import "blocks/wp-block-media-text";
 @import "blocks/wp-block-preformatted";
 @import "blocks/wp-block-pullquote";
 @import "blocks/wp-block-quote";
 @import "blocks/wp-block-separator";
-@import "blocks/wp-block-subhead";
 @import "blocks/wp-block-table";
 @import "blocks/wp-block-verse";
 

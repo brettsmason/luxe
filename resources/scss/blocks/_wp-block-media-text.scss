@@ -1,0 +1,45 @@
+.wp-block-media-text {
+	display: flex;
+	flex-direction: column;
+
+	@include mq(medium) {
+		flex-direction: row;
+
+		&.has-media-on-the-right {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__media {
+		flex: 0 0 auto;
+		margin: 0;
+
+		@include mq(medium) {
+			width: 50%;
+		}
+	}
+
+	&__content {
+		padding: vr(1);
+
+		@include mq(medium) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: vr(2);
+		}
+	}
+
+	img {
+		height: 100%;
+		object-fit: cover;
+
+	}
+
+	img,
+	video {
+		max-width: unset;
+		vertical-align: middle;
+		width: 100%;
+	}
+}

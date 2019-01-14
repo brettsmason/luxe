@@ -3,7 +3,7 @@
  *
  * Primary JavaScript file. Any includes or anything imported should
  * be filtered through this file and eventually saved back into the
- * `/dist/scripts/app.js` file.
+ * `/public/js/app.js` file.
  *
  * @package   Luxe
  * @author    Brett Mason <brettsmason@gmail.com>
@@ -15,4 +15,4 @@
 import ResponsiveMenu from './components/responsive-menu';
 
 // Setup a new menu
-const menu = new ResponsiveMenu( 'primary-menu' );
+const menu = new ResponsiveMenu( 'primary-menu', { animateToggle: true });

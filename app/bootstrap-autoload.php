@@ -33,8 +33,8 @@ array_map(
 		require_once get_parent_theme_file_path( "app/{$file}.php" );
 	}, [
 		'functions-assets',
-		'functions-embeds',
 		'functions-filters',
+		'functions-page-templates',
 		'functions-setup',
 		'functions-template',
 		'functions-woocommerce',

@@ -5,14 +5,28 @@
 ////
 
 .wp-block-embed {
+	margin-bottom: vr(1);
 
 	iframe {}
 	figcaption {}
 
 	&.is-type-image {}
 	&.is-type-audio {}
-	&.is-type-rich {} // text, twitter, etc.
-	&.is-type-video {}
+	&.is-type-rich {}
 
-	&.is-provider-vimeo {}
+	.wp-has-aspect-ratio &__wrapper {
+		@include responsive-embed();
+	}
+
+	.wp-embed-aspect-16-9 &__wrapper {
+		@include responsive-embed(16 by 9, false);
+	}
+
+	.wp-embed-aspect-4-3 &__wrapper {
+		@include responsive-embed(4 by 3, false);
+	}
+
+	.wp-embed-aspect-21-9 &__wrapper {
+		@include responsive-embed(21 by 9, false);
+	}
 }

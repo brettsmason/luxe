@@ -1,20 +1,14 @@
-////
-/// Pullquote block.
-///
-/// @group Blocks
-////
-
 .wp-block-pullquote {
-	max-width: 40%;
 	text-align: center;
 
 	blockquote {
 		border: 0;
+		margin-bottom: 0;
 		padding: vr(2) 0;
 	}
 
 	p {
-		@include font-size($h2);
+		@include font-size($h3);
 	}
 
 	&.alignleft,
@@ -25,13 +19,8 @@
 	&.is-style-solid-color {
 
 		blockquote {
-			background-color: $color-primary;
-			color: $color-white;
-			padding: vr(2);
-		}
-
-		cite {
-			color: $color-black;
+			background-color: $color-grey-100;
+			padding: vr(1);
 		}
 	}
 }

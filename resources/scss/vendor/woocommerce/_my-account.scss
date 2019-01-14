@@ -13,8 +13,8 @@
 	margin-right: vr(2);
 
 	ul {
-		margin-left: 0;
 		list-style: none;
+		margin-left: 0;
 	}
 }
 
@@ -33,10 +33,10 @@
 	}
 
 	a {
-		text-decoration: none;
 		display: block;
 		padding: vr(1/2);
 		text-align: center;
+		text-decoration: none;
 
 		@include mq(medium) {
 			text-align: left;

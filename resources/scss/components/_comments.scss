@@ -1,12 +1,6 @@
-////
-/// Comments component.
-///
-/// @group Components
-////
-
 // Comments main container.
 .comments-template {
-	margin-bottom: vr(2);
+	margin-top: vr(2);
 }
 
 .comments {
@@ -31,5 +25,7 @@
 	}
 
 	// Comments closed message.
-	&__closed {}
+	&__closed {
+		margin-top: vr(1.5);
+	}
 }

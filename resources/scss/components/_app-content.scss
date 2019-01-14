@@ -1,11 +1,16 @@
-////
-/// App content component.
-///
-/// This component generally wraps the `<main>` section and the sidebar.
-///
-/// @group Components
-////
-
 .app-content {
 	padding: vr(1);
+
+	// Set layout if the main sidebar is active.
+	.has-sidebar-primary & {
+
+		@include mq(medium) {
+			display: flex;
+			flex-wrap: wrap;
+
+			> * {
+				@include nth-grid(2 1, $gutter: vr(1));
+			}
+		}
+	}
 }

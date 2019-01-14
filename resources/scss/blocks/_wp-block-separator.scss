@@ -1,9 +1,3 @@
-////
-/// Separator block.
-///
-/// @group Blocks
-////
-
 .wp-block-separator {
 
 	&:not(.is-style-wide) {
@@ -15,6 +9,10 @@
 
 	// Dots style
 	&.is-style-dots {
-		border-style: dotted;
+		border-bottom-style: dotted;
+
+		&::before {
+			content: none;
+		}
 	}
 }

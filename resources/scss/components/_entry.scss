@@ -1,14 +1,14 @@
-////
-/// Entry component.
-///
-/// @group Components
-////
-
 .entry {
 	margin-bottom: vr(2);
 
+	.single & {
+		margin-bottom: 0;
+	}
+
 	// Featured image.
-	&__image {}
+	&__image {
+		margin-bottom: vr(1/2);
+	}
 
 	// Header wrapper.
 	&__header {}
@@ -16,23 +16,41 @@
 	// Entry title.
 	&__title {}
 
-	&__permalink {}
+	&__permalink {
+		text-decoration: none;
+	}
 
 	// Meta wrappers.
 	&__byline {
+		@include font-size(16px);
+		color: $color-grey-700;
 		margin-bottom: vr(1);
 	}
 
 	&__published {}
 
-	&__author {}
+	&__author {
+		color: inherit;
+	}
 
-	&__comments {}
+	&__comments {
+		color: inherit;
+	}
 
 	// Full entry content.
 	&__content {
 		@include clearfix;
 		margin-bottom: vr(2);
+
+		.single &,
+		> :last-child {
+			margin-bottom: 0;
+		}
+
+		// Add some spacing for anything after entry__content.
+		& + * {
+			margin-top: vr(2);
+		}
 
 		> * {
 			@include wrapper($global-width);
@@ -62,6 +80,7 @@
 	&__footer {}
 
 	&__terms-wrapper {
+		color: $color-grey-700;
 		display: block;
 
 		& + & {
@@ -74,10 +93,18 @@
 
 		a {
 			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
 		}
 	}
 
 	&__terms-icon {
+		fill: currentColor;
 		height: 16px;
 		width: 16px;
 	}

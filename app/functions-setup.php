@@ -143,9 +143,9 @@ add_action( 'init', function() {
  */
 add_action( 'init', function() {
 	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 200, 200, true );
+	set_post_thumbnail_size( 739, 493, true );
 
-	add_image_size( 'custom-thumbnail', 800, 600, true );
+	// add_image_size( 'custom-thumbnail', 800, 600, true );
 }, 5 );
 
 /**

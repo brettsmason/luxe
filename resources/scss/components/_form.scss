@@ -1,15 +1,9 @@
-////
-/// Form component.
-///
-/// @group Components
-////
-
 .form-field {
 	margin-bottom: vr(1/2);
 
 	&__description {
 		@include font-size(14px);
-		color: $color-mid-grey;
+		color: $color-grey-500;
 	}
 
 	&__required {

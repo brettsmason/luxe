@@ -1,9 +1,3 @@
-////
-/// Table element.
-///
-/// @group Elements
-////
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -19,6 +13,6 @@ td {
 	text-align: left;
 
 	tfoot & {
-		color: $color-dark-grey;
+		color: $color-grey-500;
 	}
 }

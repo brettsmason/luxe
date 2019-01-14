@@ -1,5 +1,5 @@
-<div class="app-content wrapper">
-	<main id="main" class="app-main grid grid--3">
+<div class="app-content">
+	<main id="main" class="app-main wrapper wrapper--wide grid grid--3">
 		<?php Hybrid\View\display( 'partials', 'archive-header' ) ?>
 
 		<?php if ( have_posts() ) : ?>

@@ -1,56 +1,51 @@
-////
-/// Pagination component.
-///
-/// @group Components
-////
 .pagination {
-	margin-bottom: vr(2);
+	border-bottom: 1px solid $color-grey-200;
+	border-top: 1px solid $color-grey-200;
+	clear: both;
+	padding-bottom: vr(1);
+	padding-top: vr(1);
 	width: 100%;
-}
 
-.pagination__items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	list-style: none;
-	margin: 0;
-}
-
-.pagination__item {
-
-	& + & {
-		margin-left: vr(1/4);
-	}
-}
-
-.pagination__anchor {
-	border: 1px solid $color-pagination-anchor-border;
-	border-radius: $global-radius;
-	display: block;
-	line-height: 1;
-	padding: vr(1/4) vr(1/2);
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		background-color: $color-primary;
-		border-color: $color-primary;
-		color: $color-white;
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
 	}
 
-	&--current {
-		background-color: $color-primary;
-		border-color: $color-primary;
-		color: $color-white;
+	&__item {
+		line-height: 1;
+
+		& + & {
+			margin-left: vr(1/4);
+		}
 	}
 
-	&--dots {
+	&__anchor {
+		border-radius: $global-radius;
+		display: block;
+		line-height: 1;
+		padding: vr(1/4) vr(1/2);
+		text-decoration: none;
 
-		&:hover,
-		&:focus {
-			background-color: transparent;
-			border-color: $color-border;
-			color: $color-black;
+		&--current {
+			background-color: $color-primary;
+			color: $color-white;
+		}
+	}
+
+	&__anchor-icon {
+		fill: currentColor;
+		height: 20px;
+		width: 20px;
+
+		&--prev {
+			transform: rotate(90deg);
+		}
+
+		&--next {
+			transform: rotate(-90deg);
 		}
 	}
 }

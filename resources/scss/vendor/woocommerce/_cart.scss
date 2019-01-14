@@ -75,9 +75,9 @@
 	}
 
 	.cart-collaterals {
-		padding: vr(1);
 		border: 1px solid $color-border;
 		flex: 0 0 40%;
+		padding: vr(1);
 	}
 
 	.checkout-button {
@@ -87,8 +87,8 @@
 	.shipping {
 
 		ul {
-			margin-left: 0;
 			list-style: none;
+			margin-left: 0;
 		}
 
 		td,

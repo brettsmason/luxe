@@ -1,13 +1,15 @@
 export default class ResponsiveMenu {
 	constructor(container, options) {
 		const defaults = {
+			animateToggle: true,
+			menuToggle: 'menu-toggle',
 			submenuClass: 'has-children',
-			submenuToggleClass: 'menu__submenu-toggle',
+			submenuToggleClass: 'menu__sub-menu-toggle',
 			menuToggleClass: 'menu__toggle',
 			menuClass: 'menu__items',
 			screenReaderClass: 'screen-reader-text',
-			openSubmenuText: 'Open submenu',
-			closeSubmenuText: 'Close submenu',
+			openSubmenuText: 'Open sub menu',
+			closeSubmenuText: 'Close sub menu',
 			submenuToggleIcon: menuIcons.submenuToggleIcon,
 			dropdownMenuIcon: menuIcons.dropdownMenuIcon
 		};
@@ -17,7 +19,7 @@ export default class ResponsiveMenu {
 
 		this.container = document.getElementById(container);
 		this.menu = this.container.getElementsByTagName('ul')[0];
-		this.menuToggle = this.container.getElementsByTagName('button')[0];
+		this.menuToggle = document.getElementById(this.options.menuToggle);
 		this.submenus = this.container.getElementsByClassName(
 			this.options.submenuClass
 		);
@@ -51,7 +53,7 @@ export default class ResponsiveMenu {
 
 		// Toggle ARIA states of main ul on click.
 		this.menuToggle.addEventListener('click', () => {
-			this._toggle(this.menuToggle, true);
+			this._toggle(this.menuToggle, this.options.animateToggle);
 			this._trapFocus();
 		});
 
@@ -68,10 +70,10 @@ export default class ResponsiveMenu {
 		document.addEventListener('keyup', event => {
 			if (27 === event.keyCode) {
 				if (this._isMenuOpen()) {
-					this._toggle(this.menuToggle, true);
+					this._toggle(this.menuToggle, this.options.animateToggle);
 					this.menuToggle.focus();
 
-					let toggles = document.getElementsByClassName('menu__submenu-toggle');
+					let toggles = document.getElementsByClassName('menu__sub-menu-toggle');
 
 					[...toggles].forEach(toggle => {
 						toggle.setAttribute('aria-expanded', 'false');
@@ -82,12 +84,12 @@ export default class ResponsiveMenu {
 	}
 
 	// Toggle aria-expanded state when button is pressed
-	_toggle(element, height = false) {
+	_toggle(element, height = true) {
 		let expanded =
 			'false' === element.getAttribute('aria-expanded') ? true : false;
 		element.setAttribute('aria-expanded', expanded);
 
-		if(height) {
+		if(height === true) {
 			if(expanded) {
 				this._expandElement(element.nextElementSibling);
 			} else {
@@ -100,7 +102,7 @@ export default class ResponsiveMenu {
 	_createSubmenuButtons() {
 		if(this._isMobile()) {
 			[...this.submenus].forEach(element => {
-				if (!element.classList.contains('has-submenu-toggle')) {
+				if (!element.classList.contains('has-sub-menu-toggle')) {
 					let anchor = element.getElementsByTagName('a')[0];
 					let submenu = element.getElementsByTagName('ul')[0];
 					let submenuToggle = document.createElement('button');
@@ -108,7 +110,7 @@ export default class ResponsiveMenu {
 					let submenuToggleText = this.options.openSubmenuText;
 					let submenuToggleIcon = this.options.submenuToggleIcon;
 
-					element.classList.add('has-submenu-toggle');
+					element.classList.add('has-sub-menu-toggle');
 
 					// Add our new unique ID as an ID to the submenu
 					submenu.setAttribute('id', id);
@@ -139,11 +141,11 @@ export default class ResponsiveMenu {
 	// Remove submenu toggles
 	_removeSubmenuButtons() {
 		if(!this._isMobile()) {
-			let toRemove = document.getElementsByClassName('menu__submenu-toggle');
+			let toRemove = document.getElementsByClassName('menu__sub-menu-toggle');
 
 			[...toRemove].forEach(button => {
 				button.removeEventListener('click', () => this._toggle(button));
-				button.parentNode.classList.remove('has-submenu-toggle');
+				button.parentNode.classList.remove('has-sub-menu-toggle');
 				button.parentNode.removeChild(button);
 			});
 		}
@@ -178,16 +180,12 @@ export default class ResponsiveMenu {
 	// Set initial state of our menu depending on menu state
 	_setStates() {
 		if (this._isMobile()) {
-			this.container.classList.add('menu--is-mobile');
-			this.container.classList.remove('menu--is-desktop');
 			this.menuToggle.setAttribute('aria-expanded', 'false');
 
 			[...this.submenus].forEach(submenu => {
 				submenu.removeAttribute('aria-haspopup');
 			});
 		} else {
-			this.container.classList.add('menu--is-desktop');
-			this.container.classList.remove('menu--is-mobile');
 			this.menuToggle.setAttribute('aria-expanded', 'false');
 			this.menu.style.removeProperty('height');
 		}

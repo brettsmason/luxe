@@ -1,12 +1,7 @@
-////
-/// Columns block.
-///
-/// @group Blocks
-////
-
 .wp-block-columns {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: vr(1);
 
 	@include mq(medium) {
 		flex-wrap: nowrap;
@@ -22,9 +17,16 @@
 // Individual columns.
 .wp-block-column {
 	flex: 0 0 100%;
+	margin-bottom: vr(1);
+
+	> :last-child,
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	@include mq(medium) {
 		flex: 1;
+		margin-bottom: 0;
 		margin-right: vr(1);
 
 		&:last-child {

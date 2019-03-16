@@ -62,7 +62,8 @@ module.exports = {
 					{
 						loader: 'css-loader',
 						options: {
-							sourceMap: ! isProduction
+							sourceMap: ! isProduction,
+							url: false
 						}
 					},
 					{

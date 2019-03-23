@@ -24,7 +24,11 @@
 	$border-hover: null
 ) {
 	@if $background-color {
-		$background-color-hover: if($background-color-hover, $background-color-hover, $background-color - 20);
+		$background-color-hover: if($background-color-hover, $background-color-hover, darken($background-color, 10%));
+	}
+
+	@if $color {
+		$color-hover: if($color-hover, $color-hover, $color);
 	}
 
 	background-color: $background-color;

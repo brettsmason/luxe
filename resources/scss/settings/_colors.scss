@@ -3,14 +3,6 @@ $color-primary: #482880;
 $color-secondary: #292f36;
 $color-tertiary: #6b5ca5;
 
-$color-primary-light: lighten($color-primary, 10%);
-$color-secondary-light: lighten($color-secondary, 10%);
-$color-tertiary-light: lighten($color-primary, 10%);
-
-$color-primary-dark: #482880;
-$color-secondary-dark: #292f36;
-$color-tertiary-dark: #6b5ca5;
-
 // State colors
 $color-alert: #8c182b;
 $color-warning: #f6bf27;
@@ -52,7 +44,7 @@ $color-link-hover: $color-black;
 $color-button: $color-white;
 $color-button-background: $color-primary;
 $color-button-hover: $color-white;
-$color-button-hover-background: $color-primary + 50;
+$color-button-hover-background: lighten($color-primary, 10%);
 $color-button-outline: $color-primary;
 $color-button-outline-border: $color-primary;
 $color-button-outline-hover: $color-white;

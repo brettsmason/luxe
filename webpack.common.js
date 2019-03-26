@@ -26,7 +26,7 @@ module.exports = {
 	externals: config.externals,
 
 	// custom modules resolving.
-	externals: config.resolve,
+	resolve: config.resolve,
 
 	// Performance settings.
 	performance: {

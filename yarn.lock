@@ -8423,9 +8423,9 @@ webpack-cli@^3.2.1:
     v8-compile-cache "^2.0.2"
     yargs "^12.0.4"
 
-webpack-fix-style-only-entries@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/webpack-fix-style-only-entries/-/webpack-fix-style-only-entries-0.1.0.tgz#2a5cc81610bb9843ba2da350daa9bf9df2d2d3b4"
+webpack-fix-style-only-entries@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/webpack-fix-style-only-entries/-/webpack-fix-style-only-entries-0.2.1.tgz#c8945b034ea1e17407032de24b4f458f5d03b8b0"
 
 webpack-manifest-plugin@^2.0.4:
   version "2.0.4"

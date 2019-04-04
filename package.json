@@ -58,7 +58,7 @@
     "stylelint-config-wordpress": "^13.1.0",
     "stylelint-order": "^2.0.0",
     "theme-claim": "^0.1.11",
-    "uglifyjs-webpack-plugin": "^2.1.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-fix-style-only-entries": "^0.1.0",

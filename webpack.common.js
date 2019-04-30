@@ -96,7 +96,7 @@ module.exports = {
 		}),
 
 		// Clean the `public` folder on build.
-		new CleanWebpackPlugin(path.resolve(__dirname, config.paths.public), {
+		new CleanWebpackPlugin({
 			verbose: false
 		}),
 

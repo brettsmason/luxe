@@ -6413,9 +6413,9 @@ postcss-selector-parser@^5.0.0, postcss-selector-parser@^5.0.0-rc.3, postcss-sel
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-sorting@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-4.0.1.tgz#4bb4eb40e07e2b74e49f6f97fd4317fa73bd65a8"
+postcss-sorting@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-4.1.0.tgz#a107f0bf3852977fa64e4442bc340c88d5aacdb3"
   dependencies:
     lodash "^4.17.4"
     postcss "^7.0.0"
@@ -7659,13 +7659,13 @@ stylelint-config-wordpress@^13.1.0:
     stylelint-config-recommended-scss "^3.2.0"
     stylelint-scss "^3.3.0"
 
-stylelint-order@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-2.0.0.tgz#f19400e1d42a844bfd149fae1daa02e671a9b2f2"
+stylelint-order@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-2.2.1.tgz#cd2d4a0d81d91c705f1d275a58487e5ad5aa5828"
   dependencies:
     lodash "^4.17.10"
     postcss "^7.0.2"
-    postcss-sorting "^4.0.1"
+    postcss-sorting "^4.1.0"
 
 stylelint-scss@^3.3.0:
   version "3.5.1"

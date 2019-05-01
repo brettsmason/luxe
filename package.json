@@ -55,7 +55,7 @@
     "sass-loader": "^7.1.0",
     "sass-mq": "^5.0.0",
     "stylelint": "^9.10.1",
-    "stylelint-config-wordpress": "^13.1.0",
+    "stylelint-config-wordpress": "^14.0.0",
     "stylelint-order": "^2.0.0",
     "theme-claim": "^0.1.11",
     "uglifyjs-webpack-plugin": "^2.1.2",

@@ -46,7 +46,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.0",
-    "mini-css-extract-plugin": "^0.5.0",
+    "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.11.0",
     "nth-grid": "github:brettsmason/nth-grid",
     "postcss-loader": "^3.0.0",

@@ -12,26 +12,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe;
-
-/**
- * Returns the separator.
- *
- * @since  1.0.0
- * @access public
- * @param  string $sep The seperator.
- * @return string
- */
-function sep( $sep = '' ) {
-
-	return apply_filters(
-		'luxe/sep',
-		sprintf( // WPCS: XSS OK.
-			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator', 'luxe' )
-		)
-	);
-}
+namespace App;
 
 /**
  * Determine whether to show the sidebar

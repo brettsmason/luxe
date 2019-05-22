@@ -1,5 +1,5 @@
-<footer class="app-footer u-text-center">
-	<div class="app-footer__wrapper wrapper">
+<footer class="app-footer">
+	<div class="app-footer__wrapper">
 		<p class="app-footer__credit">
 			<?php
 			printf(

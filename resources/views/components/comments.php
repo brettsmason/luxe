@@ -31,7 +31,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 		<?php endif ?>
 
-		<?php if ( ! comments_open() ) : ?>
+		<?php if ( ! comments_open() && have_comments() ) : ?>
 
 			<p class="comments__closed">
 				<?= esc_html__( 'Comments are closed.', 'luxe' ) ?>

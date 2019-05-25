@@ -24,10 +24,5 @@
     "composer/installers": "~1.0",
     "justintadlock/hybrid-core": "5.0.0"
   },
-  "require-dev": {
-    "wp-coding-standards/wpcs": "^2.0.0",
-    "wimg/php-compatibility": "^8.2",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-		"phpcompatibility/phpcompatibility-wp": "^2.0.0"
-  }
+  "require-dev": {}
 }

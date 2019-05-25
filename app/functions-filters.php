@@ -7,7 +7,7 @@
  * @package   Luxe
  */
 
-namespace App;
+namespace Luxe;
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
@@ -30,7 +30,7 @@ function excerpt_more( $link ) {
 
 	return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', __NAMESPACE__ . '\excerpt_more' );
+add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -47,45 +47,4 @@ function body_class( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', __NAMESPACE__ . '\body_class' );
-
-
-$types = [
-	'index',
-	'404',
-	'archive',
-	'author',
-	'category',
-	'tag',
-	'taxonomy',
-	'date',
-	'embed',
-	'home',
-	'frontpage',
-	'page',
-	'paged',
-	'search',
-	'single',
-	'singular',
-	'attachment'
-];
-
-foreach ( $types as $type ) {
-
-	add_filter( "{$type}_template_hierarchy", function( $templates ) {
-
-			return array_map( function( $template ) {
-
-					return "layouts/{$template}";
-					
-			}, $templates );
-	
-	}, PHP_INT_MAX );
-}
-
-add_filter( 'hybrid/view/base/hierarchy', function( $templates ) {
-	
-	return array_map( function( $template ) {
-		return str_replace( 'base/layouts/', '', $template );
-    }, $templates );
-} );
+add_filter( 'body_class', __NAMESPACE__ . '\\body_class' );

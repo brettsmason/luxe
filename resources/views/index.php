@@ -1,16 +1,26 @@
-<?php Hybrid\View\display( 'components', 'archive-header' ) ?>
+<!doctype html>
+<html <?= Hybrid\Attr\render( 'html' ) ?> class="no-js">
+	<?= Hybrid\View\render( 'components', 'head' ) ?>
 
-<?php if ( have_posts() ) : ?>
+	<body <?= Hybrid\Attr\render( 'body' ) ?>>
+		<?php do_action( 'wp_body_open' ) ?>
 
-    <?php
-    while ( have_posts() ) :
-        the_post();
-        ?>
+		<div class="app">
+			<?= Hybrid\View\render( 'components', 'header' ) ?>
 
-        <?php Hybrid\View\display( 'content/archive', Hybrid\Post\hierarchy() ) ?>
+			<div class="app-content">
+				<main id="main" class="app-main">
+					<?= Hybrid\View\render( 'layouts', Hybrid\Template\hierarchy() ) ?>
+				</main>
 
-    <?php endwhile ?>
+				<?php if ( Luxe\display_sidebar() ) : ?>
+					<?= Hybrid\View\render( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
+				<?php endif ?>
+			</div>
 
-    <?php Hybrid\View\display( 'components', 'pagination-posts' ) ?>
+			<?= Hybrid\View\render( 'components', 'footer' ) ?>
+		</div>
 
-<?php endif ?>
+		<?php wp_footer() ?>
+	</body>
+</html>

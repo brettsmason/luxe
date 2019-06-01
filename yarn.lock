@@ -819,9 +819,9 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wordpress/browserslist-config@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.2.3.tgz#09739a3f9475c892fd212a2554597d41f9c8aee0"
+"@wordpress/browserslist-config@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-2.4.0.tgz#f461ad81c9ff039c73c0f8c1c932ef36af05d1fd"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

@@ -1,5 +1,5 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -97,6 +97,7 @@ module.exports = {
 
 		// Clean the `public` folder on build.
 		new CleanWebpackPlugin({
+			cleanStaleWebpackAssets: true,
 			verbose: false
 		}),
 
@@ -122,13 +123,16 @@ module.exports = {
 		}),
 
 		// Copy static assets to the `public` folder.
-		new CopyWebpackPlugin([
-			{
+		new CopyWebpackPlugin(
+			[{
 				from: '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 				to: '[path][name].[ext]',
 				context: path.resolve(__dirname, config.paths.assets)
+			}],
+			{
+				copyUnmodified: true
 			}
-		]),
+		),
 
 		// Cache for improved concurrent builds.
 		new HardSourceWebpackPlugin({

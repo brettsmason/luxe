@@ -13,7 +13,7 @@ if ( ! has_nav_menu( $data->name ) ) :
 endif
 ?>
 
-<nav id="<?= esc_attr( $data->name ) ?>-menu" class="menu menu--<?= esc_attr( $data->name ) ?>">
+<nav id="<?= esc_attr( $data->name ) ?>-menu" class="menu menu--<?= esc_attr( $data->name ) ?> menu--responsive">
 	<button id="menu-toggle" class="menu__toggle" aria-expanded="false" aria-controls="menu__items--<?= esc_attr( $data->name ) ?>">
 		<?php Luxe\Svg\display( 'bars', [ 'class' => 'menu__toggle-icon' ] ) ?>
 		<span class="menu__label screen-reader-text"><?= esc_html( 'Menu', 'luxe' ) ?></span>

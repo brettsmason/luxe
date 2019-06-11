@@ -39,7 +39,7 @@ export default class ResponsiveMenu {
 		this.menuToggle.setAttribute('aria-expanded', 'false');
 		this._createSubmenuButtons();
 		this._createDropdownIcons();
-		this._setStates();
+		this._setInitialStates();
 	}
 
 	// Handle all events
@@ -178,7 +178,7 @@ export default class ResponsiveMenu {
 	}
 
 	// Set initial state of our menu depending on menu state
-	_setStates() {
+	_setInitialStates() {
 		if (this._isMobile()) {
 			this.menuToggle.setAttribute('aria-expanded', 'false');
 
@@ -186,6 +186,13 @@ export default class ResponsiveMenu {
 				submenu.removeAttribute('aria-haspopup');
 			});
 		} else {
+			this.menuToggle.removeAttribute('aria-expanded');
+		}
+	}
+
+	// Set state of our menu on screen size change.
+	_setStates() {
+		if (!this._isMobile()) {
 			this.menuToggle.setAttribute('aria-expanded', 'false');
 			this.menu.style.removeProperty('height');
 		}

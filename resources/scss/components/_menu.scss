@@ -178,7 +178,7 @@
 		visibility: hidden;
 		width: 100%;
 		z-index: 100;
-		transition: height $global-transition-duration $global-transition-type;
+		transition: all $global-transition-duration $global-transition-type;
 
 		@include mq(medium) {
 			height: auto;

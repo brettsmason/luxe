@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Fiber = require('fibers');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
@@ -75,6 +76,8 @@ module.exports = {
 					{
 						loader: 'sass-loader',
 						options: {
+							implementation: require('sass'),
+							fiber: Fiber,
 							sourceMap: ! isProduction,
 							outputStyle: 'expanded'
 						}

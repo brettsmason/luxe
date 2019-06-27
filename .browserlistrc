@@ -1,1 +1,2 @@
-extends @wordpress/browserslist-config
+> 1%
+last 2 versions

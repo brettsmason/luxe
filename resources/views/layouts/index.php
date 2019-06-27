@@ -7,7 +7,7 @@
         the_post();
         ?>
 
-        <?php Hybrid\View\display( 'content/archive', Hybrid\Post\hierarchy() ) ?>
+        <?php Hybrid\View\display( 'content', Hybrid\Template\hierarchy() ) ?>
 
     <?php endwhile ?>
 

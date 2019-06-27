@@ -12,11 +12,9 @@
 				<main id="main" class="app-main">
 					<?= Hybrid\View\render( 'layouts', Hybrid\Template\hierarchy() ) ?>
 				</main>
-
-				<?php if ( Luxe\display_sidebar() ) : ?>
-					<?= Hybrid\View\render( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
-				<?php endif ?>
 			</div>
+
+			<?= Hybrid\View\render( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
 
 			<?= Hybrid\View\render( 'components', 'footer' ) ?>
 		</div>

@@ -1,37 +1,39 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Fiber = require('fibers');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require( 'path' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
+const Fiber = require( 'fibers' );
+const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
+const FriendlyErrorsWebpackPlugin = require( 'friendly-errors-webpack-plugin' );
+const ManifestPlugin = require( 'webpack-manifest-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const WebpackBar = require( 'webpackbar' );
+
 const isProduction = process.env.NODE_ENV === 'production';
 
-const config = require('./config/build');
+// Build settings.
+const settings = require( './webpack.settings.js' );
 
 module.exports = {
-	entry: config.entries,
+	entry: settings.entries,
 
 	output: {
-		path: path.resolve(__dirname, config.paths.public),
-		filename: config.outputs.javascript
+		path: path.resolve(process.cwd(), settings.paths.public),
+		filename: settings.outputs.javascript,
 	},
 
 	// Console stats output.
-	// @link https://webpack.js.org/configuration/stats/#stats
-	stats: 'minimal',
+	stats: settings.stats,
 
 	// External objects.
-	externals: config.externals,
+	externals: settings.externals,
 
 	// custom modules resolving.
-	resolve: config.resolve,
+	resolve: settings.resolve,
 
 	// Performance settings.
 	performance: {
-		hints: false
+		hints: false,
+		maxAssetSize: 100000,
 	},
 
 	// Build rules to handle asset files.
@@ -46,18 +48,17 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['@babel/preset-env'],
 							cacheDirectory: true,
 							sourceMap: ! isProduction
 						}
 					}
-				]
+				],
 			},
 
 			// Styles.
 			{
 				test: /\.s[ac]ss$/,
-				// include: path.resolve(__dirname, 'resources/scss'),
+				include: path.resolve(process.cwd(), settings.paths.sass),
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
@@ -99,7 +100,8 @@ module.exports = {
 		}),
 
 		// Clean the `public` folder on build.
-		new CleanWebpackPlugin(path.resolve(__dirname, config.paths.public), {
+		new CleanWebpackPlugin({
+			cleanStaleWebpackAssets: true,
 			verbose: false
 		}),
 
@@ -120,24 +122,23 @@ module.exports = {
 
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin({
-			filename: config.outputs.css,
+			filename: settings.outputs.css,
 			chunkFilename: '[id].css'
 		}),
 
 		// Copy static assets to the `public` folder.
-		new CopyWebpackPlugin([
-			{
+		new CopyWebpackPlugin(
+			[{
 				from: '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 				to: '[path][name].[ext]',
-				context: path.resolve(__dirname, config.paths.assets)
+				context: path.resolve(process.cwd(), settings.paths.assets)
+			}],
+			{
+				copyUnmodified: true
 			}
-		]),
+		),
 
-		// Cache for improved concurrent builds.
-		new HardSourceWebpackPlugin({
-			info: {
-				level: 'warn'
-			}
-		})
+		// Fancy WebpackBar.
+		new WebpackBar(),
 	]
 };

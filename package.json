@@ -41,7 +41,7 @@
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-wordpress": "^2.0.0",
-    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-import": "^2.18.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "hard-source-webpack-plugin": "^0.13.1",
     "imagemin-mozjpeg": "^8.0.0",

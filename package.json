@@ -13,8 +13,8 @@
     "lint:scripts": "cross-env eslint './resources/js/**/*.js'",
     "lint:php": "cross-env ./vendor/bin/phpcs .",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
-    "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-    "i18n:pot": "npx wpi18n makepot",
+    "i18n:textdomain": "npx node-wp-i18n addtextdomain --exclude=vendor,node_modules",
+    "i18n:pot": "npx node-wp-i18n makepot",
     "rename": "theme-claim --config='./config/rename.json'"
   },
   "repository": {

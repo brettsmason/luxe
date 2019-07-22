@@ -1,56 +1,92 @@
 .menu {
 
+	// The base <ul> of a menu.
+	&__items {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	// Styles for <li>
+	&__item {
+		display: block;
+	}
+
+	// Styles for <a>
+	&__link {
+		display: block;
+		text-decoration: none;
+	}
+
 	// The main toggle for the menu.
 	&__toggle {
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
 		height: 50px;
-		padding: 0.5rem;
+		padding: vr(1/2);
 		width: 50px;
 
+		// This triggers the whole responsive menu.
 		@include mq(medium) {
 			display: none;
 		}
 
-		&:focus {
-			outline: 1px dotted;
-			outline-offset: -1px;
-		}
-	}
+		&-icon {
+			height: 100%;
+			width: 100%;
 
-	// The icon within the main menu toggle.
-	&__toggle-icon {
-		height: 100%;
-		width: 100%;
-
-		path {
-			opacity: 1;
-			transform: rotate(0) translate(0, 0);
-			transform-origin: 50% 50%;
-			transition: all $global-transition-duration $global-transition-type;
-		}
-
-		// State changed to expanded so we can animate the icon.
-		[aria-expanded="true"] > & {
-
-			path:nth-of-type(1) {
-				transform: rotate(-45deg) translateY(42%);
+			path {
+				opacity: 1;
+				transform: rotate(0) translate(0, 0);
+				transform-origin: 50% 50%;
+				transition: all $global-transition-duration $global-transition-type;
 			}
 
-			path:nth-of-type(2) {
-				opacity: 0;
-			}
+			// Animate the hamburger icon on open.
+			[aria-expanded="true"] > & {
 
-			path:nth-of-type(3) {
-				transform: rotate(45deg) translateY(-42%);
+				path:nth-of-type(1) {
+					transform: rotate(-45deg) translateY(42%);
+				}
+
+				path:nth-of-type(2) {
+					opacity: 0;
+				}
+
+				path:nth-of-type(3) {
+					transform: rotate(45deg) translateY(-42%);
+				}
 			}
 		}
 	}
 
-	// The base <ul> of a menu.
-	&__items {
-		background-color: $color-menu-items-background;
+	// The toggle used to expand a sub menu on smaller screens.
+	&__sub-menu-toggle {
+		background-color: $color-black;
+		border: none;
+		width: 40px;
+
+		// .menu__sub-menu-toggle-icon
+		&-icon {
+			fill: $color-white;
+			height: 1rem;
+			transition: transform $global-transition-duration $global-transition-type;
+			width: 1rem;
+	
+			// Transform icon when menu is expanded.
+			[aria-expanded="true"] > & {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.menu--responsive {
+
+	.menu__items {
 		display: flex;
 		flex-direction: column;
 		height: 0;
@@ -62,10 +98,10 @@
 		padding: 0;
 		position: absolute;
 		top: 100%;
-		transition: all 250ms ease;
+		transition: all $global-transition-duration $global-transition-type;
 		visibility: hidden;
 		width: 100%;
-		z-index: 100;
+		z-index: 1;
 
 		@include mq(medium) {
 			flex-direction: row;
@@ -75,80 +111,76 @@
 			position: static;
 			visibility: visible;
 		}
-
-		// show the menu when the toggle is expanded.
-		[aria-expanded="true"] + & {
-			height: auto;
-			opacity: 1;
-			visibility: visible;
-		}
 	}
 
-	// Styles for <li>
-	&__item {
+	// show the menu when the toggle is expanded.
+	[aria-expanded="true"] + .menu__items {
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	// Styles for <li>.
+	.menu__item {
 		display: block;
+	}
 
-		@include mq(medium) {
-
-			& + & {
-				margin-left: 10px;
-			}
-		}
-
-		&.has-children {
-			display: flex;
-			flex-wrap: wrap;
-			position: relative;
-		}
+	// Menu items which have a sub menu.
+	.has-children {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
 	}
 
 	// Styles for <a>
-	&__link {
-		color: $color-menu-link;
+	.menu__link {
 		display: block;
-		flex: 1 1 0;
-		line-height: 1.2;
-		padding: vr(1/2) vr(1);
+		flex: 1 1 0px;
+		padding: vr(1/4) vr(1/2);
 		text-decoration: none;
-
-		@include mq(medium) {
-			padding: vr(1/2);
-		}
 
 		&:hover,
 		&:focus {
-			color: $color-menu-link-hover;
 			text-decoration: none;
-		}
-
-		&:focus {
-			outline-offset: -1px;
-		}
-
-		// Current menu item styles
-		.menu__item--current & {
-			color: $color-menu-link-hover;
 		}
 	}
 
+	// A menu link that has a dropdown indicator.
+	.has-dropdown-icon {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	// The icon used on larger screens to indicate there is a dropdown.
+	.menu__dropdown-icon {
+		height: 0.5rem;
+		margin-left: vr(1/4);
+		width: 0.5rem;
+	}
+
+	.menu__sub-menu .menu__dropdown-icon {
+		transform: rotate(-90deg);
+	}
+
+	// Current menu item styles
+	.menu__item--current .menu__link {}
+
 	// The sub-menus
-	&__sub-menu {
-		background-color: $color-menu-sub-menu-background;
+	.menu__sub-menu {
 		display: flex;
 		flex-direction: column;
-		font-size: 90%;
 		height: 0;
 		list-style: none;
 		margin: 0;
 		opacity: 0;
 		padding: 0;
-		transition: all $global-transition-duration $global-transition-type;
 		visibility: hidden;
 		width: 100%;
 		z-index: 100;
+		transition: height $global-transition-duration $global-transition-type;
 
 		@include mq(medium) {
-			box-shadow: 0 vr(1/4) vr(1) rgba($color-black, 0.1);
 			height: auto;
 			left: 0;
 			min-width: 180px;
@@ -156,83 +188,37 @@
 			top: 100%;
 		}
 
-		// A sub-sub menu.
-		// 1. Offset by width of the border of the `menu__sub-menu`.
-		& & {
-			left: 100%;
-			right: auto;
-			top: 0; // [1]
-		}
-
 		// Make sure <li> items within a sub menu are full width
 		> .menu__item {
 			margin: 0;
 			padding: 0;
 		}
-
-		// Expand sub-menu when toggle is used
-		[aria-expanded="true"] + & {
-			opacity: 1;
-			visibility: visible;
-		}
 	}
 
-	// Display our sub-menus if any of these conditions are met
+	// Expand sub-menu when toggle is used
+	[aria-expanded="true"] + .menu__sub-menu {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	// Display dropdown menus on hover.
 	@include mq(medium) {
-
-		.has-focus-within > &__sub-menu,
-		.is-toggled + &__sub-menu,
-		&__sub-menu:hover,
-		&__sub-menu:focus,
-		&__item:hover > &__sub-menu,
-		&__item:focus-within > &__sub-menu {
+		.has-focus-within > .menu__sub-menu,
+		.is-toggled + .menu__sub-menu,
+		.menu__sub-menu:hover,
+		.menu__sub-menu:focus,
+		.menu__item:hover > .menu__sub-menu,
+		.menu__item:focus-within > .menu__sub-menu {
 			opacity: 1;
 			visibility: visible;
 		}
 	}
 
-	// Rotate icon for sub-menusas they open to the right
-	&__sub-menu &__dropdown-icon {
-		transform: rotate(-90deg);
-	}
-
-	// The toggle used to expand a sub menu on smaller screens.
-	&__sub-menu-toggle {
-		background-color: $color-menu-sub-menu-toggle-background;
-		border: none;
-		color: $color-menu-sub-menu-toggle;
-		width: 48px;
-
-		&:focus {
-			outline: 1px dotted;
-			outline-offset: -1px;
-		}
-	}
-
-	// The icon within the above toggle.
-	&__sub-menu-toggle-icon {
-		height: 1rem;
-		transition: transform $global-transition-duration $global-transition-type;
-		width: 1rem;
-
-		[aria-expanded="true"] > & {
-			transform: rotate(180deg);
-		}
-	}
-
-	// A menu item that has a dropdown indicator.
-	.has-dropdown-icon {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-	}
-
-	// The icon used on larger screens to indicate there is a dropdown.
-	&__dropdown-icon {
-		fill: $color-menu-dropdown-icon;
-		height: 0.5rem;
-		margin-left: 0.3rem;
-		width: 0.5rem;
+	// A sub-sub menu.
+	.menu__sub-menu .menu__sub-menu {
+		left: 100%;
+		right: auto;
+		top: 0;
 	}
 }
 

@@ -3,7 +3,7 @@
 	<?= Hybrid\View\render( 'components', 'head' ) ?>
 
 	<body <?= Hybrid\Attr\render( 'body' ) ?>>
-		<?php do_action( 'wp_body_open' ) ?>
+		<?php wp_body_open() ?>
 
 		<div class="app">
 			<?= Hybrid\View\render( 'components', 'header' ) ?>

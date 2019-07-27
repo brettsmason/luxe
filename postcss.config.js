@@ -5,11 +5,12 @@
  */
 module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 	plugins: {
+		tailwind: true,
 		'postcss-preset-env': {
 			stage: 0,
 			autoprefixer: {
-				grid: true
-			}
+				grid: true,
+			},
 		},
 		// Minify style on production using cssano.
 		cssnano: 'production' === env ?
@@ -18,11 +19,11 @@ module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 					'default', {
 						autoprefixer: true,
 						calc: {
-							precision: 8
+							precision: 8,
 						},
 						convertValues: true,
 						discardComments: {
-							removeAll: true
+							removeAll: true,
 						},
 						mergeLonghand: false,
 						zindex: false,

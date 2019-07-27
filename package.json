@@ -65,6 +65,7 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
-    "core-js": "^3.0.1"
+    "core-js": "^3.0.1",
+    "tailwindcss": "^1.0.5"
   }
 }

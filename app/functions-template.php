@@ -15,25 +15,6 @@
 namespace Luxe;
 
 /**
- * Returns the separator.
- *
- * @since  1.0.0
- * @access public
- * @param  string $sep The seperator.
- * @return string
- */
-function sep( $sep = '' ) {
-
-	return apply_filters(
-		'luxe/sep',
-		sprintf( // WPCS: XSS OK.
-			' <span class="sep">%s</span> ',
-			$sep ?: esc_html_x( '&middot;', 'meta separator', 'luxe' )
-		)
-	);
-}
-
-/**
  * Determine whether to show the sidebar
  *
  * @since  1.0.0

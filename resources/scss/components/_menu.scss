@@ -75,7 +75,7 @@
 			height: 1rem;
 			transition: transform $global-transition-duration $global-transition-type;
 			width: 1rem;
-	
+
 			// Transform icon when menu is expanded.
 			[aria-expanded="true"] > & {
 				transform: rotate(180deg);
@@ -151,7 +151,7 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	
+
 	// The icon used on larger screens to indicate there is a dropdown.
 	.menu__dropdown-icon {
 		height: 0.5rem;
@@ -178,7 +178,7 @@
 		visibility: hidden;
 		width: 100%;
 		z-index: 100;
-		transition: all $global-transition-duration $global-transition-type;
+		transition: height $global-transition-duration $global-transition-type;
 
 		@include mq(medium) {
 			height: auto;

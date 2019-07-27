@@ -1,26 +1,33 @@
 /**
  * Exports the PostCSS configuration.
+ *
+ * @return {string} PostCSS options.
  */
-module.exports = ({ file, options, env }) => ({
+module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 	plugins: {
 		'postcss-preset-env': {
-			stage: 0
+			stage: 0,
+			autoprefixer: {
+				grid: true
+			}
 		},
-		'postcss-pxtorem': {
-			rootValue: 18,
-			unitPrecision: 5,
-			propList: ['*'],
-			replace: true,
-			mediaQuery: false,
-			minPixelValue: 0
-		},
-		autoprefixer: 'production' === env ? { grid: true } : false,
+		// Minify style on production using cssano.
 		cssnano: 'production' === env ?
-		{
-			'preset': [
-				'default',
-				{ 'discardComments': { 'removeAll': true } }
-			]
-		} : false
-	}
-});
+			{
+				preset: [
+					'default', {
+						autoprefixer: true,
+						calc: {
+							precision: 8
+						},
+						convertValues: true,
+						discardComments: {
+							removeAll: true
+						},
+						mergeLonghand: false,
+						zindex: false,
+					},
+				],
+			} : false,
+	},
+} );

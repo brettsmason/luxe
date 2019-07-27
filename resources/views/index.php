@@ -1,25 +1,22 @@
-<?php
-/**
- * Index template.
- *
- * @package Luxe
- */
+<!doctype html>
+<html <?= Hybrid\Attr\render( 'html' ) ?> class="no-js">
+	<?= Hybrid\View\render( 'components', 'head' ) ?>
 
-?>
+	<body <?= Hybrid\Attr\render( 'body' ) ?>>
+		<?php wp_body_open() ?>
 
-<!DOCTYPE html>
-<html <?php language_attributes() ?>>
-	<?php Hybrid\View\display( 'partials', 'head' ) ?>
-
-	<body <?php Hybrid\Attr\display( 'body' ) ?>>
 		<div class="app">
-			<?php Hybrid\View\display( 'header', Hybrid\Template\hierarchy() ) ?>
+			<?= Hybrid\View\render( 'components', 'header' ) ?>
 
-			<?php Hybrid\View\display( 'content', Hybrid\Template\hierarchy() ) ?>
+			<div class="app-content">
+				<main id="main" class="app-main">
+					<?= Hybrid\View\render( 'layouts', Hybrid\Template\hierarchy() ) ?>
+				</main>
+			</div>
 
-			<?php Hybrid\View\display( 'sidebar', 'subsidiary', [ 'name' => 'subsidiary' ] ) ?>
+			<?= Hybrid\View\render( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
 
-			<?php Hybrid\View\display( 'footer', Hybrid\Template\hierarchy() ) ?>
+			<?= Hybrid\View\render( 'components', 'footer' ) ?>
 		</div>
 
 		<?php wp_footer() ?>

@@ -1,31 +1,10 @@
-<?php
-/**
- * Single post type template.
- *
- * @package Luxe
- */
+<article <?= Hybrid\Attr\render( 'entry' ) ?>>
+	<header class="entry__header">
+		<?= Hybrid\Post\render_title() ?>
+	</header>
 
-?>
-
-<div class="app-content">
-	<main id="main" class="app-main">
-		<?php if ( have_posts() ) : ?>
-
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
-
-				<?php Hybrid\View\display( 'entry/single', Hybrid\Post\hierarchy() ) ?>
-
-			<?php endwhile ?>
-
-			<?php comments_template() ?>
-
-		<?php endif ?>
-	</main>
-
-	<?php if ( Luxe\display_sidebar() ) : ?>
-		<?php Hybrid\View\display( 'sidebar', 'primary', [ 'name' => 'primary' ] ) ?>
-	<?php endif; ?>
-</div>
+	<div class="entry__content">
+		<?php the_content() ?>
+		<?= Hybrid\View\render( 'components', 'pagination-singular' ) ?>
+	</div>
+</article>

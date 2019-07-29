@@ -1,5 +1,3 @@
-const path = require( 'path' );
-
 module.exports = {
 
 	/**
@@ -8,9 +6,9 @@ module.exports = {
 	entries: {
 		app: './resources/js/app.js',
 		customizer: './resources/js/customizer.js',
-		screen: './resources/scss/screen.scss',
-		editor: './resources/scss/editor.scss',
-		woocommerce: './resources/scss/woocommerce.scss'
+		screen: './resources/css/screen.css',
+		// editor: './resources/css/editor.css',
+		// woocommerce: './resources/css/woocommerce.scss'
 	},
 
 	/**
@@ -29,8 +27,8 @@ module.exports = {
 			'public/css/**/*.css',
 			'public/svg/**/*.svg',
 			'public/img/**/*.{jpg,jpeg,png,gif}',
-			'public/fonts/**/*.{eot,ttf,woff,woff2,svg}'
-		]
+			'public/fonts/**/*.{eot,ttf,woff,woff2,svg}',
+		],
 	},
 
 	/**
@@ -38,14 +36,14 @@ module.exports = {
 	 * within application scripts as external.
 	 */
 	externals: {
-		jquery: 'jQuery'
+		jquery: 'jQuery',
 	},
 
 	/**
 	 * List of custom modules resolving.
 	 */
 	resolve: {
-		alias: {}
+		alias: {},
 	},
 
 	/**
@@ -54,7 +52,7 @@ module.exports = {
 	paths: {
 		public: './public',
 		assets: './resources',
-		sass: './resources/scss',
+		css: './resources/css',
 		javascript: './resources/js',
 	},
 
@@ -68,20 +66,16 @@ module.exports = {
 		assets: '[path][name].[ext]'
 	},
 
-
 	stats: {
-		// Copied from `'minimal'`.
 		all: false,
 		errors: true,
 		maxModules: 0,
 		modules: true,
 		warnings: true,
-		// Our additional options.
 		assets: true,
 		errorDetails: true,
 		excludeAssets: /\.(jpe?g|png|gif|svg|woff|woff2)$/i,
 		moduleTrace: true,
-		performance: true
+		performance: true,
 	},
-
 };

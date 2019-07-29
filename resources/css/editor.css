@@ -1,25 +1,26 @@
 /**
  * Blocks stylesheet for the theme.
- *
  * This is for the editor in WordPress 5.0 and beyond.
  */
 
-// Settings.
-//
-// Settings handle the configuration and don't output CSS. This is a good
-// place to define things like variables.
+/**
+ * Settings.
+ *
+ * Settings handle the configuration and don't output CSS. This is a good
+ * place to define things like variables.
+ */
 
 @import "settings/global";
 @import "settings/colors";
 
 
-// Tools.
-//
-// These are used throughout the code but don't output CSS on their own.
-// Things like mixins and extensions go here.
+/**
+ * Tools.
+ *
+ * These are used throughout the code but don't output CSS on their own.
+ * Things like mixins and extensions go here.
+ */
 
-@import "~nth-grid/sass/nth-grid";
-@import "~sass-mq/mq";
 @import "tools/units";
 @import "tools/clearfix";
 @import "tools/hidden";
@@ -30,10 +31,12 @@
 @import "tools/wrapper";
 
 
-// Elements.
-//
-// Elements are (or should be) class-less designs for the base
-// HTML elements.
+/**
+ * Elements.
+ *
+ * Elements are (or should be) class-less designs for the base
+ * HTML elements.
+ */
 
 @import "elements/headings";
 @import "elements/links";
@@ -46,10 +49,11 @@
 @import "elements/misc";
 
 
-// Blocks.
-//
-// Blocks are styles for specific editor blocks.
-//
+/**
+ * Blocks.
+ *
+ * Blocks are styles for specific editor blocks.
+ */
 
 @import "blocks/wp-block-audio";
 @import "blocks/wp-block-button";
@@ -71,11 +75,13 @@
 @import "blocks/wp-block-verse";
 
 
-// Utilities.
-//
-// Utilities are helper classes and overrides.  This gets loaded last.
-// If necessary, this is the only place where `!important` rules should
-// go, but only if necessary.
+/**
+ * Utilities.
+ *
+ * Utilities are helper classes and overrides.  This gets loaded last.
+ * If necessary, this is the only place where `!important` rules should
+ * go, but only if necessary.
+ */
 
 @import "utilities/alignment";
 @import "utilities/clearfix";
@@ -84,7 +90,9 @@
 @import "utilities/hide";
 
 
-// Editor related styles which overwrite above styles.
+/**
+ * Editor related styles which overwrite above styles.
+ */
 
 body {
 	background-color: $color-background;

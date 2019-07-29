@@ -10,49 +10,53 @@
  * Each "block" is a "component" in our CSS.
  */
 
-// Settings.
-//
-// Settings handle the configuration and don"t output CSS. This is a good
-// place to define things like variables.
+/**
+ * Settings.
+ *
+ * Settings handle the configuration and don"t output CSS. This is a good
+ * place to define things like variables.
+*/
 
-@import "settings/global";
-@import "settings/colors";
+/* @import "settings/global";
+@import "settings/colors"; */
 
 
-// Tools.
-//
-// These are used throughout the code but don"t output CSS on their own.
-// Things like mixins and extensions go here.
+/**
+ * Tools.
+ *
+ * These are used throughout the code but don"t output CSS on their own.
+ * Things like mixins and extensions go here.
+ */
 
-@import "~nth-grid/sass/nth-grid";
-@import "~sass-mq/mq";
-@import "tools/units";
+/* @import "tools/units";
 @import "tools/clearfix";
 @import "tools/hidden";
 @import "tools/button";
 @import "tools/font-size";
 @import "tools/vr";
 @import "tools/responsive-embed";
-@import "tools/wrapper";
+@import "tools/wrapper"; */
 
 
-// Generic.
-//
-// This is the first point that real CSS is output. Resets, normalization,
-// fonts, etc. are best handled here. These are the base styles that other
-// styles will build upon.
+/**
+ * Generic.
+ *
+ * This is the first point that real CSS is output. Resets, normalization,
+ * fonts, etc. are best handled here. These are the base styles that other
+ * styles will build upon.
+ */
 
-@import "generic/box-sizing";
-@import "generic/normalize";
-@import "generic/reset";
+@import "generic/tailwind-base";
 
 
-// Elements.
-//
-// Elements are (or should be) class-less designs for the base
-// HTML elements.
+/**
+ * Elements.
+ *
+ * Elements are (or should be) class-less designs for the base
+ * HTML elements.
+ */
 
-@import "elements/page";
+/* @import "elements/page";
 @import "elements/headings";
 @import "elements/links";
 @import "elements/blockquote";
@@ -62,28 +66,32 @@
 @import "elements/media";
 @import "elements/code";
 @import "elements/forms";
-@import "elements/misc";
+@import "elements/misc"; */
 
 
-// Objects.
-//
-// Components make up the bulk of the actual theme design.  Nearly
-// every piece of the design is some type of component, whether it"s
-// a one-off or reusable block of code.
+/**
+ * Objects.
+ *
+ * Components make up the bulk of the actual theme design.  Nearly
+ * every piece of the design is some type of component, whether it"s
+ * a one-off or reusable block of code.
+ */
 
-@import "objects/animations";
+/* @import "objects/animations";
 @import "objects/layout";
-@import "objects/media";
-@import "objects/wrapper";
+@import "objects/media"; */
 
 
-// Components.
-//
-// Components make up the bulk of the actual theme design.  Nearly
-// every piece of the design is some type of component, whether it"s
-// a one-off or reusable block of code.
+/**
+ * Components.
+ *
+ * Components make up the bulk of the actual theme design.  Nearly
+ * every piece of the design is some type of component, whether it"s
+ * a one-off or reusable block of code.
+ */
 
-@import "components/app";
+@import "components/tailwind-components";
+/* @import "components/app";
 @import "components/app-header";
 @import "components/app-content";
 @import "components/app-main";
@@ -100,14 +108,15 @@
 @import "components/sidebar";
 @import "components/svg";
 @import "components/table";
-@import "components/widget";
+@import "components/widget"; */
 
-// Blocks.
-//
-// Blocks are styles for specific editor blocks.
-//
+/**
+ * Blocks.
+ *
+ * Blocks are styles for specific editor blocks.
+ */
 
-@import "blocks/wp-block-audio";
+/* @import "blocks/wp-block-audio";
 @import "blocks/wp-block-button";
 @import "blocks/wp-block-categories";
 @import "blocks/wp-block-code";
@@ -124,25 +133,28 @@
 @import "blocks/wp-block-quote";
 @import "blocks/wp-block-separator";
 @import "blocks/wp-block-table";
-@import "blocks/wp-block-verse";
+@import "blocks/wp-block-verse"; */
 
 
-// Vendor.
-//
-// Vendor files handle code for specific plugins and third-party
-// scripts that would overwrite earlier styles.
+/**
+ * Vendor.
+ *
+ * Vendor files handle code for specific plugins and third-party
+ * scripts that would overwrite earlier styles.
+ */
 
-// @import "vendor/index";
 
+/**
+ * Utilities.
+ *
+ * Utilities are helper classes and overrides.  This gets loaded last.
+ * If necessary, this is the only place where `!important` rules should
+ * go, but only if necessary.
+ */
 
-// Utilities.
-//
-// Utilities are helper classes and overrides.  This gets loaded last.
-// If necessary, this is the only place where `!important` rules should
-// go, but only if necessary.
-
-@import "utilities/alignment";
+@import "utilities/tailwind-utilities";
+/* @import "utilities/alignment";
 @import "utilities/clearfix";
 @import "utilities/color-palette";
 @import "utilities/headings";
-@import "utilities/hide";
+@import "utilities/hide"; */

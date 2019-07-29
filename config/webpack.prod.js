@@ -9,17 +9,17 @@ module.exports = merge(common, {
 	plugins: [
 
 		// Minify and optimize image/SVG files.
-		new ImageminPlugin({
+		new ImageminPlugin( {
 			test: /\.(jpe?g|png|gif|svg)$/i,
 			optipng: {
-				optimizationLevel: 7
+				optimizationLevel: 7,
 			},
 			gifsicle: {
-				optimizationLevel: 3
+				optimizationLevel: 3,
 			},
 			pngquant: {
 				quality: '65-90',
-				speed: 4
+				speed: 4,
 			},
 			svgo: {
 				plugins: [
@@ -27,15 +27,15 @@ module.exports = merge(common, {
 					{ mergePaths: false },
 					{ removeUnknownsAndDefaults: false },
 					{ removeViewBox: false },
-				]
+				],
 			},
-			plugins: [imageminMozjpeg({ quality: 75 })]
-		})
+			plugins: [ imageminMozjpeg( { quality: 75 } ) ],
+		} ),
 	],
 
 	optimization: {
 		minimizer: [
-			new TerserPlugin({
+			new TerserPlugin( {
 				cache: true,
 				parallel: true,
 				sourceMap: false,
@@ -46,7 +46,7 @@ module.exports = merge(common, {
 						// into invalid ecma 5 code. This is why the 'compress' and 'output'
 						// sections only apply transformations that are ecma 5 safe
 						// https://github.com/facebook/create-react-app/pull/4234
-						ecma: 8
+						ecma: 8,
 					},
 					compress: {
 						ecma: 5,
@@ -60,15 +60,15 @@ module.exports = merge(common, {
 						// https://github.com/facebook/create-react-app/issues/5250
 						// Pending futher investigation:
 						// https://github.com/terser-js/terser/issues/120
-						inline: 2
+						inline: 2,
 					},
 					output: {
 						ecma: 5,
-						comments: false
+						comments: false,
 					},
-					ie8: false
-				}
-			})
-		]
-	}
-});
+					ie8: false,
+				},
+			} ),
+		],
+	},
+} );

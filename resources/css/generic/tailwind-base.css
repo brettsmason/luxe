@@ -1,0 +1,6 @@
+/**
+ * Tailwind's preflight ans base styles.
+ * https://tailwindcss.com/docs/preflight/
+ */
+
+@tailwind base;

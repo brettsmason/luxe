@@ -1,18 +1,26 @@
-/**
- * Exports the PostCSS configuration.
- *
- * @return {string} PostCSS options.
- */
-module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
+const purgecss = require('@fullhuman/postcss-purgecss')({
+
+  // Specify the paths to all of the template files in your project
+  content: [
+    './resources/views/**/*.php',
+  ],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+});
+
+module.exports = ( { env } ) => ( {
 	plugins: {
-		tailwind: true,
+		'postcss-import': {},
+		'postcss-simple-vars': {},
+		'postcss-nested': {},
 		'postcss-preset-env': {
 			stage: 0,
 			autoprefixer: {
 				grid: true,
 			},
 		},
-		// Minify style on production using cssano.
+		tailwindcss: {},
 		cssnano: 'production' === env ?
 			{
 				preset: [

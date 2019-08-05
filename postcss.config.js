@@ -1,19 +1,9 @@
-const purgecss = require('@fullhuman/postcss-purgecss')({
-
-  // Specify the paths to all of the template files in your project
-  content: [
-    './resources/views/**/*.php',
-  ],
-
-  // Include any special characters you're using in this regular expression
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-});
+const purgecss = require( './config/purgecss' );
 
 module.exports = ( { env } ) => ( {
 	plugins: {
 		'postcss-import': {},
 		'postcss-simple-vars': {},
-		'postcss-nested': {},
 		'postcss-preset-env': {
 			stage: 0,
 			autoprefixer: {
@@ -21,22 +11,28 @@ module.exports = ( { env } ) => ( {
 			},
 		},
 		tailwindcss: {},
-		cssnano: 'production' === env ?
-			{
-				preset: [
-					'default', {
-						autoprefixer: true,
-						calc: {
-							precision: 8,
-						},
-						convertValues: true,
-						discardComments: {
-							removeAll: true,
-						},
-						mergeLonghand: false,
-						zindex: false,
+		'postcss-nested': {},
+		cssnano: 'production' === env ? {
+			preset: [
+				'default', {
+					autoprefixer: true,
+					calc: {
+						precision: 8,
 					},
-				],
-			} : false,
+					convertValues: true,
+					discardComments: {
+						removeAll: true,
+					},
+					mergeLonghand: false,
+					zindex: false,
+				},
+			],
+		} : false,
+		'@fullhuman/postcss-purgecss': 'production' === env ? {
+			content: [ './resources/views/**/*.php' ],
+			defaultExtractor: ( content ) => content.match( /[A-Za-z0-9-_:/]+/g ) || [],
+			whitelist: purgecss.whitelist,
+			whitelistPatterns: purgecss.whitelistPatterns,
+		} : false,
 	},
 } );

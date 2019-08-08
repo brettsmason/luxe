@@ -117,6 +117,10 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'custom-background' );
 }, 15 );
 
+add_action( 'after_setup_theme', function() {
+	add_theme_support( 'custom-header' );
+}, 15 );
+
 /**
  * Register menus.
  *

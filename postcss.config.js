@@ -29,7 +29,11 @@ module.exports = ( { env } ) => ( {
 			],
 		} : false,
 		'@fullhuman/postcss-purgecss': 'production' === env ? {
-			content: [ './resources/views/**/*.php' ],
+			content: [
+				'app/**/*.php',
+				'resources/views/**/*.php',
+				'resources/js/**/*.js',
+			],
 			defaultExtractor: ( content ) => content.match( /[A-Za-z0-9-_:/]+/g ) || [],
 			whitelist: purgecss.whitelist,
 			whitelistPatterns: purgecss.whitelistPatterns,

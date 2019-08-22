@@ -1,4 +1,4 @@
-<?php Hybrid\View\display( 'components', 'archive-header' ) ?>
+<?= $engine->render( 'components', 'archive-header' ) ?>
 
 <?php if ( have_posts() ) : ?>
 
@@ -7,10 +7,10 @@
         the_post();
         ?>
 
-        <?php Hybrid\View\display( 'content', Hybrid\Template\hierarchy() ) ?>
+        <?= $engine->render( 'content', Hybrid\Template\hierarchy() ) ?>
 
     <?php endwhile ?>
 
-    <?php Hybrid\View\display( 'components', 'pagination-posts' ) ?>
+    <?= $engine->render( 'components', 'pagination-posts' ) ?>
 
 <?php endif ?>

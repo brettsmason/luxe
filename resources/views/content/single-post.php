@@ -11,7 +11,7 @@
 
 	<div class="entry__content">
 		<?php the_content() ?>
-		<?= Hybrid\View\render( 'components', 'pagination-singular' ) ?>
+		<?= $engine->render( 'components', 'pagination-singular' ) ?>
 	</div>
 
 	<footer class="entry__footer">

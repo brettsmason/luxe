@@ -125,7 +125,7 @@ remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 
 // Add our pagination in place of WooCommerce.
 add_action( 'woocommerce_after_shop_loop', function() {
-	\Hybrid\View\display( 'partials', 'pagination-posts' );
+	$engine->display( 'partials', 'pagination-posts' );
 }, PHP_INT_MAX );
 
 // Remove add to cart button from archive view.

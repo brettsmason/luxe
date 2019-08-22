@@ -617,6 +617,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@brettsmason/tailwindcss-wordpress@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@brettsmason/tailwindcss-wordpress/-/tailwindcss-wordpress-0.1.0.tgz#a98ba6b201bb57b4060ac919104d325e31c37c25"
+  integrity sha512-jIvFPMHBZc0wiUftxevnncD1R/ErUqymzF6Bnlho9Eh7kpdo7UK9tZdyQZbUfPceVnWjhmKpONSjhWBXWy9W7w==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"

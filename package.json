@@ -51,7 +51,7 @@
     "postcss-preset-env": "^6.6.0",
     "sass": "^1.22.9",
     "sass-loader": "^7.1.0",
-    "sass-mq": "^5.0.0",
+    "sass-mq": "^5.0.1",
     "stylelint": "^10.1.0",
     "stylelint-config-wordpress": "^14.0.0",
     "stylelint-order": "^3.0.1",

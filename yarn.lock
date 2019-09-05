@@ -8370,10 +8370,10 @@ sass-loader@^7.1.0:
     pify "^3.0.0"
     semver "^5.5.0"
 
-sass-mq@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/sass-mq/-/sass-mq-5.0.0.tgz#7e8a8eb0f289591b3521549266f0ff923772809d"
-  integrity sha512-GCN6wGY+l4n10mASeMe2vqISvEEFjv6/NVcywaMU9saZgzw+DKM+fUUAnv07LlxXvDdnHSRf5jGJ10u/iF1BKA==
+sass-mq@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/sass-mq/-/sass-mq-5.0.1.tgz#42c711e657d884ff6a1bb4d405dfb6f08a7dc622"
+  integrity sha512-ugSVZO5fzasSFrGfKCtY02spnkOOfo9U9sXuzCuSXoCl1CgcoqdJRdNmigZkhvRVph1GKM6o0pgI00Jjc445CA==
 
 sass@^1.22.9:
   version "1.22.9"

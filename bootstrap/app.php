@@ -25,6 +25,7 @@ $luxe = new \Hybrid\Core\Application();
  * bootstrapping process.
  */
 $luxe->provider( \Luxe\Providers\AppServiceProvider::class );
+$luxe->provider( \Luxe\Providers\CustomizeServiceProvider::class );
 
 /**
  * Perform bootstrap actions.

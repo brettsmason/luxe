@@ -19,7 +19,7 @@
  * that meets these requirements, this code is unnecessary.
  */
 if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) || version_compare( PHP_VERSION, '5.6', '<' ) ) {
-	require_once( get_parent_theme_file_path( 'app/bootstrap-compat.php' ) );
+	require_once( get_parent_theme_file_path( 'bootstrap/compat.php' ) );
 	return;
 }
 
@@ -29,5 +29,5 @@ if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) || version_compare( P
  * Load the bootstrap files. Note that autoloading should happen first so that
  * any classes/functions are available that we might need.
  */
-require_once get_parent_theme_file_path( 'app/bootstrap-autoload.php' );
-require_once get_parent_theme_file_path( 'app/bootstrap-app.php' );
+require_once get_parent_theme_file_path( 'bootstrap/autoload.php' );
+require_once get_parent_theme_file_path( 'bootstrap/app.php' );

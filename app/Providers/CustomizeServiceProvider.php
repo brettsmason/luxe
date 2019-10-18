@@ -1,6 +1,6 @@
 <?php
 /**
- * App service provider.
+ * Customize service provider.
  *
  * Service providers are essentially the bootstrapping code for your theme.
  * They allow you to add bindings to the container on registration and boot them
@@ -16,6 +16,7 @@
 namespace Luxe\Providers;
 
 use Hybrid\Tools\ServiceProvider;
+use Luxe\Customize\Customize;
 
 /**
  * App service provider.
@@ -23,7 +24,7 @@ use Hybrid\Tools\ServiceProvider;
  * @since  1.0.0
  * @access public
  */
-class AppServiceProvider extends ServiceProvider {
+class CustomizeServiceProvider extends ServiceProvider {
 
 	/**
 	 * Callback executed when the `\Hybrid\Core\Application` class registers
@@ -35,12 +36,22 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register() {
 
-		// Bind the asset manifest for cache-busting.
-		$this->app->singleton( 'luxe/manifest', function() {
+		// Bind a single instance of our customizer class.
+		$this->app->singleton( Customize::class );
+	}
 
-			$file = get_theme_file_path( 'public/manifest.json' );
+	/**
+	 * Callback executed after all the service providers have been registered.
+	 * This is particularly useful for single-instance container objects that
+	 * only need to be loaded once per page and need to be resolved early.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function boot() {
 
-			return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
-		} );
+		// Boot the customizer class instance.
+		$this->app->resolve( Customize::class )->boot();
 	}
 }

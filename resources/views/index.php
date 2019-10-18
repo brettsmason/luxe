@@ -1,7 +1,7 @@
 <?php $engine = Hybrid\App::resolve( 'view/engine' ) ?>
 
 <!doctype html>
-<html <?= Hybrid\Attr\render( 'html' ) ?> class="no-js">
+<html <?= Hybrid\Attr\render( 'html' ) ?>>
 	<?= $engine->render( 'components', 'head' ) ?>
 
 	<body <?= Hybrid\Attr\render( 'body' ) ?>>

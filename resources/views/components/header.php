@@ -8,6 +8,6 @@
 			<?= Hybrid\Site\render_description() ?>
 		</div>
 
-		<?= $engine->render( 'components', 'menu', [ 'location' => 'primary' ] ) ?>
+		<?= $engine->render( 'components', 'menu-primary' ) ?>
 	</div>
 </header>

@@ -1,6 +1,6 @@
 <li <?= Hybrid\Attr\render( 'comment' ) ?>>
 	<figure class="comment__avatar">
-		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
+		<?= get_avatar( $comment, $args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
 	</figure>
 
 	<div class="comment__body">

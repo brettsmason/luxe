@@ -5,7 +5,6 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 ?>
 
 <section class="comments-template">
-
 	<div id="comments" class="comments">
 
 		<?php if ( have_comments() ) : ?>

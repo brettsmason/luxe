@@ -1,17 +1,17 @@
 <?php
-if ( ! has_nav_menu( $data->location ) ) {
+if ( ! has_nav_menu( $location ) ) {
 	return;
 }
 ?>
 
-<nav id="js-menu-<?= esc_attr( $data->location ) ?>" class="menu menu--<?= esc_attr( $data->location ) ?>">
+<nav id="menu-<?= esc_attr( $location ) ?>" class="menu menu--<?= esc_attr( $location ) ?>">
 	<?php
 	wp_nav_menu(
 		[
-			'theme_location' => $data->location,
+			'theme_location' => $location,
 			'container'      => '',
 			'menu_id'        => '',
-			'menu_class'     => 'menu__items',
+			'menu_class'     => 'menu__items menu__items--' . esc_attr( $location ),
 			'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 			'item_spacing'   => 'discard',
 		]

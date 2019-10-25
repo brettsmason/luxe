@@ -1,9 +1,9 @@
 <?php
-if ( ! is_active_sidebar( $data->location ) ) {
+if ( ! is_active_sidebar( $location ) ) {
 	return;
 }
 ?>
 
-<aside class="sidebar sidebar--<?= esc_attr( $data->location ) ?>">
-	<?php dynamic_sidebar( $data->location ) ?>
+<aside class="sidebar sidebar--<?= esc_attr( $location ) ?>">
+	<?php dynamic_sidebar( $location ) ?>
 </aside>

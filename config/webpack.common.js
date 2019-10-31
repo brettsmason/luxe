@@ -1,7 +1,6 @@
 const path = require( 'path' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const Fiber = require( 'fibers' );
 const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const FriendlyErrorsWebpackPlugin = require( 'friendly-errors-webpack-plugin' );
 const ManifestPlugin = require( 'webpack-manifest-plugin' );
@@ -17,7 +16,7 @@ module.exports = {
 	entry: settings.entries,
 
 	output: {
-		path: path.resolve(process.cwd(), settings.paths.public),
+		path: path.resolve( process.cwd(), settings.paths.public ),
 		filename: settings.outputs.javascript,
 	},
 
@@ -49,43 +48,45 @@ module.exports = {
 						loader: 'babel-loader',
 						options: {
 							cacheDirectory: true,
-							sourceMap: ! isProduction
-						}
-					}
+							sourceMap: ! isProduction,
+						},
+					},
 				],
 			},
 
 			// Styles.
 			{
 				test: /\.s[ac]ss$/,
-				include: path.resolve(process.cwd(), settings.paths.sass),
+				include: path.resolve( process.cwd(), settings.paths.sass ),
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
 						options: {
 							sourceMap: ! isProduction,
-							url: false
-						}
+							url: false,
+						},
 					},
 					{
 						loader: 'postcss-loader',
 						options: {
-							sourceMap: ! isProduction
-						}
+							sourceMap: ! isProduction,
+						},
 					},
 					{
 						loader: 'sass-loader',
 						options: {
-							implementation: require('sass'),
-							fiber: Fiber,
+							implementation: require( 'sass' ),
 							sourceMap: ! isProduction,
-							outputStyle: 'expanded'
-						}
-					}
-				]
-			}
-		]
+							sassOptions: {
+								fiber: require( 'fibers' ),
+								outputStyle: 'expanded',
+							},
+						},
+					},
+				],
+			},
+		],
 	},
 
 	plugins: [
@@ -95,50 +96,49 @@ module.exports = {
 
 		// Remove the extra JS files Webpack creates for Sass entries.
 		// This should be fixed in Webpack 5.
-		new FixStyleOnlyEntriesPlugin({
-			silent: true
-		}),
+		new FixStyleOnlyEntriesPlugin( {
+			silent: true,
+		} ),
 
 		// Clean the `public` folder on build.
-		new CleanWebpackPlugin({
+		new CleanWebpackPlugin( {
 			cleanStaleWebpackAssets: true,
-			verbose: false
-		}),
+			verbose: false,
+		} ),
 
 		// Create our cache busting asset manifest.
-		new ManifestPlugin({
+		new ManifestPlugin( {
 
 			// Filter using only .js and .css files.
-			filter: ({name}) => name.endsWith( '.js' ) || name.endsWith( '.css' ),
-			map: (file) => {
-
+			filter: ( { name } ) => name.endsWith( '.js' ) || name.endsWith( '.css' ),
+			map: ( file ) => {
 				// Add hash details on production for cache busting.
 				return {
 					name: file.path,
-					path: isProduction ? `${file.path}?id=${file.chunk.hash}` : file.path
+					path: isProduction ? `${ file.path }?id=${ file.chunk.hash }` : file.path,
 				};
-			}
-		}),
+			},
+		} ),
 
 		// Extract CSS into individual files.
-		new MiniCssExtractPlugin({
+		new MiniCssExtractPlugin( {
 			filename: settings.outputs.css,
-			chunkFilename: '[id].css'
-		}),
+			chunkFilename: '[id].css',
+		} ),
 
 		// Copy static assets to the `public` folder.
 		new CopyWebpackPlugin(
-			[{
+			[ {
 				from: '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 				to: '[path][name].[ext]',
-				context: path.resolve(process.cwd(), settings.paths.assets)
-			}],
+				context: path.resolve( process.cwd(), settings.paths.assets ),
+			} ],
 			{
-				copyUnmodified: true
+				copyUnmodified: true,
 			}
 		),
 
 		// Fancy WebpackBar.
 		new WebpackBar(),
-	]
+	],
 };

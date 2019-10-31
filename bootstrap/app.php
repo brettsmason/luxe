@@ -26,6 +26,7 @@ $luxe = new \Hybrid\Core\Application();
  */
 $luxe->provider( \Luxe\Providers\AppServiceProvider::class );
 $luxe->provider( \Luxe\Providers\CustomizeServiceProvider::class );
+$luxe->provider( \Luxe\Providers\WooCommerceServiceProvider::class );
 
 /**
  * Perform bootstrap actions.

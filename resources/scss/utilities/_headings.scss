@@ -7,36 +7,36 @@
  *
  */
 
-.u-h1,
-.u-h2,
-.u-h3,
-.u-h4,
-.u-h5,
-.u-h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
 	font-family: $font-family-heading;
 	font-weight: $font-weight-heading;
 }
 
-.u-h1 {
+.h1 {
 	@include font-size($h1);
 }
 
-.u-h2 {
+.h2 {
 	@include font-size($h2);
 }
 
-.u-h3 {
+.h3 {
 	@include font-size($h3);
 }
 
-.u-h4 {
+.h4 {
 	@include font-size($h4);
 }
 
-.u-h5 {
+.h5 {
 	@include font-size($h5);
 }
 
-.u-h6 {
+.h6 {
 	@include font-size($h6);
 }

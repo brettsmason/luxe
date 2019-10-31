@@ -103,21 +103,6 @@ add_action( 'after_setup_theme', function() {
 }, 5 );
 
 /**
- * Adds support for the custom background feature. This is in its own function
- * hooked to `after_setup_theme` so that we can give it a later priority. This
- * is so that child themes can more easily overwrite this feature. Note that
- * overwriting the background should be done *before* rather than after.
- *
- * @link   https://developer.wordpress.org/reference/functions/add_theme_support/#custom-background
- * @since  1.0.0
- * @access public
- * @return void
- */
-add_action( 'after_setup_theme', function() {
-	add_theme_support( 'custom-background' );
-}, 15 );
-
-/**
  * Register menus.
  *
  * @link   https://developer.wordpress.org/reference/functions/register_nav_menus/
@@ -159,7 +144,7 @@ add_action( 'widgets_init', function() {
 	$args = [
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget__title u-h5">',
+		'before_title'  => '<h2 class="widget__title h5">',
 		'after_title'   => '</h2>',
 	];
 

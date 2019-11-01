@@ -1,0 +1,86 @@
+.single-product {
+
+	// the main product container.
+	.product {
+		position: relative;
+	}
+
+	.woocommerce-product-gallery {
+		width: 100%;
+		margin-bottom: vr(2);
+		position: relative;
+
+		@include mq(medium) {
+			float: left;
+			margin-right: vr(2);
+			width: calc(50% - #{vr(1)});
+		}
+	}
+
+	// Product summary, which contains title, price etc.
+	.summary {
+		width: 100%;
+		margin-bottom: vr(2);
+
+		@include mq(medium) {
+			float: left;
+			width: calc(50% - #{vr(1)});
+		}
+	}
+
+	.cart,
+	.woocommerce-variation-add-to-cart {
+		display: flex;
+		margin-bottom: vr(1);
+
+		.quantity {
+			margin-right: vr(1/4);
+		}
+	}
+
+	// Class added to the .cart form if variations are enabled.
+	.variations_form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Variations table.
+	.variations {
+
+		td {
+			display: block;
+			padding: 0;
+		}
+
+		input,
+		select {
+			margin-bottom: vr(1/2);
+		}
+	}
+
+	// Variations reset link.
+	.reset_variations {}
+
+	.woocommerce-variation-price {
+		margin-bottom: vr(1);
+	}
+
+	// Grouped products
+	.woocommerce-grouped-product-list {
+		margin-bottom: vr(3/4);
+	}
+
+	.woocommerce-grouped-product-list-item {
+		margin-bottom: vr(1/4);
+	}
+
+	// Set related/upsells back to block as they include the .products
+	// class on the container for some reason.
+	.related,
+	.upsells {
+		display: block;
+	}
+}
+
+@import "components/gallery";
+@import "components/tabs";

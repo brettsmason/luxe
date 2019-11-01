@@ -1,16 +1,17 @@
 .woocommerce-account {
 
 	.woocommerce {
-
-		@include mq(medium) {
-			display: flex;
-		}
+		@include clearfix;
 	}
 }
 
 .woocommerce-MyAccount-navigation {
-	flex: 0 0 20%;
-	margin-right: vr(2);
+
+	@include mq(medium) {
+		width: calc(20% - #{vr(1/2)});
+		margin-right: vr(1);
+		float: left;
+	}
 
 	ul {
 		list-style: none;
@@ -19,7 +20,11 @@
 }
 
 .woocommerce-MyAccount-content {
-	flex: 1;
+
+	@include mq(medium) {
+		width: calc(80% - #{vr(1/2)});
+		float: left;
+	}
 
 	fieldset {
 		margin-bottom: 0;
@@ -41,5 +46,9 @@
 		@include mq(medium) {
 			text-align: left;
 		}
+	}
+
+	&.is-active {
+		background-color: $color-grey-100;
 	}
 }

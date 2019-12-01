@@ -66,6 +66,6 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
-    "core-js": "^3.3.5"
+    "core-js": "^3.4.5"
   }
 }

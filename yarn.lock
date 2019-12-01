@@ -1082,10 +1082,10 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wordpress/eslint-plugin@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-3.1.0.tgz#a552ac18893714947c25a0b24eb7489894b762b0"
-  integrity sha512-i/eNTWll3OH7rFukG2pNZXlOl0xihnuxg/2maEEMGzLS8dA8TEwyzCUXCqKycpOLR9sqODhdWFjeQBAPIjpZHg==
+"@wordpress/eslint-plugin@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/eslint-plugin/-/eslint-plugin-3.2.0.tgz#e3958c0b8e9a5421ed0d88a5c92040d230b3a0da"
+  integrity sha512-T406kigwx6GQMo3r1rH6dPT3/XQdq0hOMLrxTQVu/zMQXbifOvgNYW/7EEwMF1cF04jmkEr1mbOrXkfZ3cFLng==
   dependencies:
     babel-eslint "^10.0.2"
     eslint-plugin-jest "^22.15.1"

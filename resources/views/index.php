@@ -1,24 +1,24 @@
 <?php $engine = Hybrid\App::resolve( 'view/engine' ) ?>
 
 <!doctype html>
-<html <?= Hybrid\Attr\render( 'html' ) ?>>
-	<?= $engine->render( 'components', 'head' ) ?>
+<html <?php Hybrid\Attr\display( 'html' ) ?>>
+	<?php $engine->display( 'components', 'head' ) ?>
 
-	<body <?= Hybrid\Attr\render( 'body' ) ?>>
+	<body <?php Hybrid\Attr\display( 'body' ) ?>>
 		<?php wp_body_open() ?>
 
 		<div class="app">
-			<?= $engine->render( 'components', 'header' ) ?>
+			<?php $engine->display( 'components', 'header' ) ?>
 
 			<div class="app-content">
 				<main id="main" class="app-main">
-					<?= $engine->render( 'layouts', Hybrid\Template\hierarchy() ) ?>
+					<?php $engine->display( 'layouts', Hybrid\Template\hierarchy() ) ?>
 				</main>
 			</div>
 
-			<?= $engine->render( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
+			<?php $engine->display( 'components', 'sidebar', [ 'location' => 'subsidiary' ] ) ?>
 
-			<?= $engine->render( 'components', 'footer' ) ?>
+			<?php $engine->display( 'components', 'footer' ) ?>
 		</div>
 
 		<?php wp_footer() ?>

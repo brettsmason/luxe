@@ -1,10 +1,10 @@
-<article <?= Hybrid\Attr\render( 'entry' ) ?>>
+<article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<header class="entry__header">
-		<?= Hybrid\Post\render_title() ?>
+		<?php Hybrid\Post\display_title() ?>
 	</header>
 
 	<div class="entry__content">
 		<?php the_content() ?>
-		<?= $engine->render( 'components', 'pagination-singular' ) ?>
+		<?php $engine->display( 'components', 'pagination-singular' ) ?>
 	</div>
 </article>

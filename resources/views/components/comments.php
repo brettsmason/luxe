@@ -11,7 +11,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 			<h2 class="comments__title"><?php comments_number() ?></h2>
 
-			<?= Hybrid\View\render( 'components', 'pagination-comments' ) ?>
+			<?php Hybrid\View\display( 'components', 'pagination-comments' ) ?>
 
 			<ol class="comments__list">
 
@@ -33,7 +33,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 		<?php if ( ! comments_open() && have_comments() ) : ?>
 
 			<p class="comments__closed">
-				<?= esc_html__( 'Comments are closed.', 'luxe' ) ?>
+				<?php echo esc_html__( 'Comments are closed.', 'luxe' ) ?>
 			</p>
 
 		<?php endif ?>

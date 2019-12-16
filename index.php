@@ -1,4 +1,4 @@
-<?=
+<?php
 /**
  * Index template.
  *

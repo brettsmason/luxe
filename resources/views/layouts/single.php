@@ -5,7 +5,7 @@
 		the_post();
 		?>
 
-		<?= $engine->render( 'content', Hybrid\Template\hierarchy() ) ?>
+		<?php $engine->display( 'content', Hybrid\Template\hierarchy() ) ?>
 
 	<?php endwhile ?>
 

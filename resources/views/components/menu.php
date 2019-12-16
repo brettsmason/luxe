@@ -4,7 +4,7 @@ if ( ! has_nav_menu( $location ) ) {
 }
 ?>
 
-<nav id="menu-<?= esc_attr( $location ) ?>" class="menu menu--<?= esc_attr( $location ) ?>">
+<nav id="menu-<?php echo esc_attr( $location ) ?>" class="menu menu--<?php echo esc_attr( $location ) ?>">
 	<?php
 	wp_nav_menu(
 		[

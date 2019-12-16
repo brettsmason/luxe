@@ -1,15 +1,15 @@
-<article <?= Hybrid\Attr\render( 'entry' ) ?>>
+<article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<figure class="entry__image">
 		<?php the_post_thumbnail( 'post-thumbnail' ) ?>
 	</figure>
 
 	<header class="entry__header">
-		<?= Hybrid\Post\render_title() ?>
+		<?php Hybrid\Post\display_title() ?>
 
 		<div class="entry__byline">
-			<?= Hybrid\Post\render_date() ?>
-			<?= Hybrid\Post\render_author() ?>
-			<?= Hybrid\Post\render_comments_link() ?>
+			<?php Hybrid\Post\display_date() ?>
+			<?php Hybrid\Post\display_author() ?>
+			<?php Hybrid\Post\display_comments_link() ?>
 		</div>
 	</header>
 

@@ -8758,10 +8758,10 @@ sass-mq@^5.0.1:
   resolved "https://registry.yarnpkg.com/sass-mq/-/sass-mq-5.0.1.tgz#42c711e657d884ff6a1bb4d405dfb6f08a7dc622"
   integrity sha512-ugSVZO5fzasSFrGfKCtY02spnkOOfo9U9sXuzCuSXoCl1CgcoqdJRdNmigZkhvRVph1GKM6o0pgI00Jjc445CA==
 
-sass@^1.23.2:
-  version "1.23.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.23.2.tgz#eef0163c7670c80e8824ff75e76a5b4004fe2fd2"
-  integrity sha512-ZfOl81QxcWmjxOgjPbyog3uELzOxd4X9OaqEIAi9r/d2kEjtEYaMAD9a3E+xgjcKeP3NDLMhU9GB/WMv+rAeSw==
+sass@^1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.0.tgz#e8b9931bc5d18a37d271749311ef2edc83102a77"
+  integrity sha512-1TsPyMhLTx+9DLlmwg02iBW2p4poGA7LlkWJLpUY/XticFKNhPcx+l4FsIJLKl6oSUfXmAKpVljHEez1hwjqiw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 

@@ -9382,10 +9382,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-stylelint-config-recommended-scss@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recommended-scss/-/stylelint-config-recommended-scss-4.0.0.tgz#04bca39ba693941fc27500271093846bcd68574e"
-  integrity sha512-aEy0ENUrH4ASgFCu2mMcqBUAX0l4CPXg0XucJXdW+I7mdqJ7ICddkxP1eamBNBZ1QToc/wsuLmTQcalk3qYpsw==
+stylelint-config-recommended-scss@^4.1.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recommended-scss/-/stylelint-config-recommended-scss-4.2.0.tgz#3ad3fc858215cfd16a0f90aecf1ac0ea8a3e6971"
+  integrity sha512-4bI5BYbabo/GCQ6LbRZx/ZlVkK65a1jivNNsD+ix/Lw0U3iAch+jQcvliGnnAX8SUPaZ0UqzNVNNAF3urswa7g==
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
@@ -9394,14 +9394,14 @@ stylelint-config-recommended@^3.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
   integrity sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
 
-stylelint-config-wordpress@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-wordpress/-/stylelint-config-wordpress-15.0.0.tgz#9d327cd8db53147f08e9e71f35d0ef61b16c5eff"
-  integrity sha512-53wJuCaS35MiO942ML3//lJ3sIvq9LC2Aw8y7DB9yIuO0Eqx2duWUFyxVQQDmEqDvcEg9gVXHKVca/YI+vMKIg==
+stylelint-config-wordpress@^16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-wordpress/-/stylelint-config-wordpress-16.0.0.tgz#65229406adedfc887708af16073697e987c7e5a4"
+  integrity sha512-fu8F2a3DTHjo7Id4rUbua2FprieKBDQ+jQ67XVBMsys8YyBjOd/CdcCRiWQug4sA1/A41lq0JlD2gOlR0dWmpw==
   dependencies:
     stylelint-config-recommended "^3.0.0"
-    stylelint-config-recommended-scss "^4.0.0"
-    stylelint-scss "^3.11.1"
+    stylelint-config-recommended-scss "^4.1.0"
+    stylelint-scss "^3.13.0"
 
 stylelint-order@^3.1.1:
   version "3.1.1"
@@ -9412,7 +9412,7 @@ stylelint-order@^3.1.1:
     postcss "^7.0.17"
     postcss-sorting "^5.0.1"
 
-stylelint-scss@^3.11.1, stylelint-scss@^3.14.2:
+stylelint-scss@^3.13.0, stylelint-scss@^3.14.2:
   version "3.14.2"
   resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.14.2.tgz#e449a47e0ac410e6909f1a71b49550202c978bf9"
   integrity sha512-59/BkIEWyFoORiejDIQB2P2kmg0KcqMn7wtj1y5sRvS4N+Qh+Ng3hbKelOzgS+OM2Ezbai0uEev8xckXxkh9TQ==

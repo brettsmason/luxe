@@ -1,4 +1,4 @@
-<?=
+<?php
 /**
  * Index template.
  *
@@ -10,4 +10,8 @@
  * @package Luxe
  */
 
-Hybrid\View\render( 'index' );
+// Access the view template engine.
+$engine = Hybrid\App::resolve( 'view/engine' );
+
+// Load the index template.
+$engine->display( 'index' );

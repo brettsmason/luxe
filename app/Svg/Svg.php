@@ -215,6 +215,6 @@ class Svg implements Renderable, Displayable {
 	 */
 	public function display() {
 
-		echo $this->render(); // WPCS: XSS OK.
+		echo $this->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }

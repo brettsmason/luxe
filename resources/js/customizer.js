@@ -7,7 +7,7 @@
  * @package   Luxe
  * @author    Brett Mason <brettsmason@gmail.com>
  * @copyright Copyright (c) 2018, Brett Mason
- * @link      https://github.com/brettsmason/luxe
+ * @see       @link https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -15,15 +15,15 @@
 wp.customize( 'blogname', ( value ) => {
 	value.bind( ( to ) => {
 		document.querySelector( '.app-header__title-link' ).textContent = to;
-	});
-});
+	} );
+} );
 
 // Site description.
 wp.customize( 'blogdescription', ( value ) => {
 	value.bind( ( to ) => {
 		document.querySelector( '.app-header__description' ).textContent = to;
-	});
-});
+	} );
+} );
 
 // Site title/description toggle.
 wp.customize( 'header_text', ( value ) => {
@@ -32,13 +32,13 @@ wp.customize( 'header_text', ( value ) => {
 
 		headerItems.forEach( ( text ) => {
 			if ( false === to ) {
-			text.style.clip = 'rect(0 0 0 0)';
-			text.style.position = 'absolute';
+				text.style.clip = 'rect(0 0 0 0)';
+				text.style.position = 'absolute';
 			} else {
-			text.style.clip = null;
-			text.style.position = null;
+				text.style.clip = null;
+				text.style.position = null;
 			}
-		});
-	});
-});
+		} );
+	} );
+} );
 

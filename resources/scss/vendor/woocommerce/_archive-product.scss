@@ -1,0 +1,21 @@
+.archive-product {
+
+	.woocommerce-result-count {
+
+		@include mq(medium) {
+			clear: left;
+			display: inline-block;
+			float: left;
+		}
+	}
+
+	.woocommerce-ordering {
+
+		@include mq(medium) {
+			clear: right;
+			display: inline-block;
+			float: right;
+		}
+	}
+
+}

@@ -33,11 +33,29 @@
 // If necessary, this is the only place where `!important` rules should
 // go, but only if necessary.
 
-@import "vendor/woocommerce/global";
-@import "vendor/woocommerce/product-archive";
-@import "vendor/woocommerce/product-single";
-@import "vendor/woocommerce/product-gallery-slider";
-@import "vendor/woocommerce/my-account";
+// @import "vendor/woocommerce/global";
+// @import "vendor/woocommerce/product-archive";
+// @import "vendor/woocommerce/product-single";
+// @import "vendor/woocommerce/product-gallery-slider";
+// @import "vendor/woocommerce/my-account";
+// @import "vendor/woocommerce/cart";
+// @import "vendor/woocommerce/checkout";
+// @import "vendor/woocommerce/order-confirmation";
+
+.woocommerce,
+.woocommerce-page {
+
+	.woocommerce-checkout-review-order-table {
+
+		.product-name {
+			text-align: left;
+		}
+	}
+}
+
+@import "vendor/woocommerce/general";
+@import "vendor/woocommerce/archive-product";
+@import "vendor/woocommerce/single-product";
 @import "vendor/woocommerce/cart";
 @import "vendor/woocommerce/checkout";
-@import "vendor/woocommerce/order-confirmation";
+@import "vendor/woocommerce/my-account";

@@ -1,108 +1,113 @@
 .woocommerce-cart {
 
-	.product-remove {
-		width: 10px;
-	}
+	.woocommerce-cart-form__contents {
 
-	.product-thumbnail {
-		width: 80px;
-	}
+		.product-thumbnail {
 
-	.product-name {
-		width: 40%;
-	}
+			@include mq($until: medium) {
+				display: none;
+			}
+		}
 
-	.product-quantity {
-		width: 90px;
-	}
+		.product-remove {
 
-	.product-subtotal {
-		text-align: right;
-	}
+			@include mq(medium) {
+				text-align: left;
+				width: 50px;
+			}
+		}
 
-	.woocommerce {
-		@include mq(medium) {
-			align-items: flex-start;
+		.product-name {
+
+			@include mq(medium) {
+				width: 40%;
+				text-align: left;
+			}
+		}
+
+		.product-quantity {
+			overflow: hidden;
+
+			@include mq(medium) {
+				width: 120px;
+			}
+
+			.quantity {
+				float: right;
+
+				@include mq(medium) {
+					float: none;
+				}
+			}
+		}
+
+		.actions {
+			text-align: left;
+
+			@include mq(medium) {
+				overflow: hidden;
+			}
+		}
+
+		.button {
+			@include button-style($color-secondary);
+			display: block;
+			width: 100%;
+		}
+
+		.coupon {
 			display: flex;
-			flex-wrap: wrap;
+			flex-direction: column;
+			margin-bottom: vr(1/2);
+
+			@include mq(medium) {
+				display: inline-flex;
+				flex-direction: row;
+				margin-bottom: 0;
+			}
+
+			label {
+				display: none;
+			}
+
+			[name="coupon_code"] {
+				margin-bottom: vr(1/2);
+				width: 100%;
+
+				@include mq(medium) {
+					margin-bottom: 0;
+					width: 200px;
+				}
+			}
+
+			[name="apply_coupon"] {
+				width: 100%;
+
+				@include mq(medium) {
+					display: inline-block;
+					width: auto;
+				}
+			}
+		}
+
+		[name="update_cart"] {
+			width: 100%;
+
+			@include mq(medium) {
+				display: inline-block;
+				float: right;
+				width: auto;
+			}
+
+			&[disabled] {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
 		}
 	}
 
-	.woocommerce-cart-form {
-		@include mq(medium) {
-			flex: 1;
-			margin-right: vr(2);
-		}
-	}
-
-	.coupon {
-		display: inline-block;
-
-		.input-text {
-			display: inline-block;
-			vertical-align: middle;
-			width: auto;
-		}
-
-		label {
-			display: none;
-		}
-	}
-
-	.actions {
-		padding-top: vr(2);
-	}
-
-	[name="update_cart"] {
-		float: right;
-
-		&[disabled] {
-			background-color: transparent;
-			color: $color-text;
-			opacity: 0.3;
-		}
-	}
-
-	.cart_totals {
-
-		h2 {
-			@include font-size($h5);
-		}
-
-		th {
-			width: 40%;
-		}
-	}
-
-	.cart-collaterals {
-		border: 1px solid $color-border;
-		flex: 0 0 40%;
-		padding: vr(1);
-	}
-
-	.checkout-button {
-		width: 100%;
-	}
-
-	.shipping {
-
-		ul {
-			list-style: none;
-			margin-left: 0;
-		}
-
-		td,
-		th {
-			vertical-align: top;
-		}
-
-		label {
-			font-weight: 400;
-		}
-	}
-
-	.remove {
-		font-weight: 700;
-		text-decoration: none;
+	// the toggleable shipping calculator
+	.shipping-calculator-form {
+		margin-top: vr(1);
 	}
 }

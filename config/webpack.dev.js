@@ -20,7 +20,7 @@ module.exports = merge( common, {
 			{
 				injectCss: true,
 				reload: false,
-			}
+			},
 		),
 	],
 } );

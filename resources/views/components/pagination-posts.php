@@ -1,5 +1,5 @@
-<?=
-Hybrid\Pagination\render(
+<?php
+Hybrid\Pagination\display(
 	'posts', [
 		'prev_text'  => __( '&larr; Previous', 'luxe' ),
 		'next_text'  => __( 'Next &rarr;', 'luxe' ),

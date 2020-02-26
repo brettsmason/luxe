@@ -1,13 +1,13 @@
 <header class="app-header">
-	<a class="skip-link screen-reader-text" href="#main"><?= esc_html__( 'Skip to content', 'luxe' ) ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php echo esc_html__( 'Skip to content', 'luxe' ) ?></a>
 
 	<div class="app-header__wrapper">
 		<div class="app-header__branding">
-			<?= get_custom_logo() ?>
-			<?= Hybrid\Site\render_title() ?>
-			<?= Hybrid\Site\render_description() ?>
+			<?php the_custom_logo() ?>
+			<?php Hybrid\Site\display_title() ?>
+			<?php Hybrid\Site\display_description() ?>
 		</div>
 
-		<?= Hybrid\View\render( 'components', 'menu', [ 'location' => 'primary' ] ) ?>
+		<?php $engine->display( 'components', 'menu-primary' ) ?>
 	</div>
 </header>

@@ -11,8 +11,4 @@ th,
 td {
 	padding: vr(3/4);
 	text-align: left;
-
-	tfoot & {
-		color: $color-grey-500;
-	}
 }

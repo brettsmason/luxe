@@ -8,6 +8,6 @@
  * @package   Luxe
  * @author    Brett Mason <brettsmason@gmail.com>
  * @copyright Copyright (c) 2018, Brett Mason
- * @link      https://github.com/brettsmason/luxe
+ * @see       @link https://github.com/brettsmason/luxe
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */

@@ -37,7 +37,6 @@ array_map(
 		'functions-page-templates',
 		'functions-setup',
 		'functions-template',
-		'functions-woocommerce',
 		'Svg/functions-svg',
 	]
 );

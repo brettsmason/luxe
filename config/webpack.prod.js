@@ -4,7 +4,7 @@ const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 const imageminMozjpeg = require( 'imagemin-mozjpeg' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
-module.exports = merge(common, {
+module.exports = merge( common, {
 	mode: 'production',
 	plugins: [
 

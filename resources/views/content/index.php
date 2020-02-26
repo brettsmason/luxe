@@ -1,6 +1,6 @@
-<article <?= Hybrid\Attr\render( 'entry' ) ?>>
+<article <?php Hybrid\Attr\display( 'entry' ) ?>>
 	<header class="entry__header">
-		<?= Hybrid\Post\render_title() ?>
+		<?php Hybrid\Post\display_title() ?>
 	</header>
 
 	<div class="entry__summary">

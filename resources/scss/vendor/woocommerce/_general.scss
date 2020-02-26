@@ -1,0 +1,293 @@
+.woocommerce,
+.woocommerce-page {
+
+	// Product grids for archives, related products etc.
+	.products {
+		clear: both;
+		list-style: none;
+		margin-left: 0;
+
+		@include mq(small) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.product {
+			width: 100%;
+			margin-bottom: vr(1);
+			position: relative;
+
+			@include mq(small) {
+				@include nth-grid(2);
+			}
+		}
+
+		// Generate styles for `columns-1 to columns-5` classes.
+		@for $i from 1 through 5 {
+
+			&.columns-#{$i} {
+
+				.product {
+
+					@include mq(medium) {
+						@include nth-grid($i);
+					}
+				}
+			}
+		}
+	}
+
+	// Styles shared between all shop tables.
+	.shop_table {
+		table-layout: fixed;
+
+		thead th {
+			text-align: right;
+		}
+
+		th {
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		td {
+			text-align: right;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		.woocommerce-shipping-totals {
+
+			th,
+			td {
+				vertical-align: top;
+			}
+		}
+	}
+
+	// Responsive tables (eg cart).
+	.shop_table_responsive {
+
+		thead {
+
+			@include mq($until: medium) {
+				display: none;
+			}
+		}
+
+		tbody {
+
+			th {
+
+				@include mq($until: medium) {
+					display: none;
+				}
+			}
+		}
+
+		tr {
+
+			@include mq($until: medium) {
+				display: block;
+			}
+
+			td {
+
+				@include mq($until: medium) {
+					display: block;
+					padding-left: 0;
+					padding-right: 0;
+				}
+
+				&::before {
+					content: attr(data-title) ': ';
+					font-weight: 700;
+					float: left;
+
+					@include mq(medium) {
+						content: none;
+					}
+				}
+			}
+
+			.product-remove,
+			.actions {
+
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// 2 column layout used on various pages.
+	.col2-set {
+		display: flex;
+		flex-direction: column;
+
+		@include mq(medium) {
+			flex-direction: row;
+
+			> * {
+				@include nth-grid(2);
+			}
+		}
+	}
+
+	// Form rows.
+	 .form-row {
+		@include clearfix;
+
+		@include mq(medium) {
+			float: left;
+			width: calc(50% - #{vr(1/2)});
+		}
+
+		&-first {
+
+			@include mq(medium) {
+				margin-right: vr(1);
+			}
+		}
+
+		&-wide {
+
+			@include mq(medium) {
+				clear: both;
+				width: 100%;
+			}
+		}
+
+		&.place-order,
+		&.notes {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.woocommerce-form-login {
+
+		.form-row {
+			width: 100%;
+
+			&-first {
+				margin-right: 0;
+			}
+		}
+
+		.woocommerce-form-login__rememberme {
+			margin-bottom: vr(1);
+		}
+	}
+
+	// Shipping methods
+	// This appears on both the cart and checkout, hence here.
+	.woocommerce-shipping-methods {
+		list-style: none;
+		margin-left: 0;
+	}
+
+	.onsale {
+		font-size: 14px;
+		background-color: $color-primary;
+		color: $color-white;
+		padding: vr(1/4) vr(1/2);
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		line-height: 1;
+	}
+
+	.price {
+
+		del {
+			font-size: 80%;
+		}
+
+		ins {
+			text-decoration: none;
+		}
+	}
+
+	// The <a> element used on archives, related products etc.
+	.woocommerce-loop-product__link {
+		text-decoration: none;
+	}
+
+	// Product title, visible on archives, related products etc.
+	.woocommerce-loop-product__title,
+	.woocommerce-loop-category__title {
+		@include font-size($h5);
+		margin-bottom: 0;
+	}
+
+	.quantity {
+		width: 80px;
+	}
+
+	.woocommerce-message,
+	.woocommerce-info,
+	.woocommerce-error,
+	.woocommerce-noreviews,
+	.no-comments {
+		padding: vr(3/4);
+		background-color: $color-grey-200;
+		overflow: hidden;
+		color: $color-white;
+		margin-bottom: vr(1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include mq(medium) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		a {
+			padding: 0;
+			line-height: $global-line-height;
+			color: $color-white;
+			background-color: transparent;
+			order: 1;
+
+			@include mq(medium) {
+			}
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.woocommerce-message {
+		background-color: $color-success;
+	}
+
+	.woocommerce-error {
+		background-color: $color-alert;
+	}
+
+	.wc-backward,
+	.alt {
+		@include button-style($color-secondary);
+	}
+
+	.wc-forward {
+		@include button-style($color-primary);
+	}
+}

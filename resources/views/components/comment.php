@@ -1,13 +1,13 @@
-<li <?= Hybrid\Attr\render( 'comment' ) ?>>
+<li <?php Hybrid\Attr\display( 'comment' ) ?>>
 	<figure class="comment__avatar">
-		<?= get_avatar( $data->comment, $data->args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
+		<?php echo get_avatar( $comment, $args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
 	</figure>
 
 	<div class="comment__body">
 		<header class="comment__meta">
-			<?= Hybrid\Comment\render_author() ?>
-			<?=
-			Hybrid\Comment\render_permalink(
+			<?php Hybrid\Comment\display_author() ?>
+			<?php
+			Hybrid\Comment\display_permalink(
 				[
 					'text' => sprintf(
 						// Translators: 1 is the comment date and 2 is the time.
@@ -18,14 +18,14 @@
 				]
 			)
 			?>
-			<?= Hybrid\Comment\render_edit_link() ?>
+			<?php Hybrid\Comment\display_edit_link() ?>
 		</header>
 
 		<div class="comment__content">
 
 			<?php if ( ! Hybrid\Comment\is_approved() ) : ?>
 				<p class="comment__moderation">
-					<?= esc_html__( 'Your comment is awaiting moderation.', 'luxe' ) ?>
+					<?php echo esc_html__( 'Your comment is awaiting moderation.', 'luxe' ) ?>
 				</p>
 			<?php endif ?>
 
@@ -34,7 +34,7 @@
 
 		<?php if ( comments_open() ) : ?>
 			<div class="comment__actions">
-				<?= Hybrid\Comment\render_reply_link() ?>
+				<?php Hybrid\Comment\display_reply_link() ?>
 			</div>
 		<?php endif ?>
 

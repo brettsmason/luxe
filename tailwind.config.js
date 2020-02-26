@@ -8,5 +8,5 @@ module.exports = {
   variants: {},
   plugins: [
 		require('@brettsmason/tailwindcss-wordpress'),
-  ]
+  ],
 }

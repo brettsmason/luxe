@@ -10,7 +10,7 @@
 		<div class="app">
 			<?php $engine->display( 'components', 'header' ) ?>
 
-			<div class="app-content">
+			<div class="app-content container">
 				<main id="main" class="app-main">
 					<?php $engine->display( 'layouts', Hybrid\Template\hierarchy() ) ?>
 				</main>

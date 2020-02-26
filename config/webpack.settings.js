@@ -6,9 +6,7 @@ module.exports = {
 	entries: {
 		app: './resources/js/app.js',
 		customizer: './resources/js/customizer.js',
-		screen: './resources/scss/screen.scss',
-		editor: './resources/scss/editor.scss',
-		woocommerce: './resources/scss/woocommerce.scss',
+		screen: './resources/css/screen.css',
 	},
 
 	/**

@@ -58,7 +58,7 @@
     "stylelint-scss": "^3.14.2",
     "terser-webpack-plugin": "^2.2.1",
     "theme-claim": "^0.2.0",
-    "webpack": "^4.41.2",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.10",
     "webpack-fix-style-only-entries": "^0.4.0",
     "webpack-manifest-plugin": "^2.2.0",

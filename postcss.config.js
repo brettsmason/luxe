@@ -11,6 +11,7 @@ module.exports = ( { file, options, env } ) => ( { /* eslint-disable-line */
 				grid: true
 			}
 		},
+		tailwindcss: {},
 		// Minify style on production using cssano.
 		cssnano: 'production' === env ?
 			{

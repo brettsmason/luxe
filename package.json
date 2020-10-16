@@ -46,9 +46,9 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
-    "nth-grid": "github:brettsmason/nth-grid",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
+    "purgecss-with-wordpress": "^3.0.0",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "sass-mq": "^5.0.1",
@@ -66,6 +66,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "tailwindcss": "^1.9.2"
   }
 }

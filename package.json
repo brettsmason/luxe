@@ -54,7 +54,7 @@
     "sass-mq": "^5.0.1",
     "stylelint": "^12.0.1",
     "stylelint-config-wordpress": "^17.0.0",
-    "stylelint-order": "^4.0.0",
+    "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.14.2",
     "terser-webpack-plugin": "^4.2.3",
     "theme-claim": "^0.2.0",

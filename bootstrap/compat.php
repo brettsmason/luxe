@@ -25,12 +25,12 @@ add_action( 'template_redirect', 'luxe_preview' );
  * @return mixed
  */
 function luxe_compat_message() {
-	if ( version_compare( $GLOBALS['wp_version'], '5.2', '<' ) ) {
+	if ( version_compare( $GLOBALS['wp_version'], '5.8', '<' ) ) {
 
 		return sprintf(
 			/* translators: %1$s is supported WordPress version, and %2$s is WordPress version used. */
 			esc_html__( 'Theme requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.', 'luxe' ),
-			'5.2',
+			'5.8',
 			$GLOBALS['wp_version']
 		);
 
@@ -39,7 +39,7 @@ function luxe_compat_message() {
 		return sprintf(
 			/* translators: %1$s is supported PHP version, and %2$s is PHP version used. */
 			esc_html__( 'Theme requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'luxe' ),
-			'5.6',
+			'7.4',
 			PHP_VERSION
 		);
 	}

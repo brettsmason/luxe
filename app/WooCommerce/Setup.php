@@ -9,7 +9,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe\WooCommerce\Setup;
+namespace Luxe\WooCommerce;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\Template\path;

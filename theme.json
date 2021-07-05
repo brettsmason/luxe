@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "settings": {
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "gradients": [],
+      "link": false,
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#008055"
+        },
+        {
+          "slug": "secondary",
+          "color": "#adadad"
+        }
+      ]
+    },
+    "spacing": {
+      "customPadding": false,
+      "units": ["rem"]
+    },
+    "typography": {
+      "customFontSize": false,
+      "customLineHeight": false,
+      "dropCap": false,
+      "fontSizes": [
+        {
+          "slug": "xs",
+          "size": 12
+        },
+        {
+          "slug": "sm",
+          "size": 14
+        },
+        {
+          "slug": "base",
+          "size": 16
+        },
+        {
+          "slug": "lg",
+          "size": 18
+        },
+        {
+          "slug": "xl",
+          "size": 20
+        },
+        {
+          "slug": "2xl",
+          "size": 24
+        },
+        {
+          "slug": "3xl",
+          "size": 30
+        },
+        {
+          "slug": "4xl",
+          "size": 36
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontSize": "var(--wp--preset--font-size--base)"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--4xl)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--3xl)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--2xl)"
+        }
+      }
+    }
+  }
+}

@@ -23,10 +23,43 @@
   },
   "author": "Brett Mason",
   "license": "GPL-2.0+",
+  "homepage": "https://github.com/brettsmason/luxe#readme",
   "bugs": {
     "url": "https://github.com/brettsmason/luxe/issues"
   },
-  "homepage": "https://github.com/brettsmason/luxe#readme",
+  "babel": {
+    "presets": [
+      "@wordpress/default"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/recommended"
+    ],
+    "parser": "babel-eslint"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-wordpress",
+    "ignoreFiles": [
+      "public"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": null,
+      "declaration-no-important": true,
+      "order/order": [
+        "custom-properties",
+        "declarations"
+      ]
+    },
+    "order/properties-alphabetical-order": true
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
@@ -67,5 +100,5 @@
   },
   "dependencies": {
     "core-js": "^3.6.5"
-  }
+  },
 }

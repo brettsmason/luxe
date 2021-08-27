@@ -15,7 +15,7 @@
 
 namespace Luxe\Providers;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 use Luxe\WooCommerce\Setup;
 use Luxe\WooCommerce\ArchiveProduct;
 

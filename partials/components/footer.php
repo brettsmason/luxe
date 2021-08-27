@@ -1,6 +1,6 @@
 <footer class="app-footer">
-	<div class="app-footer__wrapper">
-		<p class="app-footer__copyright">
+	<div class="container">
+		<p>
 			<?php
 			printf(
 				esc_html__( 'Copyright &#169; %1$s %2$s', 'luxe' ),

@@ -8,6 +8,9 @@
  * @package Luxe
  */
 
+use \Hybrid\Core\Application;
+use function \Hybrid\{app, booted};
+
 /**
  * Create a new application.
  *
@@ -15,7 +18,7 @@
  * this directly via the `\Hybrid\app()` function or `\Hybrid\App` static class
  * after the application has booted.
  */
-$luxe = new \Hybrid\Core\Application();
+$luxe = booted() ? app() : new Application();
 
 /**
  * Register service providers with the application.
@@ -26,7 +29,9 @@ $luxe = new \Hybrid\Core\Application();
  */
 $luxe->provider( \Luxe\Providers\AppServiceProvider::class );
 $luxe->provider( \Luxe\Providers\CustomizeServiceProvider::class );
-$luxe->provider( \Luxe\Providers\WooCommerceServiceProvider::class );
+// $luxe->provider( \Luxe\Providers\WooCommerceServiceProvider::class );
+
+$luxe->provider( \Hybrid\Template\Hierarchy\Provider::class );
 
 /**
  * Perform bootstrap actions.

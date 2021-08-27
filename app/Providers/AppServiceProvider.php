@@ -15,7 +15,7 @@
 
 namespace Luxe\Providers;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * App service provider.
@@ -36,11 +36,29 @@ class AppServiceProvider extends ServiceProvider {
 	public function register() {
 
 		// Bind the asset manifest for cache-busting.
-		$this->app->singleton( 'luxe/manifest', function() {
+		$this->app->singleton(
+			'app/manifest',
+			function() {
+				$file = get_theme_file_path( 'public/mix-manifest.json' );
+				return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
+			}
+		);
 
-			$file = get_theme_file_path( 'public/manifest.json' );
+		$this->app->singleton( \Luxe\Setup::class );
+		$this->app->singleton( \Luxe\Wrapper::class );
+	}
 
-			return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
-		} );
+	/**
+	 * Callback executed after all the service providers have been registered.
+	 * This is particularly useful for single-instance container objects that
+	 * only need to be loaded once per page and need to be resolved early.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function boot() {
+
+		$this->app->resolve( \Luxe\Setup::class )->boot();
+		$this->app->resolve( \Luxe\Wrapper::class )->boot();
 	}
 }

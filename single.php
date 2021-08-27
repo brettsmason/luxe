@@ -1,5 +1,3 @@
-<?php get_template_part( 'partials/archive-header' ); ?>
-
 <?php if ( have_posts() ) : ?>
 
 	<?php
@@ -11,6 +9,6 @@
 
 	<?php endwhile; ?>
 
-	<?php get_template_part( 'partials/components/pagination-posts' ); ?>
+	<?php comments_template( 'partials/components/comments.php' ); ?>
 
 <?php endif; ?>

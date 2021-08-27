@@ -1,1 +1,0 @@
-<?php woocommerce_content() ?>

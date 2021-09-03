@@ -1,4 +1,4 @@
-<?php $engine = Hybrid\App::resolve( 'view/engine' ) ?>
+<?php $engine = Hybrid\App::resolve( Hybrid\View\Contracts\Engine::class ) ?>
 
 <!doctype html>
 <html <?php Hybrid\Attr\display( 'html' ) ?>>

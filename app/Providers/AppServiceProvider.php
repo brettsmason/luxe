@@ -15,7 +15,7 @@
 
 namespace Luxe\Providers;
 
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
 
 /**
  * App service provider.

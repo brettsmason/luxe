@@ -11,7 +11,7 @@
     {
       "name": "Brett Mason",
       "email": "brettsmason@gmail.com",
-      "homepage": "https://brettmason.co.uk"
+      "homepage": "https://github.com/brettsmason"
     }
   ],
   "autoload": {
@@ -20,12 +20,16 @@
     }
   },
   "require": {
-    "php": ">=5.6",
+    "php": ">=7.4",
     "composer/installers": "~1.0",
-    "justintadlock/hybrid-core": "^5.0.0"
+    "themehybrid/hybrid-core": "^6.0.0",
+    "themehybrid/hybrid-attr": "^1.0.0",
+    "themehybrid/hybrid-template-hierarchy": "^1.0.0",
+    "themehybrid/hybrid-view": "^1.0.0",
+    "themehybrid/hybrid-theme": "^1.0"
   },
   "require-dev": {
-    "php": ">=7.0",
+    "php": ">=7.4",
     "wp-coding-standards/wpcs": "*",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
     "phpcompatibility/php-compatibility": "*"
@@ -36,14 +40,6 @@
     ],
     "post-install-cmd": [
       "@install-codestandards"
-    ],
-    "phpcbf-dev": "\"vendor/bin/phpcbf\"",
-    "run-phpcbf": [
-      "@phpcbf-dev"
-    ],
-    "phpcs-dev": "\"vendor/bin/phpcs\"",
-    "run-phpcs": [
-      "@phpcs-dev"
     ]
   }
 }

@@ -12,7 +12,7 @@
 
 			<div class="app-content">
 				<main id="main" class="app-main">
-					<?php $engine->display( 'layouts', Hybrid\Template\hierarchy() ) ?>
+					<?php $engine->display( 'layouts', Hybrid\Template\Hierarchy\hierarchy() ) ?>
 				</main>
 			</div>
 

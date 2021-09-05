@@ -158,3 +158,7 @@ add_action( 'widgets_init', function() {
 		'name' => esc_html_x( 'Subsidiary', 'sidebar', 'luxe' ),
 	] + $args );
 }, 5 );
+
+add_action( 'hybrid/template/path', function() {
+    return 'resources/views';
+} );

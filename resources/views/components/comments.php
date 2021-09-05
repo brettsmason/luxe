@@ -20,7 +20,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 					[
 						'style'        => 'ol',
 						'callback'     => function( $comment, $args, $depth ) {
-							Hybrid\View\display( 'components', Hybrid\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
+							Hybrid\View\display( 'components', Hybrid\Theme\Comment\hierarchy(), compact( 'comment', 'args', 'depth' ) );
 						}
 					]
 				)

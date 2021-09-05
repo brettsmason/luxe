@@ -4,12 +4,12 @@
 	</figure>
 
 	<header class="entry__header">
-		<?php Hybrid\Post\display_title() ?>
+		<?php Hybrid\Theme\Post\display_title() ?>
 
 		<div class="entry__byline">
-			<?php Hybrid\Post\display_date() ?>
-			<?php Hybrid\Post\display_author() ?>
-			<?php Hybrid\Post\display_comments_link() ?>
+			<?php Hybrid\Theme\Post\display_date() ?>
+			<?php Hybrid\Theme\Post\display_author() ?>
+			<?php Hybrid\Theme\Post\display_comments_link() ?>
 		</div>
 	</header>
 

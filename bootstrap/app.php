@@ -8,6 +8,8 @@
  * @package Luxe
  */
 
+namespace Luxe;
+
 use \Hybrid\Core\Application;
 use function \Hybrid\{app, booted};
 
@@ -30,8 +32,11 @@ $luxe = booted() ? app() : new Application();
 $luxe->provider( \Luxe\Providers\AppServiceProvider::class );
 $luxe->provider( \Luxe\Providers\CustomizeServiceProvider::class );
 $luxe->provider( \Luxe\Providers\WooCommerceServiceProvider::class );
-
+$luxe->provider( \Hybrid\Attr\Provider::class );
+$luxe->provider( \Hybrid\Lang\Provider::class );
+$luxe->provider( \Hybrid\Pagination\Provider::class );
 $luxe->provider( \Hybrid\Template\Hierarchy\Provider::class );
+$luxe->provider( \Hybrid\Theme\Provider::class );
 $luxe->provider( \Hybrid\View\Provider::class );
 
 /**

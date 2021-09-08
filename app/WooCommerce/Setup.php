@@ -42,7 +42,7 @@ class Setup implements Bootable {
 		add_filter( 'woocommerce_template_path', [ $this, 'templatePath' ] );
 
 		// Disable WooCommerce core styles.
-		// add_filter( 'woocommerce_enqueue_styles', [ $this, 'disableCoreStyles' ] );
+		add_filter( 'woocommerce_enqueue_styles', [ $this, 'disableCoreStyles' ] );
 
 		// Add custom WooCommerce styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'styles' ], 10 );
@@ -87,7 +87,7 @@ class Setup implements Bootable {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $files
+	 * @param  array $files An array of files to look for.
 	 * @return array
 	 */
 	public function templateLoaderFiles( $files ) {
@@ -103,7 +103,7 @@ class Setup implements Bootable {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $path
+	 * @param  string $path The path of the WooCommerce template folder.
 	 * @return string
 	 */
 	public function templatePath( $path ) {

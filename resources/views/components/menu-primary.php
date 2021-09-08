@@ -6,7 +6,7 @@ if ( ! has_nav_menu( 'primary' ) ) {
 
 <nav id="menu-primary" class="menu menu--primary">
 	<button id="menu-toggle" class="menu__toggle" aria-expanded="false" aria-controls="menu__items--primary">
-		<span class="menu__label screen-reader-text"><?php esc_html_e( 'Menu', 'luxe' ) ?></span>
+		<span class="menu__label screen-reader-text"><?php esc_html_e( 'Menu', 'luxe' ); ?></span>
 	</button>
 
 	<?php

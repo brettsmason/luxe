@@ -1,6 +1,6 @@
 <div class="entry entry--error">
 	<header class="entry__header">
-		<h1 class="entry__title"><?php echo esc_html__( 'Oops! Something went wrong.', 'luxe' ) ?></h1>
+		<h1 class="entry__title"><?php echo esc_html__( 'Oops! Something went wrong.', 'luxe' ); ?></h1>
 	</header>
 
 	<div class="entry__content">

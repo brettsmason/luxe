@@ -1,11 +1,11 @@
-<li <?php Hybrid\Attr\display( 'comment' ) ?>>
+<li <?php Hybrid\Attr\display( 'comment' ); ?>>
 	<figure class="comment__avatar">
-		<?php echo get_avatar( $comment, $args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ) ?>
+		<?php echo get_avatar( $comment, $args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ); ?>
 	</figure>
 
 	<div class="comment__body">
 		<header class="comment__meta">
-			<?php Hybrid\Theme\Comment\display_author() ?>
+			<?php Hybrid\Theme\Comment\display_author(); ?>
 			<?php
 			Hybrid\Theme\Comment\display_permalink(
 				[
@@ -18,23 +18,23 @@
 				]
 			)
 			?>
-			<?php Hybrid\Theme\Comment\display_edit_link() ?>
+			<?php Hybrid\Theme\Comment\display_edit_link(); ?>
 		</header>
 
 		<div class="comment__content">
 
 			<?php if ( ! Hybrid\Theme\Comment\is_approved() ) : ?>
 				<p class="comment__moderation">
-					<?php echo esc_html__( 'Your comment is awaiting moderation.', 'luxe' ) ?>
+					<?php echo esc_html__( 'Your comment is awaiting moderation.', 'luxe' ); ?>
 				</p>
 			<?php endif ?>
 
-			<?php comment_text() ?>
+			<?php comment_text(); ?>
 		</div>
 
 		<?php if ( comments_open() ) : ?>
 			<div class="comment__actions">
-				<?php Hybrid\Theme\Comment\display_reply_link() ?>
+				<?php Hybrid\Theme\Comment\display_reply_link(); ?>
 			</div>
 		<?php endif ?>
 

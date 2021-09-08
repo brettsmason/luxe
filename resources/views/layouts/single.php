@@ -5,11 +5,11 @@
 		the_post();
 		?>
 
-		<?php $engine->display( 'content', Hybrid\Template\Hierarchy\hierarchy() ) ?>
+		<?php $engine->display( 'content', Hybrid\Template\Hierarchy\hierarchy() ); ?>
 
 	<?php endwhile ?>
 
-	<?php comments_template( '/components/comments.php' ) ?>
+	<?php comments_template( '/components/comments.php' ); ?>
 
 	<?php
 endif;

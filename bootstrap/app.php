@@ -29,15 +29,22 @@ $luxe = booted() ? app() : new Application();
  * for running the theme. Service providers are essentially the backbone of the
  * bootstrapping process.
  */
-$luxe->provider( \Luxe\Providers\AppServiceProvider::class );
-$luxe->provider( \Luxe\Providers\CustomizeServiceProvider::class );
-$luxe->provider( \Luxe\Providers\WooCommerceServiceProvider::class );
-$luxe->provider( \Hybrid\Attr\Provider::class );
-$luxe->provider( \Hybrid\Lang\Provider::class );
-$luxe->provider( \Hybrid\Pagination\Provider::class );
-$luxe->provider( \Hybrid\Template\Hierarchy\Provider::class );
-$luxe->provider( \Hybrid\Theme\Provider::class );
-$luxe->provider( \Hybrid\View\Provider::class );
+
+$providers = [
+	\Luxe\Providers\AppServiceProvider::class,
+	\Luxe\Providers\CustomizeServiceProvider::class,
+	\Luxe\Providers\WooCommerceServiceProvider::class,
+	\Hybrid\Attr\Provider::class,
+	\Hybrid\Lang\Provider::class,
+	\Hybrid\Pagination\Provider::class,
+	\Hybrid\Template\Hierarchy\Provider::class,
+	\Hybrid\Theme\Provider::class,
+	\Hybrid\View\Provider::class,
+];
+
+foreach ( $providers as $provider ) {
+	$luxe->provider( $provider );
+}
 
 /**
  * Perform bootstrap actions.

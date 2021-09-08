@@ -164,7 +164,8 @@ class Svg implements Renderable, Displayable {
 				$unique_id = esc_attr( uniqid() );
 
 				$attr['aria-labelledby'] = sprintf(
-					$this->desc ? 'svg-title-%1$s svg-desc-%1$s' : 'svg-title-%s', $unique_id
+					$this->desc ? 'svg-title-%1$s svg-desc-%1$s' : 'svg-title-%s',
+					$unique_id
 				);
 
 				$patterns = [

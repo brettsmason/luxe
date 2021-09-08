@@ -29,78 +29,91 @@ namespace Luxe;
  * @access public
  * @return void
  */
-add_action( 'after_setup_theme', function() {
+add_action(
+	'after_setup_theme',
+	function() {
 
-	// Set content width.
-	$GLOBALS['content_width'] = 1024;
+		// Set content width.
+		$GLOBALS['content_width'] = 1024;
 
-	// Load theme translations.
-	load_theme_textdomain( 'luxe', get_parent_theme_file_path( 'resources/lang' ) );
+		// Load theme translations.
+		load_theme_textdomain( 'luxe', get_parent_theme_file_path( 'resources/lang' ) );
 
-	// Automatically add feed links to `<head>`.
-	add_theme_support( 'automatic-feed-links' );
+		// Automatically add feed links to `<head>`.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Outputs HTML5 markup for core features.
-	add_theme_support( 'html5', [
-		'caption',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'search-form',
-	] );
+		// Outputs HTML5 markup for core features.
+		add_theme_support(
+			'html5',
+			[
+				'caption',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'search-form',
+			]
+		);
 
-	// Add title tag support.
-	add_theme_support( 'title-tag' );
+		// Add title tag support.
+		add_theme_support( 'title-tag' );
 
-	// Adds featured image support.
-	add_theme_support( 'post-thumbnails' );
+		// Adds featured image support.
+		add_theme_support( 'post-thumbnails' );
 
-	// Add selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+		// Add selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Add support for editor color palette.
-	add_theme_support( 'editor-color-palette', [
-		[
-			'name'  => __( 'Primary', 'luxe' ),
-			'slug'  => 'primary',
-			'color' => '#544882',
-		],
-		[
-			'name'  => __( 'Secondary', 'luxe' ),
-			'slug'  => 'secondary',
-			'color' => '#292f36',
-		],
-		[
-			'name'  => __( 'White', 'luxe' ),
-			'slug'  => 'white',
-			'color' => '#fff',
-		],
-		[
-			'name'  => __( 'Black', 'luxe' ),
-			'slug'  => 'black',
-			'color' => '#000',
-		],
-	] );
+		// Add support for editor color palette.
+		add_theme_support(
+			'editor-color-palette',
+			[
+				[
+					'name'  => __( 'Primary', 'luxe' ),
+					'slug'  => 'primary',
+					'color' => '#544882',
+				],
+				[
+					'name'  => __( 'Secondary', 'luxe' ),
+					'slug'  => 'secondary',
+					'color' => '#292f36',
+				],
+				[
+					'name'  => __( 'White', 'luxe' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				],
+				[
+					'name'  => __( 'Black', 'luxe' ),
+					'slug'  => 'black',
+					'color' => '#000',
+				],
+			]
+		);
 
-	// Editor stylesheet.
-	add_theme_support( 'editor-styles' );
-	add_editor_style( 'public/css/editor.css' );
+		// Editor stylesheet.
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'public/css/editor.css' );
 
-	// Disable custom colors in block color palettes.
-	add_theme_support( 'disable-custom-colors' );
+		// Disable custom colors in block color palettes.
+		add_theme_support( 'disable-custom-colors' );
 
-	// Add support for align wide blocks.
-	add_theme_support( 'align-wide' );
+		// Add support for align wide blocks.
+		add_theme_support( 'align-wide' );
 
-	// Add support for custom logo.
-	add_theme_support( 'custom-logo', [
-		'width'       => 300,
-		'height'      => 200,
-		'flex-height' => true,
-		'flex-width'  => true,
-		'header-text' => [ 'app-header__title', 'app-header__description' ],
-	] );
-}, 5 );
+		// Add support for custom logo.
+		add_theme_support(
+			'custom-logo',
+			[
+				'width'       => 300,
+				'height'      => 200,
+				'flex-height' => true,
+				'flex-width'  => true,
+				'header-text' => [ 'app-header__title', 'app-header__description' ],
+			]
+		);
+	},
+	5
+);
 
 /**
  * Register menus.
@@ -110,14 +123,20 @@ add_action( 'after_setup_theme', function() {
  * @access public
  * @return void
  */
-add_action( 'init', function() {
+add_action(
+	'init',
+	function() {
 
-	register_nav_menus( [
-		'primary'    => esc_html_x( 'Primary', 'nav menu location', 'luxe' ),
-		'subsidiary' => esc_html_x( 'Subsidiary', 'nav menu location', 'luxe' ),
-	] );
+		register_nav_menus(
+			[
+				'primary'    => esc_html_x( 'Primary', 'nav menu location', 'luxe' ),
+				'subsidiary' => esc_html_x( 'Subsidiary', 'nav menu location', 'luxe' ),
+			]
+		);
 
-}, 5 );
+	},
+	5
+);
 
 /**
  * Register image sizes.
@@ -126,11 +145,15 @@ add_action( 'init', function() {
  * @access public
  * @return void
  */
-add_action( 'init', function() {
+add_action(
+	'init',
+	function() {
 
-	// Set the `post-thumbnail` size.
-	set_post_thumbnail_size( 739, 493, true );
-}, 5 );
+		// Set the `post-thumbnail` size.
+		set_post_thumbnail_size( 739, 493, true );
+	},
+	5
+);
 
 /**
  * Register sidebars.
@@ -140,25 +163,36 @@ add_action( 'init', function() {
  * @access public
  * @return void
  */
-add_action( 'widgets_init', function() {
-	$args = [
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget__title h5">',
-		'after_title'   => '</h2>',
-	];
+add_action(
+	'widgets_init',
+	function() {
+		$args = [
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget__title h5">',
+			'after_title'   => '</h2>',
+		];
 
-	register_sidebar( [
-		'id'   => 'primary',
-		'name' => esc_html_x( 'Primary', 'sidebar', 'luxe' ),
-	] + $args );
+		register_sidebar(
+			[
+				'id'   => 'primary',
+				'name' => esc_html_x( 'Primary', 'sidebar', 'luxe' ),
+			] + $args
+		);
 
-	register_sidebar( [
-		'id'   => 'subsidiary',
-		'name' => esc_html_x( 'Subsidiary', 'sidebar', 'luxe' ),
-	] + $args );
-}, 5 );
+		register_sidebar(
+			[
+				'id'   => 'subsidiary',
+				'name' => esc_html_x( 'Subsidiary', 'sidebar', 'luxe' ),
+			] + $args
+		);
+	},
+	5
+);
 
-add_action( 'hybrid/template/path', function() {
-    return 'resources/views';
-} );
+add_action(
+	'hybrid/template/path',
+	function() {
+		return 'resources/views';
+	}
+);

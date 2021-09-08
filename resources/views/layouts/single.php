@@ -11,4 +11,5 @@
 
 	<?php comments_template( '/components/comments.php' ) ?>
 
-<?php endif ?>
+	<?php
+endif;

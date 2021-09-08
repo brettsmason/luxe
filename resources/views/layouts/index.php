@@ -13,4 +13,5 @@
 
 	<?php $engine->display( 'components', 'pagination-posts' ) ?>
 
-<?php endif ?>
+	<?php
+endif;

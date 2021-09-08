@@ -16,15 +16,18 @@ namespace Luxe;
 /**
  * Add templates to our post types.
  */
-add_action( 'hybrid/templates/register', function( $templates ) {
+add_action(
+	'hybrid/templates/register',
+	function( $templates ) {
 
-	$templates->add(
-		'templates/landing.php',
-		[
-			'label'      => __( 'Landing', 'luxe' ),
-			'post_types' => [
-				'page',
-			],
-		]
-	);
-} );
+		$templates->add(
+			'templates/landing.php',
+			[
+				'label'      => __( 'Landing', 'luxe' ),
+				'post_types' => [
+					'page',
+				],
+			]
+		);
+	}
+);

@@ -16,33 +16,37 @@ use Hybrid\App;
  * @access public
  * @return void
  */
-add_action( 'wp_enqueue_scripts', function() {
+add_action(
+	'wp_enqueue_scripts',
+	function() {
 
-	// Load WordPress' comment-reply script where appropriate.
-	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+		// Load WordPress' comment-reply script where appropriate.
+		if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 
-	// Main scripts.
-	wp_enqueue_script(
-		'luxe-app',
-		asset( 'js/app.js' ),
-		null,
-		false,
-		true
-	);
+		// Main scripts.
+		wp_enqueue_script(
+			'luxe-app',
+			asset( 'js/app.js' ),
+			null,
+			false,
+			true
+		);
 
-	// Main styles.
-	wp_enqueue_style(
-		'luxe-screen',
-		asset( 'css/screen.css' ),
-		false,
-		null
-	);
+		// Main styles.
+		wp_enqueue_style(
+			'luxe-screen',
+			asset( 'css/screen.css' ),
+			false,
+			null
+		);
 
-	// Dequeue Core block styles.
-	wp_dequeue_style( 'wp-block-library' );
-}, 10 );
+		// Dequeue Core block styles.
+		wp_dequeue_style( 'wp-block-library' );
+	},
+	10
+);
 
 /**
  * Helper function for outputting an asset URL in the theme.

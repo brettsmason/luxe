@@ -36,11 +36,14 @@ class AppServiceProvider extends ServiceProvider {
 	public function register() {
 
 		// Bind the asset manifest for cache-busting.
-		$this->app->singleton( 'luxe/manifest', function() {
+		$this->app->singleton(
+			'luxe/manifest',
+			function() {
 
-			$file = get_theme_file_path( 'public/manifest.json' );
+				$file = get_theme_file_path( 'public/manifest.json' );
 
-			return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
-		} );
+				return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
+			}
+		);
 	}
 }

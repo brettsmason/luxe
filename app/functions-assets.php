@@ -30,7 +30,7 @@ add_action(
 			'luxe-app',
 			asset( 'js/app.js' ),
 			null,
-			false,
+			null,
 			true
 		);
 

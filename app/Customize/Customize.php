@@ -174,7 +174,7 @@ class Customize implements Bootable {
 			'luxe-customizer',
 			asset( 'js/customizer.js' ),
 			[ 'customize-preview' ],
-			false,
+			null,
 			true
 		);
 	}

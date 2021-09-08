@@ -9,7 +9,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe\WooCommerce\ArchiveProduct;
+namespace Luxe\WooCommerce;
 
 use Hybrid\Contracts\Bootable;
 
@@ -45,7 +45,7 @@ class ArchiveProduct implements Bootable {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @return string
+	 * @return void
 	 */
 	public function pagination() {
 		\Hybrid\View\display( 'partials', 'pagination-posts' );

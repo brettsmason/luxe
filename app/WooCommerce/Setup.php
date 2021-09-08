@@ -9,7 +9,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe\WooCommerce\Setup;
+namespace Luxe\WooCommerce;
 
 use Hybrid\Contracts\Bootable;
 use function Hybrid\Template\path;
@@ -42,7 +42,7 @@ class Setup implements Bootable {
 		add_filter( 'woocommerce_template_path', [ $this, 'templatePath' ] );
 
 		// Disable WooCommerce core styles.
-		add_filter( 'woocommerce_enqueue_styles', [ $this, 'disableCoreStyles' ] );
+		// add_filter( 'woocommerce_enqueue_styles', [ $this, 'disableCoreStyles' ] );
 
 		// Add custom WooCommerce styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'styles' ], 10 );
@@ -90,7 +90,6 @@ class Setup implements Bootable {
 	public function templateLoaderFiles( $files ) {
 
 		return [
-			path( 'woocommerce.php' ),
 			path( 'index.php' ),
 		];
 	}

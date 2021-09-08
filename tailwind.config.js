@@ -3,7 +3,7 @@ module.exports = {
 	purge: {
 		content: [
 			'./**/*.php',
-			'./resources/css/*.css',
+			'./resources/css/**/*.css',
 			'./resources/js/*.js',
 			'./safelist.txt'
 		],
@@ -15,5 +15,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

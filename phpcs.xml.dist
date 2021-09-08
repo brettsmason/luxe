@@ -93,6 +93,7 @@
 	</rule>
 
 	<rule ref="Squiz.PHP.EmbeddedPhp">
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
 		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon"/>
 	</rule>
 

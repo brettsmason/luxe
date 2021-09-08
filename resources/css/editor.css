@@ -1,0 +1,3 @@
+.wp-block {
+	@apply max-w-screen-lg;
+}

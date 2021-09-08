@@ -16,8 +16,6 @@
 namespace Luxe\Providers;
 
 use Hybrid\Core\ServiceProvider;
-use Luxe\WooCommerce\Setup;
-use Luxe\WooCommerce\ArchiveProduct;
 
 /**
  * App service provider.
@@ -38,8 +36,8 @@ class WooCommerceServiceProvider extends ServiceProvider {
 	public function register() {
 
 		// Bind a single instance of our WooCommerce classes.
-		$this->app->singleton( Setup\Setup::class );
-		$this->app->singleton( ArchiveProduct\ArchiveProduct::class );
+		$this->app->singleton( \Luxe\WooCommerce\Setup::class );
+		$this->app->singleton( \Luxe\WooCommerce\ArchiveProduct::class );
 	}
 
 	/**
@@ -54,7 +52,7 @@ class WooCommerceServiceProvider extends ServiceProvider {
 	public function boot() {
 
 		// Boot the WooCommerce class instances.
-		$this->app->resolve( Setup\Setup::class )->boot();
-		$this->app->resolve( ArchiveProduct\ArchiveProduct::class )->boot();
+		$this->app->resolve( \Luxe\WooCommerce\Setup::class )->boot();
+		$this->app->resolve( \Luxe\WooCommerce\ArchiveProduct::class )->boot();
 	}
 }

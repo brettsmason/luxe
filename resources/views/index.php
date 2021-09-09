@@ -1,10 +1,14 @@
-<?php $engine = Hybrid\App::resolve( Hybrid\View\Contracts\Engine::class ); ?>
+<?php
+
+use function Luxe\body_class;
+
+$engine = Hybrid\App::resolve( Hybrid\View\Contracts\Engine::class ); ?>
 
 <!doctype html>
-<html <?php Hybrid\Attr\display( 'html' ); ?>>
+<html <?php language_attributes(); ?>>
 	<?php $engine->display( 'components', 'head' ); ?>
 
-	<body <?php Hybrid\Attr\display( 'body' ); ?>>
+	<body <?php body_class(); ?>>
 		<?php wp_body_open(); ?>
 
 		<div class="app">

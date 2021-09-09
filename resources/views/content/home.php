@@ -1,4 +1,4 @@
-<article <?php Hybrid\Attr\display( 'entry' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<figure class="entry__image">
 		<?php the_post_thumbnail( 'post-thumbnail' ); ?>
 	</figure>

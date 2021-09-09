@@ -1,4 +1,4 @@
-<article <?php Hybrid\Attr\display( 'entry' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry__header">
 		<?php Hybrid\Theme\Post\display_title(); ?>
 

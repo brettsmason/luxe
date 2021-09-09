@@ -1,4 +1,4 @@
-<li <?php Hybrid\Attr\display( 'comment' ); ?>>
+<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 	<figure class="comment__avatar">
 		<?php echo get_avatar( $comment, $args['avatar_size'], '', '', [ 'class' => 'comment__avatar-img' ] ); ?>
 	</figure>

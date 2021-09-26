@@ -37,13 +37,26 @@ class AppServiceProvider extends ServiceProvider {
 
 		// Bind the asset manifest for cache-busting.
 		$this->app->singleton(
-			'luxe/manifest',
+			'app/manifest',
 			function() {
-
-				$file = get_theme_file_path( 'public/manifest.json' );
-
+				$file = get_theme_file_path( 'public/mix-manifest.json' );
 				return file_exists( $file ) ? json_decode( file_get_contents( $file ), true ) : null;
 			}
 		);
+
+		$this->app->singleton( \Luxe\Setup::class );
+	}
+
+	/**
+	 * Callback executed after all the service providers have been registered.
+	 * This is particularly useful for single-instance container objects that
+	 * only need to be loaded once per page and need to be resolved early.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function boot() {
+
+		$this->app->resolve( \Luxe\Setup::class )->boot();
 	}
 }

@@ -34,12 +34,6 @@ $providers = [
 	\Luxe\Providers\AppServiceProvider::class,
 	\Luxe\Providers\CustomizeServiceProvider::class,
 	\Luxe\Providers\WooCommerceServiceProvider::class,
-	\Hybrid\Attr\Provider::class,
-	\Hybrid\Lang\Provider::class,
-	\Hybrid\Pagination\Provider::class,
-	\Hybrid\Template\Hierarchy\Provider::class,
-	\Hybrid\Theme\Provider::class,
-	\Hybrid\View\Provider::class,
 ];
 
 foreach ( $providers as $provider ) {

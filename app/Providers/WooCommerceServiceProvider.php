@@ -37,7 +37,6 @@ class WooCommerceServiceProvider extends ServiceProvider {
 
 		// Bind a single instance of our WooCommerce classes.
 		$this->app->singleton( \Luxe\WooCommerce\Setup::class );
-		$this->app->singleton( \Luxe\WooCommerce\ArchiveProduct::class );
 	}
 
 	/**
@@ -53,6 +52,5 @@ class WooCommerceServiceProvider extends ServiceProvider {
 
 		// Boot the WooCommerce class instances.
 		$this->app->resolve( \Luxe\WooCommerce\Setup::class )->boot();
-		$this->app->resolve( \Luxe\WooCommerce\ArchiveProduct::class )->boot();
 	}
 }

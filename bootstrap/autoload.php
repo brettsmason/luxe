@@ -34,10 +34,5 @@ array_map(
 	},
 	[
 		'functions-assets',
-		'functions-filters',
-		'functions-page-templates',
-		'functions-setup',
-		'functions-template',
-		'Svg/functions-svg',
 	]
 );

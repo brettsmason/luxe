@@ -1,15 +1,17 @@
 <?php
 /**
- * Fallback Footer Template.
+ * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
+ * We use this to end our output buffer (started in header.php) and render into the view/page-plugin.twig template.
  *
- * This file is provided as a fallback for plugins that
- * directly call the footer template on plugin pages.
- *
- * @package Luxe
+ * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and
+ * WooCommerce) you can delete this file and header.php
  */
 
-// Access the view template engine.
-$engine = Hybrid\App::resolve( Hybrid\View\Contracts\Engine::class );
-
-// Load the index template.
-$engine->display( 'components/footer' );
+$timberContext = $GLOBALS['timberContext'];
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
+$timberContext['content'] = ob_get_contents();
+ob_end_clean();
+$templates = [ 'page-plugin.twig' ];
+Timber::render( $templates, $timberContext );

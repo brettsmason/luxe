@@ -2,3 +2,5 @@ node_modules/
 /vendor/
 public/
 /composer.lock
+/.yarn
+

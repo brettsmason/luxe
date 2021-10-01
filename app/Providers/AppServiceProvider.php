@@ -26,6 +26,16 @@ use Hybrid\Core\ServiceProvider;
 class AppServiceProvider extends ServiceProvider {
 
 	/**
+	 * Array of classes.
+	 *
+	 * @var array
+	 */
+	private $classes = [
+		\Luxe\Setup::class,
+		\Luxe\Customize::class,
+	];
+
+	/**
 	 * Callback executed when the `\Hybrid\Core\Application` class registers
 	 * providers. Use this method to bind items to the container.
 	 *
@@ -44,7 +54,11 @@ class AppServiceProvider extends ServiceProvider {
 			}
 		);
 
-		$this->app->singleton( \Luxe\Setup::class );
+		foreach ( $this->classes as $class ) {
+			$this->app->singleton( $class );
+		}
+
+		// $this->app->singleton( \Timber\Timber::class );
 	}
 
 	/**
@@ -57,6 +71,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot() {
 
-		$this->app->resolve( \Luxe\Setup::class )->boot();
+		foreach ( $this->classes as $class ) {
+			$this->app->resolve( $class )->boot();
+		}
 	}
 }

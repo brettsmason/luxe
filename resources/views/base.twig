@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" {{ site.language_attributes }}>
+	{% include 'components/head.twig' %}
+
+	<body class="{{ body_class }}" data-template="base.twig">
+		{{ function('wp_body_open') }}
+
+		<a class="skip-link screen-reader-text" href="#main">
+			{{ _e('Skip to content') }}
+		</a>
+
+		{% block header %}
+			{% include 'components/header.twig' %}
+		{% endblock %}
+
+		<div class="app-content">
+			<main id="main" class="app-main">
+				{% block content %}
+					{{ _e('Sorry, no content found.') }}
+				{% endblock %}
+			</main>
+
+			{% if sidebar %}
+				{% include 'components/sidebar.twig' %}
+			{% endif %}
+		</div>
+
+		{% block footer %}
+			{% include 'components/footer.twig' %}
+		{% endblock %}
+
+		{{ function('wp_footer') }}
+	</body>
+</html>

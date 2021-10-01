@@ -27,7 +27,8 @@ class Setup implements Bootable {
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'after_setup_theme', [ $this, 'ThemeSupports' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'themeSupports' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'timberSetup' ], 5 );
 		add_action( 'init', [ $this, 'registerMenus' ] );
 		add_action( 'init', [ $this, 'addImageSizes' ] );
 		add_action( 'widgets_init', [ $this, 'registerWidgetAreas' ] );
@@ -39,10 +40,10 @@ class Setup implements Bootable {
 	 * @access public
 	 * @return void
 	 */
-	public function ThemeSupports() {
+	public function themeSupports() {
 
 		// Theme translations.
-		load_theme_textdomain( 'legion', get_parent_theme_file_path( '/lang' ) );
+		load_theme_textdomain( 'luxe', get_parent_theme_file_path( '/resources/lang' ) );
 
 		// Title tag support.
 		add_theme_support( 'title-tag' );
@@ -63,7 +64,7 @@ class Setup implements Bootable {
 				'flex-width'  => true,
 				'header-text' => [
 					'app-header__title',
-					'app-header__description'
+					'app-header__description',
 				],
 			]
 		);
@@ -90,6 +91,14 @@ class Setup implements Bootable {
 
 		// Let core handle responsive embed wrappers.
 		add_theme_support( 'responsive-embeds' );
+	}
+
+	/**
+	 * Timber setup.
+	 */
+	public function timberSetup() {
+		$timber = new \Timber\Timber();
+		$timber::$dirname = [ 'resources/views' ];
 	}
 
 	/**

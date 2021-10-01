@@ -13,7 +13,7 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-namespace Luxe\Customize;
+namespace Luxe;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;

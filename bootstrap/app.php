@@ -32,7 +32,6 @@ $luxe = booted() ? app() : new Application();
 
 $providers = [
 	\Luxe\Providers\AppServiceProvider::class,
-	\Luxe\Providers\CustomizeServiceProvider::class,
 	\Luxe\Providers\WooCommerceServiceProvider::class,
 ];
 

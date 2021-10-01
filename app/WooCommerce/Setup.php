@@ -52,19 +52,22 @@ class Setup implements Bootable {
 	 */
 	public function supports() {
 
-		add_theme_support( 'woocommerce', [
-			'thumbnail_image_width' => 300,
-			'single_image_width'    => 600,
+		add_theme_support(
+			'woocommerce',
+			[
+				'thumbnail_image_width' => 300,
+				'single_image_width'    => 600,
 
-			'product_grid'          => [
-				'default_rows'    => 4,
-				'min_rows'        => 2,
-				'max_rows'        => 8,
-				'default_columns' => 4,
-				'min_columns'     => 2,
-				'max_columns'     => 6,
-			],
-		] );
+				'product_grid'          => [
+					'default_rows'    => 4,
+					'min_rows'        => 2,
+					'max_rows'        => 8,
+					'default_columns' => 4,
+					'min_columns'     => 2,
+					'max_columns'     => 6,
+				],
+			]
+		);
 
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );

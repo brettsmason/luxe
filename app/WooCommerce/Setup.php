@@ -12,8 +12,7 @@
 namespace Luxe\WooCommerce;
 
 use Hybrid\Contracts\Bootable;
-use function Hybrid\Template\path;
-use function Luxe\asset;
+use Luxe\Tools\Mix;
 
 /**
  * Handles setting up everything we need for WooCommerce.
@@ -24,9 +23,8 @@ use function Luxe\asset;
 class Setup implements Bootable {
 
 	/**
-	 * Adds actions on the appropriate action hooks.
+	 * Bootstraps the class' actions/filters.
 	 *
-	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */
@@ -92,7 +90,7 @@ class Setup implements Bootable {
 
 		wp_enqueue_style(
 			'luxe-woocommerce',
-			asset( 'css/woocommerce.css' ),
+			Mix::asset( 'css/woocommerce.css' ),
 			false,
 			null
 		);

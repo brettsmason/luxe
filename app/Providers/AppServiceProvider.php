@@ -32,7 +32,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	private $classes = [
 		\Luxe\Setup::class,
+		\Luxe\Enqueue::class,
 		\Luxe\Customize::class,
+		\Luxe\Cleanup::class,
+		\Luxe\Timber\Setup::class,
 	];
 
 	/**
@@ -57,8 +60,6 @@ class AppServiceProvider extends ServiceProvider {
 		foreach ( $this->classes as $class ) {
 			$this->app->singleton( $class );
 		}
-
-		// $this->app->singleton( \Timber\Timber::class );
 	}
 
 	/**

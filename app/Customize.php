@@ -17,7 +17,7 @@ namespace Luxe;
 
 use WP_Customize_Manager;
 use Hybrid\Contracts\Bootable;
-use function Luxe\asset;
+use Luxe\Tools\Mix;
 
 /**
  * Handles setting up everything we need for the customizer.
@@ -172,7 +172,7 @@ class Customize implements Bootable {
 
 		wp_enqueue_script(
 			'luxe-customizer',
-			asset( 'js/customizer.js' ),
+			Mix::asset( 'js/customizer.js' ),
 			[ 'customize-preview' ],
 			null,
 			true

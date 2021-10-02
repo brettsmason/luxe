@@ -1,2 +1,2 @@
 <?php
-Timber::render( [ 'sidebar.twig' ], $data );
+Timber::render( [ 'components/sidebar.twig' ], $data );

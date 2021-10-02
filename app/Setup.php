@@ -28,7 +28,6 @@ class Setup implements Bootable {
 	 */
 	public function boot() {
 		add_action( 'after_setup_theme', [ $this, 'themeSupports' ], 5 );
-		add_action( 'after_setup_theme', [ $this, 'timberSetup' ], 5 );
 		add_action( 'init', [ $this, 'registerMenus' ] );
 		add_action( 'init', [ $this, 'addImageSizes' ] );
 		add_action( 'widgets_init', [ $this, 'registerWidgetAreas' ] );
@@ -91,14 +90,6 @@ class Setup implements Bootable {
 
 		// Let core handle responsive embed wrappers.
 		add_theme_support( 'responsive-embeds' );
-	}
-
-	/**
-	 * Timber setup.
-	 */
-	public function timberSetup() {
-		$timber = new \Timber\Timber();
-		$timber::$dirname = [ 'resources/views' ];
 	}
 
 	/**

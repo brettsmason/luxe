@@ -42,6 +42,6 @@ class Config {
 
 		$file = trim( $file, '/' );
 
-		return get_theme_file_path( $file ? "config/{$file}" : 'config' );
+		return get_theme_file_path( $file ? "../config/{$file}" : '../config' );
 	}
 }

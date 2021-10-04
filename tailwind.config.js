@@ -1,3 +1,5 @@
+const { fontSizes, colors } = require('./config/theme.js');
+
 module.exports = {
 	mode: 'jit',
 	purge: {

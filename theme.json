@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "settings": {
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "gradients": [],
+      "link": false,
+      "palette": [
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#008055"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#adadad"
+        }
+      ]
+    },
+    "spacing": {
+      "customPadding": false,
+      "units": ["rem"]
+    },
+    "typography": {
+      "customFontSize": false,
+      "customLineHeight": false,
+      "dropCap": false,
+      "fontSizes": [
+        {
+          "name": "Extra small",
+          "slug": "xs",
+          "size": "12px"
+        },
+        {
+          "name": "Small",
+          "slug": "sm",
+          "size": "14px"
+        },
+        {
+          "name": "Base",
+          "slug": "base",
+          "size": "16px"
+        },
+        {
+          "name": "Large",
+          "slug": "lg",
+          "size": "18px"
+        },
+        {
+          "name": "Extra large",
+          "slug": "xl",
+          "size": "20px"
+        },
+        {
+          "name": "2XL",
+          "slug": "2xl",
+          "size": "24px"
+        },
+        {
+          "name": "3XL",
+          "slug": "3xl",
+          "size": "30px"
+        },
+        {
+          "name": "4XL",
+          "slug": "4xl",
+          "size": "36px"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontSize": "var(--wp--preset--font-size--base)"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--4xl)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--3xl)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--2xl)"
+        }
+      }
+    }
+  }
+}

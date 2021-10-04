@@ -1,15 +1,15 @@
-<header class="app-header"></header>
+<header class="app-header">
+	<div class="container">
+		<h1 class="hdr-logo" role="banner">
+			<a class="hdr-logo-link" href="{{ site.url }}" rel="home">
+				{{ site.name }}
+			</a>
+		</h1>
 
-<div class="container">
-	<h1 class="hdr-logo" role="banner">
-		<a class="hdr-logo-link" href="{{ site.url }}" rel="home">
-			{{ site.name }}
-		</a>
-	</h1>
-
-	<nav id="menu-primary" class="menu menu--primary">
-		{% include 'components/menu.twig' with {
-			items: menu_primary.get_items
-		} %}
-	</nav>
-</div>
+		<nav id="menu-primary" class="menu menu--primary">
+			{% include 'components/menu.twig' with {
+				items: menu.get_items
+			} %}
+		</nav>
+	</div>
+</header>

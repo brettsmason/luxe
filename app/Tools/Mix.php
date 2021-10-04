@@ -36,7 +36,7 @@ class Mix {
 		self::$mix = (array) json_decode( file_get_contents( $file ), true );
 
 		if ( is_child_theme() ) {
-			$child = get_stylesheet_directory() . '/public/mix-manifest.json';
+			$child = get_stylesheet_directory() . 'public/mix-manifest.json';
 
 			if ( file_exists( $child ) ) {
 				self::$mix = array_merge(

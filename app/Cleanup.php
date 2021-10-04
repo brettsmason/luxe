@@ -57,12 +57,6 @@ class Cleanup implements Bootable {
 		add_filter( 'json_enabled', '__return_false' );
 		add_filter( 'json_jsonp_enabled', '__return_false' );
 		add_filter( 'xmlrpc_enabled', '__return_false' );
-
-		// Remove pingbacks from cron jobs.
-		if ( defined( 'DOING_CRON' ) && DOING_CRON ) {
-			remove_action( 'do_pings', 'do_all_pings' );
-			wp_clear_scheduled_hook( 'do_pings' );
-		}
 	}
 
 	/**

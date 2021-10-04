@@ -52,8 +52,7 @@ class Setup implements Bootable {
 	 * @return array
 	 */
 	public function addMenusToContext( $context ) {
-		$context['menu_primary']    = Timber::get_menu( 'primary' );
-		$context['menu_subsidiary'] = Timber::get_menu( 'subsidiary' );
+		$context['menu'] = Timber::get_menu( 'primary' );
 
 		return $context;
 	}

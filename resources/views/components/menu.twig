@@ -1,13 +1,18 @@
 {% if menu %}
-	<ul>
+	<ul
+		class="flex"
+	>
 		{% for item in items %}
-			<li class="{{ item.classes|join(' ') }}">
-				<a target="{{ item.target }}" href="{{ item.link }}">
+			<li
+				class="ml-4 {{ item.classes|join(' ') }}"
+			>
+				<a
+					class=""
+					target="{{ item.target }}"
+					href="{{ item.link }}"
+				>
 					{{ item.title }}
 				</a>
-				{% include 'components/menu.twig' with {
-					items: item.children
-				} %}
 			</li>
 		{% endfor %}
 	</ul>

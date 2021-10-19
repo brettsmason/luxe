@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js" {{ site.language_attributes }}>
-	{% include 'components/head.twig' %}
+	{% block head %}
+		{% include 'components/head.twig' %}
+	{% endblock %}
 
-	<body class="{{ body_class }}" data-template="base.twig">
+	<body
+		x-data="{ isMobileNavOpen: false }"
+		:class="{ 'overflow-hidden': isMobileNavOpen }"
+		class="{{ body_class }}"
+		data-template="base.twig"
+	>
 		{{ function('wp_body_open') }}
 
 		<a class="skip-link screen-reader-text" href="#main">

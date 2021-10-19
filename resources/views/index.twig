@@ -1,15 +1,24 @@
-{% extends 'base.twig' %}
+{% extends 'layouts/base.twig' %}
 
 {% block content %}
-	{% for post in posts %}
-		{% include ['tease-' ~ post.post_type ~ '.twig', 'tease.twig'] %}
-	{% endfor %}
+	<div class="container">
+		<div class="space-y-12">
+			{% for post in posts %}
+				{% include [
+					'tease/tease-' ~ post.post_type ~ '.twig',
+					'tease/tease.twig'
+				] %}
+			{% endfor %}
+		</div>
 
-	{% include 'components/pagination.twig' with {
-		pagination: posts.pagination({
-			show_all: false,
-			mid_size: 3,
-			end_size: 2
-		})
-	} %}
+		{% if posts.found_posts > (posts|length) %}
+			{% include 'components/pagination.twig' with {
+				pagination: posts.pagination({
+					show_all: false,
+					mid_size: 3,
+					end_size: 2
+				})
+			} %}
+		{% endif %}
+	</div>
 {% endblock %}

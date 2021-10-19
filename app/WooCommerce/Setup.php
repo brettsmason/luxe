@@ -38,6 +38,10 @@ class Setup implements Bootable {
 
 		// Add custom WooCommerce styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'styles' ], 10 );
+
+		// Remove WooCommerce default wrappers.
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+		remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 	}
 
 	/**
@@ -74,9 +78,17 @@ class Setup implements Bootable {
 
 	/**
 	 * Disable core WooCommerce stylesheets.
+	 *
+	 * @param array $enqueue_styles
+	 * @return array
 	 */
-	public function disableCoreStyles() {
-		return [];
+	public function disableCoreStyles( $enqueue_styles ) {
+
+		unset( $enqueue_styles['woocommerce-general'] );     // Remove the gloss.
+		unset( $enqueue_styles['woocommerce-layout'] );      // Remove the layout.
+		unset( $enqueue_styles['woocommerce-smallscreen'] ); // Remove the smallscreen optimisation.
+
+		return $enqueue_styles;
 	}
 
 	/**

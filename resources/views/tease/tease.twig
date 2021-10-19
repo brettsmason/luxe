@@ -1,0 +1,22 @@
+<article id="tease-{{ post.ID }}" {{ function('post_class', 'tease tease-' ~ post.post_type) }}>
+	{% block content %}
+
+		{% if post.thumbnail %}
+			<div class='tease__image'>
+				<img src='{{ post.thumbnail.src }}'/>
+			</div>
+		{% endif %}
+
+		<header class="tease__header">
+			<h2 class="tease__title">
+				<a class="tease__link" href="{{ post.link }}">{{ post.title }}</a>
+			</h2>
+
+			{% block meta %}{% endblock %}
+		</header>
+
+		<div class="tease__excerpt">
+			<p>{{ post.excerpt }}</p>
+		</div>
+	{% endblock %}
+</article>

@@ -1,12 +1,12 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-	<article id="page-{{ post.ID }}" {{ function('post_class') }}>
-		<header class="page__header">
-			<h1 class="page__title">{{ post.title }}</h1>
+	<article id="post-{{ post.ID }}" {{ function('post_class') }}>
+		<header class="post__header">
+			<h1 class="post__title">{{ post.title }}</h1>
 		</header>
 
-		<div class="page__content">
+		<div class="post__content">
 			<p>{{ post.content }}</p>
 		</div>
 	</article>

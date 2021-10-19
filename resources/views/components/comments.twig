@@ -1,0 +1,5 @@
+{% if not post.password_required and post.comments and post.comment_status == 'open' %}
+	<div id="comments" class="comments">
+		{{ function('comments_template') }}
+	</div>
+{% endif %}

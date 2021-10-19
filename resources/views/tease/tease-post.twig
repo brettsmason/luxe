@@ -1,0 +1,7 @@
+{% extends 'tease/tease.twig' %}
+
+{% block meta %}
+	<div>
+		<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+	</div>
+{% endblock %}

@@ -1,10 +1,12 @@
-<header class="app-header">
-	<div class="container">
-		<h1 class="hdr-logo" role="banner">
-			<a class="hdr-logo-link" href="{{ site.url }}" rel="home">
-				{{ site.name }}
-			</a>
-		</h1>
+<header class="app-header py-4">
+	<div class="container flex items-center justify-between">
+		<div class="app-header__branding">
+			{% if function('is_front_page') %}
+				<h1>{{ site.title }}</h1>
+			{% else %}
+				<div><a href="{{ site.url }}">{{ site.title }}</a></div>
+			{% endif %}
+		</div>
 
 		<nav id="menu-primary" class="menu menu--primary">
 			{% include 'components/menu.twig' with {

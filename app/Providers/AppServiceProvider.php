@@ -36,6 +36,7 @@ class AppServiceProvider extends ServiceProvider {
 		\Luxe\Customize::class,
 		\Luxe\Cleanup::class,
 		\Luxe\Timber\Setup::class,
+		\Luxe\Timber\Site::class,
 	];
 
 	/**

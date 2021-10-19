@@ -52,6 +52,7 @@
     "theme-claim": "^0.2.0"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "alpinejs": "^3.3.2",
     "tailwindcss": "^2.2.0"

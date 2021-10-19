@@ -1475,6 +1475,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/forms@npm:^0.3.4":
+  version: 0.3.4
+  resolution: "@tailwindcss/forms@npm:0.3.4"
+  dependencies:
+    mini-svg-data-uri: ^1.2.3
+  peerDependencies:
+    tailwindcss: ">=2.0.0"
+  checksum: 4b2b2b3361169bf5adf1a575c7dc8bb7946192c0edf4829e5b1de342a4e1b8138a01441a8ecef70e0777180b0797506e3f44854f09a32b9d7083658271543783
+  languageName: node
+  linkType: hard
+
 "@tailwindcss/typography@npm:^0.4.1":
   version: 0.4.1
   resolution: "@tailwindcss/typography@npm:0.4.1"
@@ -8266,6 +8277,7 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "luxe@workspace:."
   dependencies:
+    "@tailwindcss/forms": ^0.3.4
     "@tailwindcss/typography": ^0.4.1
     "@wordpress/babel-preset-default": ^6.3.0
     "@wordpress/browserslist-config": ^4.1.0
@@ -8703,6 +8715,15 @@ fsevents@~2.3.2:
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
   checksum: c2c1f3d7e5bc206b5bece0f37b65467ee58e0bb0b61d5e031bb818682b02db2552b296f5018af9058b18eb7127e00f6462fb718712a3d4432079dfa848b510cc
+  languageName: node
+  linkType: hard
+
+"mini-svg-data-uri@npm:^1.2.3":
+  version: 1.3.3
+  resolution: "mini-svg-data-uri@npm:1.3.3"
+  bin:
+    mini-svg-data-uri: cli.js
+  checksum: 3a778132031f5472a46d9f8c012e420137412bef67997e0acedfc98dea7235c716c42fed57e80e8a5f0296fae2dab24282ebb3602dc341513745257434edc676
   languageName: node
   linkType: hard
 

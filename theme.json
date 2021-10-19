@@ -16,6 +16,31 @@
           "name": "Secondary",
           "slug": "secondary",
           "color": "#adadad"
+        },
+        {
+          "name": "Tertiary",
+          "slug": "tertiary",
+          "color": "#008055"
+        },
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#000000"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Transparent",
+          "slug": "transparent",
+          "color": "transparent"
+        },
+        {
+          "name": "Current",
+          "slug": "current",
+          "color": "currentColor"
         }
       ]
     },

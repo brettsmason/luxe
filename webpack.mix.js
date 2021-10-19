@@ -21,11 +21,22 @@ mix
     {
       host: 'localhost',
       port: 3000,
-      proxy: 'http://themedev.test',
+      proxy: 'https://themedev.test',
+			https: true,
       open: false,
+			files: [
+				'*.php',
+				'app/**/*.php',
+				'resources/views/**/*.twig',
+				'public/js/**/*.js',
+				'public/css/**/*.css',
+				'public/svg/**/*.svg',
+				'public/img/**/*.{jpg,jpeg,png,gif}',
+				'public/fonts/**/*.{eot,ttf,woff,woff2,svg}',
+			]
     },
     {
-      injectCss: true,
+      injectChanges: true,
       reload: false,
     }
   );
@@ -46,10 +57,10 @@ mix
       ]
   });
 
-// mix
-//   .copyDirectoryWatched('resources/img', 'public/img')
-//   .copyDirectoryWatched('resources/svg', 'public/svg')
-//   .copyDirectoryWatched('resources/fonts', 'public/fonts');
+mix
+  .copyDirectoryWatched('resources/img', 'public/img')
+  .copyDirectoryWatched('resources/svg', 'public/svg')
+  .copyDirectoryWatched('resources/fonts', 'public/fonts');
 
 mix
   .sourceMaps()

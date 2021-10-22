@@ -26,6 +26,16 @@ use Hybrid\Core\ServiceProvider;
 class WooCommerceServiceProvider extends ServiceProvider {
 
 	/**
+	 * Array of classes.
+	 *
+	 * @var array
+	 */
+	private $classes = [
+		\Luxe\WooCommerce\Setup::class,
+		\Luxe\WooCommerce\ArchiveProduct::class,
+	];
+
+	/**
 	 * Callback executed when the `\Hybrid\Core\Application` class registers
 	 * providers. Use this method to bind items to the container.
 	 *
@@ -35,9 +45,9 @@ class WooCommerceServiceProvider extends ServiceProvider {
 	 */
 	public function register() {
 
-		// Bind a single instance of our WooCommerce classes.
-		$this->app->singleton( \Luxe\WooCommerce\Setup::class );
-		$this->app->singleton( \Luxe\WooCommerce\ArchiveProduct::class );
+		foreach ( $this->classes as $class ) {
+			$this->app->singleton( $class );
+		}
 	}
 
 	/**
@@ -51,8 +61,8 @@ class WooCommerceServiceProvider extends ServiceProvider {
 	 */
 	public function boot() {
 
-		// Boot the WooCommerce class instances.
-		$this->app->resolve( \Luxe\WooCommerce\Setup::class )->boot();
-		$this->app->resolve( \Luxe\WooCommerce\ArchiveProduct::class )->boot();
+		foreach ( $this->classes as $class ) {
+			$this->app->resolve( $class )->boot();
+		}
 	}
 }

@@ -46,10 +46,10 @@ mix
       ]
   });
 
-// mix
-//   .copyDirectoryWatched('resources/img', 'public/img')
-//   .copyDirectoryWatched('resources/svg', 'public/svg')
-//   .copyDirectoryWatched('resources/fonts', 'public/fonts');
+mix
+  .copyDirectoryWatched('resources/img', 'public/img')
+  .copyDirectoryWatched('resources/svg', 'public/svg')
+  .copyDirectoryWatched('resources/fonts', 'public/fonts');
 
 mix
   .sourceMaps()

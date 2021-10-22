@@ -2,7 +2,8 @@ module.exports = {
 	mode: 'jit',
 	purge: {
 		content: [
-			'./**/*.php',
+			'./app/**/*.php',
+			'./resources/views/**/*.php',
 			'./resources/css/**/*.css',
 			'./resources/js/*.js',
 			'./safelist.txt'

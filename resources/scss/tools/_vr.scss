@@ -1,9 +1,0 @@
-@function vr(
-	$baselines: 1
-) {
-	@if (type-of($baselines) != number) {
-		@error "`#{$baselines}` needs to be a number.";
-	}
-
-	@return (($global-line-height / $global-font-size) * 1rem) * $baselines;
-}
